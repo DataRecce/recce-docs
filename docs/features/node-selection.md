@@ -35,7 +35,7 @@ In addition to lineage diff, other types of diff also support node selection. Yo
 - Row count diff
 - Schema diff
 
-![](../../assets/images/features/node-selection.png){: .shadow}
+![](../assets/images/features/node-selection.png){: .shadow}
 
 ## Limitation
 

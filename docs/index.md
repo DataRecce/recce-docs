@@ -75,7 +75,7 @@ The main interface to **Recce** is the [lineage DAG](features/lineage.md#node-su
 
 
 <figure markdown>
-  ![Recce Lineage Diff](../assets/images/recce-ui-elements.png)
+  ![Recce Lineage Diff](assets/images/recce-ui-elements.png)
   <figcaption>	</figcaption>
 </figure>
 

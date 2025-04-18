@@ -7,7 +7,7 @@ icon: material/school
 
 !!! Note
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability soon.  [Sign up](../../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in **private alpha** and scheduled for general availability soon.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
 
 The following guide uses the official [Jaffle Shop DuckDB](https://github.com/dbt-labs/jaffle_shop_duckdb) project from dbt-labs, and provides everything you need to get started with Recce Cloud. By the end of the guide you'll be able to create and sync Recce checks with a GitHub PR via Recce Cloud.
 
@@ -39,14 +39,14 @@ To see what you'll get, check out the first section from the following [Loom](ht
 Recce Cloud needs access to your data project's repository in order to sync your checks status to the pull request thread.
 
 1. Visit [Recce Cloud](https://cloud.datarecce.io/). If it is your first time logging in, click the **Continue with Github** button to authorize the Recce Cloud integration to access your GitHub account.
-   ![alt text](../../assets/images/recce-cloud/sign-in.png)
-   ![alt text](../../assets/images/recce-cloud/sign-in-authorize.png)
+   ![alt text](../assets/images/recce-cloud/sign-in.png)
+   ![alt text](../assets/images/recce-cloud/sign-in-authorize.png)
 1. Click the **Install** button to install the **Recce Cloud** GitHub app to your personal or organization account.
-   ![alt text](../../assets/images/recce-cloud/app-install.png)
+   ![alt text](../assets/images/recce-cloud/app-install.png)
 1. On the app installation page, authorize Recce Cloud to access the repository you created in the previous section.
-   ![alt text](../../assets/images/recce-cloud/app-install-authorize.png)
+   ![alt text](../assets/images/recce-cloud/app-install-authorize.png)
 1. Authorized repositories will then be shown in your Recce Cloud account.
-   ![alt text](../../assets/images/recce-cloud/repo-list.png)
+   ![alt text](../assets/images/recce-cloud/repo-list.png)
 
 
 ## Configure the Jaffle Shop DuckDB data project
@@ -180,7 +180,7 @@ In this section, you will launch a Recce Instance, create validation checks, and
 To access the repository, your local Recce Instance will require a GitHub Token (Classic).
 
 1. Prepare a [GitHub Token (Classic)](https://github.com/settings/tokens) in your account. Ensure you provide `repo` permission for the new token.
-   ![Create a GitHub Token (Classic)](../../assets/images/recce-cloud/github-token.png)
+   ![Create a GitHub Token (Classic)](../assets/images/recce-cloud/github-token.png)
 1. Ensure you have configured these environment variables.
    ```shell
    export GITHUB_TOKEN=<github-token>
@@ -203,12 +203,12 @@ Switch to the **Query** tab and paste the following query:
    select * from {{ ref("orders") }} order by 1
    ```
    Enter the primary key as `order_id` and click the `Run Diff` button.
-   ![Recce Query Diff](../../assets/images/recce-cloud/query-diff.png){: .shadow}
+   ![Recce Query Diff](../assets/images/recce-cloud/query-diff.png){: .shadow}
 1. Click the `Add to Checklist` button to add the query result to your Checklist
 1. On the `Checklist` page you'll find that there are three checks. The Row count diff and Schema diff are default [Preset Checks](https://datarecce.io/docs/features/preset-checks/), and the Query diff is your newly added check. Leave the checks as **unapproved**.
 1. Go back to the command line and terminate the Recce instance. Your Recce [State file](../features/state-file.md), containing your checklist and other artifacts will be encrypted and uploaded to Recce Cloud.
 1. Go to the PR page in your GitHub repository and scroll to the bottom.  Notice that Recce Cloud shows that check are not approved:
-   ![GitHub PR with unapproved Recce Checks](../../assets/images/recce-cloud/pr-checks-wo-approved.png){: .shadow}
+   ![GitHub PR with unapproved Recce Checks](../assets/images/recce-cloud/pr-checks-wo-approved.png){: .shadow}
 
 
 !!! Note
@@ -247,14 +247,14 @@ When Recce loads, click the Checklist tab to review the Checks that have been pr
 
 Approve all the checks if everything looks good to you
 
-![Recce Checklist showing approved Checks](../../assets/images/recce-cloud/checks.png){: .shadow}
+![Recce Checklist showing approved Checks](../assets/images/recce-cloud/checks.png){: .shadow}
 
 **The approval status of the check is automatically synced to Recce Cloud.**
 
 ### Merge the PR
 Back on the GitHub PR page, you'll notice that the Recce Cloud check status has automatically been updated showing that "All checks are approved".
 
-   ![Recce Cloud - All Checks are Approved](../../assets/images/recce-cloud/pr-checks-all-approved.png){: .shadow}
+   ![Recce Cloud - All Checks are Approved](../assets/images/recce-cloud/pr-checks-all-approved.png){: .shadow}
 
 
 In a real-world situation you'd now be able to merge the PR with the confidence that the PR author had checked their work, and the reviewer both understands and has signed-off on any changes.

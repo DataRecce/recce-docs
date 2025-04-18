@@ -5,13 +5,13 @@ icon: octicons/workflow-16
 
 !!! Note
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
 
 [Continuous Integration(CI)](https://en.wikipedia.org/wiki/Continuous_integration) and [Continuous Delivery(CD)](https://en.wikipedia.org/wiki/Continuous_delivery) are best practices in software development. Through CI automation, a dbt project can systematically and continuously deliver and integrate high-quality results.
 
 To automate the process, we can use [GitHub Actions](https://github.com/features/actions) and [GitHub Codespaces](https://github.com/features/codespaces) to provide an automated and reusable workspace. The following diagram describes the entire ci/cd architecture.
 
-![alt text](../../assets/images/recce-cloud/setup-architecture.png){: .shadow}
+![alt text](../assets/images/recce-cloud/setup-architecture.png){: .shadow}
 
 We suggest setting up two GitHub Actions workflows in your GitHub repository. One for the base environment and another for the PR environment.
 
@@ -254,7 +254,7 @@ We can download the dbt artifacts from dbt Cloud for Recce if CI/CD on dbt Cloud
 1. dbt Cloud Deploy Job ID: Check out "API trigger" of the deploy job
 1. dbt Cloud CI Job ID: Check out "API trigger" of the CI job
 
-![alt text](../../assets/images/recce-cloud/dbt-cloud-api-trigger.png){: .shadow }
+![alt text](../assets/images/recce-cloud/dbt-cloud-api-trigger.png){: .shadow }
 
 We prepare a GitHub Action ["Recce dbt Cloud Action"](https://github.com/marketplace/actions/recce-dbt-cloud-action) to do the following steps:
 
@@ -268,7 +268,7 @@ Check out the [GitHub Action](GitHub Action page for complete) to configure the 
 !!! note
 
     Please ensure `Generate docs on run` is toggled in the "Execution settings" of deploy job and "Advanced settings" of CI job.
-    ![alt text](../../assets/images/recce-cloud/dbt-cloud-deploy-generate-docs.png){: .shadow }
+    ![alt text](../assets/images/recce-cloud/dbt-cloud-deploy-generate-docs.png){: .shadow }
 
 ## Review the Recce State File
 

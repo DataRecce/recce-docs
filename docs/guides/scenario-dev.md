@@ -52,7 +52,7 @@ Next, you can examine the [Row count diff](../features/lineage.md#row-count-diff
 
 Observing [the summary of each node](../features/lineage.md#node-summary) can help you quickly review schema and row count changes. By using the lineage diff graph, conducting basic checks on schema and row count, you can already gain a basic level of confidence in the changes made during your development process.
 
-![Node summary](../../assets/images/features/node.png)
+![Node summary](../assets/images/features/node.png)
 
 ### Validate the Column's Summary
 Apparently, model metadata alone is insufficient. Sometimes, we need to assess the magnitude of impact that the changes currently in development have on the critical [Marts models](https://docs.getdbt.com/best-practices/how-we-structure/4-marts).
@@ -103,7 +103,7 @@ Switching branches is often unavoidable during development. To preserve the curr
 recce server recce_issue_123.json
 ```
 
-![alt text](../../assets/images/features/state-file-save.png){: .shadow}
+![alt text](../assets/images/features/state-file-save.png){: .shadow}
 
 ## Import Checklist
 You can import a checklist from a state file by following these steps:

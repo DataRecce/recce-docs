@@ -24,7 +24,7 @@ select * from {{ ref("mymodel") }}
 
     If the primary key(s) is specified, the query will occur in the warehouse; otherwise, the query will happen across two environments and the comparison will take place on the client side.
 
-![Recce Query Diff](../../assets/images/features/query-diff.png)
+![Recce Query Diff](../assets/images/features/query-diff.png)
 
 !!! tip
 
@@ -32,7 +32,7 @@ select * from {{ ref("mymodel") }}
 
 ## Query Result
 
-![Recce Query Diff](../../assets/images/features/query-diff.gif){: .shadow}
+![Recce Query Diff](../assets/images/features/query-diff.gif){: .shadow}
 
 - **Primary Key:** When comparison occurs on the client side, we can select the primary key by clicking the `key` icon. The primary key columns are used to be identified as the same record for both sides. If no primary key is specified, the records is compared by the row's index.
 - **Pinned Column:** The pinned column would show first in the column list.

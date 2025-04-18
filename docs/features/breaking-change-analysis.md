@@ -27,18 +27,18 @@ All modified models display their change category directly on the node. Addition
 
 === "Disabled"
     
-    ![Breaking Change Analysis (disabled)](../../assets/images/features/breaking-change-disabled.png){: .shadow}
+    ![Breaking Change Analysis (disabled)](../assets/images/features/breaking-change-disabled.png){: .shadow}
 
 === "Enabled"
     
-    ![Breaking Change Analysis](../../assets/images/features/breaking-change.png){: .shadow}
+    ![Breaking Change Analysis](../assets/images/features/breaking-change.png){: .shadow}
 
 
 ## Column-Level Lineage
 
 In models classified as **non-breaking** or **partial breaking** -  added, removed, or modified columns will be listed. Click on a column to open its [Column-Level Lineage](./column-level-lineage.md)
 
-![Column-level lineage](../../assets/images/features/breaking-change-lineage.png){: .shadow}
+![Column-level lineage](../assets/images/features/breaking-change-lineage.png){: .shadow}
 
 ## Limitations
 

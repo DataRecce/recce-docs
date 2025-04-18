@@ -20,7 +20,7 @@ In this document, we will explain the design and architecture of the **Self-host
 
 ## Components
 
-![alt text](../../../assets/images/recce-cloud/self-hosted-architecture.png){: .shadow }
+![alt text](../../assets/images/recce-cloud/self-hosted-architecture.png){: .shadow }
 
 
 1. **Recce Cloud**: Provides an API to manage instances through an user interface.
@@ -34,7 +34,7 @@ In this document, we will explain the design and architecture of the **Self-host
 - **GCP Cloud Run**: This approach runs the Recce Instances on GCP Cloud Run. Since GCP Cloud Run can scale the number of instances based on demand, it avoids the resource limitations faced by a single VM with Docker agents.
 
 ## Recce Instance Lifecycle
-![alt text](../../../assets/images/recce-cloud/self-hosted-instance-lifecycle.png){: .shadow }
+![alt text](../../assets/images/recce-cloud/self-hosted-instance-lifecycle.png){: .shadow }
 
 1. The user creates a Recce Instance for a PR.
 1. The agent receives the request and provisions the Recce Instance.

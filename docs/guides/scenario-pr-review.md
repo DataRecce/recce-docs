@@ -13,11 +13,11 @@ Recce at this stage aims to assist the submitter in gathering more information t
 
 Firstly, the Lineage DAG is crucial information within a dbt project as it helps us understand the dependencies between models. In dbt docs, it provides lineage diagrams. Usually, we can paste this diagram into the PR comment to help the reviewer understand the latest lineage status.
 
-![lineage in dbt](../../assets/images/pr/lineage-dbt.png){: .shadow}
+![lineage in dbt](../assets/images/pr/lineage-dbt.png){: .shadow}
 
 However, during PR reviews, we may be more interested in understanding what changes have been made and presenting them through the Lineage DAG. At this point, you can utilize recce to capture a screenshot of the Lineage diff and embed it within your PR comment.
 
-![lineage diff in recce](../../assets/images/pr/lineage-diff.png)
+![lineage diff in recce](../assets/images/pr/lineage-diff.png)
 
 ### Checks
 
@@ -30,9 +30,9 @@ Another core feature of Recce is its various checks, which allow us to compare k
 4. Click the **Copy to Clipboard** button and paste it in the corresponding position within the PR comment.
 5. Write a description of your check, including explanations and intentions.
 6. Click the **Copy markdown** button
-    ![Copy markdown](../../assets/images/pr/copy-markdown.png){: .shadow}
+    ![Copy markdown](../assets/images/pr/copy-markdown.png){: .shadow}
 7. paste it in the corresponding position within the PR comment.
-    ![GitHub Comment](../../assets/images/pr/copy-markdown-pr-comment.png){: .shadow}
+    ![GitHub Comment](../assets/images/pr/copy-markdown-pr-comment.png){: .shadow}
 
 
 ## Share the Recce File

@@ -11,13 +11,13 @@ It's from the Lineage Diff that you will determine which models to investigate f
 
 
 <figure markdown>
-  ![Recce Lineage Diff](../../assets/images/features/lineage-diff.gif){: .shadow}
+  ![Recce Lineage Diff](../assets/images/features/lineage-diff.gif){: .shadow}
   <figcaption>Lineage Diff</figcaption>
 </figure>
 
 
 ### Node Summary
-![](../../assets/images/features/node.png){: .shadow}
+![](../assets/images/features/node.png){: .shadow}
 
 Models are color-coded to indicate their **status**:
 
@@ -28,14 +28,14 @@ Models are color-coded to indicate their **status**:
 The two icons at the bottom right of each node indicate if a `row count` or `schema` change has been detected. Grayed out icons indicate no change.
 
 <figure markdown>
-  ![Model with Schema Change detected](../../assets/images/features/model-schema-change-detected.png){: .shadow}
+  ![Model with Schema Change detected](../assets/images/features/model-schema-change-detected.png){: .shadow}
   <figcaption>Model with Schema Change detected</figcaption>
 </figure>
 
 **Note**: A row count changed icon is only shown if there is row count diff executed on this node.
 
 <figure markdown>
-  ![Open node details panel](../../assets/images/features/node-details-panel.gif){: .shadow}
+  ![Open node details panel](../assets/images/features/node-details-panel.gif){: .shadow}
   <figcaption>Open the node details panel</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ Click a node to select it, or click the  **Select nodes** button at the top-righ
 
 A row count diff can be performed on nodes selected using the `select` and `exclude` options:
 
-![](../../assets/images/features/row-count-diff-selector.gif){: .shadow}
+![](../assets/images/features/row-count-diff-selector.gif){: .shadow}
 
 
 After selecting nodes, run the row count diff by:
@@ -81,13 +81,13 @@ Schema Diff shows added, removed, and renamed columns. Click a model in the Line
 
 
 <figure markdown>
-  ![Recce Schema Diff](../../assets/images/features/schema-diff.gif){: .shadow}
+  ![Recce Schema Diff](../assets/images/features/schema-diff.gif){: .shadow}
   <figcaption>Schema Diff</figcaption>
 </figure>
 
 
 <figure markdown>
-  ![Recce Schema Diff](../../assets/images/features/schema-diff.png)
+  ![Recce Schema Diff](../assets/images/features/schema-diff.png)
   <figcaption>Schema Diff showing renamed column</figcaption>
 </figure>
 
@@ -101,7 +101,7 @@ Row Count Diff shows the difference in row count between the base and current en
 3. Click `Row Count Diff`.
 
 <figure markdown>
-  ![Recce Row Count Diff - Single model](../../assets/images/features/row-count-diff-single.gif){: .shadow}
+  ![Recce Row Count Diff - Single model](../assets/images/features/row-count-diff-single.gif){: .shadow}
   <figcaption>Row Count Diff - Single model</figcaption>
 </figure>
 
@@ -109,7 +109,7 @@ Row Count Diff shows the difference in row count between the base and current en
 
 Code Diff shows the model code that has changed for a particular model.
 
-![Code diff](../../assets/images/features/code-diff.png)
+![Code diff](../assets/images/features/code-diff.png)
 
 1. Click the model in the Lineage DAG.
 2. Click the `Explore Change` button in the node details panel.
@@ -123,7 +123,7 @@ The primary key is automatically inferred by the first column with the [unique](
 
 
 <figure markdown>
-  ![Recce Value Diff](../../assets/images/features/value-diff.png)
+  ![Recce Value Diff](../assets/images/features/value-diff.png)
   <figcaption>Value Diff</figcaption>
 </figure>
 
@@ -145,7 +145,7 @@ The primary key is automatically inferred by the first column with the [unique](
 
 View mismatched values at the row level by clicking the `show mismatched values` option on a column name:
 
-![](../../assets/images/features/value-diff-detail.gif){: .shadow}
+![](../assets/images/features/value-diff-detail.gif){: .shadow}
 
 ### Profile Diff
 
@@ -157,7 +157,7 @@ Profile Diff compares the basic statistic (e.g. count, distinct count, min, max,
 
 
 <figure markdown>
-  ![Recce Profile Diff](../../assets/images/features/profile-diff.png)
+  ![Recce Profile Diff](../assets/images/features/profile-diff.png)
   <figcaption>Profile Diff</figcaption>
 </figure>
 
@@ -177,7 +177,7 @@ Please refer to the [dbt-profiler](https://hub.getdbt.com/data-mie/dbt_profiler/
 Histogram Diff compares the distribution of a numeric column in an overlay histogram chart.   
 
 <figure markdown>
-  ![Recce Histogram Diff](../../assets/images/features/histogram-diff.png)
+  ![Recce Histogram Diff](../assets/images/features/histogram-diff.png)
   <figcaption>Histogram Diff</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ A Histogram Diff can be generated in two ways.
 
 
 <figure markdown>
-  ![Generate a Recce Histogram Diff ](../../assets/images/features/histogram-diff.gif){: .shadow}
+  ![Generate a Recce Histogram Diff ](../assets/images/features/histogram-diff.gif){: .shadow}
   <figcaption>Generate a Recce Histogram Diff from the column options</figcaption>
 </figure>
 
@@ -211,7 +211,7 @@ A Histogram Diff can be generated in two ways.
 Top-K Diff compares the distribution of a categorical column. The top 10 elements are shown by default, which can be expanded to the top 50 elements.
 
 <figure markdown>
-  ![Recce Top-K Diff](../../assets/images/features/top-k-diff.png)
+  ![Recce Top-K Diff](../assets/images/features/top-k-diff.png)
   <figcaption>Recce Top-K Diff</figcaption>
 </figure>
 
@@ -236,7 +236,7 @@ A Top-K Diff can be generated in two ways.
 
 
 <figure markdown>
-  ![Generate a Recce Top-K Diff ](../../assets/images/features/top-k-diff.gif){: .shadow}
+  ![Generate a Recce Top-K Diff ](../assets/images/features/top-k-diff.gif){: .shadow}
   <figcaption>Generate a Recce Top-K Diff </figcaption>
 </figure>
 
@@ -251,7 +251,7 @@ Multiple nodes can be selected in the Lineage DAG. This enables actions to be pe
 To select multiple nodes individually, click the check box on the nodes you wish to select.
 
 <figure markdown>
-  ![Select multiple nodes individually](../../assets/images/features/multi-node-selection.gif){: .shadow}
+  ![Select multiple nodes individually](../assets/images/features/multi-node-selection.gif){: .shadow}
   <figcaption>Select multiple nodes individually</figcaption>
 </figure>
 
@@ -264,7 +264,7 @@ To select a node and all of its parents or children:
 3. Click to select either parent or child nodes.
 
 <figure markdown>
-  ![Select a node and its parents or children](../../assets/images/features/select-node-children.gif){: .shadow}
+  ![Select a node and its parents or children](../assets/images/features/select-node-children.gif){: .shadow}
   <figcaption>Select a node and its parents or children</figcaption>
 </figure>
 
@@ -273,7 +273,7 @@ To select a node and all of its parents or children:
 After selecting the desired nodes, use the Actions menu at the top right of the screen to perform diffs or add checks.
 
 <figure markdown>
-  ![Perform actions on multiple nodes](../../assets/images/features/actions-menu.png){: .shadow}
+  ![Perform actions on multiple nodes](../assets/images/features/actions-menu.png){: .shadow}
   <figcaption>Perform actions on multiple nodes</figcaption>
 </figure>
 
@@ -282,7 +282,7 @@ After selecting the desired nodes, use the Actions menu at the top right of the 
 An example of selecting multiple nodes to perform a multi-node row count diff:
 
 <figure markdown>
-  ![Perform a Row Count Diff on multiple nodes](../../assets/images/features/multi-node-row-count-diff.gif){: .shadow}
+  ![Perform a Row Count Diff on multiple nodes](../assets/images/features/multi-node-row-count-diff.gif){: .shadow}
   <figcaption>Perform a Row Count Diff on multiple nodes</figcaption>
 </figure>
 
@@ -291,7 +291,7 @@ An example of selecting multiple nodes to perform a multi-node row count diff:
 An example of selecting multiple nodes to perform a multi-node Value Diff:
 
 <figure markdown>
-  ![Perform a Value Diff on multiple nodes](../../assets/images/features/multi-node-value-diff.gif){: .shadow}
+  ![Perform a Value Diff on multiple nodes](../assets/images/features/multi-node-value-diff.gif){: .shadow}
   <figcaption>Perform a Value Diff on multiple nodes</figcaption>
 </figure>
 
@@ -302,7 +302,7 @@ An example of selecting multiple nodes to perform a multi-node Value Diff:
 In the diff result, we can find a **Copy to Clipboard** button. it's a handy feature to copy the result image to clipboard and paste in your PR comment.
 
 <figure markdown>
-  ![Copy a diff screenshot to the clipboard - Multiple models](../../assets/images/features/clipboard-to-github.gif){: .shadow}
+  ![Copy a diff screenshot to the clipboard - Multiple models](../assets/images/features/clipboard-to-github.gif){: .shadow}
   <figcaption>Copy a diff result screenshot to the clipboard and paste to GitHub</figcaption>
 </figure>
 
@@ -326,7 +326,7 @@ From the Lineage DAG, click the Actions dropdown menu and click Lineage Diff or 
 - Schema Diff: A diff of all nodes if none are selected, or specific <a href="#multi-node-selection">selected nodes</a>.
 
 <figure markdown>
-  ![Add a Lineage Diff Check or Schema Check via the Actions dropdown menu](../../assets/images/features/actions-dropdown.png){: .shadow}
+  ![Add a Lineage Diff Check or Schema Check via the Actions dropdown menu](../assets/images/features/actions-dropdown.png){: .shadow}
   <figcaption>Add a Lineage Diff Check or Schema Check via the Actions dropdown menu</figcaption>
 </figure>
 
@@ -335,7 +335,7 @@ From the Lineage DAG, click the Actions dropdown menu and click Lineage Diff or 
 For the majority of diffs, which are performed via the Explore Change dropdown menu, the Check can be added by clicking the Add to Checklist button in the results panel:
 
 <figure markdown>
-  ![Add a Check by clicking the Add to Checklist button in the diff results panel](../../assets/images/features/add-to-checklist-button.png){: .shadow}
+  ![Add a Check by clicking the Add to Checklist button in the diff results panel](../assets/images/features/add-to-checklist-button.png){: .shadow}
   <figcaption>Add a Check by clicking the Add to Checklist button in the diff results panel</figcaption>
 </figure>
 
@@ -343,6 +343,6 @@ For the majority of diffs, which are performed via the Explore Change dropdown m
 An example performing a Top-K diff and adding the results to the Checklist:
 
 <figure markdown>
-  ![Example adding a Top-K Diff to the Checklist](../../assets/images/features/add-to-checklist.gif){: .shadow}
+  ![Example adding a Top-K Diff to the Checklist](../assets/images/features/add-to-checklist.gif){: .shadow}
   <figcaption>Example adding a Top-K Diff to the Checklist</figcaption>
 </figure>

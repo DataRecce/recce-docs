@@ -5,7 +5,7 @@ icon: octicons/codespaces-16
 
 !!! Note
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
 
 GitHub Codespaces is a development environment provided by GitHub that allows developers to have identical and isolated environments for development. The GitHub Codespaces uses VS Code Server technology. We can launch it from a GitHub pull request page, and once it is started, the Recce instance will run and port forwarding will be set up. 
 
@@ -53,16 +53,16 @@ GitHub Codespaces is a development environment provided by GitHub that allows de
 Once you complete [Recce Cloud setup](index.md/#sign-up-the-recce-cloud), you can launch GitHub Codespaces from Recce Cloud's pull request page, and once it is started, the Recce instance will run and port forwarding will be set up.
  
 1. Go to Recce Cloud and click the repository you want to make changes. 
-    ![Recce Cloud Home](../../assets/images/recce-cloud/recce-cloud-home.png){: .shadow}
+    ![Recce Cloud Home](../assets/images/recce-cloud/recce-cloud-home.png){: .shadow}
 2. Click the pull request that you want to use Recce instance.  
-    ![Recce Cloud Open PR](../../assets/images/recce-cloud/recce-cloud-open-pr.png){: .shadow}
+    ![Recce Cloud Open PR](../assets/images/recce-cloud/recce-cloud-open-pr.png){: .shadow}
 3. Click "Create in GitHub Codespaces."
-    ![Create in GitHub Codespaces](../../assets/images/recce-cloud/create-in-codespace.png){: .shadow}
+    ![Create in GitHub Codespaces](../assets/images/recce-cloud/create-in-codespace.png){: .shadow}
 4. The Codespaces creation may take 1 to more than 5 mintues depeding on your Codespaces settings. And the Recce instance should take less than 1 minute to launch. 
     - Please view [FAQ](#faq) for how to speed up.
 5. You can see the "State" of the progress; And the Action you can take in each state.
     - Codespace Queued: the Codespace is creating 
-        ![Codespace Queued](../../assets/images/recce-cloud/codespaces-queued.png){: .shadow}
+        ![Codespace Queued](../assets/images/recce-cloud/codespaces-queued.png){: .shadow}
     - Codespace Provisioning: the Codespace is provisioning
     - Codespace Available: the Codespace is ready
     - Recce launching: Recce instance is launching
@@ -70,7 +70,7 @@ Once you complete [Recce Cloud setup](index.md/#sign-up-the-recce-cloud), you ca
     - Recce active: Recce instance is launched successfully. 
         - Open: open the Recce instance
         - Stop: stop the Codespace
-        ![Recce active](../../assets/images/recce-cloud/recce-active.png){: .shadow}
+        ![Recce active](../assets/images/recce-cloud/recce-active.png){: .shadow}
     - Codespace ShuttingDown: the Codespace is shutting down
     - Stopped: the Codespace is stopped and the Recce instance is closed.
         - Restart: restart the Codespace 
@@ -101,14 +101,14 @@ If your Codespace configration is correct, other common causes might include:
 When you’ve opened a Codespace but are unable to connect to the Recce instance, you can troubleshoot by following these steps:
 
 1. Check Codespace instance in GitHub. 
-    ![Check Codespace in GitHub](../../assets/images/recce-cloud/check-codespace-in-github.png){: .shadow}
+    ![Check Codespace in GitHub](../assets/images/recce-cloud/check-codespace-in-github.png){: .shadow}
 2. If the Codesapce you created from Recce Cloud is active, click "Open in Browser". 
-    ![Open Codespace in Browser](../../assets/images/recce-cloud/open-codespace-in-browser.png){: .shadow}
+    ![Open Codespace in Browser](../assets/images/recce-cloud/open-codespace-in-browser.png){: .shadow}
 3. Click on the blue block in the lower left corner of the status bar, which usually shows "Codespaces: instance name"   
-    ![Codespace status bar](../../assets/images/recce-cloud/codespace-troubleshoot-1.png)
+    ![Codespace status bar](../assets/images/recce-cloud/codespace-troubleshoot-1.png)
 4. Select "View creation log" or ppen the VS Code Command Palette and type `Codespaces: View Creation Log`. 
 5. At this point, you should be able to see the reason why the Recce server failed to start.   
-    ![alt text](../../assets/images/recce-cloud/codespace-troubleshoot-2.png)
+    ![alt text](../assets/images/recce-cloud/codespace-troubleshoot-2.png)
 6. If you cannot find any issue from the Codespace creation log, and belive your Codespace configration is correct. Please stop the Codespace and launch Recce instance again. 
 7. If you still have problem, please contact us via [slack](https://getdbt.slack.com/archives/C05C28V7CPP) or email [product@datarecce.io](mailto:product@datarecce.io). We are happy to help.
 
@@ -124,7 +124,7 @@ Once your Codespace instance is already running, you won’t need to wait again 
 **Q: Is there a way to optimize the startup speed?**
 
 Codespace offers a [prebuild](https://docs.github.com/en/codespaces/prebuilding-your-codespaces) feature, which can significantly improve startup speed. In our sample project, we found it's helpful to reduce prebuild when we set prebuild available to only sepecific regions. However, you need to ensure that the image is up-to-date. To strike a balance between speed and update frequency, you can consider scheduling a weekly image rebuild.
-![set prebuild in only specific retion](../../assets/images/recce-cloud/set-prebuild-specific-regions.png)
+![set prebuild in only specific retion](../assets/images/recce-cloud/set-prebuild-specific-regions.png)
 
 **Q: Can a Codespace environment be shared? Can different people access the same Codespace instance?**
 
@@ -152,7 +152,7 @@ Yes, you can. Please refer to the [Codespaces documentation](https://docs.github
 **Q: Should I delete Codespace after PR merged?**
 
 Yes. When you merged a PR, you'll see the Delete codespace message. You can delete the Codespace to save the free usage. 
-![Delete Codespace after PR merged](../../assets/images/recce-cloud/branch-merged-delete-codespace.png){: .shadow}
+![Delete Codespace after PR merged](../assets/images/recce-cloud/branch-merged-delete-codespace.png){: .shadow}
 
 You can also delete Codespace in your GitHub main branch or in Recce Cloud PR page. 
-![Delete Codespace in your GitHub](../../assets/images/recce-cloud/delete-codespace-in-github.png){: .shadow}
+![Delete Codespace in your GitHub](../assets/images/recce-cloud/delete-codespace-in-github.png){: .shadow}

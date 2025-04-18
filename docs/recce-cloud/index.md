@@ -5,7 +5,7 @@ icon: material/hand-wave-outline
 
 !!! Note
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
 
 ## What is `Recce Cloud`?
 
@@ -149,4 +149,4 @@ recce cloud download
 
 Recce Cloud integrate with the [GitHub Pull Request Status Check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks). If there is recce review state synced to a PR, the PR would has a recce cloud check status. Once all checks in recce are approved, the check status would change to passed and ready to be merged.
 
-![alt text](../../assets/images/recce-cloud/pr-checks-all-approved.png){: .shadow}
+![alt text](../assets/images/recce-cloud/pr-checks-all-approved.png){: .shadow}

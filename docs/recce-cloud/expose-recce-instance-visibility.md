@@ -5,7 +5,7 @@ icon: material/account-multiple-check
 
 !!! Note
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
 
 As a Recce Cloud user, you can launch a Recce Instance in [Cloud Mode](index.md#launch-the-recce-server-in-the-cloud-mode) or use [GitHub Codespaces](setup-gh-codespaces.md). However, both of these methods require a GitHub Access Token, which restricts the usage of Recce to those with GitHub accounts.
 
@@ -43,7 +43,7 @@ After installing the Ngrok client, you can create an endpoint for the Recce Inst
     ngrok http <recce-instance-port>
     ```
 
-    ![ngrok forwarding to Recce](../../assets/images/recce-cloud/ngrok-expose.png){: .shadow}
+    ![ngrok forwarding to Recce](../assets/images/recce-cloud/ngrok-expose.png){: .shadow}
 
 1. Secure access with authentication
 
@@ -67,7 +67,7 @@ Tailscale enables you to create your own private network (called a 'Tailnet') an
     
     To create a Tailnet, first create an account, then download Tailscale and follow the [official guide](https://tailscale.com/kb/1017/install) to continue set-up. Once configured, you can then invite other members to join.
 
-    ![Manage Tailscale devices](../../assets/images/recce-cloud/tailscale-dashboard-fs8.png){: .shadow}
+    ![Manage Tailscale devices](../assets/images/recce-cloud/tailscale-dashboard-fs8.png){: .shadow}
 
     It also supports [integration with GitHub Codespaces](https://tailscale.com/kb/1160/github-codespaces).
 
@@ -84,6 +84,6 @@ Tailscale enables you to create your own private network (called a 'Tailnet') an
     tailscale serve <recce-instance-port>
     ```
 
-    ![alt text](../../assets/images/recce-cloud/tailscale-expose.png){: .shadow}
+    ![alt text](../assets/images/recce-cloud/tailscale-expose.png){: .shadow}
 
     If you need a more fine-grained access control policy, please refer to the [Tailscale docs](https://tailscale.com/kb/1350/manage).

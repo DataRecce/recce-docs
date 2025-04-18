@@ -15,11 +15,11 @@ Common use-cases for column-level lineage are
 
 1. Select a node in the lineage DAG, then click the **eye** icon next to the column you want to view.
 
-    ![alt text](../../assets/images/features/cll-1.png){: .shadow}
+    ![alt text](../assets/images/features/cll-1.png){: .shadow}
 
 1. The column-level lineage for the selected column will be displayed.
 
-    ![alt text](../../assets/images/features/cll-2.png){: .shadow}
+    ![alt text](../assets/images/features/cll-2.png){: .shadow}
 
 ## Transformation Types
 

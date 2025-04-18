@@ -13,10 +13,10 @@ Preset checks can be the fixed checks that are generated every time a new Recce 
 To configure the preset checks, add the settings to the [recce config file](../reference/configuration.md).
 
 1. Add a check to your checklist
-    ![alt text](../../assets/images/features/preset-checks-prep.png){: .shadow}
+    ![alt text](../assets/images/features/preset-checks-prep.png){: .shadow}
 2. Open the menu for the check and select **Get Preset Check Template**.
 3. Copy the yaml config from the dialog
-    ![alt text](../../assets/images/features/preset-checks-template.png){: .shadow}
+    ![alt text](../assets/images/features/preset-checks-template.png){: .shadow}
 
 4. Paste the config into the `recce.yml` file located at the root of the project:
 
@@ -42,7 +42,7 @@ To configure the preset checks, add the settings to the [recce config file](../r
 ### Recce Server
 
 1. When a new Recce instance is launched, all preset checks are automatically set up, but these checks are not executed at this time.
-    ![alt text](../../assets/images/features/preset-checks.png){: .shadow}
+    ![alt text](../assets/images/features/preset-checks.png){: .shadow}
 2. When the **Run Query** button is pressed, the check will be executed.
 
 ### Recce Run

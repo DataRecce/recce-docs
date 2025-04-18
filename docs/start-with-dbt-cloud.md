@@ -74,18 +74,18 @@ To compare the data models between two environments, you need to download the db
 
 ### Login to your dbt Cloud account
 
-![dbt Cloud login](../assets/images/dbt-cloud/login-dbt-cloud.png)
+![dbt Cloud login](assets/images/dbt-cloud/login-dbt-cloud.png)
 
 ### Go to the project you want to compare
 
-![dbt Cloud login](../assets/images/dbt-cloud/select-run-job.png)
+![dbt Cloud login](assets/images/dbt-cloud/select-run-job.png)
 
 ### Download the dbt artifacts
 
 Download the artifacts from the latest run of both run jobs. You can download the artifacts from the `Artifacts` tab.
 
-![dbt Cloud login](../assets/images/dbt-cloud/prod-artifacts.png)
-![dbt Cloud login](../assets/images/dbt-cloud/dev-artifacts.png)
+![dbt Cloud login](assets/images/dbt-cloud/prod-artifacts.png)
+![dbt Cloud login](assets/images/dbt-cloud/dev-artifacts.png)
 
 ### Setup the dbt artifacts folders
 
