@@ -38,48 +38,48 @@ nav:
   - index.md
   - Guides:
       - Overview:
-          - docs/index.md
-          - docs/demo.md
+          - index.md
+          - demo.md
       - Getting Started:
-          - docs/get-started.md
-          - docs/get-started-jaffle-shop.md
-          - docs/installation.md
-          - docs/start-with-dbt-cloud.md
+          - get-started.md
+          - get-started-jaffle-shop.md
+          - installation.md
+          - start-with-dbt-cloud.md
       - Web UI:
-          - docs/features/lineage.md
-          - docs/features/query.md
-          - docs/features/checklist.md
+          - features/lineage.md
+          - features/query.md
+          - features/checklist.md
       - Command Line Interface:
-          - docs/features/recce-run.md
-          - docs/features/recce-summary.md
+          - features/recce-run.md
+          - features/recce-summary.md
       - Advanced Features:
-          - docs/features/state-file.md
-          - docs/features/preset-checks.md
-          - docs/features/node-selection.md
-          - docs/features/breaking-change-analysis.md
-          - docs/features/column-level-lineage.md
-          - docs/reference/configuration.md
+          - features/state-file.md
+          - features/preset-checks.md
+          - features/node-selection.md
+          - features/breaking-change-analysis.md
+          - features/column-level-lineage.md
+          - reference/configuration.md
       - Scenarios:
-          - docs/guides/scenario-dev.md
-          - docs/guides/scenario-pr-review.md
-          - docs/guides/scenario-ci.md
-          - docs/guides/best-practices-prep-env.md
+          - guides/scenario-dev.md
+          - guides/scenario-pr-review.md
+          - guides/scenario-ci.md
+          - guides/best-practices-prep-env.md
       - Architecture:
-          - docs/architecture/overview.md
+          - architecture/overview.md
       - Privacy & Terms:
-          - docs/agreement/privacy-policy.md
-          - docs/agreement/cookies-policy.md
-          - docs/agreement/terms-of-use.md
+          - agreement/privacy-policy.md
+          - agreement/cookies-policy.md
+          - agreement/terms-of-use.md
   - Cloud (Alpha):
-      - docs/recce-cloud/index.md
-      - docs/recce-cloud/getting-started-recce-cloud.md
-      - docs/recce-cloud/setup-gh-actions.md
-      - docs/recce-cloud/setup-gh-codespaces.md
-      - docs/recce-cloud/expose-recce-instance-visibility.md
-      - docs/recce-cloud/share-recce-session-securely.md
+      - recce-cloud/index.md
+      - recce-cloud/getting-started-recce-cloud.md
+      - recce-cloud/setup-gh-actions.md
+      - recce-cloud/setup-gh-codespaces.md
+      - recce-cloud/expose-recce-instance-visibility.md
+      - recce-cloud/share-recce-session-securely.md
       - Cloud Architecture:
-          # - docs/recce-cloud/architecture/index.md
-          - docs/recce-cloud/architecture/security.md
+          # - recce-cloud/architecture/index.md
+          - recce-cloud/architecture/security.md
   #- Blog: "https://medium.com/inthepipeline"
   - Blog:
       - blog/index.md
