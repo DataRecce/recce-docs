@@ -80,10 +80,7 @@ nav:
       - Cloud Architecture:
           # - recce-cloud/architecture/index.md
           - recce-cloud/architecture/security.md
-  #- Blog: "https://medium.com/inthepipeline"
-  - Blog:
-      - blog/index.md
-      - blog/tags.md
+  - Blog: "https://datarecce.io/blog"
 
 markdown_extensions:
   - admonition
