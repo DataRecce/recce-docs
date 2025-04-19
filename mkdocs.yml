@@ -134,23 +134,12 @@ theme:
 
 plugins:
   - search
-  - tags:
-      tags_file: blog/tags.md
   - glightbox:
       skip_classes:
         - skip-glightbox
   - social:
       cards_layout_options:
         background_color: "#ff6e41"
-  - blog:
-      blog_dir: blog
-      archive: true
-      post_dir: "{blog}/posts"
-      categories_name: Categories
-      post_url_format: "{slug}" # Removed date from URL "{date}/{slug}"
-      blog_toc: false # enable for blog, archive and category index pages
-      #archive_toc: false    # enable for archive index pages
-      # categories_toc: true # enable for category index pages
 
 watch:
   - material
