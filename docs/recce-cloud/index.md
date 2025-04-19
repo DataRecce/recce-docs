@@ -6,7 +6,7 @@ icon: material/hand-wave-outline
 ## What is Recce Cloud?
 Recce Cloud is a data collaboration platform for teams doing data validation, impact analysis, and pull requests reviews. It helps data teams catch issues early, understand downstream impacts, and communicate changes clearly—all in one shared workspace. Instead of working alone in a local dev environment, teams can explore lineage, run custom queries, and validate metrics together, speeding up reviews and building trust across stakeholders.
 
-<!-- - [Learn more about different plans](https://datarecce.io/pricing) -->
+- [Learn more about different plans](https://datarecce.io/pricing)
 - Follow the [Getting Started](/get-started/) guide
 
 ## Integration with GitHub

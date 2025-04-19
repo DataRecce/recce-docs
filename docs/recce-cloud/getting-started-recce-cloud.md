@@ -6,8 +6,7 @@ icon: material/school
 **Estimated Time:** 20 minutes
 
 !!! Note
-
-    Recce Cloud is currently in **private alpha** and scheduled for general availability soon.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in beta. [Learn more about different plans](https://datarecce.io/pricing).
 
 The following guide uses the official [Jaffle Shop DuckDB](https://github.com/dbt-labs/jaffle_shop_duckdb) project from dbt-labs, and provides everything you need to get started with Recce Cloud. By the end of the guide you'll be able to create and sync Recce checks with a GitHub PR via Recce Cloud.
 
