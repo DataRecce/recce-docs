@@ -3,39 +3,31 @@ title: Overview
 icon: material/hand-wave-outline
 ---
 
-!!! Note
+## What is Recce Cloud?
+Recce Cloud is a data collaboration platform for teams doing data validation, impact analysis, and pull requests reviews. It helps data teams catch issues early, understand downstream impacts, and communicate changes clearly—all in one shared workspace. Instead of working alone in a local dev environment, teams can explore lineage, run custom queries, and validate metrics together, speeding up reviews and building trust across stakeholders.
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+<!-- - [Learn more about different plans](https://datarecce.io/pricing) -->
+- Follow the [Getting Started](/get-started/) guide
 
-## What is `Recce Cloud`?
+## Integration with GitHub
+Recce Cloud integrates with GitHub to support validation in your PR workflow. The following instructions provide an overview of the setup. For a hands-on walkthrough, check out the [Jaffle Shop Tutorial for Cloud](./getting-started-recce-cloud.md).
 
-Recce Cloud is a service specifically designed for streamlining the DBT PR Review workflow. 
-
-Recce Cloud primarily operates through [Recce](../index.md) and integrates GitHub Pull Requests, consolidating the review status of PRs within the Cloud. Without Recce Cloud, we use the [state file](http://localhost:5678/docs/features/state-file/) to store PR review states. However, this method is not very suitable for collaboration or integration with CI because our review states are not stored in a fixed location. Recce Cloud is designed to solve this problem.
-
-
-## Prerequisite
-
-1. Recce Cloud requires [Recce](../index.md). Please make sure that you have understood how use Recce in your dbt project.
-1. Prepare the github personal access token with the `repo` permission. Please see the [GitHub document](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). And set it to your environment variable.
+### Prerequisite
+1. Sign in [Recce cloud](https://cloud.datarecce.io/)
+2. Click **Install** button to install Recce Cloud github app to your personal or organization account.
+3. Authorize the repositories to the github app.
+4. Prepare the github personal access token with the `repo` permission. Please see the [GitHub document](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). And set it to your environment variable.
    ```
    export GITHUB_TOKEN=<token>
    ```
     Or you can set the `--cloud-token <GITHUB_TOKEN>` command option.
-1. Prepare the Recce state password. The Recce state password is used to encrypt/decrypt the state file before uploading/downloading. The password is not stored in Recce Cloud, so you need to keep it safe.
+5. Prepare the Recce state password. The Recce state password is used to encrypt/decrypt the state file before uploading/downloading. The password is not stored in Recce Cloud, so you need to keep it safe.
    ```
    export RECCE_STATE_PASSWORD=<password>
    ```
    Or you can set the `--password <password>` or `-p <password>` command option.
 
-## Getting Started
-The following instructions give an overview of the process of using Recce in your dbt project. For a hands-on tutorial, please check the [Jaffle Shop Tutorial for Cloud](./getting-started-recce-cloud.md).
 
-### Sign Up the Recce Cloud
-1. Go to the [recce cloud](https://cloud.datarecce.io/)
-2. Sign in by github account
-3. Click **Install** button to install Recce Cloud github app to your personal or organization account.
-4. Authorize the repositories to the github app.
 
 ### Launch the `recce server` in the cloud mode
 
