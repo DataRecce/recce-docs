@@ -110,7 +110,6 @@ markdown_extensions:
 
 theme:
   name: material
-  custom_dir: material/overrides
   logo: assets/images/recce-logo-white.png
   palette:
     # Palette toggle for light mode
