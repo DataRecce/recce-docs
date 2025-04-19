@@ -1,4 +1,4 @@
-.md-nav__item a.md-nav__link[href^="https://"] .md-ellipsis::before {
+.md-nav__item a.md-nav__link[href^="https://github.com/DataRecce/recce/releases"] .md-ellipsis::before {
   content: url("/assets/images/clock-regular.svg");
   display: inline-block;
   height: 1rem;
