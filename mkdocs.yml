@@ -142,4 +142,4 @@ plugins:
         background_color: "#ff6e41"
 
 watch:
-  - material
+  - docs
