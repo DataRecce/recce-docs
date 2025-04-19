@@ -65,6 +65,7 @@ nav:
           - guides/best-practices-prep-env.md
       - Architecture:
           - architecture/overview.md
+          - Changelog: "https://github.com/DataRecce/recce/releases"
       - Privacy & Terms:
           - agreement/privacy-policy.md
           - agreement/cookies-policy.md
@@ -105,7 +106,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
-      alternate_style: true          
+      alternate_style: true
 
 theme:
   name: material
