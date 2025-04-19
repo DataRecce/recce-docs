@@ -1,9 +1,8 @@
-site_name: Recce
+site_name: Recce Docs
 site_description: >-
-  Data change validation for dbt projects - 
-  Create 'all signal, no noise' pull request comments
+  Data change validation for dbt projects
 
-copyright: Copyright &copy; 2025 Recce <br /><a href="https://cal.com/team/recce/chat?utm_source=banner&utm_campaign=oss" target="_blank" /><img alt="Book us with Cal.com" src="https://cal.com/book-with-cal-light.svg" /></a>
+copyright: Copyright &copy; 2025 Recce <br />
 
 # Repository
 repo_name: datarecce/recce
@@ -35,7 +34,7 @@ extra:
       link: https://getdbt.slack.com/archives/C05C28V7CPP
 
 nav:
-  - index.md
+  - Home: "https://datarecce.io/"
   - Guides:
       - Overview:
           - index.md
