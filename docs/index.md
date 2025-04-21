@@ -4,86 +4,124 @@ icon: material/hand-wave-outline
 ---
 
 
-# What is **Recce**?
+# What is Recce?
 
-**Recce** (/ˈrɛki/), pronounced 'reh-kee', is short for 'reconnaissance'. It's a data change management toolkit designed to enhance the pull request (PR) review process for dbt projects. **Recce** provides enhanced visibility into the data impact from dbt modeling changes by comparing the data in dev and production environments. Using Recce for data impact assessment before merging a PR ensures that production data remains stable and accurate.
+Recce (pronounced "wreck-E"), short of reconnaissance, helps data teams cut guesswork on downstream impact, streamline collaboration, and ship changes faster—building trust through clarity.
 
-## Key Features
+## Quick Start
 
-### Manual and Automated Data Checks
+You can launch Recce in any dbt project in just two commands:
 
-**Recce** checks help you to assess data impact and explore data change both manually and automatically. 
-
-- **Manual checks** - Create a **Recce** <a href="https://medium.com/inthepipeline/build-a-checklist-for-better-dbt-pr-review-913906ff11dd" target="blank">Checklist</a> of data checks that help to validate your data modeling work during development, including data profile comparisons, structural comparisons, and row-level data checks.
-- **Automated checks** - Integrate **Recce** Checks into your CI process and post a data impact summary automatically to your PR thread when opening a PR.
-
-### Collaboration and Replication
-
-Share **Recce** checks with your team for stakeholder and PR review. Checks results can be either [shared individually](features/lineage.md#screenshot), or your full **Recce** <a href="https://medium.com/inthepipeline/enhanced-dbt-pr-review-with-reproducible-data-validation-environments-e6c37a15908f" target="_blank">environment can be exported</a> and [replicated with one command](features/state-file.md#review-the-state-file).
-
-
-## Why Recce
-
-dbt has brought software engineering best practices to data projects, but “bad merges” still happen, allowing erroneous data and silent errors to make their way into prod data.
-
-### Understand data impact
-
-**Recce** provides data and analytics engineers with a toolkit to explore data impact caused by dbt data modeling changes. The varying levels of **Recce** checks enable holistic or fine grained impact assessment so you can drill down to find the root cause of data change.
-
-### Improved confidence merging
-
-The improved visibility into data impact gives PR reviewers the confidence to sign-off PRs knowing that prod data will not change unexpectedly.
-
-
-<div style="position: relative; padding-bottom: 71.68758716875871%; height: 0;"><iframe src="https://www.loom.com/embed/f6ea8a9b37964cbd9821bb6896d3206f?sid=9c701279-08cd-45c5-b12d-e7967d8f898d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-
-## How Recce Works
-Recce works by comparing dbt model changes between two environments, which is essential for full impact analysis. However, you can still get started with Recce without first preparing a base environment.
-
-### Quick start
-
-Launch Recce in any dbt project in just two commands:
-
-```yaml
+```bash
 # cd into your dbt project
 pip install -U recce
 recce server
 ```
 
-In this mode, you can perform the following actions:
+This starts Recce locally, where you can explore lineage and run queries. To unlock the full set of diffing tools, such as data comparisons and impact checks, you’ll need to prepare two environments to compare against. You can follow our [5-minute Jaffle Shop tutorial](https://datarecce.io/docs/get-started-jaffle-shop/) to try it out step-by-step.
 
-- Explore lineage and navigate your dbt project
-- Track model changes with basic lineage diff
-- Run queries with Jinja and macros
+Recce is the foundation of the workflow. It helps you explore changes, validate before merge, and provide full context to reviewers and stakeholders. Once you're comfortable using it locally, you can explore advanced collaboration features through Recce Cloud.
 
-### Full comparison mode
+### Explore the Live Demos
 
-To use the full suite of diffing tools in Recce, set up a base dbt environment for Recce to compare against. 
+Want to see Recce in action without setting anything up? Try it with real pull requests from the Jaffle Shop demo project.
 
-See the [Getting Started](get-started.md) page for instructions on how to do this.
+Each PR shows how Recce helps validate dbt model changes with lineage, diffs, and review checklists.
 
-## What you get
+- [PR #1](https://github.com/DataRecce/jaffle_shop_duckdb/pull/1) – Fixing logic in Customer Lifetime Value
+- [PR #2](https://github.com/DataRecce/jaffle_shop_duckdb/pull/2) – Refactoring for clarity
+- [PR #3](https://github.com/DataRecce/jaffle_shop_duckdb/pull/3) – Adding rounding analysis
+- [PR #44](https://github.com/DataRecce/jaffle_shop_duckdb/pull/44) – Enhancing the customers model
+- [PR #46](https://github.com/DataRecce/jaffle_shop_duckdb/pull/46) – fixing metrics, rebuilding trust
 
-### Interactive impact assessment environment
+## Why Recce
 
-`recce server` launches a web UI with an [**interactive impact assessment environment**](features/lineage.md). Use the tools in **Recce** to explore the impact to your data models from your branch changes.
+[dbt](https://www.getdbt.com/) introduced software best practices to data projects: modular SQL, version-controlled code, and reproducible pipelines.
 
-### Focused data impact exploration
+But “bad merges” still happen. Silent data errors slip through. Trust breaks when the metrics break.
 
-The main interface to **Recce** is the [lineage DAG](features/lineage.md#node-summary), which shows modified nodes and potentially impacted downstream nodes. You can quickly see if critical nodes are within the impact radius and focus your data validation efforts.
+As teams scale and more people contribute to data projects, it becomes harder to validate changes with confidence, especially when the impact spans multiple models or business domains.
 
+Recce brings data reconnaissance into the workflow. Instead of hoping everything’s fine, you can:
 
-<figure markdown>
-  ![Recce Lineage Diff](assets/images/recce-ui-elements.png)
-  <figcaption>	</figcaption>
-</figure>
+- Instantly trace dependencies down to the column level
+- Compare data and metrics before and after a change
+- Share a clear, explainable checklist with teammates and stakeholders
 
-## Getting Started
+The only way to know the impact of a change is to compare what it actually changes. Recce makes that fast, visible, and collaborative.
 
-Try the [5-minute tutorial](get-started-jaffle-shop.md) that uses dbt’s Jaffle Shop project, or take the [online demo](demo.md) for a test run, which includes an actual PR and related Recce Instance.
+## Who is Recce for?
 
+Recce helps teams catch issues early, understand the impact of changes, and build trust in every deployment. It fits naturally into the data workflow so validation becomes part of how you build, not something extra to worry about.
 
-## What does **Recce** mean?
+- **Data engineers** use Recce to check for downstream impact and make sure changes are safe before merging.
+- **Analysts** use Recce to review their own work, compare data before and after, and confirm that key metrics still make sense.
+- **Stakeholders** use Recce to review updates with clear context, without reading SQL or digging into warehouse tables.
 
-**Recce** (/ˈrɛki/), pronounced 'reh-kee', is short for 'reconnaissance'. We chose this name as it's the perfect fit for a tool you'll use to perform a 'data reconnaissance' to discover and assess the impact of data modeling changes. Add a **Data Recce** to your pull request workflow and stop pushing breaking changes to production!
+## What You Get
+
+Recce gives you a clear, fast way to understand what your data changes are doing and why they matter. It helps you catch problems early, verify metrics, and share your findings with others, all as part of your normal workflow.
+
+![Lineage graph supports model/column levels navigation and breaking change analysis](assets/images/home/lineage-readme1.png)
+
+Lineage graph supports model/column levels navigation and breaking change analysis.
+
+![Model and column level diff](assets/images/home/diff-readme2.png)
+
+Model and column level diff
+
+![Checklist for collaboration](assets/images/home/checklist-readme3.png)
+
+Checklist for collaboration
+
+### What’s included
+
+- **Lineage and impact mapping:** Quickly see which models and columns are affected by a change. Navigate lineage down to the column level, and spot breaking changes with clear visual cues.
+- **Metric and data comparisons:** Use Profile, Value, Top-K, and Histogram Diffs to compare results before and after changes. Validate things like row counts, category distributions, and numeric ranges without writing extra SQL.
+- **Query diff:** Write and compare any two queries side by side. This is helpful when validating fixes or reviewing changes with teammates.
+- **Checklist for reviews and approvals:** Turn your validation steps into a checklist. Add notes, rerun checks, and share the results with reviewers or stakeholders. In Recce Cloud, checklists can sync automatically and even block PRs until checks are approved.
+- **Secure by design:** Recce is SOC 2 compliant to meet enterprise security standards. It runs locally or in your private environment, and your data stays in your warehouse.
+
+### Learn More
+
+Want to dive deeper? Check out the full documentation for setup guides, feature overviews, and use case tutorials.
+
+- [Getting Started](https://datarecce.io/docs/get-started-jaffle-shop/)
+- [Features Overview](https://datarecce.io/docs/features/lineage/)
+- [Writing Checks and Using Checklists](https://datarecce.io/docs/features/checklist/)
+- [State File and Configuration](https://datarecce.io/docs/features/state-file/)
+- [Running Recce in CI/CD](https://datarecce.io/docs/guides/scenario-ci/)
+- [Breaking Change Analysis](https://docs.datarecce.io/features/breaking-change-analysis/)
+
+## Recce Cloud
+
+Ready to collaborate and move faster as a team? Recce Cloud adds real-time collaboration, automatic checklist sync, and PR gating, so nothing gets merged without a full review.
+
+- Share checklists across environments
+- Invite stakeholders to review data changes
+- Block merges until all Checks are approved
+- Launch demo links from your CI with full context
+
+👉 [View Pricing and Plans](https://datarecce.io/pricing)
+
+Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps teams aligned, and reduces errors—so you can ship data changes with confidence.
+
+## Community & Support
+
+Here's where you can get in touch with the Recce team and find support:
+
+- [dbt Slack](https://www.getdbt.com/community/join-the-community) in the [#tools-recce](https://getdbt.slack.com/archives/C05C28V7CPP) channel
+- Email us [product@datarecce.io](mailto:product@datarecce.io)
+
+If you believe you have found a bug, or there is some missing functionality in Recce, please open a [GitHub Issue](https://github.com/DataRecce/recce/issues).
+
+## Recce on the web
+
+You can follow along with news about Recce and blogs from our team in the following places:
+
+- [DataRecce.io](https://datarecce.io/)
+- [LinkedIn](https://www.linkedin.com/company/datarecce)
+- [Medium blog](https://medium.com/inthepipeline)
+- [@datarecce](https://x.com/DataRecce) on Twitter/X
+- [@DataRecce@mastodon.social](https://mastodon.social/@DataRecce) on Mastodon
+- [@datarecce.bsky.social](https://bsky.app/profile/datarecce.bsky.social) on BlueSky
