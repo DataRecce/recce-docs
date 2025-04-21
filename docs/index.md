@@ -22,6 +22,8 @@ This starts Recce locally, where you can explore lineage and run queries. To unl
 
 Recce is the foundation of the workflow. It helps you explore changes, validate before merge, and provide full context to reviewers and stakeholders. Once you're comfortable using it locally, you can explore advanced collaboration features through Recce Cloud.
 
+<iframe src="https://www.loom.com/embed/77a85411dbd046bf802d7786b2d47bf5?sid=40245a99-03d7-4687-b5fb-3d509489fc3b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 100%; height: 500px;"></iframe>
+
 ### Explore the Live Demos
 
 Want to see Recce in action without setting anything up? Try it with real pull requests from the Jaffle Shop demo project.
