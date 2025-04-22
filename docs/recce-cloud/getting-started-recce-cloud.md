@@ -205,9 +205,9 @@ Switch to the **Query** tab and paste the following query:
    Enter the primary key as `order_id` and click the `Run Diff` button.
    ![Recce Query Diff](../assets/images/recce-cloud/query-diff.png){: .shadow}
 1. Click the `Add to Checklist` button to add the query result to your Checklist
-1. On the `Checklist` page you'll find that there are three checks. The Row count diff and Schema diff are default [Preset Checks](https://datarecce.io/docs/features/preset-checks/), and the Query diff is your newly added check. Leave the checks as **unapproved**.
-1. Go back to the command line and terminate the Recce instance. Your Recce [State file](../features/state-file.md), containing your checklist and other artifacts will be encrypted and uploaded to Recce Cloud.
-1. Go to the PR page in your GitHub repository and scroll to the bottom.  Notice that Recce Cloud shows that check are not approved:
+2. On the `Checklist` page you'll find that there are three checks. The Row count diff and Schema diff are default [Preset Checks](https://docs.datarecce.io/features/preset-checks/), and the Query diff is your newly added check. Leave the checks as **unapproved**.
+3. Go back to the command line and terminate the Recce instance. Your Recce [State file](../features/state-file.md), containing your checklist and other artifacts will be encrypted and uploaded to Recce Cloud.
+4. Go to the PR page in your GitHub repository and scroll to the bottom.  Notice that Recce Cloud shows that check are not approved:
    ![GitHub PR with unapproved Recce Checks](../assets/images/recce-cloud/pr-checks-wo-approved.png){: .shadow}
 
 

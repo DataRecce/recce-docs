@@ -27,7 +27,7 @@ When you access or use the Services, we automatically collect personal informati
 
 Log Files: We gather certain personal information about your use of the Services, including the type of browser you use, access times, pages viewed, your IP address and the page you visited before navigating to the Services, and store it in log files.
 
-Personal information Collected by Cookies and Other Tracking Technologies: We use various technologies to collect personal information including cookies. For more information about cookies, and how to disable them, please see our Cookie Policy page [https://datarecce.io/docs/agreement/privacy-policy/](/docs/agreement/privacy-policy/) and Your Choices below.
+Personal information Collected by Cookies and Other Tracking Technologies: We use various technologies to collect personal information including cookies. For more information about cookies, and how to disable them, please see our Cookie Policy page [https://docs.datarecce.io/agreement/privacy-policy/](https://docs.datarecce.io/agreement/privacy-policy/) and Your Choices below.
 
 ### Personal information We Collect from Other Sources
 
@@ -126,7 +126,7 @@ You may be able to add, update or delete your personal information, but we will 
 
 ### Cookies
 
-Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. For more information, please see Recce’s Cookie Policy at [https://datarecce.io/docs/agreement/cookies-policy/](/docs/agreement/cookies-policy/) 
+Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. For more information, please see Recce’s Cookie Policy at [https://docs.datarecce.io/agreement/cookies-policy/](https://docs.datarecce.io/agreement/cookies-policy/) 
 
 ## Promotional Communications
 
