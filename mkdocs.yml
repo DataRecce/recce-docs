@@ -69,7 +69,7 @@ nav:
           - agreement/privacy-policy.md
           - agreement/cookies-policy.md
           - agreement/terms-of-use.md
-  - Cloud (Alpha):
+  - Cloud (Beta):
       - recce-cloud/index.md
       - recce-cloud/getting-started-recce-cloud.md
       - recce-cloud/setup-gh-actions.md

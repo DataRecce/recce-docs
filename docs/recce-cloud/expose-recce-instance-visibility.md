@@ -5,7 +5,7 @@ icon: material/account-multiple-check
 
 !!! Note
 
-    Recce Cloud is currently in **private alpha** and scheduled for general availability later this year.  [Sign up](../cloud.md#signup) to the Recce newsletter to be notified, or email [product@datarecce.io](mailto:product@datarecce.io) to join our design partnership program for early access.
+    Recce Cloud is currently in beta. [Learn more about different plans](https://datarecce.io/pricing).
 
 As a Recce Cloud user, you can launch a Recce Instance in [Cloud Mode](index.md#launch-the-recce-server-in-the-cloud-mode) or use [GitHub Codespaces](setup-gh-codespaces.md). However, both of these methods require a GitHub Access Token, which restricts the usage of Recce to those with GitHub accounts.
 
