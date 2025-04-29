@@ -7,7 +7,7 @@ copyright: Copyright &copy; 2025 Recce <br />
 # Repository
 repo_name: datarecce/recce
 repo_url: https://github.com/datarecce/recce
-site_url: https://datarecce.io
+site_url: https://docs.datarecce.io
 extra_css:
   - styles/extra.css
 
@@ -105,7 +105,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
-      alternate_style: true          
+      alternate_style: true
 
 theme:
   name: material
