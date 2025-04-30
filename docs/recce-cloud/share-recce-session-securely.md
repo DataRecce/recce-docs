@@ -55,7 +55,6 @@ The first time you do this, you'll need to connect your local Recce to Recce Clo
 
     - Open `profile.yml` with any text editor to add your token:
     ```yaml
-    user_id: <your_user_id>
     api_token: <your_api_token>
     ```
     Alternatively, for one-time use, you can use `--api-token` flag with commend. e.g.,
