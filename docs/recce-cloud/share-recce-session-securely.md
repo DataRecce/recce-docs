@@ -1,5 +1,5 @@
 ---
-title: Share Recce Session
+title: Share Recce Instance
 icon: material/account-eye
 ---
 
