@@ -63,8 +63,8 @@ For dbt Core users:
     1. Build base dbt artifacts
     2. Upload dbt artifacts to Recce Cloud
 
-Upload the base dbt artifact to Recce Cloud by `recce cloud upload-artifacts`. 
-You and other developers on your team can then download by `recce cloud download-base-artifacts` without building base artifacts every time. 
+Upload the base dbt artifact to Recce Cloud by `recce cloud upload-artifacts`.
+You and other developers on your team can then download by `recce cloud download-base-artifacts` without building base artifacts every time.
 
 !!! note
 
@@ -226,7 +226,7 @@ jobs:
         env:
           RECCE_STATE_PASSWORD: ${{ secrets.RECCE_STATE_PASSWORD }}
           NEXT_STEP_MESSAGE: |
-            ## Next Steps          
+            ## Next Steps
             If you want to check more detail information about the recce result, please follow this instruction.
 
             ```bash
@@ -263,7 +263,7 @@ We prepare a GitHub Action ["Recce dbt Cloud Action"](https://github.com/marketp
 1. Download the dbt artifacts from the deploy job to `./target-base` directory
 1. Download the dbt artifacts from the deploy job to `./target` directory
 
-Check out the [GitHub Action](GitHub Action page for complete) to configure the GitHub workflow.
+Check out the [GitHub Action](https://github.com/marketplace/actions/recce-dbt-cloud-action) to configure the GitHub workflow.
 
 !!! note
 
