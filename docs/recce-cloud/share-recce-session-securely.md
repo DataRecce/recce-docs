@@ -1,5 +1,5 @@
 ---
-title: Share Recce Session
+title: Share Recce Instance
 icon: material/account-eye
 ---
 
@@ -33,9 +33,28 @@ The first time you do this, you'll need to connect your local Recce to Recce Clo
 
 1. Add the token to `.recce/profile.yml`
 
-    For convenience, you can add your API token in `.recce/profile.yml`, located by default in your home directory. 
+    For convenience, you can add your API token in `.recce/profile.yml`, located in your home directory.
+
+    - Find the `.recce` folder in your home directory.
+
+        **For Mac/Linux users:**
+
+        In the terminal, type the following command to navigate to the Recce configuration directory:
+        ```shell
+        cd ~/.recce
+        ```
+
+        **For Windows users:**
+
+        Navigate to `C:\Users\<your_user_name>` and open the hidden `.recce` folder.
+
+        Or in PowerShell, type:
+        ```powershell
+        cd ~\.recce
+        ```
+
+    - Open `profile.yml` with any text editor to add your token:
     ```yaml
-    user_id: <your_user_id>
     api_token: <your_api_token>
     ```
     Alternatively, for one-time use, you can use `--api-token` flag with commend. e.g.,
