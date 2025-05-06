@@ -65,6 +65,7 @@ nav:
           - guides/best-practices-prep-env.md
       - Architecture:
           - architecture/overview.md
+          - Changelog: "https://github.com/DataRecce/recce/releases"
       - Privacy & Terms:
           - agreement/privacy-policy.md
           - agreement/cookies-policy.md
