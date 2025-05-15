@@ -1,22 +1,21 @@
 ---
 title: Lineage
 icon: material/file-tree
-
 ---
 
 The Lineage Diff is the main interface to Recce and allows you to quickly see the potential area of impact from your dbt data modeling changes.
 
 ## Lineage Diff
-It's from the Lineage Diff that you will determine which models to investigate further; and also perform the various data validation checks that will serve as proof-of-correctness of your work.
 
+It's from the Lineage Diff that you will determine which models to investigate further; and also perform the various data validation checks that will serve as proof-of-correctness of your work.
 
 <figure markdown>
   ![Recce Lineage Diff](../assets/images/features/lineage-diff.gif){: .shadow}
   <figcaption>Lineage Diff</figcaption>
 </figure>
 
-
 ### Node Summary
+
 ![](../assets/images/features/node.png){: .shadow}
 
 Models are color-coded to indicate their **status**:
@@ -42,18 +41,19 @@ The two icons at the bottom right of each node indicate if a `row count` or `sch
 Click a model to open the [node details](#node-detail) panel and perform other data validation checks.
 
 ### Filter Nodes
+
 In the top control bar, you can change the rule to filter the nodes:
 
 1. **Mode:**
-    - **Changed Models:** Modified nodes and their downstream + 1st degree of their parents.
-    - **All:** Show all nodes.
+   - **Changed Models:** Modified nodes and their downstream + 1st degree of their parents.
+   - **All:** Show all nodes.
 1. **Package:** Filter by dbt package names.
 1. **Select:** Select nodes by [node selection](./node-selection.md).
 1. **Exclude:** Exclude nodes by [node selection](./node-selection.md).
 
 ### Select Nodes
 
-Click a node to select it, or click the  **Select nodes** button at the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](#multi-nodes-selection) section 
+Click a node to select it, or click the **Select nodes** button at the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](#multi-nodes-selection) section
 
 ### Row Count Diff
 
@@ -61,36 +61,31 @@ A row count diff can be performed on nodes selected using the `select` and `excl
 
 ![](../assets/images/features/row-count-diff-selector.gif){: .shadow}
 
-
 After selecting nodes, run the row count diff by:
 
 1. Clicking the 3 dots (**...**) button at the top-right corner.
 2. Clicking **Row Count Diff by Selector**.
 
-
 ## Node Details
 
-The node details panel shows information about a node, such as node type, schema and row count changes, and allows you to perform diffs on the node using the options accessed via the `Explore Change` button. 
+The node details panel shows information about a node, such as node type, schema and row count changes, and allows you to perform diffs on the node using the options accessed via the `Explore Change` button.
 
 ### Schema Diff
 
 Schema Diff shows added, removed, and renamed columns. Click a model in the Lineage Diff to open the node details and view the Schema Diff.
 
 !!! Note
-    Schema Diff requires `catalog.json` in both environments.
-
+Schema Diff requires `catalog.json` in both environments.
 
 <figure markdown>
   ![Recce Schema Diff](../assets/images/features/schema-diff.gif){: .shadow}
   <figcaption>Schema Diff</figcaption>
 </figure>
 
-
 <figure markdown>
   ![Recce Schema Diff](../assets/images/features/schema-diff.png)
   <figcaption>Schema Diff showing renamed column</figcaption>
 </figure>
-
 
 ### Row Count Diff
 
@@ -121,7 +116,6 @@ Value Diff shows the matched count and percentage for each column in the table. 
 
 The primary key is automatically inferred by the first column with the [unique](https://docs.getdbt.com/reference/resource-properties/data-tests#unique) test. If no primary key is detected at least one column is required to be specified as the primary key.
 
-
 <figure markdown>
   ![Recce Value Diff](../assets/images/features/value-diff.png)
   <figcaption>Value Diff</figcaption>
@@ -131,17 +125,6 @@ The primary key is automatically inferred by the first column with the [unique](
 - **Removed**: Removed PKs.
 - **Matched**: For a column, the count of matched value of common PKs.
 - **Matched %**: For a column, the ratio of matched over common PKs.
-
-!!! note
-
-    Value Diff uses the `compare_column_values` from [audit-helper](https://hub.getdbt.com/dbt-labs/audit_helper/latest/). To use Value Diff, ensure that `audit-helper` is installed in your project.
-
-    ```yaml
-    packages:
-      - package: dbt-labs/audit_helper
-        version: <version>
-    ```
-
 
 View mismatched values at the row level by clicking the `show mismatched values` option on a column name:
 
@@ -155,26 +138,26 @@ Profile Diff compares the basic statistic (e.g. count, distinct count, min, max,
 2. Click the `Expore Change` button.
 3. Click `Profile Diff`.
 
-
 <figure markdown>
   ![Recce Profile Diff](../assets/images/features/profile-diff.png)
   <figcaption>Profile Diff</figcaption>
 </figure>
 
-Please refer to the [dbt-profiler](https://hub.getdbt.com/data-mie/dbt_profiler/latest/#dbt-profiler) documentation for the definitions of profiling stats.
+The Statistics:
 
-!!! Note
-    Profile diff uses the `get_profile` from [dbt-profiler](https://hub.getdbt.com/data-mie/dbt_profiler/latest/). To use Profile Diff, ensure that dbt-profiler is installed in your project.
-
-    ```yaml
-    packages:
-      - package: data-mie/dbt_profiler
-        version: <version>
-    ```
+- Row count
+- Not null proportion
+- Distinct proportion
+- Distinct count
+- Is unique
+- Minimum
+- Maximum
+- Average
+- Median
 
 ### Histogram Diff
 
-Histogram Diff compares the distribution of a numeric column in an overlay histogram chart.   
+Histogram Diff compares the distribution of a numeric column in an overlay histogram chart.
 
 <figure markdown>
   ![Recce Histogram Diff](../assets/images/features/histogram-diff.png)
@@ -184,7 +167,6 @@ Histogram Diff compares the distribution of a numeric column in an overlay histo
 A Histogram Diff can be generated in two ways.
 
 **Via the Explore Change button menu:**
-
 
 1. Select the model from the Lineage DAG.
 2. Click the `Explore Change` button.
@@ -199,12 +181,10 @@ A Histogram Diff can be generated in two ways.
 3. Click the vertical 3 dots `...`
 4. Click `Histogram Diff`.
 
-
 <figure markdown>
   ![Generate a Recce Histogram Diff ](../assets/images/features/histogram-diff.gif){: .shadow}
   <figcaption>Generate a Recce Histogram Diff from the column options</figcaption>
 </figure>
-
 
 ### Top-K Diff
 
@@ -215,11 +195,9 @@ Top-K Diff compares the distribution of a categorical column. The top 10 element
   <figcaption>Recce Top-K Diff</figcaption>
 </figure>
 
-
 A Top-K Diff can be generated in two ways.
 
 **Via the Explore Change button menu:**
-
 
 1. Select the model from the Lineage DAG.
 2. Click the `Explore Change` button.
@@ -234,13 +212,10 @@ A Top-K Diff can be generated in two ways.
 3. Click the vertical 3 dots `...`
 4. Click `Top-K Diff`.
 
-
 <figure markdown>
   ![Generate a Recce Top-K Diff ](../assets/images/features/top-k-diff.gif){: .shadow}
   <figcaption>Generate a Recce Top-K Diff </figcaption>
 </figure>
-
-
 
 ## Multi-Node Selection
 
@@ -295,8 +270,6 @@ An example of selecting multiple nodes to perform a multi-node Value Diff:
   <figcaption>Perform a Value Diff on multiple nodes</figcaption>
 </figure>
 
-
-
 ## Screenshot
 
 In the diff result, we can find a **Copy to Clipboard** button. it's a handy feature to copy the result image to clipboard and paste in your PR comment.
@@ -338,7 +311,6 @@ For the majority of diffs, which are performed via the Explore Change dropdown m
   ![Add a Check by clicking the Add to Checklist button in the diff results panel](../assets/images/features/add-to-checklist-button.png){: .shadow}
   <figcaption>Add a Check by clicking the Add to Checklist button in the diff results panel</figcaption>
 </figure>
-
 
 An example performing a Top-K diff and adding the results to the Checklist:
 

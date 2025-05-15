@@ -77,18 +77,6 @@ Set up the Jaffle Shop project and install Recce.
    +     schema: prod
    +     threads: 24
    ```
-1. Add the following packages required by Recce for some features (highly recommended). Create a `./packages.yml` file in the root of your project with the following packages:
-   ```
-   packages:
-   - package: dbt-labs/audit_helper
-     version: 0.12.0
-   - package: data-mie/dbt_profiler
-     version: 0.8.2
-   ```
-   Install the packages:
-   ```
-   dbt deps
-   ```
 
 ## Prepare the base environment
 
