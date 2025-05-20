@@ -3,10 +3,13 @@ title: 5 Minute Tutorial
 icon: material/school
 ---
 
-**Jaffle Shop** is an example project officially provided by dbt-labs. This document uses [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb) to enable you to start using Recce locally from scratch within five minutes.
+Jaffle Shop is an example project officially provided by [dbt Labs](https://www.getdbt.com). This document uses [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb) to enable you to start using Recce locally from scratch within five minutes.
 
 !!! tip
-   DuckDB projects like jaffle_shop_duckdb don’t use a server-based connection or cloud warehouse credentials. Be aware that a few setup steps differ from those for cloud-based warehouses.
+
+      [DuckDB](https://duckdb.org/) projects like jaffle_shop_duckdb don’t use a server-based connection or cloud warehouse credentials. Be aware that a few setup steps differ from those for cloud-based warehouses.
+
+## Step by Step
 
 1. Clone the “Jaffle Shop” dbt data project
    ```shell
@@ -23,10 +26,9 @@ icon: material/school
    pip install -r requirements.txt
    pip install recce
    ```
-4. Provide additional environment to compare. 
+4. Provide additional environment to compare<br> 
    Edit `./profiles.yml` to add one more target to serve as the base environment for comparison. 
-   
-   Note: This step is only necessary for file-based engines like DuckDB. For cloud warehouses (e.g., Snowflake, BigQuery), Recce auto-detects your active dbt profile and schema, so no changes required.
+   <br><br>Note: This step is only necessary for file-based engines like DuckDB. For cloud warehouses (e.g., Snowflake, BigQuery), Recce auto-detects your active dbt profile and schema, so no changes required.
    ```diff
    jaffle_shop:
      target: dev
@@ -41,10 +43,9 @@ icon: material/school
    +   schema: prod
    +   threads: 24
    ```
-5. Prepare production environment
+5. Prepare production environment<br>
    Using DuckDB, you need to generate the artifacts for the base environment. Checkout the `main` branch of your project and generate the required artifacts into `target-base`. You can skip `dbt build` if this environment already exists.
-
-   Note: This step is only necessary for file-based engines like DuckDB. For most data warehouses, you don’t need to re-run production locally. You can download the dbt artifacts generated from the main branch, and save them to a `target-base/` folder.
+   <br><br>Note: This step is only necessary for file-based engines like DuckDB. For most data warehouses, you don’t need to re-run production locally. You can download the dbt artifacts generated from the main branch, and save them to a `target-base/` folder.
    ```shell
    dbt seed --target prod
    dbt run --target prod
@@ -85,3 +86,9 @@ icon: material/school
    ![Query in Recce](assets/images/jaffle-shop/jaffle_shop_query.png)
 9.  Click the `+` to add the query result to checklist
    ![Add query to checklist](assets/images/jaffle-shop/jaffle_shop_check.png)
+
+## What’s Next
+By following this DuckDB tutorial, you’ve seen how Recce works locally.
+You can now return to the [Getting Started guide](./get-started.md)) to set up Recce with your cloud data warehouse.
+
+Got questions? [Let us know](/#community-support). We’re happy to help!

@@ -12,7 +12,7 @@ Use Recce to validate your data changes with clarity and confidence. Recce helps
 - Validate downstream impacts
 - Collaborate through shareable checklists
 
-For a hands-on walkthrough, check out the [5 minutes tutorial of Jaffle Shop](./get-started-jaffle-shop.md).
+For a hands-on walkthrough, check out the [5 Minute Tutorial](./get-started-jaffle-shop.md).
 
 
 ## Start Recce with Two Commands
@@ -107,7 +107,7 @@ You’ll be able to see modified lineage, explore model changes, and run detaile
 !!! tip
     1. Click **Environment Info** at the top-right corner to view the two environments you configured.
       ![Environment info](assets/images/getting-started/environment-info.png)
-    2. Want to try Recce without setting up a warehouse? See the [5-Minutes Tutorial](./get-started-jaffle-shop.md) using DuckDB to run Recce locally.
+    2. Want to try Recce without setting up a warehouse? See the [5 Minute Tutorial](./get-started-jaffle-shop.md) using DuckDB to run Recce locally.
 
 ## Share to Collaborate 
 If you’ve followed the steps above and are ready to share your checklist with others, Recce Cloud makes it easy.
