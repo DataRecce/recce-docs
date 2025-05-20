@@ -40,10 +40,12 @@ GitHub Codespaces is a development environment provided by GitHub that allows de
     - or [Repository-level or organization-level codespaces secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization)
 
 1. Prepare the `.devcontainer/Dockerfile`
+    For environment setup, you need to install `recce`, dbt and the appropriate adapter for your data platform.
+    Below is a sample Dockerfile for BigQuery. You can customize it based on your needs.
     ```
     FROM mcr.microsoft.com/vscode/devcontainers/python:3.11
 
-    RUN pip install dbt-bigquery~=1.7.0 recce~=0.34
+    RUN pip install dbt-core dbt-bigquery recce
     ```
 !!!Note
 
