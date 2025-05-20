@@ -41,7 +41,7 @@ GitHub Codespaces is a development environment provided by GitHub that allows de
 
 1. Prepare the `.devcontainer/Dockerfile`
 
-    For environment setup, you need to install `recce`, `dbt` and the appropriate adapter for your data platform.
+    For environment setup, you need to install `recce`, `dbt`, and the appropriate adapter for your data platform.
 
     Below is a sample Dockerfile for BigQuery. You can customize it based on your needs.
     ```
