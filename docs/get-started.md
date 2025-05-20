@@ -12,10 +12,10 @@ Use Recce to validate your data changes with clarity and confidence. Recce helps
 - Validate downstream impacts
 - Collaborate through shareable checklists
 
-For a hands-on walkthrough, check out the [Jaffle Shop Tutorial](./get-started-jaffle-shop.md).
+For a hands-on walkthrough, check out the [5 minutes tutorial of Jaffle Shop](./get-started-jaffle-shop.md).
 
 
-## Start Recce with two commands
+## Start Recce With Two Commands
 
 Navigate to your dbt project and run:
 ```shell
@@ -24,7 +24,7 @@ pip install -U recce
 recce server
 ```
 
-Recce use dbt [artifacts](https://docs.getdbt.com/reference/artifacts/dbt-artifacts) generated with every invocation. You can find these files in the `target/` folder.
+Recce use dbt [artifacts](https://docs.getdbt.com/reference/artifacts/dbt-artifacts) generated with every invocation to understand your project’s and data. You can find these files in the `target/` folder.
 
 | artifacts     | dbt command                        |
 | ------------- | ---------------------------------- |
@@ -35,7 +35,7 @@ Recce use dbt [artifacts](https://docs.getdbt.com/reference/artifacts/dbt-artifa
 
     The regeneration of the `catalog.json` file is not required after every `dbt run`. it is only required to regenerate this file when models or columns are added or updated.
 
-## Get instant visibility
+## Get Instant Visibility
 
 With just one environment, Recce gives you:
 
@@ -47,10 +47,12 @@ With just one environment, Recce gives you:
 
 Perfect for early exploration, root cause analysis, and faster debugging before involving others.
 
-## Unlock diff & validation with two environments
-Not all data changes are obviously right or wrong. Comparing metrics before and after is key to confident validation.
+<!-- <insert the gif of sign in flow step 2>  -->
 
-When you configure two dbt environments (e.g. prod and dev schemas), Recce lets you:
+## Unlock Diff & Validation With Two Environments
+Not all data changes are obviously right or wrong, especially when business logic is involved. Even if your change pass all tests, it might still produce unexpected results. That’s why comparing **before and after** is critical: it helps you understand the impact of your change, validate with confidence, and spot issues before they reach stakeholders.
+
+When you configure two environments (e.g. prod and dev), Recce lets you:
 
 - **Explore** modified models and downstream impact
 
@@ -59,48 +61,30 @@ When you configure two dbt environments (e.g. prod and dev schemas), Recce lets 
 - Add validation results to **Checklists** for review and alignment
 
 
-### How to setup two environments
+### How To Setup Two Environments
 Setup two separate [environments](https://docs.getdbt.com/docs/environments-in-dbt) that refers to different [schemas](https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles#understanding-target-schemas), e.g., prod for production and dev for development.
 
-Recce supports schema discovery across all major warehouses without needing to modify your `profiles.yml`.
+Recce supports all major data warehouses that [dbt supports](https://docs.getdbt.com/docs/supported-data-platforms), including Snowflake, Databricks, BigQuery, Redshift, and DuckDB. 
 
-However, if you're using DuckDB, you’ll need to explicitly define both schemas to make it run locally. For example:
-```yaml
-jaffle_shop:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: jaffle_shop.duckdb
-      schema: dev
-    prod:
-      type: duckdb
-      path: jaffle_shop.duckdb
-      schema: main
-```
+!!! tip
+
+  No need to change your `profiles.yml`. Recce auto-discovers your dbt profile and runs everything in your current environment.
 
 ### Prepare dbt artifacts
+Recce compares **metadata**, not just code. dbt generates [artifacts](https://docs.getdbt.com/reference/artifacts/dbt-artifacts) (like manifest, catalog..etc.) that describe your project’s structure and data characteristics.
 
-Recce expects two sets of dbt [artifacts](https://docs.getdbt.com/reference/artifacts/dbt-artifacts) to be present:
+To compare environments, Recce expects **two sets of dbt artifacts**:
 
-- `target-base/` - dbt artifacts for to be used as the base for the comparison e.g. production
-- `target/` - dbt artifacts for your development branch
+- `target-base/` - the baseline environment (e.g. main or production)
+- `target/` - the development environment (your current changes)
 
-#### Generate artifacts for the `base` environment
-For most data warehouses, you can download the artifacts generated from the codebase of your main branch. 
-You don't need to re-run the whole production in your local. 
+#### Generate Artifacts For The `base` Environment
+For most data warehouses, you don’t need to re-run production locally.
+Instead, you can download the dbt artifacts generated from the main branch, and save them to a `target-base/` folder.
+This gives Recce the metadata it needs to compare your current development changes against the baseline, without querying production data.
 
-However, if you use duckdb, you need to generate the artifacts for the base environment. 
-Checkout the `main` branch of your project and generate the required artifacts into `target-base`. You can skip `dbt build` if this environment already exists. 
-
-```shell
-git checkout main
-
-dbt run --target prod
-dbt docs generate --target prod --target-path target-base/
-```
-
-#### Generate artifacts for the `target` environment
+#### Generate Artifacts For The `target` Environment
+To generate artifacts for your current environment, run:
 
 ```shell
 git checkout feature/my-awesome-feature
@@ -108,7 +92,24 @@ git checkout feature/my-awesome-feature
 dbt run
 dbt docs generate
 ```
-## Share to collaborate 
+By default, dbt will save the artifacts to the `target/` folder. Recce uses these to understand the current state of your project.
+
+### All Set
+Once you’ve configured both environments, launch the Recce server again:
+
+```shell
+recce server
+```
+
+You’ll be able to see modified lineage, explore model changes, and run detailed diffs across environments.
+![Recce modified lineage](assets/images/getting-started/recce-two-env.png)
+
+!!! tip
+    1. Click Environment info at the top-right corner to view the two environments you configured.
+      ![Environment info](assets/images/getting-started/environment-info.png)
+    2. Want to try Recce without setting up a warehouse? See the 5-Minute Tutorial using DuckDB to run Recce locally.
+
+## Share To Collaborate 
 If you’ve followed the steps above and are ready to share your checklist with others, Recce Cloud makes it easy.
 Just one link gives full context:
 
@@ -118,4 +119,4 @@ Just one link gives full context:
 
 Built for teams, Recce Cloud includes secure, cloud-hosted sharing and collaboration features designed for fast reviews and confident sign-off.
 
-[Sign up for Recce Cloud](https://datarecce.io/pricing) to unlock collaboration at scale.
+[Sign up for Recce Cloud](https://cloud.datarecce.io/) to unlock collaboration at scale.
