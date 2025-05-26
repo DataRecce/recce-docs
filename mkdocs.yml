@@ -41,8 +41,9 @@ nav:
           - demo.md
       - Getting Started:
           - get-started.md
+          - configure-diff.md
           - get-started-jaffle-shop.md
-          - installation.md
+          - how-diff-works.md
           - start-with-dbt-cloud.md
       - Web UI:
           - features/lineage.md
