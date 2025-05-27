@@ -43,7 +43,6 @@ nav:
           - get-started.md
           - configure-diff.md
           - get-started-jaffle-shop.md
-          - how-diff-works.md
           - start-with-dbt-cloud.md
       - Web UI:
           - features/lineage.md

@@ -45,7 +45,7 @@ Once both artifacts and schemas are configured, Recce can surface meaningful dif
 
 ## Check setup in Environment Info
 
-Use **Environment Info** to verify that the configuration is complete.
+Use **Environment Info** at the top-right corner to verify that the configuration is complete.
 
 A correctly configured setup will display two environments:
 
@@ -53,4 +53,4 @@ A correctly configured setup will display two environments:
 - **Current** – the schema for the environment under development (e.g., staging or dev)
 
 This confirms that both the artifacts and schemas are properly connected for diffing.
-<!-- <insert the gif that clicks Environment Info and show the modal>  -->
+![Environment Info](assets/images/configure-diff/environment-info.png)
