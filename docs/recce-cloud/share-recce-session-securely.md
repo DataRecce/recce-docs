@@ -19,59 +19,57 @@ When you're ready to share your lineage exploration, query results, or validatio
 
 The first time you do this, you'll need to connect your local Recce to Recce Cloud. This requires signing in and setting up an API token. Once connected, Recce Cloud will host your state file securely, allowing you to share a link that others can open in their browsers.
 
-1. Enable Recce Sharing
+### 1. Enable Recce Sharing
 
-    To start sharing, launch Recce server and click the **Enable Sharing** button.
+To start sharing, launch Recce server and click the **Enable Sharing** button.
 
-    ![Recce Server](../assets/images/recce-cloud/recce-server-enable-sharing-fs8.png){: .shadow}
+![Recce Server](../assets/images/recce-cloud/recce-server-enable-sharing-fs8.png){: .shadow}
 
-1. Sign in to Recce Cloud and get your API token
+### 2. Sign in to Recce Cloud and retrieve your API token
 
-    Copy your API token from the [personal settings page](https://cloud.datarecce.io/settings#tokens) in Recce Cloud.
+Copy your API token from the [personal settings page](https://cloud.datarecce.io/settings#tokens) in Recce Cloud.
 
-    ![Recce API Token](../assets/images/recce-cloud/setting-page-api-token-fs8.png){: .shadow}
+![Recce API Token](../assets/images/recce-cloud/setting-page-api-token-fs8.png){: .shadow}
 
-1. Add the token to `.recce/profile.yml`
+### 3. Add the token to `.recce/profile.yml`
 
-    For convenience, you can add your API token in `.recce/profile.yml`, located in your home directory.
+For convenience, you can add your API token in `.recce/profile.yml`, located in your home directory.
 
-    - Find the `.recce` folder in your home directory.
+- Find the `.recce` folder in your home directory.
 
-        **For Mac/Linux users:**
-
-        In the terminal, type the following command to navigate to the Recce configuration directory:
-        ```shell
-        cd ~/.recce
-        ```
-
-        **For Windows users:**
-
-        Navigate to `C:\Users\<your_user_name>` and open the hidden `.recce` folder.
-
-        Or in PowerShell, type:
-        ```powershell
-        cd ~\.recce
-        ```
-
-    - Open `profile.yml` with any text editor to add your token:
-    ```yaml
-    api_token: <your_api_token>
+!!! info
+    **For Mac/Linux users:** In the terminal, type the following command to navigate to the Recce configuration directory:
+    ```shell
+    cd ~/.recce
     ```
-    Alternatively, for one-time use, you can use `--api-token` flag with commend. e.g.,
+    **For Windows users:** Navigate to `C:\Users\<your_user_name>` and open the hidden `.recce` folder.
+
+    Or in PowerShell, type:
+    ```powershell
+    cd ~\.recce
+    ```
+
+- Open `profile.yml` with any text editor to add your token:
+```yaml
+api_token: <your_api_token>
+```
+
+!!! note
+    Alternatively, for one-time use, you can use `--api-token` flag with the following command:
     ```bash
     recce server --api-token <your_api_token>
     ```
 
-1. Relaunch Recce server
+### 4. Relaunch Recce server
 
-    After adding the API token, restarting Recce server is required to load the new configuration.
-    Once it's running, you'll see the **Share** button, then you can click it to get the link on top.
+After adding the API token, restarting Recce server is required to load the new configuration.
+Once it's running, you'll see the **Share** button, then you can click it to get the link on top.
 
-    ![Recce Share From Server](../assets/images/recce-cloud/recce-share-from-server-fs8.png){: .shadow}
+![Recce Share From Server](../assets/images/recce-cloud/recce-share-from-server-fs8.png){: .shadow}
 
-    You can also use the `recce share` command. If you already have a prepared Recce state file, you can obtain a share link directly through the command line.
-    ```bash
-    recce share <your_state_file>
-    recce share --api-token <your_api_token> <your_state_file>  # for one-time use
-    ```
-    ![Recce Share From CLI](../assets/images/recce-cloud/recce-share-from-cli.png){: .shadow}
+You can also use the `recce share` command. If you already have a prepared Recce state file, you can obtain a share link directly through the command line.
+```bash
+recce share <your_state_file>
+recce share --api-token <your_api_token> <your_state_file>  # for one-time use
+```
+![Recce Share From CLI](../assets/images/recce-cloud/recce-share-from-cli.png){: .shadow}
