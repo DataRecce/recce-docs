@@ -53,9 +53,9 @@ This helps you evaluate both the direct and downstream effects of a column chang
 
 
 ### Example: Simplified Model Chain
-![alt text](../assets/images/features/cll-2.png){: .shadow}
 
-The following dbt models represent a simplified version of the CLL graph above:
+Here are some example models
+
 ```sql
 -- stg_orders.sql
 select
@@ -92,4 +92,15 @@ select
   ...
 from {{ ref("customers") }}
 ```
+
+![alt text](../assets/images/features/cll-example.png){: .shadow}
+
+Here's how changes to `stg_orders.status` affect downstream models:
+
+- **orders**: This model is partially impacted, as it selects the `status` column directly from `stg_orders` but does not apply any transformation or filtering logic. The change is limited to the `status` column only.
+
+- **customers**: This model is fully impacted, because it uses `status` in a WHERE clause (`where o.status = 'completed'`). Any change to the logic in `stg_orders.status` can affect the entire output of the model.
+
+- **customer_segments**: This model is indirectly impacted, as it depends on the `customers` model, which itself is fully impacted. Even though `customer_segments` does not directly reference `status`, changes can still propagate downstream via its upstream dependency.
+
 
