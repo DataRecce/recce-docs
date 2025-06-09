@@ -54,7 +54,7 @@ This helps you evaluate both the direct and downstream effects of a column chang
 
 ### Example: Simplified Model Chain
 
-Here are some example models
+Given the following models, here's how changes to `stg_orders.status` would impact downstream models:
 
 ```sql
 -- stg_orders.sql
@@ -95,7 +95,7 @@ from {{ ref("customers") }}
 
 ![alt text](../assets/images/features/cll-example.png){: .shadow}
 
-Here's how changes to `stg_orders.status` affect downstream models:
+The following impact is detected:
 
 - **orders**: This model is partially impacted, as it selects the `status` column directly from `stg_orders` but does not apply any transformation or filtering logic. The change is limited to the `status` column only.
 
