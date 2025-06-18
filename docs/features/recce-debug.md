@@ -29,7 +29,7 @@ recce debug [OPTIONS]
 
 When everything is properly configured, you'll see output like this:
 
-```
+```shell
 ────────────────────── Development Environment ──────────────────────
 [OK] Directory exists: target
 [OK] Manifest JSON file exists : target/manifest.json
@@ -50,7 +50,7 @@ Even when some components are missing, Recce can still launch with limited featu
 
 #### Missing Base Environment Directory
 
-```
+```shell
 ────────────────────── Development Environment ──────────────────────
 [OK] Directory exists: target
 [OK] Manifest JSON file exists : target/manifest.json
@@ -68,7 +68,7 @@ Even when some components are missing, Recce can still launch with limited featu
 
 #### Missing Base Environment Artifacts
 
-```
+```shell
 ────────────────────── Development Environment ──────────────────────
 [OK] Directory exists: target
 [OK] Manifest JSON file exists : target/manifest.json
@@ -91,7 +91,7 @@ Even when some components are missing, Recce can still launch with limited featu
 
 When the database connection fails, you'll see output like this:
 
-```
+```shell
 ────────────────────── Development Environment ──────────────────────
 [OK] Directory exists: target
 [OK] Manifest JSON file exists : target/manifest.json
