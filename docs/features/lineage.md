@@ -130,6 +130,12 @@ View mismatched values at the row level by clicking the `show mismatched values`
 
 ![](../assets/images/features/value-diff-detail.gif){: .shadow}
 
+#### SQL Execution
+
+Value Diff generates SQL queries using Jinja templates to compare data between your base and current environments. The queries perform a FULL OUTER JOIN on primary keys to identify added, removed, and mismatched records.
+
+You can review the exact SQL templates in the [ValueDiffTask class](https://github.com/DataRecce/recce/blob/main/recce/tasks/valuediff.py#L80).
+
 ### Profile Diff
 
 Profile Diff compares the basic statistic (e.g. count, distinct count, min, max, average) for each column in models between two environments.
