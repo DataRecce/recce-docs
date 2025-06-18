@@ -49,6 +49,7 @@ nav:
           - features/query.md
           - features/checklist.md
       - Command Line Interface:
+          - features/recce-debug.md
           - features/recce-run.md
           - features/recce-summary.md
       - Advanced Features:

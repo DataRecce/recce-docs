@@ -5,7 +5,7 @@ icon: material/package-variant
 
 # Configure Diff
 
-To compare changes, Recce needs a baseline. This guide explains the concept of Diff in Recce and how it fits into data validation workflows. Setup steps vary by environment, so this guide focuses on the core ideas rather than copy-paste instructions. 
+To compare changes, Recce needs a baseline. This guide explains the concept of Diff in Recce and how it fits into data validation workflows. Setup steps vary by environment, so this guide focuses on the core ideas rather than copy-paste instructions.
 
 For a concrete example, refer to the [5-minute Jaffle Shop tutorial](./get-started-jaffle-shop/).
 
@@ -33,7 +33,7 @@ For example:
 - `prod` schema for production
 - `dev` schema for development
 
-These schemas represent where dbt builds its models. 
+These schemas represent where dbt builds its models.
 
 !!! tip
 
@@ -43,9 +43,23 @@ Schemas are typically configured in the `profiles.yml` file, which defines how d
 
 Once both artifacts and schemas are configured, Recce can surface meaningful diffs across logic, metadata, and data.
 
-## Check setup in Environment Info
+## Verify your setup
 
-Use **Environment Info** at the top-right corner to verify that the configuration is complete.
+There are two ways to check that your configuration is complete:
+
+### 1. Debug Command (CLI)
+
+Run `recce debug` from the command line to verify your setup before launching the server:
+
+```bash
+recce debug
+```
+
+This command checks artifacts, directories, and warehouse connection, providing detailed feedback on any missing components.
+
+### 2. Environment Info (Web UI)
+
+Use **Environment Info** at the top-right corner of the Recce web interface to verify your configuration.
 
 A correctly configured setup will display two environments:
 
