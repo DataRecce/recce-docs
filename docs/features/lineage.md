@@ -239,7 +239,7 @@ A Top-K Diff can be generated in two ways.
 
 Top-K Diff generates SQL queries using FULL OUTER JOIN to compare the most frequent values in categorical columns between environments. The queries group by column values and count occurrences to identify the top K categories.
 
-You can review the exact SQL templates in the [TopKDiffTask class](https://github.com/DataRecce/recce/blob/main/recce/tasks/topk.py#L15).
+You can review the exact SQL templates in the [TopKDiffTask class](https://github.com/DataRecce/recce/blob/main/recce/tasks/top_k.py#L15).
 
 ## Multi-Node Selection
 
