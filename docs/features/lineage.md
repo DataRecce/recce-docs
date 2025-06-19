@@ -75,7 +75,8 @@ The node details panel shows information about a node, such as node type, schema
 Schema Diff shows added, removed, and renamed columns. Click a model in the Lineage Diff to open the node details and view the Schema Diff.
 
 !!! Note
-Schema Diff requires `catalog.json` in both environments.
+
+    Schema Diff requires `catalog.json` in both environments.
 
 <figure markdown>
   ![Recce Schema Diff](../assets/images/features/schema-diff.gif){: .shadow}
