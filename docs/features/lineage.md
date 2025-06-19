@@ -75,7 +75,8 @@ The node details panel shows information about a node, such as node type, schema
 Schema Diff shows added, removed, and renamed columns. Click a model in the Lineage Diff to open the node details and view the Schema Diff.
 
 !!! Note
-Schema Diff requires `catalog.json` in both environments.
+
+    Schema Diff requires `catalog.json` in both environments.
 
 <figure markdown>
   ![Recce Schema Diff](../assets/images/features/schema-diff.gif){: .shadow}
@@ -130,6 +131,12 @@ View mismatched values at the row level by clicking the `show mismatched values`
 
 ![](../assets/images/features/value-diff-detail.gif){: .shadow}
 
+#### SQL Execution
+
+Value Diff generates SQL queries using Jinja templates to compare data between your base and current environments. The queries perform a FULL OUTER JOIN on primary keys to identify added, removed, and mismatched records.
+
+You can review the exact SQL templates in the [ValueDiffTask class](https://github.com/DataRecce/recce/blob/main/recce/tasks/valuediff.py#L80).
+
 ### Profile Diff
 
 Profile Diff compares the basic statistic (e.g. count, distinct count, min, max, average) for each column in models between two environments.
@@ -137,6 +144,12 @@ Profile Diff compares the basic statistic (e.g. count, distinct count, min, max,
 1. Select the model from the Lineage DAG.
 2. Click the `Expore Change` button.
 3. Click `Profile Diff`.
+
+#### SQL Execution
+
+Profile Diff generates SQL queries using Jinja templates to calculate statistical measures for each column in your models. The queries analyze data distribution, null values, uniqueness, and numerical statistics.
+
+You can review the exact [SQL templates](https://github.com/DataRecce/recce/blob/main/recce/tasks/profile.py#L14).
 
 <figure markdown>
   ![Recce Profile Diff](../assets/images/features/profile-diff.png)
@@ -186,6 +199,12 @@ A Histogram Diff can be generated in two ways.
   <figcaption>Generate a Recce Histogram Diff from the column options</figcaption>
 </figure>
 
+#### SQL Execution
+
+Histogram Diff generates SQL queries to create distribution histograms for numeric and date columns. The queries use binning strategies to group values and count occurrences in each bin, supporting both integer and floating-point data types.
+
+You can review the exact SQL generation functions in the [HistogramDiffTask class](https://github.com/DataRecce/recce/blob/main/recce/tasks/histogram.py#L160).
+
 ### Top-K Diff
 
 Top-K Diff compares the distribution of a categorical column. The top 10 elements are shown by default, which can be expanded to the top 50 elements.
@@ -216,6 +235,12 @@ A Top-K Diff can be generated in two ways.
   ![Generate a Recce Top-K Diff ](../assets/images/features/top-k-diff.gif){: .shadow}
   <figcaption>Generate a Recce Top-K Diff </figcaption>
 </figure>
+
+#### SQL Execution
+
+Top-K Diff generates SQL queries using FULL OUTER JOIN to compare the most frequent values in categorical columns between environments. The queries group by column values and count occurrences to identify the top K categories.
+
+You can review the exact SQL templates in the [TopKDiffTask class](https://github.com/DataRecce/recce/blob/main/recce/tasks/top_k.py#L15).
 
 ## Multi-Node Selection
 
