@@ -7,7 +7,7 @@ copyright: Copyright &copy; 2025 Recce <br />
 # Repository
 repo_name: datarecce/recce
 repo_url: https://github.com/datarecce/recce
-site_url: https://docs.datarecce.io
+site_url: https://docs.reccehq.com
 extra_css:
   - styles/extra.css
 
@@ -34,7 +34,7 @@ extra:
       link: https://getdbt.slack.com/archives/C05C28V7CPP
 
 nav:
-  - Home: "https://datarecce.io/"
+  - Home: "https://reccehq.com/"
   - Guides:
       - Overview:
           - index.md
@@ -81,7 +81,7 @@ nav:
       - Cloud Architecture:
           # - recce-cloud/architecture/index.md
           - recce-cloud/architecture/security.md
-  - Blog: "https://datarecce.io/blog"
+  - Blog: "https://reccehq.com/blog"
 
 markdown_extensions:
   - admonition
