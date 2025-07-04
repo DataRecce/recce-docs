@@ -13,7 +13,7 @@ It's generally assumed that any modification to a model’s SQL will affect all 
 
 
 ## Usage
-Use the [impact radius](./impact-radius.md#usage) to analyze changed and see the impacted downstream.
+Use the [impact radius](./impact-radius.md#usage) view to analyze changed and see the impacted downstream.
 
 ## Categories of change
 ### Non-breaking change

@@ -56,7 +56,7 @@ Two core features power the impact radius analysis:
 **[Breaking Change Analysis](./breaking-change-analysis.md)** classifies modified models into three categories:
 
 - **Breaking changes**: All downstream nodes are impacted
-- **Non-breaking changes**: No downstream nodes are not impacted
+- **Non-breaking changes**: No downstream nodes are impacted
 - **Partial breaking changes**: Only downstream columns that depend on modified columns are impacted.
 
 **[Column-level lineage](./column-level-lineage.md)** analyzes your model's SQL to identify column-level dependencies:
