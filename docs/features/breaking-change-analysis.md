@@ -12,37 +12,103 @@ icon: octicons/diff-modified-24
 It's generally assumed that any modification to a model’s SQL will affect all downstream models. However, not all changes have the same level of impact. For example, formatting adjustments or the addition of a new column should not break downstream dependencies. Breaking change analysis helps you assess whether a change affects downstream models and, if so, to what extent.
 
 
-## Categories of change
-Category | Downstream Impact | Examples
----|---|---
-Non-breaking change | No downstream models are affected |  New column, formatting SQL, adding comments
-Partial breaking change | Only downstream models referencing certain columns are affected | Removing, renaming, or modifying the definition of a column
-Breaking change | All downstream models are affected | Changing filter conditions (e.g. `WHERE`), sort order (`ORDER BY`), or other SQL logic
-
 ## Usage
+Use the [impact radius](./impact-radius.md#usage) to analyze changed and see the impacted downstream.
 
-To enable **Breaking Change Analysis**, click the toggle on the  **Lineage** page. 
+## Categories of change
+### Non-breaking change
 
-All modified models display their change category directly on the node. Additionally, partial breaking changes are highlighted with a dashed orange border to indicate that they may not impact downstream models.
+No downstream models are affected. Common cases are adding new columns, comments, or formatting changes that don't alter logic.
 
-=== "Disabled"
-    
-    ![Breaking Change Analysis (disabled)](../assets/images/features/breaking-change-disabled.png){: .shadow}
+**Example: Add new columns**
+Adding a new column like status doesn't affect models that don't reference it.
 
-=== "Enabled"
-    
-    ![Breaking Change Analysis](../assets/images/features/breaking-change.png){: .shadow}
+```diff
+select
+    user_id,
+    user_name,
+++  status,
+from
+    {{ ref("orders") }}
+
+```
 
 
-## Column-Level Lineage
 
-In models classified as **non-breaking** or **partial breaking** -  added, removed, or modified columns will be listed. Click on a column to open its [Column-Level Lineage](./column-level-lineage.md)
 
-![Column-level lineage](../assets/images/features/breaking-change-lineage.png){: .shadow}
+### Partial breaking change
+
+Only downstream models that reference specific columns are affected. Common cases are removing, renaming, or redefining a column.
+
+**Example: Removing a column**
+
+```diff
+select
+    user_id,
+--  status,
+    order_date,
+from
+    {{ ref("orders") }}
+```
+
+**Example: Renaming a column**
+
+```diff
+select
+    user_id,
+--  status
+++  order_status
+from
+    {{ ref("orders") }}
+```
+
+
+**Example: Redefining a column**
+```diff
+select
+    user_id,
+--  discount
+++  coalesce(discount, 0) as discount
+from
+    {{ ref("orders") }}
+```
+
+
+### Breaking change
+
+All downstream models are affected. Common case are changes adding a filter condition or adding group by columns.
+
+**Example: Adding a filter condition**
+This may reduce the number of rows, affecting all downstream logic that depends on the original row set.
+
+```diff
+select
+    user_id,
+    order_date
+from
+    {{ ref("orders") }}
+++ where status = 'completed'
+```
+
+
+**Example: Adding a GROUP BY column**
+Changes the granularity of the result set, which can break all dependent models.
+
+```diff
+select
+    user_id,
+++  order_data,
+    count(*) as total_orders
+from
+    {{ ref("orders") }}
+-- group by user_id
+++ group by user_id, order_date
+```
+
 
 ## Limitations
 
-The current implementation of breaking change analysis is still very conservative. As a result, a modified model may be classified as a breaking change when it is actually non breaking or partial breaking changes. Common cases include:
+Our breaking change analysis is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a breaking change when it is actually non breaking or partial breaking changes. Common cases include:
 
 1. Logical equivalence in operations, such as changing `a + b` to `b + a`.
 1. Adding a `LEFT JOIN` to a table and selecting columns from it. This is often used to enrich the current model with additional dimension table data without affecting existing downstream tables.

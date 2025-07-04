@@ -56,6 +56,7 @@ nav:
           - features/state-file.md
           - features/preset-checks.md
           - features/node-selection.md
+          - features/impact-radius.md          
           - features/breaking-change-analysis.md
           - features/column-level-lineage.md
           - reference/configuration.md
