@@ -24,29 +24,29 @@ While dbt provides a similar capability using the [state selector](https://docs.
 
 1. Click the **Impact Radius** button in the upper-left corner.
 
-    ![alt text](../assets/images/features/impact-radius-1.png){: .shadow}
+    ![Impact Radius button highlighted](../assets/images/features/impact-radius-1.png){: .shadow}
 
 1. The impact radius will be displayed.
 
-    ![alt text](../assets/images/features/impact-radius-2.png){: .shadow}
+    ![Impact radius displayed on screen](../assets/images/features/impact-radius-2.png){: .shadow}
 
 1. To exit impact radius view, click the close button in the upper-left corner.
     
-    ![alt text](../assets/images/features/impact-radius-3.png){: .shadow}
+    ![Close button for exiting impact radius view](../assets/images/features/impact-radius-3.png){: .shadow}
 
 ### Show impact radius for a single changed model
 
 1. Hover over a changed model, then click the **target icon** or right-click the model and click the **Show Impact Radius**
 
-    ![alt text](../assets/images/features/impact-radius-single-1.png){: .shadow}
+    ![Target icon for showing impact radius of a single model](../assets/images/features/impact-radius-single-1.png){: .shadow}
 
 1. The impact radius for this model will be displayed.
 
-    ![alt text](../assets/images/features/impact-radius-single-2.png){: .shadow}
+    ![Impact radius for a single model displayed on screen](../assets/images/features/impact-radius-single-2.png){: .shadow}
 
 1. To exit impact radius view, click the close button in the upper-left corner.
     
-    ![alt text](../assets/images/features/impact-radius-single-3.png){: .shadow}
+    ![Close button for exiting single model impact radius view](../assets/images/features/impact-radius-single-3.png){: .shadow}
 
 
 ## How it works
