@@ -44,7 +44,7 @@ The state file can be used in several ways:
 1. **Review the state**: Running Recce with the `--review` option enables review mode. In this mode, Recce uses the dbt artifacts in the state file instead of those in the `target/` and `target-base/` directories. This option is useful for distinguishing between development and review purposes.
    ```
    recce server --review my_recce_state.json
-   ```   
+   ```
 1. **Import checklist from file**: To preserve favorite checks across different branches, you can import a checklist by clicking the **Import** button at the top of the checklist.
 1. **Continue the state from `recce run`**: This will execute the checks in the specified state file.
    ```
@@ -61,7 +61,7 @@ Common development workflow:
     ```
     recce server
     ```
-1. Add checks to the checklist. 
+1. Add checks to the checklist.
 1. Save the state by clicking the **Save** or **Export** button.
 1. Resume your session by launching Recce with the specific state file.
     ```
@@ -78,7 +78,7 @@ During the PR review process, the state file serves as a communication medium be
     ```
     recce server
     ```
-1. Add checks to the checklist. 
+1. Add checks to the checklist.
 1. Save the state by clicking the **Save** or **Export** button.
 1. Share the state file with the reviewer or attach it as a comment in the pull request.
 1. The reviewer reviews the results using the state file
@@ -93,7 +93,7 @@ During the PR review process, the state file serves as a communication medium be
 
 !!! Note
 
-    Currently, Recce Cloud is still under development. If you are interested, please [sign up for a Recce Cloud invite](https://datarecce.io/) or contact us in the [dbt slack #tool-recce channel](https://getdbt.slack.com/archives/C05C28V7CPP)
+    Currently, Recce Cloud is still under development. If you are interested, please [sign up for a Recce Cloud invite](https://reccehq.com/) or contact us in the [dbt slack #tool-recce channel](https://getdbt.slack.com/archives/C05C28V7CPP)
 
 Although a state file can store the state, it is not very suitable for recording the latest review status of a PR. Especially since a PR may include the submitter, reviewer, and the automated processes in the CI workflow. The purpose of Recce Cloud is to solve the PR review status management issue.
 

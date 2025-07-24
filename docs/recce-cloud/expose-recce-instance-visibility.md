@@ -5,13 +5,13 @@ icon: material/account-multiple-check
 
 !!! Note
 
-    Recce Cloud is currently in beta. [Learn more about different plans](https://datarecce.io/pricing).
+    Recce Cloud is currently in beta. [Learn more about different plans](https://reccehq.com/pricing).
 
 As a Recce Cloud user, you can launch a Recce Instance in [Cloud Mode](index.md#launch-the-recce-server-in-the-cloud-mode) or use [GitHub Codespaces](setup-gh-codespaces.md). However, both of these methods require a GitHub Access Token, which restricts the usage of Recce to those with GitHub accounts.
 
 For situations in which you would like to share your Recce Instance with non-GitHub users, such as stakeholders or other teams, we currently recommend the use of one of the following third-party utilities:
 
-- [Ngrok](https://ngrok.com/) 
+- [Ngrok](https://ngrok.com/)
 - [Tailscale](https://tailscale.com/)
 
 These services provide an endpoint for your Recce Instance, with optional authentication, that will enable other users to access Recce.
@@ -30,7 +30,7 @@ These services provide an endpoint for your Recce Instance, with optional authen
 After installing the Ngrok client, you can create an endpoint for the Recce Instance that will allow other users to participate in the dbt PR review process, without any additional tools or setup.
 
 1. Setup the ngrok agent
-   
+
    ngrok supports multiple platforms, including macOS, Linux, and Windows. Please refer to the [official installation guide](https://ngrok.com/docs/getting-started/) for details.
 
 1. Connect your ngrok agent to your ngrok account.
@@ -64,7 +64,7 @@ After installing the Ngrok client, you can create an endpoint for the Recce Inst
 Tailscale enables you to create your own private network (called a 'Tailnet') and invite members to join it. Once set up, you can easily expose your Recce instance, making it accessible to all devices within the Tailnet.
 
 1. Setup tailscale
-    
+
     To create a Tailnet, first create an account, then download Tailscale and follow the [official guide](https://tailscale.com/kb/1017/install) to continue set-up. Once configured, you can then invite other members to join.
 
     ![Manage Tailscale devices](../assets/images/recce-cloud/tailscale-dashboard-fs8.png){: .shadow}

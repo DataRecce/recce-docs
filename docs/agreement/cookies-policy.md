@@ -10,7 +10,7 @@ output:
 
 _Effective date: April 26, 2021_
 
-Recce ("us", "we", or "our") uses cookies on [https://datarecce.io](https://datarecce.io) (the "Service"). By using the Service, you consent to the use of cookies.
+Recce ("us", "we", or "our") uses cookies on [https://reccehq.com](https://reccehq.com) (the "Service"). By using the Service, you consent to the use of cookies.
 
 Our Cookies Policy explains what cookies are, how we use cookies, how third-parties we may partner with may use cookies on the Service, your choices regarding cookies and further information about cookies.
 

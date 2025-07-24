@@ -7,7 +7,7 @@ icon: fontawesome/solid/user-shield
 
 _Effective date: January 1, 2025_
 
-This Privacy Policy explains how your personal information is collected, used and disclosed by InfuseAI Inc. (“Recce,” “we” or “us”) when you use our website [https://datarecce.io](https://datarecce.io), online products and monitoring services (“Platform”) (collectively, “Services”), or when you otherwise interact with us. This Privacy Policy also describes your choices regarding use, access and correction of personal information collected about you through our Services.
+This Privacy Policy explains how your personal information is collected, used and disclosed by InfuseAI Inc. (“Recce,” “we” or “us”) when you use our website [https://reccehq.com](https://reccehq.com), online products and monitoring services (“Platform”) (collectively, “Services”), or when you otherwise interact with us. This Privacy Policy also describes your choices regarding use, access and correction of personal information collected about you through our Services.
 
 By accessing or using the Services, you acknowledge that you have read and understood the content of this Privacy Policy and consent to our collection, using and sharing of your personal information. Please read this Privacy Policy carefully and ensure that you understand it before you start.
 
@@ -27,7 +27,7 @@ When you access or use the Services, we automatically collect personal informati
 
 Log Files: We gather certain personal information about your use of the Services, including the type of browser you use, access times, pages viewed, your IP address and the page you visited before navigating to the Services, and store it in log files.
 
-Personal information Collected by Cookies and Other Tracking Technologies: We use various technologies to collect personal information including cookies. For more information about cookies, and how to disable them, please see our Cookie Policy page [https://docs.datarecce.io/agreement/privacy-policy/](https://docs.datarecce.io/agreement/privacy-policy/) and Your Choices below.
+Personal information Collected by Cookies and Other Tracking Technologies: We use various technologies to collect personal information including cookies. For more information about cookies, and how to disable them, please see our Cookie Policy page [https://docs.reccehq.com/agreement/privacy-policy/](https://docs.reccehq.com/agreement/privacy-policy/) and Your Choices below.
 
 ### Personal information We Collect from Other Sources
 
@@ -126,7 +126,7 @@ You may be able to add, update or delete your personal information, but we will 
 
 ### Cookies
 
-Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. For more information, please see Recce’s Cookie Policy at [https://docs.datarecce.io/agreement/cookies-policy/](https://docs.datarecce.io/agreement/cookies-policy/) 
+Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. For more information, please see Recce’s Cookie Policy at [https://docs.reccehq.com/agreement/cookies-policy/](https://docs.reccehq.com/agreement/cookies-policy/)
 
 ## Promotional Communications
 

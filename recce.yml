@@ -1,5 +1,5 @@
 # Preset Checks
-# Please see https://docs.datarecce.io/features/preset-checks/
+# Please see https://docs.reccehq.com/features/preset-checks/
 checks:
 - name: Row count diff
   description: Check the row count diff for all table models.

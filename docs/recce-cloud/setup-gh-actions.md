@@ -5,7 +5,7 @@ icon: octicons/workflow-16
 
 !!! Note
 
-     Recce Cloud is currently in beta. [Learn more about different plans](https://datarecce.io/pricing).
+     Recce Cloud is currently in beta. [Learn more about different plans](https://reccehq.com/pricing).
 
 [Continuous Integration(CI)](https://en.wikipedia.org/wiki/Continuous_integration) and [Continuous Delivery(CD)](https://en.wikipedia.org/wiki/Continuous_delivery) are best practices in software development. Through CI automation, a dbt project can systematically and continuously deliver and integrate high-quality results.
 

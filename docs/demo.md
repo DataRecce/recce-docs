@@ -5,9 +5,9 @@ icon: material/keyboard
 
 # Recce Online Demo
 
-Try `Recce` without installing using this [online demo](https://pr1.cloud.datarecce.io). 
+Try `Recce` without installing using this [online demo](https://pr1.demo.reccehq.com).
 
-[Recce Online Demo](https://pr1.cloud.datarecce.io){ .md-button .md-button--primary }
+[Recce Online Demo](https://pr1.demo.reccehq.com){ .md-button .md-button--primary }
 
 The demo showcases a [pull request](https://github.com/DataRecce/jaffle_shop_duckdb/pull/1) that fixes the `customer_lifetime_value` calculation in dbt's Jaffle Shop project to only included completed orders.
 

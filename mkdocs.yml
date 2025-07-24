@@ -12,9 +12,6 @@ extra_css:
   - styles/extra.css
 
 extra:
-  analytics:
-    provider: google
-    property: G-E06MSTE2SX
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/HUUx9fyphJ
@@ -113,6 +110,7 @@ markdown_extensions:
 theme:
   name: material
   logo: assets/images/recce-logo-white.png
+  custom_dir: docs/overrides
   palette:
     # Palette toggle for light mode
     - scheme: default

@@ -49,7 +49,7 @@ If you prefer to set up the Recce Cloud association manually or your are running
 
 ### 1. Sign in to Recce Cloud and retrieve your API token
 
-Copy your API token from the [personal settings page](https://cloud.datarecce.io/settings#tokens) in Recce Cloud.
+Copy your API token from the [personal settings page](https://cloud.reccehq.com/settings#tokens) in Recce Cloud.
 
 ![Recce API Token](../assets/images/recce-cloud/setting-page-api-token-fs8.png){: .shadow}
 
