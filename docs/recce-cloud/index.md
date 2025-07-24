@@ -6,14 +6,14 @@ icon: material/hand-wave-outline
 ## What is Recce Cloud?
 Recce Cloud is a data collaboration platform for teams doing data validation, impact analysis, and pull requests reviews. It helps data teams catch issues early, understand downstream impacts, and communicate changes clearly—all in one shared workspace. Instead of working alone in a local dev environment, teams can explore lineage, run custom queries, and validate metrics together, speeding up reviews and building trust across stakeholders.
 
-- [Learn more about different plans](https://datarecce.io/pricing)
+- [Learn more about different plans](https://reccehq.com/pricing)
 - Follow the [Getting Started](/get-started/) guide
 
 ## Integration with GitHub
 Recce Cloud integrates with GitHub to support validation in your PR workflow. The following instructions provide an overview of the setup. For a hands-on walkthrough, check out the [Jaffle Shop Tutorial for Cloud](./getting-started-recce-cloud.md).
 
 ### Prerequisite
-1. Sign in [Recce cloud](https://cloud.datarecce.io/)
+1. Sign in [Recce cloud](https://cloud.reccehq.com/)
 2. Click **Install** button to install Recce Cloud github app to your personal or organization account.
 3. Authorize the repositories to the github app.
 4. Prepare the github personal access token with the `repo` permission. Please see the [GitHub document](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). And set it to your environment variable.
@@ -60,10 +60,10 @@ If the review state is already available for this PR, you can open the Recce ins
 
 All the commands requires the following settings.
 
-Name           | Environment Variables | CLI Options     | Description                                      
----------------|-----------------------|-----------------|-------------------------------------------------- 
-Cloud token    | `GITHUB_TOKEN`        | `--cloud-token` | Used for  <br>1. Get the pull request from github<br>2. Used as the **access token** to the recce cloud 
-State password | `RECCE_STATE_PASSWORD`| `--password`    | Used to encrypt/decrypt the state in the recce cloud     
+Name           | Environment Variables | CLI Options     | Description
+---------------|-----------------------|-----------------|--------------------------------------------------
+Cloud token    | `GITHUB_TOKEN`        | `--cloud-token` | Used for  <br>1. Get the pull request from github<br>2. Used as the **access token** to the recce cloud
+State password | `RECCE_STATE_PASSWORD`| `--password`    | Used to encrypt/decrypt the state in the recce cloud
 
 Recce Cloud is used for pull request reviews. Before interacting with the cloud state, you should switch to a branch that has an open PR on the remote.
 

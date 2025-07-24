@@ -10,7 +10,7 @@ output:
 
 ## 1. INTRODUCTION
 
-Welcome to [https://datarecce.io](https://datarecce.io/) (and sub-domains). The website is owned and operated by InfuseAI, Inc. (“Recce” or “we” or “us”). Please read these Terms of Use (“Terms of Use”) carefully as it constitutes a legally binding contract between you and Recce governing your use of the websites owned and/or operated by us and any other online services (collectively, the “Services”). By accessing or using the Services, you agree to be legally bound by these Terms of Use whether as a visitor or as a registered user. If you do not agree with any of these Terms of Use, please do not use or access the Services in any manner.
+Welcome to [https://reccehq.com](https://reccehq.com/) (and sub-domains). The website is owned and operated by InfuseAI, Inc. (“Recce” or “we” or “us”). Please read these Terms of Use (“Terms of Use”) carefully as it constitutes a legally binding contract between you and Recce governing your use of the websites owned and/or operated by us and any other online services (collectively, the “Services”). By accessing or using the Services, you agree to be legally bound by these Terms of Use whether as a visitor or as a registered user. If you do not agree with any of these Terms of Use, please do not use or access the Services in any manner.
 
 You warrant and represent to Recce that you are able to enter into
 

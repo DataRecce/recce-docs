@@ -6,7 +6,7 @@ icon: material/school
 **Estimated Time:** 20 minutes
 
 !!! Note
-    Recce Cloud is currently in beta. [Learn more about different plans](https://datarecce.io/pricing).
+    Recce Cloud is currently in beta. [Learn more about different plans](https://reccehq.com/pricing).
 
 The following guide uses the official [Jaffle Shop DuckDB](https://github.com/dbt-labs/jaffle_shop_duckdb) project from dbt-labs, and provides everything you need to get started with Recce Cloud. By the end of the guide you'll be able to create and sync Recce checks with a GitHub PR via Recce Cloud.
 
@@ -37,7 +37,7 @@ To see what you'll get, check out the first section from the following [Loom](ht
 
 Recce Cloud needs access to your data project's repository in order to sync your checks status to the pull request thread.
 
-1. Visit [Recce Cloud](https://cloud.datarecce.io/). If it is your first time logging in, click the **Continue with Github** button to authorize the Recce Cloud integration to access your GitHub account.
+1. Visit [Recce Cloud](https://cloud.reccehq.com/). If it is your first time logging in, click the **Continue with Github** button to authorize the Recce Cloud integration to access your GitHub account.
    ![alt text](../assets/images/recce-cloud/sign-in.png)
    ![alt text](../assets/images/recce-cloud/sign-in-authorize.png)
 1. Click the **Install** button to install the **Recce Cloud** GitHub app to your personal or organization account.
@@ -104,16 +104,16 @@ Recce requires to two environments to compare. The `base` represents your point 
    ```
    git add .
    git commit -m 'Configure project and prep for Recce'
-   git push 
+   git push
    ```
 
 !!! Important
 
-      By default, Recce expects the dbt artifacts for the base environment to be located in a folder named `target-base`. 
+      By default, Recce expects the dbt artifacts for the base environment to be located in a folder named `target-base`.
 
-The base environment preparation is now complete. The data in the `prod` schema, and artifacts in the `target-base` folder, represent stable (production) data. 
+The base environment preparation is now complete. The data in the `prod` schema, and artifacts in the `target-base` folder, represent stable (production) data.
 
-As a PR author, you'll be working on data models, making changes to the project, and validating your work for correctness. 
+As a PR author, you'll be working on data models, making changes to the project, and validating your work for correctness.
 
 ## Prepare the review state for the PR
 
@@ -138,7 +138,7 @@ In this section, you'll make a new branch, update a data model, and create a pul
             from source
    )
    ```
-1. 
+1.
    Run dbt on the development environment (the default target):
    ```shell
    dbt seed
@@ -150,14 +150,14 @@ In this section, you'll make a new branch, update a data model, and create a pul
    ```
    git add models/staging/stg_payments.sql
    git commit -m 'Update the model'
-   git push -u origin feature/recce-getting-started 
+   git push -u origin feature/recce-getting-started
    ```
 
 1. **Create a pull request for this branch** in your GitHub repository.
 
 !!! Important
 
-      Don't forget to create a branch for the commit above, before continuing with this tutorial. 
+      Don't forget to create a branch for the commit above, before continuing with this tutorial.
 
 ## Launch a Recce Instance to validate your change
 
@@ -192,7 +192,7 @@ Switch to the **Query** tab and paste the following query:
    Enter the primary key as `order_id` and click the `Run Diff` button.
    ![Recce Query Diff](../assets/images/recce-cloud/query-diff.png){: .shadow}
 1. Click the `Add to Checklist` button to add the query result to your Checklist
-2. On the `Checklist` page you'll find that there are three checks. The Row count diff and Schema diff are default [Preset Checks](https://docs.datarecce.io/features/preset-checks/), and the Query diff is your newly added check. Leave the checks as **unapproved**.
+2. On the `Checklist` page you'll find that there are three checks. The Row count diff and Schema diff are default [Preset Checks](https://docs.reccehq.com/features/preset-checks/), and the Query diff is your newly added check. Leave the checks as **unapproved**.
 3. Go back to the command line and terminate the Recce instance. Your Recce [State file](../features/state-file.md), containing your checklist and other artifacts will be encrypted and uploaded to Recce Cloud.
 4. Go to the PR page in your GitHub repository and scroll to the bottom.  Notice that Recce Cloud shows that check are not approved:
    ![GitHub PR with unapproved Recce Checks](../assets/images/recce-cloud/pr-checks-wo-approved.png){: .shadow}
@@ -204,7 +204,7 @@ Switch to the **Query** tab and paste the following query:
 
 ## Review the PR
 
-As a PR author, your job is to review and approve the Checks created by the PR author. Once approved, the PR can be merged. 
+As a PR author, your job is to review and approve the Checks created by the PR author. Once approved, the PR can be merged.
 
 !!! Note
 

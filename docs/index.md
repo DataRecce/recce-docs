@@ -18,7 +18,7 @@ pip install -U recce
 recce server
 ```
 
-This starts Recce locally, where you can explore lineage and run queries. To unlock the full set of diffing tools, such as data comparisons and impact checks, you’ll need to prepare two environments to compare against. You can follow our [5-minute Jaffle Shop tutorial](https://docs.datarecce.io/get-started-jaffle-shop/) to try it out step-by-step.
+This starts Recce locally, where you can explore lineage and run queries. To unlock the full set of diffing tools, such as data comparisons and impact checks, you’ll need to prepare two environments to compare against. You can follow our [5-minute Jaffle Shop tutorial](https://docs.reccehq.com/get-started-jaffle-shop/) to try it out step-by-step.
 
 Recce is the foundation of the workflow. It helps you explore changes, validate before merge, and provide full context to reviewers and stakeholders. Once you're comfortable using it locally, you can explore advanced collaboration features through Recce Cloud.
 
@@ -88,12 +88,12 @@ Checklist for collaboration
 
 Want to dive deeper? Check out the full documentation for setup guides, feature overviews, and use case tutorials.
 
-- [Getting Started](https://docs.datarecce.io/get-started/)
-- [Features Overview](https://docs.datarecce.io/features/lineage/)
-- [Writing Checks and Using Checklists](https://docs.datarecce.io/features/checklist/)
-- [State File and Configuration](https://docs.datarecce.io/features/state-file/)
-- [Running Recce in CI/CD](https://docs.datarecce.io/guides/scenario-ci/)
-- [Breaking Change Analysis](https://docs.datarecce.io/features/breaking-change-analysis/)
+- [Getting Started](https://docs.reccehq.com/get-started/)
+- [Features Overview](https://docs.reccehq.com/features/lineage/)
+- [Writing Checks and Using Checklists](https://docs.reccehq.com/features/checklist/)
+- [State File and Configuration](https://docs.reccehq.com/features/state-file/)
+- [Running Recce in CI/CD](https://docs.reccehq.com/guides/scenario-ci/)
+- [Breaking Change Analysis](https://docs.reccehq.com/features/breaking-change-analysis/)
 
 ## Recce Cloud
 
@@ -104,7 +104,7 @@ Ready to collaborate and move faster as a team? Recce Cloud adds real-time colla
 - Block merges until all Checks are approved
 - Launch demo links from your CI with full context
 
-👉 [View Pricing and Plans](https://datarecce.io/pricing)
+👉 [View Pricing and Plans](https://reccehq.com/pricing)
 
 Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps teams aligned, and reduces errors—so you can ship data changes with confidence.
 
@@ -121,7 +121,7 @@ If you believe you have found a bug, or there is some missing functionality in R
 
 You can follow along with news about Recce and blogs from our team in the following places:
 
-- [DataRecce.io](https://datarecce.io/)
+- [reccehq.com](https://reccehq.com/)
 - [LinkedIn](https://www.linkedin.com/company/datarecce)
 - [Medium blog](https://medium.com/inthepipeline)
 - [@datarecce](https://x.com/DataRecce) on Twitter/X

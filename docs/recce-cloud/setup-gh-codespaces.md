@@ -5,9 +5,9 @@ icon: octicons/codespaces-16
 
 !!! Note
 
-     Recce Cloud is currently in beta. [Learn more about different plans](https://datarecce.io/pricing).
+     Recce Cloud is currently in beta. [Learn more about different plans](https://reccehq.com/pricing).
 
-GitHub Codespaces is a development environment provided by GitHub that allows developers to have identical and isolated environments for development. The GitHub Codespaces uses VS Code Server technology. We can launch it from a GitHub pull request page, and once it is started, the Recce instance will run and port forwarding will be set up. 
+GitHub Codespaces is a development environment provided by GitHub that allows developers to have identical and isolated environments for development. The GitHub Codespaces uses VS Code Server technology. We can launch it from a GitHub pull request page, and once it is started, the Recce instance will run and port forwarding will be set up.
 
 ## Setup Recce Cloud in GitHub Codespaces
 
@@ -36,7 +36,7 @@ GitHub Codespaces is a development environment provided by GitHub that allows de
     }
     ```
     The secrets are Github Codespaces secrets. You can configure them in
-    - [Account specific codespaces secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces) 
+    - [Account specific codespaces secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces)
     - or [Repository-level or organization-level codespaces secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization)
 
 1. Prepare the `.devcontainer/Dockerfile`
@@ -55,33 +55,33 @@ GitHub Codespaces is a development environment provided by GitHub that allows de
 
 ## How to use
 Once you complete [Recce Cloud setup](index.md/#sign-up-the-recce-cloud), you can launch GitHub Codespaces from Recce Cloud's pull request page, and once it is started, the Recce instance will run and port forwarding will be set up.
- 
-1. Go to Recce Cloud and click the repository you want to make changes. 
+
+1. Go to Recce Cloud and click the repository you want to make changes.
     ![Recce Cloud Home](../assets/images/recce-cloud/recce-cloud-home.png){: .shadow}
-2. Click the pull request that you want to use Recce instance.  
+2. Click the pull request that you want to use Recce instance.
     ![Recce Cloud Open PR](../assets/images/recce-cloud/recce-cloud-open-pr.png){: .shadow}
 3. Click "Create in GitHub Codespaces."
     ![Create in GitHub Codespaces](../assets/images/recce-cloud/create-in-codespace.png){: .shadow}
-4. The Codespaces creation may take 1 to more than 5 mintues depeding on your Codespaces settings. And the Recce instance should take less than 1 minute to launch. 
+4. The Codespaces creation may take 1 to more than 5 mintues depeding on your Codespaces settings. And the Recce instance should take less than 1 minute to launch.
     - Please view [FAQ](#faq) for how to speed up.
 5. You can see the "State" of the progress; And the Action you can take in each state.
-    - Codespace Queued: the Codespace is creating 
+    - Codespace Queued: the Codespace is creating
         ![Codespace Queued](../assets/images/recce-cloud/codespaces-queued.png){: .shadow}
     - Codespace Provisioning: the Codespace is provisioning
     - Codespace Available: the Codespace is ready
     - Recce launching: Recce instance is launching
       - Stop: stop launching Recce instance
-    - Recce active: Recce instance is launched successfully. 
+    - Recce active: Recce instance is launched successfully.
         - Open: open the Recce instance
         - Stop: stop the Codespace
         ![Recce active](../assets/images/recce-cloud/recce-active.png){: .shadow}
     - Codespace ShuttingDown: the Codespace is shutting down
     - Stopped: the Codespace is stopped and the Recce instance is closed.
-        - Restart: restart the Codespace 
+        - Restart: restart the Codespace
         - Delete: delete the Codespace
-            - It’s recommended to delete the Codespace once your PR is merged. 
+            - It’s recommended to delete the Codespace once your PR is merged.
 
-  
+
 ## Troubleshooting
 
 If this is your first time setting up a Codespace, it’s recommended to first [test locally](./getting-started-recce-cloud.md#review-the-pr) with the following commands:
@@ -97,23 +97,23 @@ Ensure it runs correctly locally. If it does, then the remaining issues within t
 
 If your Codespace configration is correct, other common causes might include:
 
-1. The current branch does not have a corresponding pull request. This usually happens if you launch Codespace directly form GitHub main branch. Recce instance cannot assoicate with the main branch. 
+1. The current branch does not have a corresponding pull request. This usually happens if you launch Codespace directly form GitHub main branch. Recce instance cannot assoicate with the main branch.
 2. The pull request does not have an uploaded [Recce state file](../features/state-file.md). In review mode, the state file must be prepared via CI or locally before proceeding.
 3. The `RECCE_STATE_PASSWORD` mentioned above is not set or the password is incorrect.
 4. Other issues are preventing the Recce server from starting at all.
 
 When you’ve opened a Codespace but are unable to connect to the Recce instance, you can troubleshoot by following these steps:
 
-1. Check Codespace instance in GitHub. 
+1. Check Codespace instance in GitHub.
     ![Check Codespace in GitHub](../assets/images/recce-cloud/check-codespace-in-github.png){: .shadow}
-2. If the Codesapce you created from Recce Cloud is active, click "Open in Browser". 
+2. If the Codesapce you created from Recce Cloud is active, click "Open in Browser".
     ![Open Codespace in Browser](../assets/images/recce-cloud/open-codespace-in-browser.png){: .shadow}
-3. Click on the blue block in the lower left corner of the status bar, which usually shows "Codespaces: instance name"   
+3. Click on the blue block in the lower left corner of the status bar, which usually shows "Codespaces: instance name"
     ![Codespace status bar](../assets/images/recce-cloud/codespace-troubleshoot-1.png)
-4. Select "View creation log" or ppen the VS Code Command Palette and type `Codespaces: View Creation Log`. 
-5. At this point, you should be able to see the reason why the Recce server failed to start.   
+4. Select "View creation log" or ppen the VS Code Command Palette and type `Codespaces: View Creation Log`.
+5. At this point, you should be able to see the reason why the Recce server failed to start.
     ![alt text](../assets/images/recce-cloud/codespace-troubleshoot-2.png)
-6. If you cannot find any issue from the Codespace creation log, and belive your Codespace configration is correct. Please stop the Codespace and launch Recce instance again. 
+6. If you cannot find any issue from the Codespace creation log, and belive your Codespace configration is correct. Please stop the Codespace and launch Recce instance again.
 7. If you still have problem, please contact us via [slack](https://getdbt.slack.com/archives/C05C28V7CPP) or email [product@datarecce.io](mailto:product@datarecce.io). We are happy to help.
 
 
@@ -155,8 +155,8 @@ Yes, you can. Please refer to the [Codespaces documentation](https://docs.github
 
 **Q: Should I delete Codespace after PR merged?**
 
-Yes. When you merged a PR, you'll see the Delete codespace message. You can delete the Codespace to save the free usage. 
+Yes. When you merged a PR, you'll see the Delete codespace message. You can delete the Codespace to save the free usage.
 ![Delete Codespace after PR merged](../assets/images/recce-cloud/branch-merged-delete-codespace.png){: .shadow}
 
-You can also delete Codespace in your GitHub main branch or in Recce Cloud PR page. 
+You can also delete Codespace in your GitHub main branch or in Recce Cloud PR page.
 ![Delete Codespace in your GitHub](../assets/images/recce-cloud/delete-codespace-in-github.png){: .shadow}
