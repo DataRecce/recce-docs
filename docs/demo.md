@@ -1,20 +1,13 @@
 ---
-title: Online Demo
+title: Interactive Demos
 icon: material/keyboard
 ---
 
-# Recce Online Demo
+# Interactive Demos
 
-Try `Recce` without installing using this [online demo](https://pr1.demo.reccehq.com).
+Try `Recce` without installing using this [online demo](https://reccehq.com/demo/).
 
-[Recce Online Demo](https://pr1.demo.reccehq.com){ .md-button .md-button--primary }
-
-The demo showcases a [pull request](https://github.com/DataRecce/jaffle_shop_duckdb/pull/1) that fixes the `customer_lifetime_value` calculation in dbt's Jaffle Shop project to only included completed orders.
-
-<figure markdown>
-  ![customers.sql](assets/images/demo/clv-customers-model-fs8.png){: .shadow}
-  <figcaption>Jaffle Shop customers.sql</figcaption>
-</figure>
+[Recce Online Demo](https://reccehq.com/demo/){ .md-button .md-button--primary }
 
 
 ## Examples
