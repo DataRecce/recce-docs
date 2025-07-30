@@ -7,7 +7,7 @@ icon: material/keyboard
 
 We provide interactive demos that show common ways to use Recce. You can try them right now without installing anything.
 
-[Try Demos](https://reccehq.com/demo/){ .md-button .md-button--primary } (No install)
+[Check out Demos](https://reccehq.com/demo/){ .md-button .md-button--primary } (No install)
 
 ## Examples
 

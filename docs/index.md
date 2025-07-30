@@ -26,7 +26,7 @@ Recce is the foundation of the workflow. It helps you explore changes, validate 
 
 ### Explore the Live Demos
 
-Want to see Recce in action without setting anything up? Try [interactive demos](https://reccehq.com/demo/). 
+Want to see Recce in action without setting anything up? Check out the [interactive demos](https://reccehq.com/demo/). 
 
 ## Why Recce
 
