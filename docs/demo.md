@@ -5,10 +5,9 @@ icon: material/keyboard
 
 # Interactive Demos
 
-Try `Recce` without installing using this [online demo](https://reccehq.com/demo/).
+We provide interactive demos that show common ways to use Recce. You can try them right now without installing anything.
 
-[Recce Online Demo](https://reccehq.com/demo/){ .md-button .md-button--primary }
-
+[Try Demos](https://reccehq.com/demo/){ .md-button .md-button--primary } (No install)
 
 ## Examples
 

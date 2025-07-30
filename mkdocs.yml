@@ -35,7 +35,7 @@ nav:
   - Guides:
       - Overview:
           - index.md
-          - Interactive Demos: "https://reccehq.com/demo/"
+          - demo.md
       - Getting Started:
           - get-started.md
           - configure-diff.md
