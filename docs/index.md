@@ -26,15 +26,7 @@ Recce is the foundation of the workflow. It helps you explore changes, validate 
 
 ### Explore the Live Demos
 
-Want to see Recce in action without setting anything up? Try it with real pull requests from the Jaffle Shop demo project.
-
-Each PR shows how Recce helps validate dbt model changes with lineage, diffs, and review checklists.
-
-- [PR #1](https://github.com/DataRecce/jaffle_shop_duckdb/pull/1) – Fixing logic in Customer Lifetime Value
-- [PR #2](https://github.com/DataRecce/jaffle_shop_duckdb/pull/2) – Refactoring for clarity
-- [PR #3](https://github.com/DataRecce/jaffle_shop_duckdb/pull/3) – Adding rounding analysis
-- [PR #44](https://github.com/DataRecce/jaffle_shop_duckdb/pull/44) – Enhancing the customers model
-- [PR #46](https://github.com/DataRecce/jaffle_shop_duckdb/pull/46) – fixing metrics, rebuilding trust
+Want to see Recce in action without setting anything up? Check out the [interactive demos](https://reccehq.com/demo/). 
 
 ## Why Recce
 

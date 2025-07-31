@@ -6,6 +6,7 @@
   margin-right: 0.1rem;
   vertical-align: top;
 }
+
 .md-nav__item a.md-nav__link[href^="https://"]:hover .md-ellipsis::before {
   filter: invert(46%) sepia(13%) saturate(2575%) hue-rotate(326deg) brightness(115%) contrast(106%);
 }
