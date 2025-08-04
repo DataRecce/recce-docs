@@ -12,23 +12,32 @@ extra_css:
   - styles/extra.css
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/HUUx9fyphJ
+      name: Recce on Discord
     - icon: fontawesome/brands/x-twitter
       link: https://x.com/datarecce
+      name: Recce on X (Twitter)
     - icon: fontawesome/brands/bluesky
       link: https://x.com/datarecce
+      name: Recce on Bluesky
     - icon: fontawesome/brands/mastodon
       link: https://mastodon.social/@DataRecce
+      name: Recce on Mastadon
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/datarecce
+      name: Recce on LinkedIn
     - icon: fontawesome/brands/medium
       link: https://medium.com/inthepipeline
+      name: Recce on Medium
     - icon: fontawesome/brands/github
       link: https://github.com/DataRecce/recce
+      name: Recce on GitHub
     - icon: fontawesome/brands/slack
       link: https://getdbt.slack.com/archives/C05C28V7CPP
+      name: Recce on Slack
 
 nav:
   - Home: "https://reccehq.com/"
@@ -66,9 +75,10 @@ nav:
           - architecture/overview.md
           - Changelog: "https://github.com/DataRecce/recce/releases"
       - Privacy & Terms:
-          - agreement/privacy-policy.md
-          - agreement/cookies-policy.md
-          - agreement/terms-of-use.md
+          - Privacy Policy: "https://reccehq.com/statements/privacy-policy/"
+          - Cookie Policy: "https://reccehq.com/statements/cookie-policy/"
+          - Terms of Use: "https://reccehq.com/statements/terms-of-use/"
+          - Accessibility Statement: "https://reccehq.com/statements/accessibility-statement/"
   - Cloud (Beta):
       - recce-cloud/index.md
       - recce-cloud/getting-started-recce-cloud.md
