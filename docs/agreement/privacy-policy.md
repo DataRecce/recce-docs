@@ -27,7 +27,7 @@ When you access or use the Services, we automatically collect personal informati
 
 Log Files: We gather certain personal information about your use of the Services, including the type of browser you use, access times, pages viewed, your IP address and the page you visited before navigating to the Services, and store it in log files.
 
-Personal information Collected by Cookies and Other Tracking Technologies: We use various technologies to collect personal information including cookies. For more information about cookies, and how to disable them, please see our Cookie Policy page [https://docs.reccehq.com/agreement/privacy-policy/](https://docs.reccehq.com/agreement/privacy-policy/) and Your Choices below.
+Personal information Collected by Cookies and Other Tracking Technologies: We use various technologies to collect personal information including cookies. For more information about cookies, and how to disable them, please see our Cookie Policy page [https://reccehq.com/statements/cookie-policy/](https://reccehq.com/statements/cookie-policy/) and Your Choices below.
 
 ### Personal information We Collect from Other Sources
 
