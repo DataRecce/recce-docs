@@ -87,7 +87,7 @@ Download the artifacts from the latest run of both run jobs. You can download th
 ![dbt Cloud login](assets/images/dbt-cloud/prod-artifacts.png)
 ![dbt Cloud login](assets/images/dbt-cloud/dev-artifacts.png)
 
-### Setup the dbt artifacts folders
+### Set up the dbt artifacts folders
 
 Extract the downloaded artifacts and keep them in a separate folder. The production artifacts should be in the `target-base` folder and the development artifacts should be in the `target` folder.
 

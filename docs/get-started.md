@@ -12,7 +12,7 @@ Recce supports data validation by:
 - Validate downstream impacts
 - Collaborate through shareable checklists
 
-For a hands-on example, refer to the [5 Minute Tutorial](./get-started-jaffle-shop.md).
+For a hands-on example, refer to the [5-Minute Tutorial](./get-started-jaffle-shop.md).
 
 Currently, **Recce supports dbt projects**. For teams using other tools, [feature requests are welcomed](mailto:product@datarecce.io) and may be considered for the product roadmap.
 

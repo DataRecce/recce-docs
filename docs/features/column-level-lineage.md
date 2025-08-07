@@ -3,7 +3,7 @@ title: Column-Level Lineage
 icon: material/file-tree
 ---
 
-Column-Level Lineage provides visibility into the upstream and downstream relationships of a column. 
+Column-Level Lineage provides visibility into the upstream and downstream relationships of a column.
 
 Common use-cases for column-level lineage are
 
@@ -13,7 +13,7 @@ Common use-cases for column-level lineage are
 
 ## Usage
 
-1. Select a node in the lineage DAG, then click the the column you want to view.
+1. Select a node in the lineage DAG, then click the column you want to view.
 
     ![alt text](../assets/images/features/cll-1.png){: .shadow}
 
@@ -22,7 +22,7 @@ Common use-cases for column-level lineage are
     ![alt text](../assets/images/features/cll-2.png){: .shadow}
 
 1. To exit column-level lineage view, click the close button in the upper-left corner.
-    
+
     ![alt text](../assets/images/features/cll-3.png){: .shadow}
 
 ## Transformation Types
@@ -35,7 +35,7 @@ The transformation type is also displayed for each column, which will help you u
 | Renamed | The column is selected from the upstream table but with a different name. |
 | Derived | The column is created through transformations applied to upstream columns, such as calculations, conditions, functions, or aggregations. |
 | Source | The column is not derived from any upstream data. It may originate from a seed/source node, literal value, or data generation function. |
-| Unknown | We have no information about the transformation type. This could be due to a parse error, or other unknown reason. | 
+| Unknown | We have no information about the transformation type. This could be due to a parse error, or other unknown reason. |
 
 
 ## Impact Radius of a Column

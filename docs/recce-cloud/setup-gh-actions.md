@@ -36,7 +36,7 @@ We suggest setting up two GitHub Actions workflows in your GitHub repository. On
           schema: PUBLIC
     ```
 
-2.  **GitHub Token** and **Recce State Password**: As mentioned [here](index.md#prerequisite), please ensure that the two secrets are available when running recce commands. You can add `GH_TOKEN` and `RECCE_STATE_PASSWORD` to the [GitHub Actions Secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions). Then we can use them in the Github Actions workflow file.
+2.  **GitHub Token** and **Recce State Password**: As mentioned [here](index.md#prerequisite), please ensure that the two secrets are available when running recce commands. You can add `GH_TOKEN` and `RECCE_STATE_PASSWORD` to the [GitHub Actions Secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions). Then we can use them in the GitHub Actions workflow file.
     ```yaml
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -247,11 +247,11 @@ jobs:
 
 ### PR workflow with dbt Cloud
 
-We can download the dbt artifacts from dbt Cloud for Recce if CI/CD on dbt Cloud is configured. The basic scenario is to download the latest artifacts of the deploy job for the base environment and the artifacts of the CI job for the current environment. We can archieve it via [dbt Cloud API](https://docs.getdbt.com/dbt-cloud/api-v2#/) and we need:
+We can download the dbt artifacts from dbt Cloud for Recce if CI/CD on dbt Cloud is configured. The basic scenario is to download the latest artifacts of the Deploy job for the base environment and the artifacts of the CI job for the current environment. We can achieve it via [dbt Cloud API](https://docs.getdbt.com/dbt-cloud/api-v2#/) and we need:
 
 1. [dbt Cloud Token](https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens)
 1. dbt Cloud Account ID: Check out your "Account settings" on dbt Cloud
-1. dbt Cloud Deploy Job ID: Check out "API trigger" of the deploy job
+1. dbt Cloud Deploy Job ID: Check out "API trigger" of the Deploy job
 1. dbt Cloud CI Job ID: Check out "API trigger" of the CI job
 
 ![alt text](../assets/images/recce-cloud/dbt-cloud-api-trigger.png){: .shadow }
@@ -260,14 +260,14 @@ We prepare a GitHub Action ["Recce dbt Cloud Action"](https://github.com/marketp
 
 1. Trigger the CI job on dbt Cloud
 1. Wait the CI job to finish
-1. Download the dbt artifacts from the deploy job to `./target-base` directory
-1. Download the dbt artifacts from the deploy job to `./target` directory
+1. Download the dbt artifacts from the Deploy job to `./target-base` directory
+1. Download the dbt artifacts from the Deploy job to `./target` directory
 
 Check out the [GitHub Action](https://github.com/marketplace/actions/recce-dbt-cloud-action) to configure the GitHub workflow.
 
 !!! note
 
-    Please ensure `Generate docs on run` is toggled in the "Execution settings" of deploy job and "Advanced settings" of CI job.
+    Please ensure `Generate docs on run` is toggled in the "Execution settings" of Deploy job and "Advanced settings" of CI job.
     ![alt text](../assets/images/recce-cloud/dbt-cloud-deploy-generate-docs.png){: .shadow }
 
 ## Review the Recce State File

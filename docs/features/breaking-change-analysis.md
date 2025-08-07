@@ -108,7 +108,7 @@ from
 
 ## Limitations
 
-Our breaking change analysis is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a breaking change when it is actually non breaking or partial breaking changes. Common cases include:
+Our breaking change analysis is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a breaking change when it is actually non-breaking or partial breaking changes. Common cases include:
 
 1. Logical equivalence in operations, such as changing `a + b` to `b + a`.
 1. Adding a `LEFT JOIN` to a table and selecting columns from it. This is often used to enrich the current model with additional dimension table data without affecting existing downstream tables.

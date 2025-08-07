@@ -19,7 +19,7 @@ recce summary recce-state.json
 
 ## Output
 
-The output of the `summary` command will be markdown format. The markdown output will contain the following sections:
+The output of the `summary` command will be Markdown format. The markdown output will contain the following sections:
 
 - Lineage Graph - A graph that shows the lineage of the models that are impacted by the modified models.
 - Checks Summary - A summary of the checks that are detected mismatch between `base` and `current` environments.
@@ -66,7 +66,7 @@ The rendered output will look like this. [Example Output](./recce-summary-exampl
 
 ### Lineage Graph
 
-The lineage graph shows the lineage of the models that are impacted by the modified models. The graph is generated using the `mermaid` library. The graph is a directed graph that shows the relationship between the models. The graph is generated based on the modified models and their's children models.
+The lineage graph shows the lineage of the models that are impacted by the modified models. The graph is generated using the `mermaid` library. The graph is a directed graph that shows the relationship between the models. The graph is generated based on the modified models and their child models.
 If the model is modified or impacted by the modified model, it will be highlighted in the `[What's Changed]` section.
 
 #### Example of Lineage Graph

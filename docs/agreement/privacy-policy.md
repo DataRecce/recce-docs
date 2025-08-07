@@ -46,7 +46,7 @@ We may use your personal information to:
 - Provide and deliver the products and services you request, process transactions and send you related information, including confirmations and invoices;
 - Send you technical notices, updates, security alerts, and support and administrative messages;
 - Respond to your comments, questions and requests, and provide customer support;
-- Create your account and identify you when you sign-in to your account in accordance with your agreement with us;
+- Create your account and identify you when you sign in to your account in accordance with your agreement with us;
 - Communicate with you about products, services, offers, promotions, rewards, and events offered by us and others, and provide news and information we think will be of interest to you;
 - Monitor and analyze trends, usage and activities in connection with the Services;
 - Detect, investigate and prevent fraud and other illegal activities and protect the rights and property of us and others;
@@ -61,7 +61,7 @@ We may use your personal information to:
 
 We may share your personal information as follows or as otherwise described in this Privacy Policy:
 
-With vendors, consultants and other service providers we have vetted and approved who need access to such personal information to carry out work on our behalf only to the extent necessary for the performance of any contract we enter into with you. This includes companies providing the following services for our Website and/or Platform: hosting services, authentication services, cyber security and anti-fraud services, and advertising;
+With vendors, consultants and other service providers we have vetted and approved who need access to such personal information to carry out work on our behalf only to the extent necessary for the performance of any contract we enter into with you. This includes companies providing the following services for our Website and/or Platform: hosting services, authentication services, cybersecurity and anti-fraud services, and advertising;
 
 In response to a request for personal information if we believe disclosure is permitted by, in accordance with, or required by, any applicable law, regulation or legal process such as to comply with a subpoena or applicable court order;
 
@@ -120,7 +120,7 @@ You may have the following rights pertaining to your personal information depend
 
 ### Account Information
 
-You may access, update or change personal information you have provided by logging into the Services or emailing us at [product@datarecce.io](mailto:product@datarecce.io). You can always opt not to disclose information to us, but we would like to remind you that some personal information may be needed for registration. Shall you decide not to provide such personal information, we might not be able to provide the Services to you.
+You may access, update or change personal information you have provided by logging into the Services or emailing us at [product@datarecce.io](mailto:product@datarecce.io). You can always opt not to disclose information to us, but we would like to remind you that some personal information may be needed for registration. If you decide not to provide such personal information, we may not be able to provide the Services to you.
 
 You may be able to add, update or delete your personal information, but we will maintain a copy of the unrevised personal information in our records. You may request deletion of your account or personal information by sending a request to us. Some personal information may remain in our records after the deletion as necessary to comply with our legal obligations or for legitimate business purposes, such as to resolve disputes or enforce our agreements. We may also retain cached or archived copies of personal information for a certain period of time.
 

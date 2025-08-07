@@ -45,7 +45,7 @@ After granting access, you need to refresh the Recce page. This will ensure that
 
 
 ## Configure recce cloud association manually
-If you prefer to set up the Recce Cloud association manually or your are running Recce under the container environment, you can do so by following these steps:
+If you prefer to set up the Recce Cloud association manually, or you are running Recce under the container environment, you can do so by following these steps:
 
 ### 1. Sign in to Recce Cloud and retrieve your API token
 

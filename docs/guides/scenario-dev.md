@@ -19,7 +19,7 @@ For base environment, put the dbt artifacts in your `target-base/` path. You can
 
 For current developing environment, for most of the dbt command, it would generate the `manifest.json`. If you want to update the schema information, you have to run the `dbt docs generate` to generate the `catalog.json`.
 
-Recce also watch the the `target/` and `target-base/` folders. If there is artifact file changed, the recce web ui would reload to the latest version.
+Recce also watch the `target/` and `target-base/` folders. If there is artifact file changed, the recce web ui would reload to the latest version.
 
 
 ## Development Cycle

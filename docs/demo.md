@@ -33,7 +33,7 @@ Check the [Profile Diff](features/lineage.md#profile-diff) of the customers tabl
 
 
 ### Query Diff
-Run a [Query Diff](features/query.md) to compare the the actual values in prod and dev.
+Run a [Query Diff](features/query.md) to compare the actual values in prod and dev.
 
 ```SQL
 select customer_id, customer_lifetime_value from {{ ref("customers") }} where customer_id < 50;

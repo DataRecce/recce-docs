@@ -35,7 +35,7 @@ GitHub Codespaces is a development environment provided by GitHub that allows de
         "postStartCommand": "recce server --cloud --review"
     }
     ```
-    The secrets are Github Codespaces secrets. You can configure them in
+    The secrets are GitHub Codespaces secrets. You can configure them in
     - [Account specific codespaces secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces)
     - or [Repository-level or organization-level codespaces secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization)
 
@@ -62,7 +62,7 @@ Once you complete [Recce Cloud setup](index.md/#sign-up-the-recce-cloud), you ca
     ![Recce Cloud Open PR](../assets/images/recce-cloud/recce-cloud-open-pr.png){: .shadow}
 3. Click "Create in GitHub Codespaces."
     ![Create in GitHub Codespaces](../assets/images/recce-cloud/create-in-codespace.png){: .shadow}
-4. The Codespaces creation may take 1 to more than 5 mintues depeding on your Codespaces settings. And the Recce instance should take less than 1 minute to launch.
+4. The Codespaces creation may take 1 to more than 5 minutes depending on your Codespaces settings. And the Recce instance should take less than 1 minute to launch.
     - Please view [FAQ](#faq) for how to speed up.
 5. You can see the "State" of the progress; And the Action you can take in each state.
     - Codespace Queued: the Codespace is creating
@@ -97,7 +97,7 @@ Ensure it runs correctly locally. If it does, then the remaining issues within t
 
 If your Codespace configration is correct, other common causes might include:
 
-1. The current branch does not have a corresponding pull request. This usually happens if you launch Codespace directly form GitHub main branch. Recce instance cannot assoicate with the main branch.
+1. The current branch does not have a corresponding pull request. This usually happens if you launch Codespace directly form GitHub main branch. Recce instance cannot associate with the main branch.
 2. The pull request does not have an uploaded [Recce state file](../features/state-file.md). In review mode, the state file must be prepared via CI or locally before proceeding.
 3. The `RECCE_STATE_PASSWORD` mentioned above is not set or the password is incorrect.
 4. Other issues are preventing the Recce server from starting at all.
@@ -106,14 +106,14 @@ When you’ve opened a Codespace but are unable to connect to the Recce instance
 
 1. Check Codespace instance in GitHub.
     ![Check Codespace in GitHub](../assets/images/recce-cloud/check-codespace-in-github.png){: .shadow}
-2. If the Codesapce you created from Recce Cloud is active, click "Open in Browser".
+2. If the Codespace you created from Recce Cloud is active, click "Open in Browser".
     ![Open Codespace in Browser](../assets/images/recce-cloud/open-codespace-in-browser.png){: .shadow}
 3. Click on the blue block in the lower left corner of the status bar, which usually shows "Codespaces: instance name"
     ![Codespace status bar](../assets/images/recce-cloud/codespace-troubleshoot-1.png)
-4. Select "View creation log" or ppen the VS Code Command Palette and type `Codespaces: View Creation Log`.
+4. Select "View creation log" or open the VS Code Command Palette and type `Codespaces: View Creation Log`.
 5. At this point, you should be able to see the reason why the Recce server failed to start.
     ![alt text](../assets/images/recce-cloud/codespace-troubleshoot-2.png)
-6. If you cannot find any issue from the Codespace creation log, and belive your Codespace configration is correct. Please stop the Codespace and launch Recce instance again.
+6. If you cannot find any issue from the Codespace creation log, and believe your Codespace configration is correct. Please stop the Codespace and launch Recce instance again.
 7. If you still have problem, please contact us via [slack](https://getdbt.slack.com/archives/C05C28V7CPP) or email [product@datarecce.io](mailto:product@datarecce.io). We are happy to help.
 
 
@@ -121,14 +121,14 @@ When you’ve opened a Codespace but are unable to connect to the Recce instance
 
 **Q: How long does Codespace generally take to start?**
 
-The typical startup time is around 1 to 2 minutes if you have prebuid. If not, it may take more than 5 mintues. However, this depends on how your Dockerfile is configured. Codespace builds your image every time it starts, so if your Dockerfile includes multiple pip install <packages>, it may take longer.
+The typical startup time is around 1 to 2 minutes if you have prebuilt. If not, it may take more than 5 minutes. However, this depends on how your Dockerfile is configured. Codespace builds your image every time it starts, so if your Dockerfile includes multiple pip install <packages>, it may take longer.
 
 Once your Codespace instance is already running, you won’t need to wait again when you return to it.
 
 **Q: Is there a way to optimize the startup speed?**
 
-Codespace offers a [prebuild](https://docs.github.com/en/codespaces/prebuilding-your-codespaces) feature, which can significantly improve startup speed. In our sample project, we found it's helpful to reduce prebuild when we set prebuild available to only sepecific regions. However, you need to ensure that the image is up-to-date. To strike a balance between speed and update frequency, you can consider scheduling a weekly image rebuild.
-![set prebuild in only specific retion](../assets/images/recce-cloud/set-prebuild-specific-regions.png)
+Codespace offers a [prebuild](https://docs.github.com/en/codespaces/prebuilding-your-codespaces) feature, which can significantly improve startup speed. In our sample project, we found it's helpful to reduce prebuild when we set prebuild available to only specific regions. However, you need to ensure that the image is up-to-date. To strike a balance between speed and update frequency, you can consider scheduling a weekly image rebuild.
+![set prebuild in only specific region](../assets/images/recce-cloud/set-prebuild-specific-regions.png)
 
 **Q: Can a Codespace environment be shared? Can different people access the same Codespace instance?**
 

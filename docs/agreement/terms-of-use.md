@@ -10,11 +10,11 @@ output:
 
 ## 1. INTRODUCTION
 
-Welcome to [https://reccehq.com](https://reccehq.com/) (and sub-domains). The website is owned and operated by InfuseAI, Inc. (“Recce” or “we” or “us”). Please read these Terms of Use (“Terms of Use”) carefully as it constitutes a legally binding contract between you and Recce governing your use of the websites owned and/or operated by us and any other online services (collectively, the “Services”). By accessing or using the Services, you agree to be legally bound by these Terms of Use whether as a visitor or as a registered user. If you do not agree with any of these Terms of Use, please do not use or access the Services in any manner.
+Welcome to [https://reccehq.com](https://reccehq.com/) (and subdomains). The website is owned and operated by InfuseAI, Inc. (“Recce” or “we” or “us”). Please read these Terms of Use (“Terms of Use”) carefully as it constitutes a legally binding contract between you and Recce governing your use of the websites owned and/or operated by us and any other online services (collectively, the “Services”). By accessing or using the Services, you agree to be legally bound by these Terms of Use whether as a visitor or as a registered user. If you do not agree with any of these Terms of Use, please do not use or access the Services in any manner.
 
 You warrant and represent to Recce that you are able to enter into
 
-contracts by any and all applicable laws and regulations. If you are entering into these Terms of Use for an entity, such as the company you work for, you warrant and represent that you have the authority to bind that entity and you agree that “you” as used in these Terms of Use includes both you personally and the entity you represent. You and Recce are collectively referred to as the “Parties” and each is a “Party”
+contracts by any and all applicable laws and regulations. If you are entering into these Terms of Use for an entity, such as the company you work for, you warrant and represent that you have the authority to bind that entity, and you agree that “you” as used in these Terms of Use includes both you personally and the entity you represent. You and Recce are collectively referred to as the “Parties” and each is a “Party”
 
 ## 2. DEFINITIONS
 
@@ -30,7 +30,7 @@ contracts by any and all applicable laws and regulations. If you are entering in
 
 **2.6** Derived Metadata: Data we have derived from the Data that provides information about the content or structure of the Data but does not contain the Data itself.
 
-**2.7** Destructive Elements: Computer code, programs, or programming devices that are intentionally designed to disrupt, modify, access, delete, damage, deactivate, disable, harm, or otherwise impede in any manner, including aesthetic disruptions or distortions, the operation of the website or any other associated software, firmware, hardware, computer system, or network (including, without limitation, “Trojan horses,” “viruses,” “worms,” “time bombs,” “time locks,” “devices,” “traps,” “access codes,” or “drop dead” or “trap door” devices) or any other harmful, malicious, or hidden procedures, routines or mechanisms that would cause the website to cease functioning or to damage or corrupt data, storage media, programs, equipment, or communications, or otherwise interfere with operations.
+**2.7** Destructive Elements: Computer code, programs, or programming devices that are intentionally designed to disrupt, modify, access, delete, damage, deactivate, disable, harm, or otherwise impede in any manner, including aesthetic disruptions or distortions, the operation of the website or any other associated software, firmware, hardware, computer system, or network (including, without limitation, “Trojan horses,” “viruses,” “worms,” “time bombs,” “time locks,” “devices,” “traps,” “access codes,” or “drop-dead” or “trap door” devices) or any other harmful, malicious, or hidden procedures, routines or mechanisms that would cause the website to cease functioning or to damage or corrupt data, storage media, programs, equipment, or communications, or otherwise interfere with operations.
 
 **2.8** Fees: Any Services Fees, and any other fees we charge for our products, services, or data
 
@@ -54,7 +54,7 @@ You agree to use and test the Beta Features and to provide timely feedback, comm
 
 You agree that we shall be free to use, reproduce, disclose, and otherwise exploit any and all such Feedback without compensation or attribution to you.
 
-Unless otherwise stated, any Beta Feature trial period will expire upon the date that a version of the Beta Feature becomes generally available or we elect to discontinue such Beta Feature.
+Unless otherwise stated, any Beta Feature trial period will expire upon the date that a version of the Beta Feature becomes generally available, or we elect to discontinue such Beta Feature.
 
 We may discontinue Beta Features at any time in our sole discretion with or without notice and may never make them generally available.
 
@@ -134,7 +134,7 @@ EXCEPT AS EXPRESSLY SET FORTH HEREIN, THE SERVICES, THE WEBSITE, ANY BETA FEATUR
 
 ## 11. LIMITATION OF LIABILITY
 
-IN NO EVENT SHALL WE BE LIABLE FOR ANY LOSS OR DAMAGE, OF ANY KIND, DIRECT OR INDIRECT, IN CONNECTION WITH OR ARISING FROM USE OF THE SERVICES, CONTENT, OR FROM THESE TERMS OF USE, INCLUDING, WITHOUT LIMITATION, COMPENSATORY, CONSEQUENTIAL, INCIDENTAL, INDIRECT, SPECIAL OR PUNITIVE DAMAGES, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO THESE TERMS OF USE AND/OR YOUR USE OF OR ACCESS TO OR INABILITY TO USE OR ACCESS THE SERVICES, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT OR OTHERWISE), WHETHER OR NOT WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+IN NO EVENT SHALL WE BE LIABLE FOR ANY LOSS OR DAMAGE, OF ANY KIND, DIRECT OR INDIRECT, IN CONNECTION WITH OR ARISING FROM USE OF THE SERVICES, CONTENT, OR FROM THESE TERMS OF USE, INCLUDING, WITHOUT LIMITATION, COMPENSATORY, CONSEQUENTIAL, INCIDENTAL, INDIRECT, SPECIAL OR PUNITIVE DAMAGES, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO THESE TERMS OF USE AND/OR YOUR USE OF OR ACCESS TO OR INABILITY TO USE OR ACCESS THE SERVICES, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT OR OTHERWISE), WHETHER WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 ## 12. INDEMNIFICATION
 
@@ -150,7 +150,7 @@ You will defend, indemnify, and hold harmless us and our officers, directors, ma
 
 **13.1** Assignment
 
-Neither Party may assign or otherwise transfer any of its rights or obligations under the Services without the prior, written consent of the other Party; provided, however, that a Party may, upon written notice to the other Party and without the consent of the other Party, assign or otherwise transfer the Services: (i) to any of its Affiliates; or (ii) in connection with a change of control transaction (whether by merger, consolidation, sale of equity interests, sale of all or substantially all assets, or otherwise), provided that in all cases, the assignee agrees in writing to be bound by the terms and conditions of the Services. Any assignment or other transfer in violation of this Section will be null and void.
+Neither Party may assign nor otherwise transfer any of its rights or obligations under the Services without the prior, written consent of the other Party; provided, however, that a Party may, upon written notice to the other Party and without the consent of the other Party, assign or otherwise transfer the Services: (i) to any of its Affiliates; or (ii) in connection with a change of control transaction (whether by merger, consolidation, sale of equity interests, sale of all or substantially all assets, or otherwise), provided that in all cases, the assignee agrees in writing to be bound by the terms and conditions of the Services. Any assignment or other transfer in violation of this Section will be null and void.
 
 **13.2** Waiver
 
@@ -166,7 +166,7 @@ The Parties hereby consent and agree to the exclusive jurisdiction of the Taiwan
 
 **13.5** Modifications
 
-we may modify these Terms of Use at any time by posting such modification on the Website and providing you notice of such update, and any such modification shall automatically go into effect thirty (30) days after it is so posted. In the event that you do not agree to the terms of any such modification, your sole remedy shall be to provide us with written notice during such thirty (30)-day period of your objection and desire to terminate the applicable Services, in which case the applicable Services shall terminate on the last day of such thirty (30)-day period and we shall refund to you an amount equal to a pro rata portion of any Fees prepaid by you for the Services. By continuing to use the Services after any such modification goes into effect, you agree to the terms of any such modification.
+we may modify these Terms of Use at any time by posting such modification on the Website and providing you notice of such update, and any such modification shall automatically go into effect thirty (30) days after it is so posted. In the event that you do not agree to the terms of any such modification, your sole remedy shall be to provide us with written notice during such thirty (30)-day period of your objection and desire to terminate the applicable Services, in which case the applicable Services shall terminate on the last day of such thirty (30)-day period, and we shall refund to you an amount equal to a pro rata portion of any Fees prepaid by you for the Services. By continuing to use the Services after any such modification goes into effect, you agree to the terms of any such modification.
 
 **13.6** Notices
 

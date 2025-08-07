@@ -23,7 +23,7 @@ In this document, we will explain the design and architecture of the **Self-host
 ![alt text](../../assets/images/recce-cloud/self-hosted-architecture.png){: .shadow }
 
 
-1. **Recce Cloud**: Provides an API to manage instances through an user interface.
+1. **Recce Cloud**: Provides an API to manage instances through a user interface.
 2. **Recce Cloud Agent**: A service running on your own cloud infrastructure. It communicates with Recce Cloud, creates and manages Recce Instances. The agent requires configuration with the Recce Cloud API token and the necessary data warehouse credentials for the Recce Instances.
 3. **Recce Instance**: An instance running Recce that requires a publicly accessible URL.
 
