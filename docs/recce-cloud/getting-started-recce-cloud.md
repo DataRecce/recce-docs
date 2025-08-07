@@ -13,7 +13,7 @@ The following guide uses the official [Jaffle Shop DuckDB](https://github.com/db
 To see what you'll get, check out the first section from the following [Loom](https://www.loom.com/share/2029a2d63e61426fa16137f58575cea4?sid=ea4bcbd2-5ba8-4cbb-8617-3ddd97476b4b):
 
 
-<div style="position: relative; padding-bottom: 62.19806763285024%; height: 0;"><iframe src="https://www.loom.com/embed/2029a2d63e61426fa16137f58575cea4?sid=5fd2f55d-f744-42a5-b11d-295cd9f43799" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 62.19806763285024%; height: 0;"><iframe src="https://www.loom.com/embed/2029a2d63e61426fa16137f58575cea4?sid=5fd2f55d-f744-42a5-b11d-295cd9f43799" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 
 ## Clone Jaffle Shop to your own private repository
@@ -37,10 +37,10 @@ To see what you'll get, check out the first section from the following [Loom](ht
 
 Recce Cloud needs access to your data project's repository in order to sync your checks status to the pull request thread.
 
-1. Visit [Recce Cloud](https://cloud.reccehq.com/). If it is your first time logging in, click the **Continue with Github** button to authorize the Recce Cloud integration to access your GitHub account.
+1. Visit [Recce Cloud](https://cloud.reccehq.com/). If it is your first time logging in, click the **Continue with GitHub** button to authorize the Recce Cloud integration to access your GitHub account.
    ![alt text](../assets/images/recce-cloud/sign-in.png)
    ![alt text](../assets/images/recce-cloud/sign-in-authorize.png)
-1. Click the **Install** button to install the **Recce Cloud** GitHub app to your personal or organization account.
+1. Click the **"Install"** button to install the **Recce Cloud** GitHub app to your personal or organization account.
    ![alt text](../assets/images/recce-cloud/app-install.png)
 1. On the app installation page, authorize Recce Cloud to access the repository you created in the previous section.
    ![alt text](../assets/images/recce-cloud/app-install-authorize.png)
@@ -181,7 +181,7 @@ Run Recce instance in the cloud mode
 recce server --cloud
 ```
 
-Open the link to the Recce Instance in your browser. By default it should be [http://0.0.0.0:8000](http://0.0.0.0:8000)
+Open the link to the Recce Instance in your browser. By default, it should be [http://0.0.0.0:8000](http://0.0.0.0:8000)
 
 
 ### Create a Recce Check

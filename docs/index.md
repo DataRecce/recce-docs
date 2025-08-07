@@ -104,8 +104,9 @@ Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps 
 
 Here's where you can get in touch with the Recce team and find support:
 
+- [Our discord](https://discord.com/invite/VpwXRC34jz)
 - [dbt Slack](https://www.getdbt.com/community/join-the-community) in the [#tools-recce](https://getdbt.slack.com/archives/C05C28V7CPP) channel
-- Email us [product@datarecce.io](mailto:product@datarecce.io)
+- Email us [help@reccehq.com](mailto:help@reccehq.com)
 
 If you believe you have found a bug, or there is some missing functionality in Recce, please open a [GitHub Issue](https://github.com/DataRecce/recce/issues).
 

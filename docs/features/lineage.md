@@ -53,7 +53,7 @@ In the top control bar, you can change the rule to filter the nodes:
 
 ### Select Nodes
 
-Click a node to select it, or click the **Select nodes** button at the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](#multi-nodes-selection) section
+Click a node to select it, or click the **Select nodes** button in the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](#multi-nodes-selection) section
 
 ### Row Count Diff
 
@@ -63,7 +63,7 @@ A row count diff can be performed on nodes selected using the `select` and `excl
 
 After selecting nodes, run the row count diff by:
 
-1. Clicking the 3 dots (**...**) button at the top-right corner.
+1. Clicking the 3 dots (**...**) button in the top-right corner.
 2. Clicking **Row Count Diff by Selector**.
 
 ## Node Details
@@ -248,7 +248,7 @@ Multiple nodes can be selected in the Lineage DAG. This enables actions to be pe
 
 ### Select Nodes Individually
 
-To select multiple nodes individually, click the check box on the nodes you wish to select.
+To select multiple nodes individually, click the checkbox on the nodes you wish to select.
 
 <figure markdown>
   ![Select multiple nodes individually](../assets/images/features/multi-node-selection.gif){: .shadow}
@@ -260,7 +260,7 @@ To select multiple nodes individually, click the check box on the nodes you wish
 To select a node and all of its parents or children:
 
 1. Click the checkbox on the node.
-2. Right click the node.
+2. Right-click the node.
 3. Click to select either parent or child nodes.
 
 <figure markdown>

@@ -144,7 +144,7 @@ Execute recce to update dbt artifacts, rerun check runs, and update the PR statu
 
 **In the CI workflow of the PR push event**
 
-1. The github action workflow is triggered by the push event
+1. The GitHub action workflow is triggered by the push event
 1. Checkout the PR branch
 1. Fetch the dbt artifacts for the base environment
 1. Run dbt for the PR environment

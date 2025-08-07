@@ -29,7 +29,7 @@ These services provide an endpoint for your Recce Instance, with optional authen
 
 After installing the Ngrok client, you can create an endpoint for the Recce Instance that will allow other users to participate in the dbt PR review process, without any additional tools or setup.
 
-1. Setup the ngrok agent
+1. Set up the ngrok agent
 
    ngrok supports multiple platforms, including macOS, Linux, and Windows. Please refer to the [official installation guide](https://ngrok.com/docs/getting-started/) for details.
 

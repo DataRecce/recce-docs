@@ -29,7 +29,7 @@ Another difference is that in dbt, you cannot select removed nodes. However, in 
 
 ## Supported Diff
 
-In addition to lineage diff, other types of diff also support node selection. You can find these features in the **...** button at the top right corner. Currently supported diffs include:
+In addition to lineage diff, other types of diff also support node selection. You can find these features in the **...** button in the top right corner. Currently supported diffs include:
 
 - Lineage diff
 - Row count diff

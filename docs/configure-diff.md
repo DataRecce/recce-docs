@@ -1,5 +1,5 @@
 ---
-title: Congifure Diff
+title: Configure Diff
 icon: material/package-variant
 ---
 
@@ -59,7 +59,7 @@ This command checks artifacts, directories, and warehouse connection, providing 
 
 ### 2. Environment Info (Web UI)
 
-Use **Environment Info** at the top-right corner of the Recce web interface to verify your configuration.
+Use **Environment Info** in the top-right corner of the Recce web interface to verify your configuration.
 
 A correctly configured setup will display two environments:
 

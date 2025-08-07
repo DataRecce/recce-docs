@@ -23,7 +23,7 @@ In dbt, you can leverage profiles and targets to specify the credentials for you
 
 1. **Define Your Profile and Target**:
 Your `profiles.yml` should have different targets that you can switch between. Here’s an example of a `profiles.yml` file:
-    
+
     ```yaml
     my_profile:
       target: dev
@@ -44,27 +44,27 @@ Your `profiles.yml` should have different targets that you can switch between. H
           port: 5432
           dbname: prod_db
           schema: public
-    
+
     ```
-    
+
 2. **Run dbt with the Specified Schema**:
 Now, when you run dbt commands, the `schema` setting will dynamically use the value of the `DBT_SCHEMA` environment variable.
-    
+
     ```bash
     DBT_SCHEMA=pr_env dbt run
-    
+
     ```
-    
+
 3. **Using `args` in dbt**:
 You can also pass arguments directly in your dbt commands to dynamically set variables. For example:
-    
+
     ```bash
     dbt run --vars '{"schema_name": "pr_123"}'
-    
+
     ```
-    
+
     And modify your `profiles.yml` to use this variable:
-    
+
     ```yaml
     my_profile:
       target: dev
@@ -77,9 +77,9 @@ You can also pass arguments directly in your dbt commands to dynamically set var
           port: 5432
           dbname: my_db
           schema: "{{ var('schema_name') }}"
-    
+
     ```
-    
+
 
 This approach allows you to dynamically create different environments by changing the schema on-the-fly. This is particularly useful for creating isolated environments for different PRs or testing scenarios, ensuring that your transformations are scoped to the correct schema and avoiding conflicts between different environments.
 
@@ -147,7 +147,7 @@ GitHub can automatically detect whether a PR is in sync. You need to [enable thi
 
 ![alt text](../assets/images/env-prep/prep-env-github-pr-outdated.png){: .shadow}
 
-You can also to check if the PR is up-to-date in the CI workflow before preparing the PR environment. Here is an example in github action
+You can also to check if the PR is up-to-date in the CI workflow before preparing the PR environment. Here is an example in GitHub action
 ```yaml
 - name: Check if PR is up-to-date
   if: github.event_name == 'pull_request'

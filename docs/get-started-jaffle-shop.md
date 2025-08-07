@@ -26,8 +26,8 @@ Jaffle Shop is an example project officially provided by [dbt Labs](https://www.
    pip install -r requirements.txt
    pip install recce
    ```
-4. Provide additional environment to compare<br> 
-   Edit `./profiles.yml` to add one more target to serve as the base environment for comparison. 
+4. Provide additional environment to compare<br>
+   Edit `./profiles.yml` to add one more target to serve as the base environment for comparison.
    <br><br>Note: This step is only necessary for file-based engines like DuckDB. For cloud warehouses (e.g., Snowflake, BigQuery), Recce auto-detects your active dbt profile and schema, so no changes required.
    ```diff
    jaffle_shop:
@@ -50,7 +50,7 @@ Jaffle Shop is an example project officially provided by [dbt Labs](https://www.
    dbt seed --target prod
    dbt run --target prod
    dbt docs generate --target prod --target-path ./target-base
-   ```   
+   ```
 6. Prepare development environment. First, edit an existing model `./models/staging/stg_payments.sql`.
    ```diff
    ...
@@ -89,6 +89,6 @@ Jaffle Shop is an example project officially provided by [dbt Labs](https://www.
 
 ## What’s Next
 By following this DuckDB tutorial, you’ve seen how Recce works locally.
-You can now return to the [Getting Started guide](./get-started.md)) to set up Recce with your cloud data warehouse.
+You can now return to the [Getting Started guide](./get-started.md) to set up Recce with your cloud data warehouse.
 
 Got questions? [Let us know](/#community-support). We’re happy to help!

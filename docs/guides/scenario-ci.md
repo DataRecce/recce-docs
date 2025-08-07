@@ -34,7 +34,7 @@ We suggest setting up two GitHub Actions workflows in your GitHub repository. On
 This workflow will perform the following actions:
 
 1. Run dbt on the base environment.
-2. Upload the generated DBT artifacts to [github workflow artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) for later use.
+2. Upload the generated DBT artifacts to [GitHub workflow artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) for later use.
 
 ```yaml
 name: Recce CI Base Branch
