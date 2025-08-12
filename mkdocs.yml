@@ -73,7 +73,7 @@ nav:
           - guides/best-practices-prep-env.md
       - Architecture:
           - architecture/overview.md
-          - Changelog: "https://github.com/DataRecce/recce/releases"
+          - Changelog: "https://blog.reccehq.com/tag/release"
       - Privacy & Terms:
           - Privacy Policy: "https://reccehq.com/statements/privacy-policy/"
           - Cookie Policy: "https://reccehq.com/statements/cookie-policy/"
