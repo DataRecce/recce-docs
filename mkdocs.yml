@@ -89,7 +89,7 @@ nav:
       - Cloud Architecture:
           # - recce-cloud/architecture/index.md
           - recce-cloud/architecture/security.md
-  - Blog: "https://reccehq.com/blog"
+  - Blog: "https://blog.reccehq.com"
 
 markdown_extensions:
   - admonition

@@ -116,7 +116,7 @@ You can follow along with news about Recce and blogs from our team in the foll
 
 - [reccehq.com](https://reccehq.com/)
 - [LinkedIn](https://www.linkedin.com/company/datarecce)
-- [Medium blog](https://medium.com/inthepipeline)
+- [Recce Blog](https://blog.reccehq.com/)
 - [@datarecce](https://x.com/DataRecce) on Twitter/X
 - [@DataRecce@mastodon.social](https://mastodon.social/@DataRecce) on Mastodon
 - [@datarecce.bsky.social](https://bsky.app/profile/datarecce.bsky.social) on BlueSky
