@@ -1,5 +1,5 @@
 ---
-title: Lineage
+title: Lineage Diff
 icon: material/file-tree
 ---
 

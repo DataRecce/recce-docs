@@ -42,53 +42,51 @@ extra:
 nav:
   - Home: "https://reccehq.com/"
   - Guides:
-      - Overview:
-          - index.md
-          - demo.md
-      - Getting Started:
-          - get-started.md
-          - configure-diff.md
-          - get-started-jaffle-shop.md
-          - start-with-dbt-cloud.md
-      - Web UI:
-          - features/lineage.md
-          - features/query.md
-          - features/checklist.md
-      - Command Line Interface:
-          - features/recce-debug.md
-          - features/recce-run.md
-          - features/recce-summary.md
-      - Advanced Features:
-          - features/state-file.md
-          - features/preset-checks.md
-          - features/node-selection.md
-          - features/impact-radius.md
-          - features/breaking-change-analysis.md
-          - features/column-level-lineage.md
-          - reference/configuration.md
-      - Scenarios:
-          - guides/scenario-dev.md
-          - guides/scenario-pr-review.md
-          - guides/scenario-ci.md
-          - guides/best-practices-prep-env.md
-      - Architecture:
-          - architecture/overview.md
+      - What's Recce:
+          - 1-whats-recce/index.md
           - Changelog: "https://blog.reccehq.com/tag/release"
-      - Privacy & Terms:
-          - Privacy Policy: "https://reccehq.com/statements/privacy-policy/"
-          - Cookie Policy: "https://reccehq.com/statements/cookie-policy/"
-          - Terms of Use: "https://reccehq.com/statements/terms-of-use/"
-          - Accessibility Statement: "https://reccehq.com/statements/accessibility-statement/"
-  - Cloud (Beta):
-      - recce-cloud/index.md
-      - recce-cloud/getting-started-recce-cloud.md
-      - recce-cloud/setup-gh-actions.md
-      - recce-cloud/setup-gh-codespaces.md
-      - recce-cloud/expose-recce-instance-visibility.md
-      - recce-cloud/share-recce-session-securely.md
-      - Cloud Architecture:
-          # - recce-cloud/architecture/index.md
-          - recce-cloud/architecture/security.md
+      - Getting Started:
+          - 2-getting-started/start-free-with-cloud.md
+          - 2-getting-started/cloud-5min-tutorial.md
+          - 2-getting-started/installation.md
+          - 2-getting-started/get-started-jaffle-shop.md
+          - 2-getting-started/oss-vs-cloud.md
+      - View modified:
+          - 3-view-modified/code-diff.md
+          - 3-view-modified/lineage.md
+          - 3-view-modified/column-level-lineage.md
+      - Downstream impacts:
+          - 4-downstream-impacts/metadata-first.md
+          - 4-downstream-impacts/impact-radius.md
+          - 4-downstream-impacts/breaking-change-analysis.md
+          - 4-downstream-impacts/transformation-types.md
+      - Data Diffing:
+          - 5-data-diffing/query.md
+      - Collaborate Validation:
+          - 6-collaboration/checklist.md
+          - 6-collaboration/share-recce-session-securely.md
+      - Workflow Integration:
+          - 7-workflow-integration/automate-in-pr.md
+          - 7-workflow-integration/setup-gh-actions.md
+          - 7-workflow-integration/recce-summary.md
+          - 7-workflow-integration/recce-summary-example.md
+          - 7-workflow-integration/preset-checks.md
+          - 7-workflow-integration/best-practices-prep-env.md
+          - 7-workflow-integration/scenario-pr-review.md
+        # Automate before PR
+          - 7-workflow-integration/scenario-dev.md
+        # CLI commands
+          - 7-workflow-integration/recce-debug.md
+          - 7-workflow-integration/recce-run.md
+        # automate open source
+          #  - 7-workflow-integration/scenario-ci.md
+      - Lots models:
+          - 8-lots-models/node-selection.md
+      - Technical Concepts:
+          - 9-technical-concepts/overview.md
+          - 9-technical-concepts/state-file.md
+          - 9-technical-concepts/configuration.md
+          - 9-technical-concepts/security.md
   - Blog: "https://blog.reccehq.com"
 
 markdown_extensions:

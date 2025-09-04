@@ -1,5 +1,5 @@
 ---
-title: 5 Minute Tutorial
+title: Open Source Tutorial
 icon: material/school
 ---
 
