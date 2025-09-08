@@ -3,6 +3,20 @@ title: Share Recce Instance
 icon: material/account-eye
 ---
 
+## Screenshot
+
+In the diff result, we can find a **Copy to Clipboard** button. it's a handy feature to copy the result image to clipboard and paste in your PR comment.
+
+<figure markdown>
+  ![Copy a diff screenshot to the clipboard - Multiple models](../assets/images/features/clipboard-to-github.gif){: .shadow}
+  <figcaption>Copy a diff result screenshot to the clipboard and paste to GitHub</figcaption>
+</figure>
+
+!!! Note
+
+    FireFox does not support to copy image to clipboard. Recce show a modal instead. You can download the image to local or right-click on the image to copy the image.
+
+
 ## Share your validation results with anyone, no setup needed
 
 If you've already used Recce to validate your PR and prepared checks, but stakeholders might not have the environment to run Recce.

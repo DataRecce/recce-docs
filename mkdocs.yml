@@ -44,13 +44,14 @@ nav:
   - Guides:
       - What's Recce:
           - 1-whats-recce/index.md
+          - 1-whats-recce/community-support.md
           - Changelog: "https://blog.reccehq.com/tag/release"
       - Getting Started:
+          - 2-getting-started/oss-vs-cloud.md
           - 2-getting-started/start-free-with-cloud.md
           - 2-getting-started/cloud-5min-tutorial.md
           - 2-getting-started/installation.md
           - 2-getting-started/get-started-jaffle-shop.md
-          - 2-getting-started/oss-vs-cloud.md
       - View modified:
           - 3-view-modified/code-diff.md
           - 3-view-modified/lineage.md
@@ -61,6 +62,11 @@ nav:
           - 4-downstream-impacts/breaking-change-analysis.md
           - 4-downstream-impacts/transformation-types.md
       - Data Diffing:
+          - 5-data-diffing/row-count-diff.md  
+          - 5-data-diffing/profile-diff.md
+          - 5-data-diffing/value-diff.md
+          - 5-data-diffing/topK-diff.md
+          - 5-data-diffing/histogram-diff.md
           - 5-data-diffing/query.md
       - Collaborate Validation:
           - 6-collaboration/checklist.md
@@ -88,6 +94,7 @@ nav:
           - 9-technical-concepts/configuration.md
           - 9-technical-concepts/security.md
   - Blog: "https://blog.reccehq.com"
+  - Start Free: "https://cloud.reccehq.com/"
 
 markdown_extensions:
   - admonition

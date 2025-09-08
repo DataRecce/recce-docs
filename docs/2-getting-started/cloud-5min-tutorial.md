@@ -1,8 +1,7 @@
 ---
 title: 5 min tutorial
-icon: material/video
 ---
 
-# 5 min toturial 
+# 5-min Toturial 
 
-using cloud with sample data
+Coming soon.

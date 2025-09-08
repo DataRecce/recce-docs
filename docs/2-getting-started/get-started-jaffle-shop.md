@@ -1,6 +1,5 @@
 ---
 title: Open Source Tutorial
-icon: material/school
 ---
 
 Jaffle Shop is an example project officially provided by [dbt Labs](https://www.getdbt.com). This document uses [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb) to enable you to start using Recce locally from scratch within five minutes.
@@ -76,19 +75,19 @@ Jaffle Shop is an example project officially provided by [dbt Labs](https://www.
    recce server
    ```
    Open the link http://0.0.0.0:8000, you can see the lineage diff
-   ![Lineage diff](assets/images/jaffle-shop/jaffle_shop_lineage.png)
+   ![Lineage diff](../assets/images/jaffle-shop/jaffle_shop_lineage.png)
 8. Switch to the **Query** tab, run this query
    ```sql
    select * from {{ ref("orders") }} order by 1
    ```
    Click the `Run Diff` or press `Cmd + Shift + Enter`
    Click on the 🔑 icon next to the `order_id` column to compare records that are uniquely identified by their `order_id`.
-   ![Query in Recce](assets/images/jaffle-shop/jaffle_shop_query.png)
+   ![Query in Recce](../assets/images/jaffle-shop/jaffle_shop_query.png)
 9.  Click the `+` to add the query result to checklist
-   ![Add query to checklist](assets/images/jaffle-shop/jaffle_shop_check.png)
+   ![Add query to checklist](../assets/images/jaffle-shop/jaffle_shop_check.png)
 
 ## What’s Next
 By following this DuckDB tutorial, you’ve seen how Recce works locally.
-You can now return to the [Getting Started guide](./get-started.md) to set up Recce with your cloud data warehouse.
+You can now return to the [Open Source Setup](./installation.md) to set up Recce with your cloud data warehouse.
 
-Got questions? [Let us know](/#community-support). We’re happy to help!
+Got questions? [Let us know](../1-whats-recce/community-support.md). We're happy to help!
