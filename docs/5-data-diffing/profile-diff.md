@@ -17,7 +17,7 @@ Profile Diff generates SQL queries using Jinja templates to calculate statistica
 You can review the exact [SQL templates](https://github.com/DataRecce/recce/blob/main/recce/tasks/profile.py#L14).
 
 <figure markdown>
-  ![Recce Profile Diff](../assets/images/features/profile-diff.png)
+  ![Recce Profile Diff](../assets/images/5-data-diffing/profile-diff.png)
   <figcaption>Profile Diff</figcaption>
 </figure>
 

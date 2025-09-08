@@ -1,6 +1,5 @@
 ---
 title: Transformation Types
-icon: material/adjust
 ---
 
 # Transformation Types
@@ -71,7 +70,7 @@ select
 from {{ ref("customers") }}
 ```
 
-![alt text](../assets/images/features/cll-example.png){: .shadow}
+![alt text](../assets/images/4-downstream-impacts/cll-example.png){: .shadow}
 
 The following impact is detected:
 

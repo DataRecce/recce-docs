@@ -11,6 +11,6 @@ Row Count Diff shows the difference in row count between the base and current en
 3. Click `Row Count Diff`.
 
 <figure markdown>
-  ![Recce Row Count Diff - Single model](../assets/images/features/row-count-diff-single.gif){: .shadow}
+  ![Recce Row Count Diff - Single model](../assets/images/5-data-diffing/row-count-diff-single.gif){: .shadow}
   <figcaption>Row Count Diff - Single model</figcaption>
 </figure>

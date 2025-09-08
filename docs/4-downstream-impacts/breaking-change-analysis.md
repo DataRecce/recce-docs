@@ -1,6 +1,5 @@
 ---
 title: Breaking Change Analysis
-icon: octicons/diff-modified-24
 ---
 
 **Breaking Change Analysis** examines modified models and categorizes changes into three types:

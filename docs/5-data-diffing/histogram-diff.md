@@ -7,7 +7,7 @@ title: Histogram Diff
 Histogram Diff compares the distribution of a numeric column in an overlay histogram chart.
 
 <figure markdown>
-  ![Recce Histogram Diff](../assets/images/features/histogram-diff.png)
+  ![Recce Histogram Diff](../assets/images/5-data-diffing/histogram-diff.png)
   <figcaption>Histogram Diff</figcaption>
 </figure>
 
@@ -29,11 +29,11 @@ A Histogram Diff can be generated in two ways.
 4. Click `Histogram Diff`.
 
 <figure markdown>
-  ![Generate a Recce Histogram Diff ](../assets/images/features/histogram-diff.gif){: .shadow}
+  ![Generate a Recce Histogram Diff ](../assets/images/5-data-diffing/histogram-diff.gif){: .shadow}
   <figcaption>Generate a Recce Histogram Diff from the column options</figcaption>
 </figure>
 
-#### SQL Execution
+## SQL Execution
 
 Histogram Diff generates SQL queries to create distribution histograms for numeric and date columns. The queries use binning strategies to group values and count occurrences in each bin, supporting both integer and floating-point data types.
 

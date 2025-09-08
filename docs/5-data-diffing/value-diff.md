@@ -3,14 +3,12 @@ title: Value Diff
 ---
 
 
-# Value Diff
-
 Value Diff shows the matched count and percentage for each column in the table. It uses the primary key(s) to uniquely identify the records between the model in both environments.
 
 The primary key is automatically inferred by the first column with the [unique](https://docs.getdbt.com/reference/resource-properties/data-tests#unique) test. If no primary key is detected at least one column is required to be specified as the primary key.
 
 <figure markdown>
-  ![Recce Value Diff](../assets/images/features/value-diff.png)
+  ![Recce Value Diff](../assets/images/5-data-diffing/value-diff.png)
   <figcaption>Value Diff</figcaption>
 </figure>
 
@@ -23,7 +21,7 @@ View mismatched values at the row level by clicking the `show mismatched values`
 
 ![](../assets/images/features/value-diff-detail.gif){: .shadow}
 
-#### SQL Execution
+## SQL Execution
 
 Value Diff generates SQL queries using Jinja templates to compare data between your base and current environments. The queries perform a FULL OUTER JOIN on primary keys to identify added, removed, and mismatched records.
 

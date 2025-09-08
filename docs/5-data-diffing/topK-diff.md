@@ -7,7 +7,7 @@ title: Top-K Diff
 Top-K Diff compares the distribution of a categorical column. The top 10 elements are shown by default, which can be expanded to the top 50 elements.
 
 <figure markdown>
-  ![Recce Top-K Diff](../assets/images/features/top-k-diff.png)
+  ![Recce Top-K Diff](../assets/images/5-data-diffing/top-k-diff.png)
   <figcaption>Recce Top-K Diff</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ A Top-K Diff can be generated in two ways.
 4. Click `Top-K Diff`.
 
 <figure markdown>
-  ![Generate a Recce Top-K Diff ](../assets/images/features/top-k-diff.gif){: .shadow}
+  ![Generate a Recce Top-K Diff ](../assets/images/5-data-diffing/top-k-diff.gif){: .shadow}
   <figcaption>Generate a Recce Top-K Diff </figcaption>
 </figure>
 

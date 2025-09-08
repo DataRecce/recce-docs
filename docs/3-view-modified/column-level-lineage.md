@@ -1,6 +1,5 @@
 ---
 title: Column-Level Lineage
-icon: material/file-tree
 ---
 
 Column-Level Lineage provides visibility into the upstream and downstream relationships of a column.
@@ -15,13 +14,13 @@ Common use-cases for column-level lineage are
 
 1. Select a node in the lineage DAG, then click the column you want to view.
 
-    ![alt text](../assets/images/features/cll-1.png){: .shadow}
+    ![alt text](../assets/images/3-view-modified/cll-1.png){: .shadow}
 
 1. The column-level lineage for the selected column will be displayed.
 
-    ![alt text](../assets/images/features/cll-2.png){: .shadow}
+    ![alt text](../assets/images/3-view-modified/cll-2.png){: .shadow}
 
 1. To exit column-level lineage view, click the close button in the upper-left corner.
 
-    ![alt text](../assets/images/features/cll-3.png){: .shadow}
+    ![alt text](../assets/images/3-view-modified/cll-3.png){: .shadow}
 
