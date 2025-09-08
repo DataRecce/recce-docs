@@ -8,19 +8,9 @@ title: Start free with Cloud
 
 👉 **[Start Free →](https://cloud.reccehq.com)**
 
-## Step 1: Choose Your Starting Point
+## Step 1: Get Ready to Launch Recce
 
-Once you sign up, you'll see three options to launch Recce:
-
-### Option A: Connect Your PR 
-
-- **Best if**: You have a current PR and GitHub permissions
-- **You get**: List all your PRs and validate any of them
-- **Setup**: Connect GitHub (installs Recce app)
-- **Immediate value**: See all PRs ready for validation
-- ✨ **You'll know it's working when**: Your PRs appear in a the project
-
-### Option B: Upload Your Artifacts
+### Upload your artifacts
 
 - **Best if**: You want to try without GitHub permissions  
 - **You get**: Launch Recce with your actual dbt project
@@ -28,13 +18,16 @@ Once you sign up, you'll see three options to launch Recce:
 - **Immediate value**: See your real project lineage and metadata diffs
 - ✨ **You'll know it's working when**: Your modesl appear in the lineage graph
 
-### Option C: Try Sample Data
+<br>
+If you don't have a dbt project, you can just click "Launch" to see the Jaffle Shop sample project loaded.
 
-- **Best if**: You don't have a dbt project ready
-- **You get**: Experience Recce with sample data
-- **Setup**: Just click "Launch" 
-- **Immediate value**: Explore all Recce features risk-free
-- ✨ **You'll know it's working when**: You see the Jaffle Shop sample project loaded
+### Connect to view all your PR
+
+- **Best if**: You have a current PR and GitHub permissions
+- **You get**: List all your PRs and validate any of them
+- **Setup**: Connect GitHub (installs Recce app) and upload your PR snapshots
+- **Immediate value**: See all PRs and do validation
+- ✨ **You'll know it's working when**: Your PRs appear in a the project
 
 ## Step 2: Launch Recce → See Metadata Diffing
 
@@ -71,7 +64,6 @@ Once you sign up, you'll see three options to launch Recce:
     - ✅ **Automatic PR checks** - validation runs on every push
     - ✅ **Team workflows** - standardized validation across team
     - ✅ **PR blocking** - prevent bad changes from merging
-
 
 ## What's Next?
 

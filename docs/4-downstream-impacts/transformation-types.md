@@ -17,7 +17,7 @@ The transformation type is also displayed for each column, which will help you u
 
 ## Impact Radius of a Column
 
-The **right side of the Column-Level Lineage (CLL)** graph represents the **impact radius** of a selected column.
+The **right side of the [Column-Level Lineage](../3-view-modified/column-level-lineage.md) (CLL)** graph represents the **impact radius** of a selected column.
 This view helps you quickly understand what will be affected if that column changes.
 
 ### What does the impact radius include?

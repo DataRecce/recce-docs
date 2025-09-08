@@ -53,8 +53,8 @@ nav:
           - 2-getting-started/installation.md
           - 2-getting-started/get-started-jaffle-shop.md
       - View modified:
-          - 3-view-modified/code-diff.md
           - 3-view-modified/lineage.md
+          - 3-view-modified/code-diff.md
           - 3-view-modified/column-level-lineage.md
       - Downstream impacts:
           - 4-downstream-impacts/metadata-first.md

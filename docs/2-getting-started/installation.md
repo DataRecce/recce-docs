@@ -93,7 +93,7 @@ A correctly configured setup will display two environments:
 - **Current** – the schema for the environment under development (e.g., staging or dev)
 
 This confirms that both the artifacts and schemas are properly connected for diffing.
-![Environment Info](../assets/images/configure-diff/environment-info.png)
+![Environment Info](../assets/images/shared/environment-info.png)
 
 
 ## Start with dbt Cloud
@@ -160,18 +160,18 @@ To compare the data models between two environments, you need to download the db
 
 #### Login to your dbt Cloud account
 
-![dbt Cloud login](../assets/images/dbt-cloud/login-dbt-cloud.png)
+![dbt Cloud login](../assets/images/shared/login-dbt-cloud.png)
 
 #### Go to the project you want to compare
 
-![dbt Cloud login](../assets/images/dbt-cloud/select-run-job.png)
+![dbt Cloud login](../assets/images/shared/select-run-job.png)
 
 #### Download the dbt artifacts
 
 Download the artifacts from the latest run of both run jobs. You can download the artifacts from the `Artifacts` tab.
 
-![dbt Cloud login](../assets/images/dbt-cloud/prod-artifacts.png)
-![dbt Cloud login](../assets/images/dbt-cloud/dev-artifacts.png)
+![dbt Cloud login](../assets/images/shared/prod-artifacts.png)
+![dbt Cloud login](../assets/images/shared/dev-artifacts.png)
 
 ### Set up the dbt artifacts folders
 

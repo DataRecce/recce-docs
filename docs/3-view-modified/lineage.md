@@ -2,89 +2,172 @@
 title: Lineage Diff
 ---
 
-The Lineage Diff is the main interface to Recce and allows you to quickly see the potential area of impact from your dbt data modeling changes.
+# Understanding Lineage Diff
 
-## Lineage Diff
+The Lineage view is Recce's main interface for visualizing and analyzing how your dbt model changes impact your data pipeline. It shows you the potential area of impact from your modifications, helping you determine which models need further investigation and validation.
 
-It's from the Lineage Diff that you will determine which models to investigate further; and also perform the various data validation checks that will serve as proof-of-correctness of your work.
+## What is Data Lineage?
+
+Data lineage tracks the flow and transformation of data through your dbt project. In Recce, the lineage graph shows:
+
+- **Dependencies**: Which models depend on others
+- **Change Impact**: How modifications ripple through your pipeline
+- **Data Flow**: The path data takes from sources to final outputs
+
+## Viewing the Lineage Graph
+
+From the Lineage view, you can determine which models to investigate further and perform various data validation checks that serve as proof-of-correctness of your work.
 
 <figure markdown>
-  ![Recce Lineage Diff](../assets/images/features/lineage-diff.gif){: .shadow}
-  <figcaption>Lineage Diff</figcaption>
+  ![Recce Lineage Diff](../assets/images/3-view-modified/lineage-diff.gif){: .shadow}
+  <figcaption>Interactive lineage graph showing modified models</figcaption>
 </figure>
 
-### Node Summary
+!!! tip "Getting Started"
+    When you first open Recce, the lineage graph automatically loads showing only the models affected by your changes. This focused view helps you quickly understand the impact of your work.
 
-![](../assets/images/features/node.png){: .shadow}
+## Understanding Model Nodes
 
-Models are color-coded to indicate their **status**:
-
-- `Added` models are green.
-- `Removed` models are red.
-- `Modified` models are orange.
-
-The two icons at the bottom right of each node indicate if a `row count` or `schema` change has been detected. Grayed out icons indicate no change.
+### Visual Status Indicators
 
 <figure markdown>
-  ![Model with Schema Change detected](../assets/images/features/model-schema-change-detected.png){: .shadow}
+  ![Node example](../assets/images/3-view-modified/node.png){: .shadow}
+  <figcaption>Example model node with status indicators</figcaption>
+</figure>
+
+Models in the lineage graph are **color-coded** to indicate their status:
+
+- **Green**: Added models (new to your project)
+- **Red**: Removed models (deleted from your project)
+- **Orange**: Modified models (changed code or configuration)
+- **Gray**: Unchanged models (shown for context)
+
+### Change Detection Icons
+
+Each model node displays two icons in the bottom-right corner that indicate detected changes:
+
+- **Row Count Icon** : Shows when row count differences are detected
+- **Schema Icon** : Shows when column or data type changes are detected
+
+Grayed-out icons indicate no changes were detected in that category.
+
+<figure markdown>
+  ![Model with Schema Change detected](../assets/images/3-view-modified/model-schema-change-detected.png){: .shadow}
   <figcaption>Model with Schema Change detected</figcaption>
 </figure>
 
-**Note**: A row count changed icon is only shown if there is row count diff executed on this node.
+!!! note "Row Count Detection"
+    The row count icon only appears after you've run a row count diff on that specific model. This helps you track which models you've already validated.
 
 <figure markdown>
-  ![Open node details panel](../assets/images/features/node-details-panel.gif){: .shadow}
+  ![Open node details panel](../assets/images/3-view-modified/node-details-panel.gif){: .shadow}
   <figcaption>Open the node details panel</figcaption>
 </figure>
 
-Click a model to open the [node details](#node-detail) panel and perform other data validation checks.
+## Investigating Model Changes
+
+### Opening the Node Details Panel
+
+Click on any model in the lineage graph to open the node details panel. This is your starting point for deeper analysis.
 
 
 ## Schema Diff
 
-Schema Diff shows added, removed, and renamed columns. Click a model in the Lineage Diff to open the node details and view the Schema Diff.
+Schema diff helps you understand structural changes to your models.
 
-!!! Note
+!!! warning "Requirements"
+    Schema diff requires `catalog.json` files in both your base and current environments. Make sure to run `dbt docs generate` in both environments before starting your Recce session.
 
-    Schema Diff requires `catalog.json` in both environments.
+### Viewing Schema Changes
+
+Click on a model to view its schema diff in the node details panel.
 
 <figure markdown>
-  ![Recce Schema Diff](../assets/images/features/schema-diff.gif){: .shadow}
-  <figcaption>Schema Diff</figcaption>
+  ![Recce Schema Diff](../assets/images/3-view-modified/schema-diff.gif){: .shadow}
+  <figcaption>Interactive schema diff showing column changes</figcaption>
 </figure>
 
+### Types of Schema Changes
+
+Schema diff identifies:
+
+- **Added columns**: New fields in your model (shown in green)
+- **Removed columns**: Fields that no longer exist (shown in red)
+- **Renamed columns**: Fields that have changed names (shown with arrows)
+- **Data type changes**: Modifications to column types
+
 <figure markdown>
-  ![Recce Schema Diff](../assets/images/features/schema-diff.png)
-  <figcaption>Schema Diff showing renamed column</figcaption>
+  ![Recce Schema Diff](../assets/images/3-view-modified/schema-diff.png){: .shadow}
+  <figcaption>Schema diff showing renamed column</figcaption>
 </figure>
 
 
 ## Code Diff
 
-Examine the specific code changes to understand the nature of the modifications.
+Understanding the code changes helps you analyze the root cause of data differences.
 
-Learn more [here](code-diff.md)
+From any model's node details panel, you can view the exact code changes that were made. This helps you understand:
+
+- What SQL logic was modified
+- How transformations changed
+- Why data differences might be occurring
+
+Learn more about viewing and analyzing code changes in the [Code Diff guide](code-diff.md).
 
 
 ## Node Details
 
-The node details panel shows information about a node, such as node type, schema and row count changes, and allows you to perform diffs on the node using the options accessed via the `Explore Change` button.
+### Node Details Overview
+
+The node details panel provides comprehensive information about the selected model:
 
 <figure markdown>
   ![Explore the model](../assets/images/3-view-modified/explore-the-model.png){: .shadow}
-  <figcaption>Explore the model</figcaption>
+  <figcaption>Node details panel with exploration options</figcaption>
 </figure>
 
-You can click "Query" to jump to Query of this model. 
-There are few pre-defied diff that saved your time on writing SQL snippets. 
+From this panel, you can:
 
-1. Row Count Diff: shows the difference in row counts. [Learn more here](./5-data-diffing/row-count-diff.md)
-2. Profile Diff
-3. Value Diff
-4. Top-K Diff
-5. Histogram Diff
+- **View model information**: Node type, materialization, and basic metadata
+- **Examine changes**: See what specifically changed in the model
+- **Run validations**: Execute pre-built data diffs and custom queries
+- **Add to checklist**: Document important findings for review
 
-You can add the Lineage Diff of this model to the checklist. 
+### Available Data Validation Checks
+
+Click the "Explore Change" button to access pre-built validation checks that save time on writing SQL:
+
+1. **[Row Count Diff](../5-data-diffing/row-count-diff.md)**: Compare the number of rows between environments
+2. **[Profile Diff](../5-data-diffing/profile-diff.md)**: Analyze column-level statistics and distributions
+3. **[Value Diff](../5-data-diffing/value-diff.md)**: Identify specific value changes between datasets
+4. **[Top-K Diff](../5-data-diffing/topK-diff.md)**: Compare the most common values in your data
+5. **[Histogram Diff](../5-data-diffing/histogram-diff.md)**: Visualize data distribution changes
+
+### Custom Query Analysis
+
+Click "Query" to open the query interface where you can:
+
+- Write custom SQL to investigate changes
+- Run ad-hoc comparisons between environments
+- Validate specific business logic or data quality rules
+
+## Building Your Validation Checklist
+
+As you investigate changes, you can add important findings to your checklist for documentation and collaboration purposes.
+
+!!! tip "Collaboration Best Practice"
+    Use the checklist feature to document your validation process. This creates a clear record of what you've tested and verified, making it easier for teammates to review your changes.
+
+## Next Steps
+
+After reviewing the lineage changes:
+
+1. **Validate**: Run data diffs on critical models to verify changes are correct
+2. **Document**: Add key findings to your checklist with clear descriptions
+3. **Collaborate**: Share your analysis with team members for review
+4. **Integrate**: Use Recce's workflow integration to automate validation in your CI/CD process
+
+Ready to dive deeper into specific validation techniques? Explore the [Data Diffing](../5-data-diffing/row-count-diff.md) section to learn about different ways to validate your changes. 
 
 
 

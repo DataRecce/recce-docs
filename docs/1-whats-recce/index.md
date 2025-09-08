@@ -76,15 +76,15 @@ Recce helps teams catch issues early, understand the impact of changes, and buil
 
 Recce gives you a clear, fast way to understand what your data changes are doing and why they matter. It helps you catch problems early, verify metrics, and share your findings with others, all as part of your normal workflow.
 
-![Lineage graph supports model/column levels navigation and breaking change analysis](../assets/images/home/lineage-readme1.png)
+![Lineage graph supports model/column levels navigation and breaking change analysis](../assets/images/1-whats-recce/lineage-readme1.png)
 
 Lineage graph supports model/column levels navigation and breaking change analysis.
 
-![Model and column level diff](../assets/images/home/diff-readme2.png)
+![Model and column level diff](../assets/images/1-whats-recce/diff-readme2.png)
 
 Model and column level diff
 
-![Checklist for collaboration](../assets/images/home/checklist-readme3.png)
+![Checklist for collaboration](../assets/images/1-whats-recce/checklist-readme3.png)
 
 Checklist for collaboration
 
