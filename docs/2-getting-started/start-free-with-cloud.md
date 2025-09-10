@@ -59,7 +59,7 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 ## Step 4: Automate Everything → CI/CD Integration
 
 - **What you'll unlock**: Automatic validation on every PR
-- **Setup needed**: [Set up automated workflows](../7-workflow-integration/automate-in-pr.md)
+- **Setup needed**: [Set up automated workflows](../7-cicd/scenario-ci.md)
 - **Ultimate value**:
     - ✅ **Automatic PR checks** - validation runs on every push
     - ✅ **Team workflows** - standardized validation across team
@@ -69,7 +69,7 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 
 After launching Recce, explore:
 
-- [View modified](../3-view-modified/lineage.md)
+- [View modified](../3-visualized-change/lineage.md)
 - [View downstream impacts](../4-downstream-impacts/impact-radius.md)
 - [Data diffing](../5-data-diffing/query.md)
 

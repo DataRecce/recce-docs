@@ -1,6 +1,5 @@
 ---
-title: Overview
-icon: fontawesome/regular/building
+title: Concepts
 ---
 
 The core concepts in Recce are [Tasks](#tasks), [Runs](#runs), and [Checks](#checks).

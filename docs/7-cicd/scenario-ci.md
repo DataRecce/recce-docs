@@ -1,13 +1,12 @@
 ---
-title: Continuous Integration (CI)
-icon: octicons/play-16
+title: Setup CI in Open Source
 ---
 
 # Recce CI integration with GitHub Action
 
 Recce provides the `recce run` command for CI/CD pipeline. You can integrate Recce with GitHub Actions (or other CI tools) to compare the data models between two environments when a new pull-request is created. The below image describes the basic architecture.
 
-![ci/cd architecture](../assets/images/pr/ci-cd.png){: .shadow}
+![ci/cd architecture](../assets/images/7-cicd/ci-cd.png){: .shadow}
 
 The following guide demonstrates how to configure Recce in GitHub Actions.
 
@@ -92,7 +91,7 @@ This workflow will perform the following actions:
 1. Run dbt on the PR environment.
 2. Download previously generated base artifacts from base workflow.
 3. Use Recce to compare the PR environment with the downloaded base artifacts.
-4. Use Recce to generate the summary of the current changes and post it as a comment on the pull request. Please refer to the [Recce Summary](../features/recce-summary.md) for more information.
+4. Use Recce to generate the summary of the current changes and post it as a comment on the pull request. Please refer to the [Recce Summary](./recce-summary.md) for more information.
 
 ````yaml
 name: Recce CI PR Branch
@@ -200,10 +199,10 @@ jobs:
 
 ## Review the Recce State File
 
-Review the downloaded Recce [state file](../features/state-file.md) with the following command:
+Review the downloaded Recce [state file](../8-technical-concepts/state-file.md) with the following command:
 
 ```bash
 recce server --review recce_state.json
 ```
 
-In the Recce server `--review` mode, you can review the comparison results of the data models between the base and current environments. It will contain the row counts of modified data models, and the results of any Recce [Preset Checks](../features/preset-checks.md).
+In the Recce server `--review` mode, you can review the comparison results of the data models between the base and current environments. It will contain the row counts of modified data models, and the results of any Recce [Preset Checks](./preset-checks.md).

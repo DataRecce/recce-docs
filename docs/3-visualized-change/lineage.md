@@ -19,19 +19,45 @@ Data lineage tracks the flow and transformation of data through your dbt project
 From the Lineage view, you can determine which models to investigate further and perform various data validation checks that serve as proof-of-correctness of your work.
 
 <figure markdown>
-  ![Recce Lineage Diff](../assets/images/3-view-modified/lineage-diff.gif){: .shadow}
+  ![Recce Lineage Diff](../assets/images/3-visualized-change/lineage-diff.gif){: .shadow}
   <figcaption>Interactive lineage graph showing modified models</figcaption>
 </figure>
 
 !!! tip "Getting Started"
     When you first open Recce, the lineage graph automatically loads showing only the models affected by your changes. This focused view helps you quickly understand the impact of your work.
 
+### Filter Nodes
+
+In the top control bar, you can change the rule to filter the nodes:
+
+1. **Mode:**
+   - **Changed Models:** Modified nodes and their downstream + 1st degree of their parents.
+   - **All:** Show all nodes.
+1. **Package:** Filter by dbt package names.
+1. **Select:** Select nodes by [node selection](./node-selection.md).
+1. **Exclude:** Exclude nodes by [node selection](./node-selection.md).
+
+### Select Nodes
+
+Click a node to select it, or click the **Select nodes** button in the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](#multi-nodes-selection) section
+
+### Row Count Diff
+
+A row count diff can be performed on nodes selected using the `select` and `exclude` options:
+
+![](../assets/images/3-visualized-change/row-count-diff-selector.gif){: .shadow}
+
+After selecting nodes, run the row count diff by:
+
+1. Clicking the 3 dots (**...**) button in the top-right corner.
+2. Clicking **Row Count Diff by Selector**.
+
 ## Understanding Model Nodes
 
 ### Visual Status Indicators
 
 <figure markdown>
-  ![Node example](../assets/images/3-view-modified/node.png){: .shadow}
+  ![Node example](../assets/images/3-visualized-change/node.png){: .shadow}
   <figcaption>Example model node with status indicators</figcaption>
 </figure>
 
@@ -52,7 +78,7 @@ Each model node displays two icons in the bottom-right corner that indicate dete
 Grayed-out icons indicate no changes were detected in that category.
 
 <figure markdown>
-  ![Model with Schema Change detected](../assets/images/3-view-modified/model-schema-change-detected.png){: .shadow}
+  ![Model with Schema Change detected](../assets/images/3-visualized-change/model-schema-change-detected.png){: .shadow}
   <figcaption>Model with Schema Change detected</figcaption>
 </figure>
 
@@ -60,7 +86,7 @@ Grayed-out icons indicate no changes were detected in that category.
     The row count icon only appears after you've run a row count diff on that specific model. This helps you track which models you've already validated.
 
 <figure markdown>
-  ![Open node details panel](../assets/images/3-view-modified/node-details-panel.gif){: .shadow}
+  ![Open node details panel](../assets/images/3-visualized-change/node-details-panel.gif){: .shadow}
   <figcaption>Open the node details panel</figcaption>
 </figure>
 
@@ -83,7 +109,7 @@ Schema diff helps you understand structural changes to your models.
 Click on a model to view its schema diff in the node details panel.
 
 <figure markdown>
-  ![Recce Schema Diff](../assets/images/3-view-modified/schema-diff.gif){: .shadow}
+  ![Recce Schema Diff](../assets/images/3-visualized-change/schema-diff.gif){: .shadow}
   <figcaption>Interactive schema diff showing column changes</figcaption>
 </figure>
 
@@ -97,7 +123,7 @@ Schema diff identifies:
 - **Data type changes**: Modifications to column types
 
 <figure markdown>
-  ![Recce Schema Diff](../assets/images/3-view-modified/schema-diff.png){: .shadow}
+  ![Recce Schema Diff](../assets/images/3-visualized-change/schema-diff.png){: .shadow}
   <figcaption>Schema diff showing renamed column</figcaption>
 </figure>
 
@@ -122,7 +148,7 @@ Learn more about viewing and analyzing code changes in the [Code Diff guide](cod
 The node details panel provides comprehensive information about the selected model:
 
 <figure markdown>
-  ![Explore the model](../assets/images/3-view-modified/explore-the-model.png){: .shadow}
+  ![Explore the model](../assets/images/3-visualized-change/explore-the-model.png){: .shadow}
   <figcaption>Node details panel with exploration options</figcaption>
 </figure>
 

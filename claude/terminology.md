@@ -17,8 +17,12 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **validation results** | diff output, comparison data | What users see in Recce |
 | **impact analysis** | dependency analysis, lineage | Understanding downstream effects |
 | **data changes** | code changes, model changes | What users are validating |
+| **code change** | code modification | Specific term for data team workflows |
 | **validation workflow** | testing workflow, QA process | How teams use Recce |
 | **diff** | comparison, delta | Data teams familiar with git diff, use freely |
+| **Recce**| recce | this is the brand name, should always use "Recce" | 
+| **dbt** | DBT | this is the brand name, should always use lower cases| 
+
 
 ### Data vs Software Terms
 
@@ -27,6 +31,7 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **data warehouse** | database | Data teams distinguish warehouses from operational databases |
 | **development stage** | environment | "Environment" confuses (warehouse vs dev/prod) |
 | **data models** | components | dbt models vs software components |
+| **model** | node | Data teams think "model", software teams think "node" |
 | **release changes** | deploy | Data teams "release" changes, don't "deploy" infrastructure |
 | **validation checks** | unit tests | Data quality checks vs code functionality tests |
 | **automated validation** | CI/CD pipeline | Data processing vs deployment automation |

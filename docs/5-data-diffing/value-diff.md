@@ -19,7 +19,7 @@ The primary key is automatically inferred by the first column with the [unique](
 
 View mismatched values at the row level by clicking the `show mismatched values` option on a column name:
 
-![](../assets/images/features/value-diff-detail.gif){: .shadow}
+![](../assets/images/3-visualized-change/value-diff-detail.gif){: .shadow}
 
 ## SQL Execution
 

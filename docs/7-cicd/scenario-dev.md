@@ -1,12 +1,11 @@
 ---
 title: Development
-icon: material/microsoft-visual-studio-code
 ---
 
 In developing a project with dbt, there are numerous methods available to help you query warehouse data for validation. Recce, in particular, allows for further comparison with production or a specific baseline environment.
 
 
-## Prepare the environments
+<!-- ## Prepare the environments
 In order to enable Recce to compare the base and current environment, you need to prepare artifacts for both environments.
 
 For base environment, put the dbt artifacts in your `target-base/` path. You can have the following options
@@ -19,7 +18,7 @@ For base environment, put the dbt artifacts in your `target-base/` path. You can
 
 For current developing environment, for most of the dbt command, it would generate the `manifest.json`. If you want to update the schema information, you have to run the `dbt docs generate` to generate the `catalog.json`.
 
-Recce also watch the `target/` and `target-base/` folders. If there is artifact file changed, the recce web ui would reload to the latest version.
+Recce also watch the `target/` and `target-base/` folders. If there is artifact file changed, the recce web ui would reload to the latest version. -->
 
 
 ## Development Cycle
@@ -35,39 +34,39 @@ Here, I assume your pull request hasn't been marked as "ready for review" yet, a
 
 ### Check the Lineage
 
-DBT provides a method to identify modified models using `dbt ls -s state:modified+,` but this is obviously not usable within dbt docs. While you can determine how many models are affected using this command, you can't visualize these results.
+dbt provides a method to identify modified models using `dbt ls -s state:modified+,` but this is obviously not usable within dbt docs. While you can determine how many models are affected using this command, you can't visualize these results.
 
-In Recce, you can conduct an initial assessment of your impact scope by [Lineage diff](../features/lineage.md#lineage-diff), which may help you identify potential unintended impacts.
+In Recce, you can conduct an initial assessment of your impact scope by [Lineage diff](../3-visualized-change/lineage.md), which may help you identify potential unintended impacts.
 
 ### Validate the Models' Metadata
 
 With lineage diff, you can start from the modified models to confirm your impact. An inexpensive method is to examine the impact scope of the affected models' metadata.
 
-Firstly, you can start by examining [Schema diff](../features/lineage.md#schema-diff) to see if any changes are detected in each model's schema. Sometimes, a change from **Integer** to **Text**, or from **Decimal** to **Numeric**, may have subtle impacts on your downstream models.
+Firstly, you can start by examining [Schema diff](../3-visualized-change/lineage.md#schema-diff) to see if any changes are detected in each model's schema. Sometimes, a change from **Integer** to **Text**, or from **Decimal** to **Numeric**, may have subtle impacts on your downstream models.
 
 Additionally, whether the models with schema changes have only added columns is worth noting, as this might not significantly affect your downstream processes. However, if columns are removed, it's essential to pay special attention to ensure it's the expected outcome.
 
 
-Next, you can examine the [Row count diff](../features/lineage.md#row-count-diff) for the affected models. Typically, row counts are stored in the warehouse's metadata, meaning you can obtain row count information without much cost. This allows you to quickly determine if row counts are the same or if there are significant changes. Common issues may arise from an erroneous join resulting in unexpected data volumes and erroneous outcomes. Row count diff provides a fast method to identify similar errors.
+Next, you can examine the [Row count diff](../5-data-diffing/row-count-diff.md) for the affected models. Typically, row counts are stored in the warehouse's metadata, meaning you can obtain row count information without much cost. This allows you to quickly determine if row counts are the same or if there are significant changes. Common issues may arise from an erroneous join resulting in unexpected data volumes and erroneous outcomes. Row count diff provides a fast method to identify similar errors.
 
-Observing [the summary of each node](../features/lineage.md#node-summary) can help you quickly review schema and row count changes. By using the lineage diff graph, conducting basic checks on schema and row count, you can already gain a basic level of confidence in the changes made during your development process.
+Observing [each model](../3-visualized-change/lineage.md) can help you quickly review schema and row count changes. By using the lineage diff graph, conducting basic checks on schema and row count, you can already gain a basic level of confidence in the changes made during your development process.
 
-![Node summary](../assets/images/features/node.png)
+![Node summary](../assets/images/7-cicd/node.png)
 
 ### Validate the Column's Summary
 Apparently, model metadata alone is insufficient. Sometimes, we need to assess the magnitude of impact that the changes currently in development have on the critical [Marts models](https://docs.getdbt.com/best-practices/how-we-structure/4-marts).
 
 Recce provides 4 powerful diff tools to compare the data level changes.
 
-1. [Value Diff](../features/lineage.md#value-diff): You can use value diff to observe the matched percentage for each column.
-2. [Profile Diff](../features/lineage.md#profile-diff): You can use profile diff to compare basic statistical values for each column, such as count, distinct count, min, max, and average.
-3. [Histogram Diff](../features/lineage.md#histogram-diff): You can use histogram diff to examine the distribution changes of numeric columns.
-4. [Top-K Diff](../features/lineage.md#top-k-diff): You can use top-k diff to analyze distribution changes of categorical columns.
+1. [Value Diff](../5-data-diffing/value-diff.md): You can use value diff to observe the matched percentage for each column.
+2. [Profile Diff](../5-data-diffing/profile-diff.md): You can use profile diff to compare basic statistical values for each column, such as count, distinct count, min, max, and average.
+3. [Histogram Diff](../5-data-diffing/histogram-diff.md): You can use histogram diff to examine the distribution changes of numeric columns.
+4. [Top-K Diff](../5-data-diffing/topK-diff.md): You can use top-k diff to analyze distribution changes of categorical columns.
 
 It's important to note that these queries may take longer to execute and require reading larger amounts of data. Please choose the appropriate method based on the data volume of each model.
 
 ### Validate by Adhoc Query
-If you want to choose the most flexible method, [Query diff](../features/query.md) is the way to go. You can compare individual records, perform complex operations like **where**, **group by**, **order by**. Or even query multiple models with joins.
+If you want to choose the most flexible method, [Query diff](../5-data-diffing/query.md) is the way to go. You can compare individual records, perform complex operations like **where**, **group by**, **order by**. Or even query multiple models with joins.
 
 AdHoc queries also support the use of dbt macros, providing the highest level of flexibility for validation. However, the downside is that you'll need to write the queries yourself.
 
@@ -93,17 +92,17 @@ ORDER BY
     month desc
 ```
 
-Next, you can add this check to your [checklist](../features/checklist.md). After modifying your code each time, rerun this check until it meets your requirements.
+Next, you can add this check to your [checklist](../6-collaboration/checklist.md). After modifying your code each time, rerun this check until it meets your requirements.
 
 ## Save Your State
 
-Switching branches is often unavoidable during development. To preserve the current state for future use, save or export the [state file](../features/state-file.md). To resume the state, start the Recce server with the state file as an argument:
+Switching branches is often unavoidable during development. To preserve the current state for future use, save or export the [state file](../8-technical-concepts/state-file.md). To resume the state, start the Recce server with the state file as an argument:
 
 ```
 recce server recce_issue_123.json
 ```
 
-![alt text](../assets/images/features/state-file-save.png){: .shadow}
+![alt text](../assets/images/7-cicd/state-file-save.png){: .shadow}
 
 ## Import Checklist
 You can import a checklist from a state file by following these steps:

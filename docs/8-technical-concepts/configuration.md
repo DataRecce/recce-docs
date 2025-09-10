@@ -1,13 +1,12 @@
 ---
 title: Configuration
-icon: octicons/gear-16
 ---
 
 The config file for Recce is located in recce.yml. Currently, only preset checks are configurable.
 
 ## Preset Checks
 
-[Preset checks](../features/preset-checks.md) can be generated when executing `recce server` or `recce run`.
+[Preset checks](../7-cicd/preset-checks.md) can be generated when executing `recce server` or `recce run`.
 
 ```yaml
 # recce.yml

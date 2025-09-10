@@ -1,16 +1,16 @@
 ---
-title: Code Diff
+title: Code Change
 ---
 
-# Code Diff
+# Code Change
 
-The Code Diff feature allows you to compare the SQL code changes between your current branch and the base branch, helping you understand exactly what has been modified in your dbt models.
+The Code Change feature allows you to compare the SQL code changes between your current branch and the base branch, helping you understand exactly what has been modified in your dbt models.
 
-## Viewing Code Changes
+## Viewing Code Change
 
 When you identify a modified model in the [Lineage Diff](lineage.md), you can examine the specific code changes to understand the nature of the modifications.
 
-### Opening Code Diff
+### Opening Code Change
 
 To view the code changes for a model:
 
@@ -19,7 +19,7 @@ To view the code changes for a model:
 3. The code diff will display showing the changes between branches
 
 <figure markdown>
-  ![View code changes for a model](../assets/images/3-view-modified/view-code-of-model.png){: .shadow}
+  ![View code changes for a model](../assets/images/3-visualized-change/view-code-of-model.png){: .shadow}
   <figcaption>Viewing code changes for a modified model</figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ For complex changes or detailed review, you can expand the code diff to full scr
 3. Use this view when conducting thorough code reviews or sharing changes with team members
 
 <figure markdown>
-  ![Expanded full-screen view of code changes](../assets/images/3-view-modified/full-view-code-of-model.png){: .shadow}
+  ![Expanded full-screen view of code changes](../assets/images/3-visualized-change/full-view-code-of-model.png){: .shadow}
   <figcaption>Full-screen view for detailed code review</figcaption>
 </figure>
 

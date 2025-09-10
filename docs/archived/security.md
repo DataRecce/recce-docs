@@ -1,6 +1,5 @@
 ---
 title: Security
-icon: material/cloud-key-outline
 ---
 
 # Security

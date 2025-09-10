@@ -1,7 +1,8 @@
 ---
 title: Debug
-icon: material/bug-check
 ---
+
+## debug command
 
 The `recce debug` command is a diagnostic tool that helps you verify your Recce setup by checking the development and base environments. It validates that all required dbt artifacts are in place and tests the warehouse connection, ensuring everything is properly configured before running other Recce commands.
 

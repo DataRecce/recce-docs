@@ -21,7 +21,7 @@ extra:
       link: https://x.com/datarecce
       name: Recce on X (Twitter)
     - icon: fontawesome/brands/bluesky
-      link: https://x.com/datarecce
+      link: https://bsky.app/profile/datarecce.bsky.social
       name: Recce on Bluesky
     - icon: fontawesome/brands/mastodon
       link: https://mastodon.social/@DataRecce
@@ -49,18 +49,19 @@ nav:
       - Getting Started:
           - 2-getting-started/oss-vs-cloud.md
           - 2-getting-started/start-free-with-cloud.md
-          - 2-getting-started/cloud-5min-tutorial.md
+          #- 2-getting-started/cloud-5min-tutorial.md
           - 2-getting-started/installation.md
           - 2-getting-started/get-started-jaffle-shop.md
-      - View modified:
-          - 3-view-modified/lineage.md
-          - 3-view-modified/code-diff.md
-          - 3-view-modified/column-level-lineage.md
-      - Downstream impacts:
-          - 4-downstream-impacts/metadata-first.md
+      - Visualized Change:
+          - 3-visualized-change/lineage.md
+          - 3-visualized-change/code-change.md
+          - 3-visualized-change/column-level-lineage.md
+          - 3-visualized-change/multi-models.md
+      - Downstream Impacts:
+          #- 4-downstream-impacts/metadata-first.md
           - 4-downstream-impacts/impact-radius.md
           - 4-downstream-impacts/breaking-change-analysis.md
-          - 4-downstream-impacts/transformation-types.md
+          #- 4-downstream-impacts/transformation-types.md
       - Data Diffing:
           - 5-data-diffing/row-count-diff.md  
           - 5-data-diffing/profile-diff.md
@@ -70,29 +71,27 @@ nav:
           - 5-data-diffing/query.md
       - Collaborate Validation:
           - 6-collaboration/checklist.md
-          - 6-collaboration/share-recce-session-securely.md
-      - Workflow Integration:
-          - 7-workflow-integration/automate-in-pr.md
-          - 7-workflow-integration/setup-gh-actions.md
-          - 7-workflow-integration/recce-summary.md
-          - 7-workflow-integration/recce-summary-example.md
-          - 7-workflow-integration/preset-checks.md
-          - 7-workflow-integration/best-practices-prep-env.md
-          - 7-workflow-integration/scenario-pr-review.md
-        # Automate before PR
-          - 7-workflow-integration/scenario-dev.md
-        # CLI commands
-          - 7-workflow-integration/recce-debug.md
-          - 7-workflow-integration/recce-run.md
-        # automate open source
-          #  - 7-workflow-integration/scenario-ci.md
-      - Lots models:
-          - 8-lots-models/node-selection.md
+          - 6-collaboration/share.md
+      - CI/CD:
+          #- 7-cicd/setup-cd.md
+          #- Development
+          - 7-cicd/scenario-dev.md #should be indented under Development
+          - 7-cicd/recce-debug.md #should be indented under Development
+          #- Continuous Integration
+            #- 7-cicd/setup-ci.md
+            #- 7-cicd/cloud-recce-summary.md
+            #- 7-cicd/cloud-preset-checks.md
+          - 7-cicd/scenario-pr-review.md #should be indented under Continuous Integration
+          #- CI/CD for Open Source
+          - 7-cicd/scenario-ci.md #should be indented under CI/CD for Open Source
+          - 7-cicd/recce-summary.md #should be indented under CI/CD for Open Source
+          - 7-cicd/preset-checks.md #should be indented under CI/CD for Open Source
+          - 7-cicd/best-practices-prep-env.md
+          
       - Technical Concepts:
-          - 9-technical-concepts/overview.md
-          - 9-technical-concepts/state-file.md
-          - 9-technical-concepts/configuration.md
-          - 9-technical-concepts/security.md
+          - 8-technical-concepts/state-file.md
+          - 8-technical-concepts/configuration.md
+  
   - Blog: "https://blog.reccehq.com"
   - Start Free: "https://cloud.reccehq.com/"
 

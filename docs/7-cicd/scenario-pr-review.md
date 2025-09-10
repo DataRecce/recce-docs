@@ -1,6 +1,5 @@
 ---
 title: PR Review
-icon: octicons/git-pull-request-16
 ---
 
 When you've finished developing your feature, we should turn the pull request (PR) into [ready for review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request) state. At this point, the PR submitter needs to provide the necessary information for the PR reviewer. Some projects may offer a PR template. In the dbt official blog, [this article](https://docs.getdbt.com/blog/analytics-pull-request-template) provides an excellent example.

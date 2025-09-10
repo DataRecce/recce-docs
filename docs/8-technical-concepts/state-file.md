@@ -1,6 +1,5 @@
 ---
-title: Recce State File
-icon: material/file
+title: State File
 ---
 
 ## Introduction
@@ -19,7 +18,7 @@ There are multiple ways to save the state file.
 1. **Save from the Web UI**: Click the **Save** button at the top of the app. Recce will continuously write updates to the state file, effectively working like an auto-save feature, and persist the state until the Recce instance is closed. The file is saved with the specified filename in the directory where the recce server command is run.
 
 1. **Export from the Web UI**: Click the **Export** button located in the top-right corner to download the current Recce state to any location on your machine.
-   ![](../assets/images/features/state-file-save.png){: .shadow}
+   ![](../assets/images/8-technical-concepts/state-file-save.png){: .shadow}
 
 1. **Start Recce from a State File**: You can provide a state file as an argument when launching Recce. If the file does not exist, Recce will create a state file and start with an empty state. If the file exists, Recce will load the state and continue working from it.
    ```
@@ -68,7 +67,7 @@ Common development workflow:
     recce server recce_issue_1.json
     ```
 
-![State File For Development](../assets/images/features/state-file-dev.png)
+![State File For Development](../assets/images/8-technical-concepts/state-file-dev.png)
 
 ## Scenario: PR Review
 
@@ -87,9 +86,9 @@ During the PR review process, the state file serves as a communication medium be
     recce server --review recce_issue_1.json
     ```
 
-![State File For PR Review](../assets/images/features/state-file-pr.png)
+![State File For PR Review](../assets/images/8-technical-concepts/state-file-pr.png)
 
-## Recce Cloud
+<!-- ## Recce Cloud
 
 !!! Note
 
@@ -162,4 +161,4 @@ Execute recce to update dbt artifacts, rerun check runs, and update the PR statu
 1. Launch recce server for this PR branch in the review mode
    ```
    recce server --review --cloud --password <password-to-encrypt-state-file>
-   ```
+   ``` -->

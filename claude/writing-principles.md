@@ -155,9 +155,21 @@ These structure is to align users adoption process. Start from using in PR, coll
 
 
 
-## Content Structure Template
+## Content format guide
 
-Use markdown
+1. **Use markdown** for all content formatting
+2. **Add line breaks** between sentences and bullet points or numbered lists to ensure proper rendering
+3. **Page title capitalization**: Capitalize every word in the main page title (Title Case)
+4. **Heading capitalization**: For H2 headings and below, only capitalize the first word (Sentence case)
+5. **Image format**: Use the standardized figure format with shadow styling:
+
+```markdown
+<figure markdown>
+  ![Recce Lineage Diff](../assets/images/3-view-modified/lineage-diff.gif){: .shadow}
+  <figcaption>Interactive lineage graph showing modified models</figcaption>
+</figure>
+```
+6. Use bold only when it's neccessary. Too many highlight will lose focus and not easy to read. 
 
 ### Page Structure Template
 ```markdown

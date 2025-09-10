@@ -1,6 +1,5 @@
 ---
-title: "Best Practices for Preparing Environments"
-icon:  octicons/thumbsup-16
+title: Best Practices for Preparing Environments
 ---
 
 Recce is designed to compare two environments in your data project. To use it effectively, it is crucial to prepare environments through CI.
@@ -106,7 +105,7 @@ Some data projects may have source data that updates every hour or even every se
 
 Currently, some data warehouses support **zero-copy clone** (snowflake, bigquery, databricks), which allows us to freeze the source data at a specific point in time. Considering updating the source data weekly can significantly reduce the variability in environments caused by source data changes.
 
-![alt text](../assets/images/7-workflow-integration/prep-env-clone-source.png){: .shadow}
+![alt text](../assets/images/7-cicd/prep-env-clone-source.png){: .shadow}
 
 ### Limit the data range used in transformations
 
@@ -116,7 +115,7 @@ If zero-copy clone for the source data is not supported and the source data cont
 
 For example, you can design the transformation to only use data from the last month, up to Sunday at 00:00. This approach combines the benefits of shorter execution times and reduced data volatility.
 
-![alt text](../assets/images/7-workflow-integration/prep-env-limit-data-range.png)
+![alt text](../assets/images/7-cicd/prep-env-limit-data-range.png)
 
 
 ```sql
@@ -141,11 +140,11 @@ There are two scenarios that may cause the base environment to be out of date:
 
 If the PR is executed after the base branch has been updated, the comparison with the base environment will mix the changes from the PR with the changes from other PRs merged into the base branch. This results in comparison outcomes that do not accurately reflect the impact of the current PR.
 
-![alt text](../assets/images/7-workflow-integration/prep-env-pr-outdated.png){: .shadow}
+![alt text](../assets/images/7-cicd/prep-env-pr-outdated.png){: .shadow}
 
 GitHub can automatically detect whether a PR is in sync. You need to [enable this feature](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch) in the repository settings. Once enabled, you will see whether the PR is up-to-date directly on the PR page.
 
-![alt text](../assets/images/7-workflow-integration/prep-env-github-pr-outdated.png){: .shadow}
+![alt text](../assets/images/7-cicd/prep-env-github-pr-outdated.png){: .shadow}
 
 You can also to check if the PR is up-to-date in the CI workflow before preparing the PR environment. Here is an example in GitHub action
 ```yaml

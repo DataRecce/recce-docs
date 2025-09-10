@@ -2,7 +2,7 @@
 title: Checklist
 ---
 
-# Checklist
+## What's Checklist
 
 Save your validation checks to the Recce checklist with a description of your findings.
 
@@ -37,3 +37,7 @@ The Recce Checklist provides a way to record the results of a data check during 
 - Save Checks with notes of your interpretation of the data.
 - Re-run checks following further data modeling changes.
 - Share Checks as part of PR or stakeholder review.
+
+## Preset Check
+
+Preset checks can be the fixed checks that are generated every time a new Recce instance is initiated.

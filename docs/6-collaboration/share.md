@@ -1,8 +1,8 @@
 ---
-title: Share Recce Sessions Securely
+title: Share
 ---
 
-# Share Recce Sessions Securely
+## Share Recce Sessions Securely
 
 Recce provides two secure methods to share your validation results with team members and stakeholders, ensuring everyone can access the insights they need for informed decision-making.
 
