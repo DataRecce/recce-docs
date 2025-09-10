@@ -143,13 +143,12 @@ Avoid Uncertainty Language, like:
 Maintain consistency with the 9-section structure:
 1. **What's Recce** - Introduction, value proposition, use cases
 2. **Getting Started** - Installation, tutorials, first steps
-3. **View Modified** - Core functionality, diff analysis
+3. **Visualized Change** - Core functionality, diff analysis
 4. **Downstream Impacts** - Impact analysis, dependency mapping
 5. **Data Diffing** - Query comparison, validation techniques
 6. **Collaborate Validation** - Team workflows, checklist management
-7. **Workflow Integration** - CI/CD, automation, best practices
-8. **Lots Models** - Scale considerations, performance optimization
-9. **Technical Concepts** - Architecture, configuration, security
+7. **CI/CD** - CI/CD, automation, best practices
+8. **Technical Concepts** - Architecture, configuration
 
 These structure is to align users adoption process. Start from using in PR, colloaborate with team, and using in dev time. And know more technical behind it. 
 

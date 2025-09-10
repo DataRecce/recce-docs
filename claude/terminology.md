@@ -20,6 +20,15 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **code change** | code modification | Specific term for data team workflows |
 | **validation workflow** | testing workflow, QA process | How teams use Recce |
 | **diff** | comparison, delta | Data teams familiar with git diff, use freely |
+| **state file** | session file, cache | Stores validation results and checks for later use |
+| **preset checks** | default tests, template checks | Pre-configured validation rules for projects |
+| **lineage diff** | dependency comparison | Visual comparison of model relationships |
+| **breaking change analysis** | impact assessment | Automated detection of schema changes |
+| **value diff** | data comparison | Row-by-row data validation between environments |
+| **profile diff** | summary statistics | Column-level statistical comparisons |
+| **histogram diff** | distribution analysis | Numeric data distribution comparisons |
+| **top-K diff** | frequency analysis | Categorical data frequency comparisons |
+| **row count diff** | record count validation | Quick data volume verification |
 | **Recce**| recce | this is the brand name, should always use "Recce" | 
 | **dbt** | DBT | this is the brand name, should always use lower cases| 
 
@@ -37,6 +46,13 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **automated validation** | CI/CD pipeline | Data processing vs deployment automation |
 | **change review** | code review | Reviewing data changes vs code changes |
 | **diff** | comparison | Data teams understand diff from git/version control |
+| **artifacts** | build outputs | dbt manifest.json, catalog.json files |
+| **run dbt** | execute dbt, build models | Preferred: "run dbt" not "execute" or "build" |
+| **materialization** | table creation strategy | How dbt creates tables (table, view, incremental) |
+| **dbt target** | environment config | profiles.yml target configuration |
+| **warehouse connection** | database connection | Data team context for connecting to warehouse |
+| **development workspace** | dev environment | Where data analysts work on models |
+| **production workspace** | prod environment | Live data warehouse with production data |
 
 ### Business Impact Language
 
@@ -47,6 +63,11 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **confident releases** | successful deployments | User empowerment over technical success |
 | **team collaboration** | workflow integration | People-first over tool-first |
 | **validate changes** | test modifications | Active validation vs passive testing |
+| **validation checklist** | test suite | Collaborative validation workflow for teams |
+| **share findings** | distribute results | Team collaboration on validation results |
+| **review together** | collaborate on validation | Team-based change review process |
+| **check status** | test results | Current state of validation checks |
+| **approve changes** | sign off on deployment | Business approval vs technical deployment |
 
 ## Terms That Confuse Data Teams
 
@@ -72,6 +93,16 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 - **Software team thinks**: Unit/integration tests for code
 - **✅ Use instead**: "validation" or "data quality checks"
 
+**Build**
+- **Data team thinks**: "dbt run" - executing transformations
+- **Software team thinks**: Compile/package application
+- **✅ Use instead**: "run models" or "execute transformations"
+
+**Server**
+- **Data team thinks**: Database server (Snowflake, BigQuery)
+- **Software team thinks**: Web server or application server
+- **✅ Use instead**: "Recce UI" or "Recce interface" for the tool
+
 ### ⚠️ Medium Confusion Terms
 
 **Model**
@@ -88,6 +119,21 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 - **Data context**: dbt profile target (dev/prod warehouse config)
 - **Software context**: Deployment target or goal
 - **✅ Clarify**: "dbt target" when referring to profiles.yml
+
+**Artifacts**
+- **Data context**: dbt-generated metadata files (manifest.json, catalog.json)
+- **Software context**: Build outputs, compiled binaries
+- **✅ Clarify**: "dbt artifacts" or "metadata files"
+
+**Workspace**
+- **Data context**: Development area in data warehouse
+- **Software context**: IDE or development environment
+- **✅ Clarify**: "development workspace" vs "local workspace"
+
+**Instance**
+- **Data context**: Recce UI session or warehouse instance
+- **Software context**: Running application or server
+- **✅ Clarify**: "Recce session" or "warehouse connection"
 
 ## Terminology Alert System
 
@@ -141,6 +187,48 @@ While software teams deploy applications, data teams release model changes to th
 Configure your dbt target (the warehouse connection in profiles.yml) to point to your development environment.
 ```
 
+## Conflicting Usage Patterns
+
+These terms are used inconsistently across the documentation, creating potential confusion. Document conflicts here without changing the content immediately.
+
+### 🔀 Terms Used Inconsistently
+
+**"Environment" vs "Target" vs "Workspace"**
+- **Data team perspective**: "Target" refers to dbt profiles.yml config, "Environment" means warehouse type (Snowflake vs BigQuery)
+- **Software team perspective**: "Environment" means dev/staging/prod deployment context
+- **Current usage in docs**: Mixed usage - sometimes "environment" for dbt targets, sometimes for deployment stages
+- **Recommendation**: Use "dbt target" for profiles.yml, "development workspace" for where analysts work
+
+**"Check" vs "Validation" vs "Test"**
+- **Data team perspective**: "Validation" sounds more professional than "testing", "checks" are specific validations
+- **Software team perspective**: "Tests" are automated code verification, "checks" are CI/CD gates
+- **Current usage in docs**: Mixed - "preset checks", "validation workflow", "test your models"
+- **Recommendation**: Standardize on "validation" for data quality, "checks" for specific validation rules
+
+**"Build" vs "Run" vs "Execute"**
+- **Data team perspective**: "Run dbt" is the standard command, "build" sounds like compiling code
+- **Software team perspective**: "Build" means compile/package, "execute" means run program
+- **Current usage in docs**: Mixed usage - "build your models", "run dbt", "execute transformations"
+- **Recommendation**: Use "run" for dbt operations, avoid "build" and "execute"
+
+**"Review" vs "Audit" vs "Validation"**
+- **Data team perspective**: "Review" is collaborative, "audit" is formal compliance checking
+- **Software team perspective**: "Review" is code review process, "audit" is security scanning
+- **Current usage in docs**: "Review mode", "change review", "validation workflow"
+- **Recommendation**: Use "review" for collaborative processes, "validation" for automated checks
+
+**"Pipeline" vs "Workflow"**
+- **Data team perspective**: "Pipeline" means data transformation flow (dbt models)
+- **Software team perspective**: "Pipeline" means CI/CD automation pipeline
+- **Current usage in docs**: "CI/CD pipeline", "validation workflow", "automation workflow"
+- **Recommendation**: "Data pipeline" for transformations, "automation workflow" for CI/CD
+
+**"Deploy" vs "Release" vs "Publish"**
+- **Data team perspective**: "Release" means making changes live, "deploy" sounds like infrastructure
+- **Software team perspective**: "Deploy" means publish application, "release" means version release
+- **Current usage in docs**: Mixed - "deploy changes", "release changes", "publish results"
+- **Recommendation**: Use "release" for data changes, "deploy" only for infrastructure
+
 ## Maintenance Guidelines
 
 ### Adding New Terms
@@ -174,6 +262,11 @@ Before publishing, verify:
 | "Production deployment" | "Production release" | Making changes live |
 | "Development environment" | "Development warehouse" | Where you develop |
 | "Code review" | "Change review" | Reviewing data modifications |
+| "Build models" | "Run models" | dbt model execution |
+| "Execute dbt" | "Run dbt" | Standard dbt command usage |
+| "Check results" | "Validation status" | Status of data validation |
+| "Recce server" | "Recce interface" | The UI tool itself |
+| "Database connection" | "Warehouse connection" | Data team context |
 
 ---
 
