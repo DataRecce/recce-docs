@@ -43,7 +43,7 @@ nav:
   - Home: "https://reccehq.com/"
   - Guides:
       - What's Recce:
-          - 1-whats-recce/index.md
+          - index.md
           - 1-whats-recce/community-support.md
           - Changelog: "https://blog.reccehq.com/tag/release"
       - Getting Started:
