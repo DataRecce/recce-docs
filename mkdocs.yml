@@ -76,7 +76,7 @@ nav:
           #- 7-cicd/setup-cd.md
           #- Development
           - 7-cicd/scenario-dev.md #should be indented under Development
-          - 7-cicd/recce-debug.md #should be indented under Development
+          #- 7-cicd/recce-debug.md # content outdated 
           #- Continuous Integration
             #- 7-cicd/setup-ci.md
             #- 7-cicd/cloud-recce-summary.md
@@ -84,8 +84,8 @@ nav:
           - 7-cicd/scenario-pr-review.md #should be indented under Continuous Integration
           #- CI/CD for Open Source
           - 7-cicd/scenario-ci.md #should be indented under CI/CD for Open Source
-          - 7-cicd/recce-summary.md #should be indented under CI/CD for Open Source
-          - 7-cicd/preset-checks.md #should be indented under CI/CD for Open Source
+          #- 7-cicd/recce-summary.md content outdated
+          - 7-cicd/preset-checks.md 
           - 7-cicd/best-practices-prep-env.md
           
       - Technical Concepts:

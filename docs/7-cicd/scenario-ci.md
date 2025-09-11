@@ -88,10 +88,10 @@ jobs:
 
 This workflow will perform the following actions:
 
-1. Run dbt on the PR environment
-2. Download previously generated base artifacts from base workflow
-3. Use Recce to compare the PR environment with the downloaded base artifacts
-4. Use Recce to generate the summary of the current changes and post it as a comment on the pull request. Please refer to the [Recce Summary](./recce-summary.md) for more information
+1. Run dbt on the PR environment.
+2. Download previously generated base artifacts from base workflow.
+3. Use Recce to compare the PR environment with the downloaded base artifacts.
+<!-- 4. Use Recce to generate the summary of the current changes and post it as a comment on the pull request. Please refer to the [Recce Summary](./recce-summary.md) for more information. -->
 
 ````yaml
 name: Recce CI PR Branch
@@ -158,8 +158,9 @@ jobs:
         with:
           name: recce-state-file
           path: recce_state.json
-
-      - name: Prepare Recce Summary
+````
+<!--
+       - name: Prepare Recce Summary
         id: recce-summary
         run: |
           recce summary recce_state.json > recce_summary.md
@@ -194,8 +195,9 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           filePath: recce_summary.md
-          comment_tag: recce
-````
+          comment_tag: recce 
+          -->
+
 
 ## Review the Recce State File
 
@@ -205,4 +207,5 @@ Review the downloaded Recce [state file](../8-technical-concepts/state-file.md) 
 recce server --review recce_state.json
 ```
 
-In the Recce server `--review` mode, you can review the comparison results of the data models between the base and current environments. It will contain the row counts of modified data models, and the results of any Recce [Preset Checks](./preset-checks.md).
+In the Recce server `--review` mode, you can review the comparison results of the data models between the base and current environments. It will contain the row counts of modified data models.
+ <!-- and the results of any Recce [Preset Checks](./preset-checks.md). -->

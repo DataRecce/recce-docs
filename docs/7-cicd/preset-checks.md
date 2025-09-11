@@ -69,8 +69,8 @@ To configure the preset checks, add the settings to the [recce config file](../8
     ```shell
     recce server recce_state.json
     ```
-3. You can show the summary of the state by the [recce summary](./recce-summary.md) command.
+<!-- 3. You can show the summary of the state by the [recce summary](./recce-summary.md) command.
     ```shell
     recce summary recce_state.json
-    ```
+    ``` -->
     
