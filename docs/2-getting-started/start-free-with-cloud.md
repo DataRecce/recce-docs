@@ -4,7 +4,7 @@ title: Start free with Cloud
 
 # Start Free with Recce Cloud
 
-**Launch Recce in under 2 minutes** and see your data changes validated. Choose the path that works best for your situation.
+**Launch Recce in under 2 minutes** to validate your data changes. We offer two paths to getting started.
 
 👉 **[Start Free →](https://cloud.reccehq.com)**
 

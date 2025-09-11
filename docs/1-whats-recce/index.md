@@ -5,12 +5,12 @@ title: Introduction
 
 # What is Recce?
 
-Recce (pronounced "wreck-E"), short of reconnaissance, helps data teams cut guesswork on downstream impact, streamline collaboration, and ship changes faster—building trust through clarity.
+Recce (pronounced "wreck-E"), short for reconnaissance, helps data teams cut guesswork on downstream impact, streamline collaboration, and ship changes faster—building trust through clarity.
 
 ## Open Source vs Cloud
 Recce started as an [open source project](https://github.com/datarecce/recce) and now offers a Cloud version for teams seeking enhanced collaboration.
 
-**Open Source** is perfect for developers who want to try locally and contribute feedback, while **Cloud** provides data teams with real-time collaboration, automatic checklist sync, and PR gating.
+Our **Open Source Project** is perfect for developers who want to try locally and contribute feedback, while our **Cloud** product provides data teams with real-time collaboration, automatic checklist sync, and PR gating.
 
 [Compare options and choose what fits your team](../2-getting-started/oss-vs-cloud.md). 
 
@@ -25,7 +25,7 @@ Ready to collaborate and move faster as a team? Recce Cloud adds real-time colla
 
 👉 [Start free with cloud](../2-getting-started/start-free-with-cloud.md)
 
-Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps teams aligned, and reduces errors—so you can ship data changes with confidence. -->
+Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps teams aligned, and reduces errors, so you can ship data changes with confidence. -->
 
 
 <!-- ## Quick Start
@@ -52,11 +52,11 @@ Want to see Recce in action without setting anything up? Check out the [interact
 
 [dbt](https://www.getdbt.com/) introduced software best practices to data projects: modular SQL, version-controlled code, and reproducible pipelines.
 
-But “bad merges” still happen. Silent data errors slip through. Trust breaks when the metrics break.
+But “bad merges” still happen. Silent data errors slip into production breaking metrics, breaking stakeholder trust.
 
 As teams scale and more people contribute to data projects, it becomes harder to validate changes with confidence, especially when the impact spans multiple models or business domains.
 
-Recce brings data reconnaissance into the workflow. Instead of hoping everything’s fine, you can:
+Recce brings data reconnaissance into the workflow. We make it easy to create and standardize a data validation workflow by enabling you to:
 
 - Instantly trace dependencies down to the column level
 - Compare data and metrics before and after a change
@@ -74,7 +74,7 @@ Recce helps teams catch issues early, understand the impact of changes, and buil
 
 ## What You Get
 
-Recce gives you a clear, fast way to understand what your data changes are doing and why they matter. It helps you catch problems early, verify metrics, and share your findings with others, all as part of your normal workflow.
+Recce gives you a clear, fast way to understand what your data changes are doing and why they matter. It helps you catch problems early, verify metrics, and share your findings with others all as part of your normal workflow.
 
 ![Lineage graph supports model/column levels navigation and breaking change analysis](../assets/images/1-whats-recce/lineage-readme1.png)
 
