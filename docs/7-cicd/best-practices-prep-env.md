@@ -6,12 +6,12 @@ Recce is designed to compare two environments in your data project. To use it ef
 
 However, there are many challenges in preparing environments.
 
-1. Your **source data** might be continuously updating.
-2. Your transformations might be **time-consuming**.
-3. The base branch may have **other PRs merged** at any time.
-4. The generated environment will leave data in the warehouse, which also needs to be properly managed.
+1. Your **source data** might be continuously updating
+2. Your transformations might be **time-consuming**
+3. The base branch may have **other PRs merged** at any time
+4. The generated environment will leave data in the warehouse, which also needs to be properly managed
 
-This article will not focus on how to use Recce but rather on how to effectively prepare environments for Recce use.
+This article will not focus on how to use Recce, but rather on how to effectively prepare environments for Recce use.
 
 
 ## Best Practices
@@ -88,9 +88,9 @@ Using the production environment as the base environment is a straightforward ch
 
 This staging environment can have the following characteristics:
 
-1. Ensure that the transformed results reflect the **latest commit** of the base branch.
-2. Use the **same source data** as the PR environment.
-3. Use the **same transformation logic** as the PR environment.
+1. Ensure that the transformed results reflect the **latest commit** of the base branch
+2. Use the **same source data** as the PR environment
+3. Use the **same transformation logic** as the PR environment
 
 The basic principle is that the staging environment's configuration should be **as close as possible to the PR environments**, except for using a different git commit.
 
@@ -168,9 +168,9 @@ Recce relies on the base and current environment artifacts to find the correspon
 
 Here are a few methods you can choose:
 
-1. In CI, upload the generated artifact to the cloud storage (e.g., AWS S3).
-2. For dbt Cloud users, you can [download artifacts](https://docs.getdbt.com/dbt-cloud/api-v2#/operations/Retrieve%20Run%20Artifact) for the latest run of a given job.
-3. For GitHub Actions users, you can use the GitHub CLI (gh) to [download artifacts](https://cli.github.com/manual/gh_run_download) for the latest run of a given workflow.
+1. In CI, upload the generated artifact to the cloud storage (e.g., AWS S3)
+2. For dbt Cloud users, you can [download artifacts](https://docs.getdbt.com/dbt-cloud/api-v2#/operations/Retrieve%20Run%20Artifact) for the latest run of a given job
+3. For GitHub Actions users, you can use the GitHub CLI (gh) to [download artifacts](https://cli.github.com/manual/gh_run_download) for the latest run of a given workflow
 
 If the methods mentioned above are too complex, a stateless approach is to directly check out the base branch and run **`dbt docs generate`** to generate the artifacts.
 
@@ -205,8 +205,8 @@ dbt run-operation clear_schema --args "{'schema_name': 'pr_123'}"
 | PR           | `pr_<number>` | On Push            | # of opened PR      | 1 month, excluding this week     |
 
 
-- Automate environment generation using GitHub Actions.
-- PR Environment will only be generated automatically when the PR is up-to-date.
-- Artifacts will be stored under the workflow’s artifacts.
-- PR environments are removed on PR closed.
-- Use staging environment as the base environment for Recce.
+- Automate environment generation using GitHub Actions
+- PR Environment will only be generated automatically when the PR is up-to-date
+- Artifacts will be stored under the workflow’s artifacts
+- PR environments are removed on PR closed
+- Use staging environment as the base environment for Recce

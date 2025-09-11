@@ -53,11 +53,11 @@ In the current version, Recce provides two ways to compare the query result betw
 
 **Query diff occurs in the client side:**
 
-Without providing primary key(s) upfront, AdHoc query compare in the client side. That is, Recce fetches the first 2,000 rows and compare in the client side. The advantage is it has more flexibility to query sql for no PK, especially when column structures differ or no clear primary key exists.
+Without primary keys provided upfront, adhoc queries will compare results on the client side. That is, Recce fetches the first 2,000 rows and compare in the client side. The advantage is it has more flexibility to query sql for no PK, especially when column structures differ or no clear primary key exists.
 However, the limitation is that we cannot find the mismatched rows in a big query result.
 
 **Query diff occurs in the warehouse:**
 
-With primary key(s) given, it can perform a query diff in the warehouse. It only displays changed, added, or removed rows. Therefore, if only one record is different among a million, that specific record will be visible. Hence, it also reduces the amount of data transferred.
+When primary keys are given, it can perform a query diff in the warehouse. It will only display changed, added, or removed rows. Meaning, if only one record is different among a million, that specific record will be visible. Thus reducing the amount of data transferred.
 
 Another similar feature is [Value Diff](lineage.md#value-diff). Value diff is based on a chosen model, so you don’t need to write SQL to operate it, though it naturally offers less flexibility. Additionally, value diff can show a summary or actual diff records, whereas query diff only shows the actual diff records.

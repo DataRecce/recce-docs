@@ -13,7 +13,7 @@ To configure the preset checks, add the settings to the [recce config file](../8
 
 1. Add a check to your checklist
     ![alt text](../assets/images/7-cicd/preset-checks-prep.png){: .shadow}
-2. Open the menu for the check and select **Get Preset Check Template**.
+2. Open the menu for the check and select **Get Preset Check Template**
 3. Copy the yaml config from the dialog
     ![alt text](../assets/images/7-cicd/preset-checks-template.png){: .shadow}
 
@@ -40,9 +40,9 @@ To configure the preset checks, add the settings to the [recce config file](../8
 
 ### Recce Server
 
-1. When a new Recce instance is launched, all preset checks are automatically set up, but these checks are not executed at this time.
+1. When a new Recce instance is launched, all preset checks are automatically set up, but these checks are not executed at this time
     ![alt text](../assets/images/7-cicd/preset-checks.png){: .shadow}
-2. When the **Run Query** button is pressed, the check will be executed.
+2. When the **Run Query** button is pressed, the check will be executed
 
 ### Recce Run
 
@@ -69,7 +69,7 @@ To configure the preset checks, add the settings to the [recce config file](../8
     ```shell
     recce server recce_state.json
     ```
-3. You can show the summary of the state by the [recce summary](./recce-summary.md) command
+3. You can show the summary of the state by the [recce summary](./recce-summary.md) command.
     ```shell
     recce summary recce_state.json
     ```

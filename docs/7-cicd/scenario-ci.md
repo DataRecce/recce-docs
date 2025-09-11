@@ -32,8 +32,8 @@ We suggest setting up two GitHub Actions workflows in your GitHub repository. On
 
 This workflow will perform the following actions:
 
-1. Run dbt on the base environment.
-2. Upload the generated DBT artifacts to [GitHub workflow artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) for later use.
+1. Run dbt on the base environment
+2. Upload the generated DBT artifacts to [GitHub workflow artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) for later use
 
 ```yaml
 name: Recce CI Base Branch
@@ -88,10 +88,10 @@ jobs:
 
 This workflow will perform the following actions:
 
-1. Run dbt on the PR environment.
-2. Download previously generated base artifacts from base workflow.
-3. Use Recce to compare the PR environment with the downloaded base artifacts.
-4. Use Recce to generate the summary of the current changes and post it as a comment on the pull request. Please refer to the [Recce Summary](./recce-summary.md) for more information.
+1. Run dbt on the PR environment
+2. Download previously generated base artifacts from base workflow
+3. Use Recce to compare the PR environment with the downloaded base artifacts
+4. Use Recce to generate the summary of the current changes and post it as a comment on the pull request. Please refer to the [Recce Summary](./recce-summary.md) for more information
 
 ````yaml
 name: Recce CI PR Branch

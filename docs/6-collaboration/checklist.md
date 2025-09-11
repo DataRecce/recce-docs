@@ -34,9 +34,9 @@ An example performing a Top-K diff and adding the results to the Checklist:
 
 The Recce Checklist provides a way to record the results of a data check during change exploration. The purpose of adding Checks to the Checklist is to enable you to:
 
-- Save Checks with notes of your interpretation of the data.
-- Re-run checks following further data modeling changes.
-- Share Checks as part of PR or stakeholder review.
+- Save Checks with notes of your interpretation of the data
+- Re-run checks following further data modeling changes
+- Share Checks as part of PR or stakeholder review
 
 ## Preset Check
 

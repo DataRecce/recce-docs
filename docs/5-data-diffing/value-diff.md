@@ -5,7 +5,7 @@ title: Value Diff
 
 Value Diff shows the matched count and percentage for each column in the table. It uses the primary key(s) to uniquely identify the records between the model in both environments.
 
-The primary key is automatically inferred by the first column with the [unique](https://docs.getdbt.com/reference/resource-properties/data-tests#unique) test. If no primary key is detected at least one column is required to be specified as the primary key.
+The primary key (PK) is automatically inferred by the first column with the [unique](https://docs.getdbt.com/reference/resource-properties/data-tests#unique) test. If no primary key is detected at least one column is required to be specified as the primary key.
 
 <figure markdown>
   ![Recce Value Diff](../assets/images/5-data-diffing/value-diff.png)

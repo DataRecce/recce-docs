@@ -6,10 +6,10 @@ title: State File
 
 The state file represents the serialized state of a Recce instance. It is a JSON-formatted file containing the following information:
 
-- **Checks**: Data from the checks added to the checklist on the Checklist page.
-- **Runs**: Each diff execution in Recce corresponds to a run, similar to a query in a data warehouse. Typically, a single run submits a series of queries to the warehouse and retrieves the final results.
-- **Environment Artifacts**: Includes `manifest.json` and `catalog.json` files for both the base and current environments.
-- **Runtime Information**: Metadata such as Git branch details and pull request (PR) information from the CI runner.
+- **Checks**: Data from the checks added to the checklist on the Checklist page
+- **Runs**: Each diff execution in Recce corresponds to a run, similar to a query in a data warehouse. Typically, a single run submits a series of queries to the warehouse and retrieves the final results
+- **Environment Artifacts**: Includes `manifest.json` and `catalog.json` files for both the base and current environments
+- **Runtime Information**: Metadata such as Git branch details and pull request (PR) information from the CI runner
 
 ## How to Save the State File
 

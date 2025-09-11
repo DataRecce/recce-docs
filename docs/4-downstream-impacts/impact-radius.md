@@ -134,8 +134,8 @@ Two core features power the impact radius analysis:
 With the insights from the two features above, Recce determines the impact radius:
 
 1. If a model has a **breaking change**, include all downstream models in the impact radius.
-1. If a model has a **non-breaking change**, include only the downstream columns and models of newly added columns.
-1. If a model has a **partial breaking change**, include the downstream columns and models of added, removed, or modified columns.
+2. If a model has a **non-breaking change**, include only the downstream columns and models of newly added columns.
+3. If a model has a **partial breaking change**, include the downstream columns and models of added, removed, or modified columns.
 
 
 

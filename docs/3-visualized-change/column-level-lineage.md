@@ -4,7 +4,7 @@ title: Column-Level Lineage
 
 Column-Level Lineage provides visibility into the upstream and downstream relationships of a column.
 
-Common use-cases for column-level lineage are
+Common use-cases for column-level lineage are:
 
 1. **Source Exploration**: During development, column-level lineage helps you understand how a column is derived.
 2. **Impact Analysis**: When modifying the logic of a column, column-level lineage enables you to assess the potential impact across the entire DAG.
@@ -33,7 +33,7 @@ The transformation type is also displayed for each column, which will help you u
 | Pass-through  |The column is directly selected from the upstream table. |
 | Renamed | The column is selected from the upstream table but with a different name. |
 | Derived | The column is created through transformations applied to upstream columns, such as calculations, conditions, functions, or aggregations. |
-| Source | The column is not derived from any upstream data. It may originate from a seed/source node, literal value, or data generation function. |
-| Unknown | We have no information about the transformation type. This could be due to a parse error, or other unknown reason. |
+| Source | The column is not derived from any upstream data. It may originate from a seed/source node, literal value or data generation function. |
+| Unknown | We have no information about the transformation type. This could be due to a parse error or other unknown reason. |
 
 

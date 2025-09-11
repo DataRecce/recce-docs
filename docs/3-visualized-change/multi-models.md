@@ -20,9 +20,9 @@ To select multiple models individually, click the checkbox on the models you wis
 
 To select a node and all of its parents or children:
 
-1. Click the checkbox on the node.
-2. Right-click the node.
-3. Click to select either parent or child models.
+1. Click the checkbox on the node
+2. Right-click the node
+3. Click to select either parent or child models
 
 <figure markdown>
   ![Select a node and its parents or children](../assets/images/3-visualized-change/select-node-children.gif){: .shadow}
@@ -88,7 +88,7 @@ Since Recce uses dbt's built-in node selector, it supports most of the selecting
 
 ### Use `state` method
 
-In dbt, you need to specify the `--state` option in the CLI. In Recce, we use the base environment as the state, allowing you to use the selector on the fly.
+In dbt, you need to specify the `--state` option in the CLI. In Recce we use the base environment as the state, allowing you to use the selector on the fly.
 
 
 ### Removed models
@@ -97,7 +97,7 @@ Another difference is that in dbt, you cannot select removed models. However, in
 
 ## Supported Diff
 
-In addition to lineage diff, other types of diff also support node selection. You can find these features in the **...** button in the top right corner. Currently supported diffs include:
+In addition to lineage diff, other types of diff also support node selection. You can find these features in the **...** button in the top right corner. Currently supported node-based diffs include:
 
 - Lineage diff
 - Row count diff

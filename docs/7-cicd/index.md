@@ -4,7 +4,7 @@ icon: material/hand-wave-outline
 ---
 
 ## What is Recce Cloud?
-Recce Cloud is a data collaboration platform for teams doing data validation, impact analysis, and pull requests reviews. It helps data teams catch issues early, understand downstream impacts, and communicate changes clearly—all in one shared workspace. Instead of working alone in a local dev environment, teams can explore lineage, run custom queries, and validate metrics together, speeding up reviews and building trust across stakeholders.
+Recce Cloud is a data collaboration platform for teams doing data validation, impact analysis, and pull requests reviews. It helps data teams catch issues early, understand downstream impacts, and communicate changes clearly in one shared workspace. Instead of working in an isolated local environment, teams can explore lineage, run custom queries, and validate metrics together in a cloud-hosted environment.
 
 - [Learn more about different plans](https://reccehq.com/pricing)
 - Follow the [Getting Started](/get-started/) guide
@@ -14,9 +14,9 @@ Recce Cloud integrates with GitHub to support validation in your PR workflow. Th
 
 ### Prerequisite
 1. Sign in [Recce cloud](https://cloud.reccehq.com/)
-2. Click **Install** button to install Recce Cloud GitHub app to your personal or organization account.
-3. Authorize the repositories to the GitHub app.
-4. Prepare the GitHub personal access token with the `repo` permission. Please see the [GitHub document](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). And set it to your environment variable.
+2. Click **Install** button to install Recce Cloud GitHub app to your personal or organization account
+3. Authorize the repositories to the GitHub app
+4. Prepare the GitHub personal access token with the `repo` permission. Please see the [GitHub document](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). And set it to your environment variable
    ```
    export GITHUB_TOKEN=<token>
    ```
@@ -36,8 +36,8 @@ Recce Cloud integrates with GitHub to support validation in your PR workflow. Th
    git checkout -b <my-awesome-feature>
    ```
 1. Develop your features and prepare the dbt artifacts for the base (`target-base/`) and current (`target/`) environments.
-1. Create a pull request for this branch. Recce Cloud requires an open pull request in your GitHub repository. It also stores the latest Recce state for each pull request.
-1. Launch the Recce instance in the cloud mode. It will use the dbt artifacts in the local `target` and `target-base` and initiate a new review state if necessary.
+2. Create a pull request for this branch. Recce Cloud requires an open pull request in your GitHub repository. It also stores the latest Recce state for each pull request.
+3. Launch the Recce instance in the cloud mode. It will use the dbt artifacts in the local `target` and `target-base` and initiate a new review state if necessary.
    ```
    recce server --cloud
    ```
@@ -51,7 +51,7 @@ Recce Cloud integrates with GitHub to support validation in your PR workflow. Th
 If the review state is already available for this PR, you can open the Recce instance to review.
 
 1. Checkout the branch for the reviewed PR.
-1. Launch the Recce instance to review this PR
+2. Launch the Recce instance to review this PR
     ```
     recce server --review --cloud
     ```
@@ -105,14 +105,14 @@ recce summary --cloud > summary.md
 
 ### Recce cloud
 
-The cloud subcommand in recce provides functionality for managing state files in cloud storage.
+The cloud subcommand in Recce provides functionality for managing state files in cloud storage.
 
 #### purge
 
 You can purge the state from your current PR. It is useful when
 
 1. You forgot the password
-1. You would like to reset the state of this PR.
+1. You would like to reset the state of this PR
 
 ```shell
 git checkout <pr-branch>
@@ -139,6 +139,6 @@ recce cloud download
 
 ## GitHub Pull Request Status Check
 
-Recce Cloud integrate with the [GitHub Pull Request Status Check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks). If there is recce review state synced to a PR, the PR would have a recce cloud check status. Once all checks in recce are approved, the check status would change to passed and ready to be merged.
+Recce Cloud integrate with the [GitHub Pull Request Status Check](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks). If there is Recce review state synced to a PR, the PR would have a Recce cloud check status. Once all checks in Recce are approved, the check status would change to passed and ready to be merged.
 
 ![alt text](../assets/images/recce-cloud/pr-checks-all-approved.png){: .shadow}
