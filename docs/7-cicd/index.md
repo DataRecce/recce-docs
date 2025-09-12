@@ -1,6 +1,5 @@
 ---
 title: Overview
-icon: material/hand-wave-outline
 ---
 
 ## What is Recce Cloud?
