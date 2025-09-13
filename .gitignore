@@ -83,10 +83,4 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-# Claude checking py
-check_images.py
-update_image_paths.py
-move_images.py
-analyze_image_usage.py
-check_links.py
-check_active_docs.py
+

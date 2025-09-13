@@ -124,7 +124,7 @@ Two core features power the impact radius analysis:
 - **Non-breaking changes**: Do not impact any downstream **models**
 - **Partial breaking changes**: Impact only downstream **models or columns** that depend on the modified columns
 
-**[Column-level lineage](./column-level-lineage.md)** analyzes your model's SQL to identify column-level dependencies:
+**[Column-level lineage](../3-visualized-change/column-level-lineage.md)** analyzes your model's SQL to identify column-level dependencies:
 
 - Which upstream **columns** are used as filters or grouping keys. If those upstream **columns** change, the current **model** is impacted.
 - Which upstream **columns** a specific column references. If those upstream **columns** change, the specific **column** is impacted.

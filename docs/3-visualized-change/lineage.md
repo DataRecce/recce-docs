@@ -34,12 +34,12 @@ In the top control bar, you can change the rule to filter the nodes:
    - **Changed Models:** Modified nodes and their downstream + 1st degree of their parents.
    - **All:** Show all nodes.
 1. **Package:** Filter by dbt package names.
-1. **Select:** Select nodes by [node selection](./node-selection.md).
-1. **Exclude:** Exclude nodes by [node selection](./node-selection.md).
+1. **Select:** Select nodes by [node selection](./multi-models.md).
+1. **Exclude:** Exclude nodes by [node selection](./multi-models.md).
 
 ### Select Nodes
 
-Click a node to select it, or click the **Select nodes** button in the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](#multi-nodes-selection) section
+Click a node to select it, or click the **Select nodes** button in the top-right corner to select multiple nodes for further operations. For detail, see the [Multi Nodes Selections](./multi-models.md) section
 
 ### Row Count Diff
 
@@ -138,7 +138,7 @@ From any model's node details panel, you can view the exact code changes that we
 - How transformations changed
 - Why data differences might be occurring
 
-Learn more about viewing and analyzing code changes in the [Code Diff guide](code-diff.md).
+Learn more about viewing and analyzing code changes in the [Code Diff guide](code-change.md).
 
 
 ## Node Details

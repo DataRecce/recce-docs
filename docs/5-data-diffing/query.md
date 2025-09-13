@@ -60,4 +60,4 @@ However, the limitation is that we cannot find the mismatched rows in a big quer
 
 When primary keys are given, it can perform a query diff in the warehouse. It will only display changed, added, or removed rows. Meaning, if only one record is different among a million, that specific record will be visible. Thus reducing the amount of data transferred.
 
-Another similar feature is [Value Diff](lineage.md#value-diff). Value diff is based on a chosen model, so you don’t need to write SQL to operate it, though it naturally offers less flexibility. Additionally, value diff can show a summary or actual diff records, whereas query diff only shows the actual diff records.
+Another similar feature is [Value Diff](value-diff.md). Value diff is based on a chosen model, so you don't need to write SQL to operate it, though it naturally offers less flexibility. Additionally, value diff can show a summary or actual diff records, whereas query diff only shows the actual diff records.

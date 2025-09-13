@@ -35,7 +35,7 @@ Best suited for quick exploration before moving to structured validation using D
 
 To compare changes, Recce needs a baseline. This guide explains the concept of Diff in Recce and how it fits into data validation workflows. Setup steps vary by environment, so this guide focuses on the core ideas rather than copy-paste instructions.
 
-For a concrete example, refer to the [5-minute Jaffle Shop tutorial](./get-started-jaffle-shop/).
+For a concrete example, refer to the [5-minute Jaffle Shop tutorial](./get-started-jaffle-shop.md).
 
 To configure a comparison in Recce, two components are required:
 

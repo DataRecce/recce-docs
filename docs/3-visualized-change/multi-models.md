@@ -61,8 +61,8 @@ An example of selecting multiple models to perform a multi-node Value Diff:
 
 From the Lineage DAG, click the Actions dropdown menu and click Lineage Diff or Schema Diff from the Add to Checklist section. This will add:
 
-- Lineage Diff: The current Lineage view, dependent on your <a href="#select-models">model selection</a> options.
-- Schema Diff: A diff of all models if none are selected, or specific <a href="#multi-node-selection">selected models</a>.
+- Lineage Diff: The current Lineage view, dependent on your [model selection](./lineage.md#select-nodes) options.
+- Schema Diff: A diff of all models if none are selected, or [specific selected models](#multi-models-selection).
 
 <figure markdown>
   ![Add a Lineage Diff Check or Schema Check via the Actions dropdown menu](../assets/images/3-visualized-change/actions-dropdown.png){: .shadow}
@@ -71,7 +71,7 @@ From the Lineage DAG, click the Actions dropdown menu and click Lineage Diff or 
 
 
 
-Recce supports dbt [node selection](https://docs.getdbt.com/reference/node-selection/syntax) in the [lineage diff](./lineage.md#lineage-diff). This enables you to target specific resources with data checks by selecting or excluding models.
+Recce supports dbt [node selection](https://docs.getdbt.com/reference/node-selection/syntax) in the [lineage diff](./lineage.md). This enables you to target specific resources with data checks by selecting or excluding models.
 
 ## Supported syntax and methods
 

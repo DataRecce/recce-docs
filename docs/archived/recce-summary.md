@@ -59,7 +59,7 @@ model.jaffle_shop.customer_order_pattern["customer_order_pattern"]
 | Query diff of customers avg lifetime value | Query Diff  | N/A            |
 ````
 
-The rendered output will look like this. [Example Output](./recce-summary-example.md)
+<!-- The rendered output will look like this. [Example Output](./recce-summary-example.md) -->
 
 ## Content of the Summary
 

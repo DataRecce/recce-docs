@@ -12,7 +12,7 @@ Recce started as an [open source project](https://github.com/datarecce/recce) an
 
 Our **Open Source Project** is perfect for developers who want to try locally and contribute feedback, while our **Cloud** product provides data teams with real-time collaboration, automatic checklist sync, and PR gating.
 
-[Compare options and choose what fits your team](../2-getting-started/oss-vs-cloud.md). 
+[Compare options and choose what fits your team](2-getting-started/oss-vs-cloud.md). 
 
 <!-- ## Recce Cloud
 
@@ -23,7 +23,7 @@ Ready to collaborate and move faster as a team? Recce Cloud adds real-time colla
 - Block merges until all checks are approved
 - Launch Recce from your automated workflows with full context
 
-👉 [Start free with cloud](../2-getting-started/start-free-with-cloud.md)
+👉 [Start free with cloud](2-getting-started/start-free-with-cloud.md)
 
 Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps teams aligned, and reduces errors, so you can ship data changes with confidence. -->
 
@@ -76,15 +76,15 @@ Recce helps teams catch issues early, understand the impact of changes, and buil
 
 Recce gives you a clear, fast way to understand what your data changes are doing and why they matter. It helps you catch problems early, verify metrics, and share your findings with others all as part of your normal workflow.
 
-![Lineage graph supports model/column levels navigation and breaking change analysis](../assets/images/1-whats-recce/lineage-readme1.png)
+![Lineage graph supports model/column levels navigation and breaking change analysis](assets/images/1-whats-recce/lineage-readme1.png)
 
 Lineage graph supports model/column levels navigation and breaking change analysis.
 
-![Model and column level diff](../assets/images/1-whats-recce/diff-readme2.png)
+![Model and column level diff](assets/images/1-whats-recce/diff-readme2.png)
 
 Model and column level diff
 
-![Checklist for collaboration](../assets/images/1-whats-recce/checklist-readme3.png)
+![Checklist for collaboration](assets/images/1-whats-recce/checklist-readme3.png)
 
 Checklist for collaboration
 

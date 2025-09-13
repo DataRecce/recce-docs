@@ -36,7 +36,7 @@ Another core feature of Recce is its various checks, which allow us to compare k
 
 ## Share the Recce File
 
-If you want the reviewer to access your environment, you can also attach the [Recce state file](../features/state-file.md) to the PR comment.
+If you want the reviewer to access your environment, you can also attach the [Recce state file](../8-technical-concepts/state-file.md) to the PR comment.
 
 **As a Submitter**
 

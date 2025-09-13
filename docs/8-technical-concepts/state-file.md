@@ -25,11 +25,11 @@ There are multiple ways to save the state file.
    recce server my_recce_state.json
    ```
 
-1. **Use the `run` Command**: For more complex dbt projects with a CI/CD process, where dbt transformations are executed and results are placed in a PR-specific environment, you can integrate the [recce run](./recce-run.md) command into your workflow. This allows reviewers to easily audit results and decide whether a merge can proceed.
+<!-- 1. **Use the `run` Command**: For more complex dbt projects with a CI/CD process, where dbt transformations are executed and results are placed in a PR-specific environment, you can integrate the [recce run](./recce-run.md) command into your workflow. This allows reviewers to easily audit results and decide whether a merge can proceed.
    ```
    # create state file at recce_state.json
    recce run
-   ```
+   ``` -->
 
 
 ## How to Use the State File
