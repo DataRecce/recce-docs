@@ -276,4 +276,4 @@ recce server --cloud --review
 
 **Review in the GitHub codespace**
 
-Please see [GitHub Codespaces](./setup-gh-codespaces.md) integration.
+Please see [GitHub Codespaces](setup-gh-codespaces.md) integration.

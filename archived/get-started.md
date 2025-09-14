@@ -47,5 +47,5 @@ Best suited for quick exploration before moving to structured validation using D
 
 Tests may pass, but business logic or edge cases can still cause unexpected results. Comparing **before and after** helps confirm impact, validate intent, and catch issues early.
 
-👉 See [Configure Diff](./configure-diff.md)
+👉 See [Configure Diff](configure-diff.md)
 

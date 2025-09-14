@@ -84,7 +84,7 @@ Once you complete [Recce Cloud setup](index.md/#sign-up-the-recce-cloud), you ca
 
 ## Troubleshooting
 
-If this is your first time setting up a Codespace, it’s recommended to first [test locally](./getting-started-recce-cloud.md#review-the-pr) with the following commands:
+If this is your first time setting up a Codespace, it’s recommended to first [test locally](getting-started-recce-cloud.md#review-the-pr) with the following commands:
 
 ```shell
 git checkout feature/recce-getting-started
