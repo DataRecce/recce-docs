@@ -63,7 +63,7 @@ nav:
           - 4-downstream-impacts/breaking-change-analysis.md
           #- 4-downstream-impacts/transformation-types.md
       - Data Diffing:
-          - 5-data-diffing/row-count-diff.md  
+          - 5-data-diffing/row-count-diff.md
           - 5-data-diffing/profile-diff.md
           - 5-data-diffing/value-diff.md
           - 5-data-diffing/topK-diff.md
@@ -74,24 +74,24 @@ nav:
           - 6-collaboration/share.md
       - CI/CD:
           #- 7-cicd/setup-cd.md
-          #- Development
-          - 7-cicd/scenario-dev.md #should be indented under Development
-          #- 7-cicd/recce-debug.md # content outdated 
-          #- Continuous Integration
+          - Development:
+            - 7-cicd/scenario-dev.md
+          #- 7-cicd/recce-debug.md # content outdated
+          - Continuous Integration:
             #- 7-cicd/setup-ci.md
             #- 7-cicd/cloud-recce-summary.md
             #- 7-cicd/cloud-preset-checks.md
-          - 7-cicd/scenario-pr-review.md #should be indented under Continuous Integration
-          #- CI/CD for Open Source
-          - 7-cicd/scenario-ci.md #should be indented under CI/CD for Open Source
+            - 7-cicd/scenario-pr-review.md
+          - CI/CD for Open Source:
+            - 7-cicd/scenario-ci.md
           #- 7-cicd/recce-summary.md content outdated
-          - 7-cicd/preset-checks.md 
+          - 7-cicd/preset-checks.md
           - 7-cicd/best-practices-prep-env.md
-          
+
       - Technical Concepts:
           - 8-technical-concepts/state-file.md
           - 8-technical-concepts/configuration.md
-  
+
   - Blog: "https://blog.reccehq.com"
   - Start Free: "https://cloud.reccehq.com/"
 
