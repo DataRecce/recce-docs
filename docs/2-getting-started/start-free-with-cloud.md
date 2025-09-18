@@ -12,11 +12,11 @@ title: Start free with Cloud
 
 ### Upload your artifacts
 
-- **Best if**: You want to try without GitHub permissions  
+- **Best if**: You want to try without GitHub permissions
 - **You get**: Launch Recce with your actual dbt project
 - **Setup**: Upload your development and production artifacts locally
 - **Immediate value**: See your real project lineage and metadata diffs
-- ✨ **You'll know it's working when**: Your modesl appear in the lineage graph
+- ✨ **You'll know it's working when**: Your models appear in the lineage graph
 
 <br>
 If you don't have a dbt project, you can just click "Launch" to see the Jaffle Shop sample project loaded.
@@ -31,12 +31,12 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 
 ## Step 2: Launch Recce → See Metadata Diffing
 
-**What you just unlocked**: 
+**What you just unlocked**:
 
 - ✅ **Lineage visualization** of your models
-- ✅ **Metadata comparison** between changes and production  
+- ✅ **Metadata comparison** between changes and production
 - ✅ **Change detection** automatically highlighted
-- ✅ **Column-level impact analysis** 
+- ✅ **Column-level impact analysis**
 
 **You can now**: Explore which models changed and understand downstream impact
 
@@ -46,11 +46,11 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 
 - **What you'll unlock**: Compare actual data between development and production
 - **Setup needed**: Configure your data warehouse connection (1 action)
-- **New value**: 
-    - ✅ **Value diff** - see row count changes
-    - ✅ **Profile diff** - compare data distributions  
-    - ✅ **Schema diff** - spot structure changes
-    - ✅ **Custom query comparisons** - run any SQL side-by-side
+- **New value**:
+  - ✅ **Value diff** - see row count changes
+  - ✅ **Profile diff** - compare data distributions
+  - ✅ **Schema diff** - spot structure changes
+  - ✅ **Custom query comparisons** - run any SQL side-by-side
 
 **You can now**: Validate that your data changes work correctly
 
@@ -61,9 +61,9 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 - **What you'll unlock**: Automatic validation on every PR
 - **Setup needed**: [Set up automated workflows](../7-cicd/scenario-ci.md)
 - **Ultimate value**:
-    - ✅ **Automatic PR checks** - validation runs on every push
-    - ✅ **Team workflows** - standardized validation across team
-    - ✅ **PR blocking** - prevent bad changes from merging
+  - ✅ **Automatic PR checks** - validation runs on every push
+  - ✅ **Team workflows** - standardized validation across team
+  - ✅ **PR blocking** - prevent bad changes from merging
 
 ## What's Next?
 
@@ -73,4 +73,4 @@ After launching Recce, explore:
 - [View downstream impacts](../4-downstream-impacts/impact-radius.md)
 - [Data diffing](../5-data-diffing/query.md)
 
-**Questions?** [Join our Discord](../1-whats-recce/community-support.md) - we're here to help! 
+**Questions?** [Join our Discord](../1-whats-recce/community-support.md) - we're here to help!
