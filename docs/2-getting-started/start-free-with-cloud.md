@@ -47,10 +47,10 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 - **What you'll unlock**: Compare actual data between development and production
 - **Setup needed**: Configure your data warehouse connection (1 action)
 - **New value**:
-  - ✅ **Value diff** - see row count changes
-  - ✅ **Profile diff** - compare data distributions
-  - ✅ **Schema diff** - spot structure changes
-  - ✅ **Custom query comparisons** - run any SQL side-by-side
+    - ✅ **Value diff** - see row count changes
+    - ✅ **Profile diff** - compare data distributions
+    - ✅ **Schema diff** - spot structure changes
+    - ✅ **Custom query comparisons** - run any SQL side-by-side
 
 **You can now**: Validate that your data changes work correctly
 
@@ -61,9 +61,9 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 - **What you'll unlock**: Automatic validation on every PR
 - **Setup needed**: [Set up automated workflows](../7-cicd/scenario-ci.md)
 - **Ultimate value**:
-  - ✅ **Automatic PR checks** - validation runs on every push
-  - ✅ **Team workflows** - standardized validation across team
-  - ✅ **PR blocking** - prevent bad changes from merging
+    - ✅ **Automatic PR checks** - validation runs on every push
+    - ✅ **Team workflows** - standardized validation across team
+    - ✅ **PR blocking** - prevent bad changes from merging
 
 ## What's Next?
 
