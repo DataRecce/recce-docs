@@ -1,5 +1,5 @@
 ---
-title: Development
+title: Development Overview
 ---
 
 In developing a project with dbt, there are numerous methods available to help you query warehouse data for validation. Recce allows for further comparison with production or a specific baseline environment.
