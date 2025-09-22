@@ -4,73 +4,168 @@ title: Start free with Cloud
 
 # Start Free with Recce Cloud
 
-**Launch Recce in under 2 minutes** to validate your data changes. We offer two paths to getting started.
+**Launch Recce in under 2 minutes**. Each following feature provides additional value. The progressive features help you get more value from Recce over time.
 
 👉 **[Start Free →](https://cloud.reccehq.com)**
 
-## Step 1: Get Ready to Launch Recce
+## Model Changes and Impact Analysis
 
-### Upload your artifacts
+Recce shows what changed between **base** and **current** environments and helps assess potential impact.
 
-- **Best if**: You want to try without GitHub permissions
-- **You get**: Launch Recce with your actual dbt project
-- **Setup**: Upload your development and production artifacts locally
-- **Immediate value**: See your real project lineage and metadata diffs
-- ✨ **You'll know it's working when**: Your models appear in the lineage graph
+**Upload your metadata:**
 
-<br>
-If you don't have a dbt project, you can just click "Launch" to see the Jaffle Shop sample project loaded.
+1. Click "Update" in base session to upload baseline metadata
+2. Click "Update" in current session to upload comparison metadata
+3. Click "Launch" to compare current against base
 
-### Connect to view all your PR
+**Or explore with sample data:** Skip uploads and launch with pre-loaded sample data.
 
-- **Best if**: You have a current PR and GitHub permissions
-- **You get**: List all your PRs and validate any of them
-- **Setup**: Connect GitHub (installs Recce app) and upload your PR snapshots
-- **Immediate value**: See all PRs and do validation
-- ✨ **You'll know it's working when**: Your PRs appear in a the project
+<!-- insert a video -->
 
-## Step 2: Launch Recce → See Metadata Diffing
+### Required Files
 
-**What you just unlocked**:
+Recce needs `manifest.json` and `catalog.json` from both **base** and **current** environments for comparison.
 
-- ✅ **Lineage visualization** of your models
-- ✅ **Metadata comparison** between changes and production
-- ✅ **Change detection** automatically highlighted
-- ✅ **Column-level impact analysis**
+### Base Metadata
 
-**You can now**: Explore which models changed and understand downstream impact
+Production environment is commonly used as the baseline, but any environment can serve as the base.
 
-✨ **You'll know it's working when**: You see colored nodes showing changed models in the lineage view
+Choose one method:
 
-## Step 3: Unlock Data Diffing → Real Data Validation
+**Method 1: Generate locally**
 
-- **What you'll unlock**: Compare actual data between development and production
-- **Setup needed**: Configure your data warehouse connection (1 action)
-- **New value**:
-    - ✅ **Value diff** - see row count changes
-    - ✅ **Profile diff** - compare data distributions
-    - ✅ **Schema diff** - spot structure changes
-    - ✅ **Custom query comparisons** - run any SQL side-by-side
+```
+dbt docs generate --target-path target-base --target <your_prod_target>
+```
 
-**You can now**: Validate that your data changes work correctly
 
-✨ **You'll know it's working when**: You can run "Value Diff" and see actual row count comparisons
+**Method 2: dbt Cloud**<br>
+Deploy → Jobs → Production job → Recent run → Download artifacts
 
-## Step 4: Automate Everything → CI/CD Integration
+**Method 3: dbt Docs server**<br>
+Download directly from URLs:
 
-- **What you'll unlock**: Automatic validation on every PR
-- **Setup needed**: [Set up automated workflows](../7-cicd/scenario-ci.md)
-- **Ultimate value**:
-    - ✅ **Automatic PR checks** - validation runs on every push
-    - ✅ **Team workflows** - standardized validation across team
-    - ✅ **PR blocking** - prevent bad changes from merging
+- `<dbt_docs_url>/manifest.json`
+- `<dbt_docs_url>/catalog.json`
 
-## What's Next?
+### Current Metadata
 
-After launching Recce, explore:
+Use development environment or PR branch as current to compare against the base.
 
-- [View modified](../3-visualized-change/lineage.md)
-- [View downstream impacts](../4-downstream-impacts/impact-radius.md)
-- [Data diffing](../5-data-diffing/query.md)
+Choose one method:
 
-**Questions?** [Join our Discord](../1-whats-recce/community-support.md) - we're here to help!
+**Method 1: Generate locally**
+
+```
+dbt docs generate --target <your_dev_target>
+```
+
+**Method 2: dbt Cloud**<br>
+Deploy → Jobs → CI job → Recent run → Download artifacts
+
+## Data Warehouse Diffing {#data-diffing}
+
+Go beyond metadata to see how changes affect your actual data. Configure your data warehouse connection to compare query results and catch issues before they impact production.
+
+### Setup Requirements
+
+- Data warehouse credentials with read access
+- Network connectivity to your warehouse
+- Base and current environments configured in previous step
+
+### Supported Warehouses
+
+- Snowflake
+- others are on upcoming future
+
+### Warehouse Connection
+
+Configure connection to your data warehouse to enable query result comparisons.
+
+**Connection setup:**
+
+1. Navigate to [settings](https://cloud.reccehq.com/settings#organization)
+2. Add Connection
+
+Your connection credentials are secure. See our [security practices](https://reccehq.com/security/) for details.
+
+<!-- insert a video -->
+
+### How to Use Data Diffing
+
+Recce supports several data diffing methods. See Data Diffing sections for details:
+
+- [Row Count Diff](/5-data-diffing/row-count-diff)
+- [Profile Diff](/5-data-diffing/profile-diff/)
+- [Value Diff](5-data-diffing/value-diff/)
+- [Top-K Diff](/5-data-diffing/topK-diff/)
+- [Histogram Diff](/5-data-diffing/histogram-diff/)
+- [Query](/5-data-diffing/query/)
+
+## GitHub Integration {#github-integration}
+
+Connect your GitHub repo to see all PRs in one place and validate changes before they hit production.
+
+### Setup Requirements
+
+- GitHub repository with dbt project
+- Repository admin access for initial setup
+- Active PRs with model changes
+
+**Note:** You'll need administrative access to the GitHub organization you want to connect. Please ensure you have the necessary permissions for **GitHub App installations**.
+
+### GitHub Connection
+
+Connect your repository to track pull requests and validate changes.
+
+**Connection setup:**
+
+1. Navigate to settings
+2. Connect GitHub repository
+3. Authorize Recce access
+4. Select repository
+
+<!-- insert a video -->
+
+### How to Use PR Tracking
+
+Once connected, Recce displays all open and draft PRs in your dashboard.
+
+### PR Validation Workflow
+
+- View open/draft PRs in dashboard
+- Select PR to validate
+- Upload PR metadata (until CI/CD is configured)
+- Launch Recce to analyze changes
+
+
+## CI/CD Automation {#cicd-automation}
+
+Set up CI/CD to automatically upload metadata and run validation checks on every PR. Available with Team plan (free trial included).
+
+### Setup Requirements
+
+- GitHub integration configured
+- Team plan subscription or free trial
+
+### Automation Benefits
+
+- Automatic metadata upload on every PR
+- Consistent validation across all PRs
+- Reduced manual setup steps
+- Integrated PR status checks
+- Validation results directly in PR
+
+### Team Plan Trial
+
+Start your free trial to access CI/CD automation features. No credit card required for trial period.
+
+### Setup Details
+
+See the CI/CD sections for complete setup guides:
+
+<!-- - Setup CD -->
+<!-- - CI pipeline configuration -->
+- [Development workflow setup](7-cicd/scenario-dev/)
+- [Open source CI/CD setup](7-cicd/scenario-ci/)
+- [Best practices for environment preparation](7-cicd/best-practices-prep-env)
