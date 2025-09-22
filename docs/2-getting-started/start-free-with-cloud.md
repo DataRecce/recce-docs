@@ -26,7 +26,7 @@ Recce shows what changed between **base** and **current** environments and helps
 
 Recce needs `manifest.json` and `catalog.json` from both **base** and **current** environments for comparison.
 
-### Base Metadata
+#### Base Metadata
 
 Production environment is commonly used as the baseline, but any environment can serve as the base.
 
@@ -48,7 +48,7 @@ Download directly from URLs:
 - `<dbt_docs_url>/manifest.json`
 - `<dbt_docs_url>/catalog.json`
 
-### Current Metadata
+#### Current Metadata
 
 Use development environment or PR branch as current to compare against the base.
 
@@ -62,6 +62,16 @@ dbt docs generate --target <your_dev_target>
 
 **Method 2: dbt Cloud**<br>
 Deploy → Jobs → CI job → Recent run → Download artifacts
+
+
+### Upload Files
+- Web interface: Click "Update" on the session you want to update in Recce Cloud.
+- CLI command:
+```
+bashrecce upload-session --session-id <your_session_id>
+```
+Find your session ID in Recce Cloud web interface when clicking "Update" on any session.
+
 
 ## Data Warehouse Diffing {#data-diffing}
 
