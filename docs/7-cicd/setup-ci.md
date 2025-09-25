@@ -10,11 +10,15 @@ Automated data validation for pull requests using Recce Cloud. Catch data issues
 
 ## Purpose
 
-**Automated PR Validation** → Prevent data regressions before merge
+**Automated PR Validation** prevents data regressions before merge.
 
 - **Triggers**: PR opened/updated against main
 - **Action**: Auto-update Recce session for PR validation
 - **Benefit**: Automated data validation and comparison
+
+## Prerequisites
+
+You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
 
 ## Implementation
 
@@ -77,15 +81,13 @@ jobs:
 
 **Default: Fresh Build** (shown in example above)
 
-- `dbt docs generate` → Required (provides all needed artifacts)
-- `dbt build` → Optional (ensures tables are materialized and updated)
+- `dbt docs generate` is required and provides all needed artifacts.
+- `dbt build` is optional but ensures tables are materialized and updated.
 
 **Alternative Methods:**
 
 - **External Download**: Download from dbt Cloud, Paradime, or other platforms
 - **Pipeline Integration**: Use existing dbt build workflows
-
-**Key Requirement**: `manifest.json` and `catalog.json` available for Recce Cloud action.
 
 ### 3. Verification
 
@@ -106,6 +108,6 @@ jobs:
 
 To analyze the PR changes in detail:
 
-- Go to your Recce Cloud dashboard
+- Go to your [Recce Cloud dashboard](https://cloud.reccehq.com)
 - Find the PR session that was created
 - Launch Recce instance to explore data differences

@@ -10,11 +10,15 @@ Automated continuous deployment (CD) for Recce Cloud base session updates. Ensur
 
 ## Purpose
 
-**Automated Base Session Management** → Eliminates manual baseline maintenance
+**Automated Base Session Management** eliminates manual baseline maintenance.
 
 - **Triggers**: PR merge to main + scheduled updates
 - **Action**: Auto-update base Recce session
 - **Benefit**: Current comparison baseline for future PRs
+
+## Prerequisites
+
+You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
 
 ## Implementation
 
@@ -77,15 +81,14 @@ jobs:
 
 **Default: Fresh Build** (shown in example above)
 
-- `dbt docs generate` → Required (provides all needed artifacts)
-- `dbt build` → Optional (ensures tables are materialized and updated)
+- `dbt docs generate` is required and provides the needed `manifest.json` and `catalog.json` artifacts.
+- `dbt build` is optional but ensures tables are materialized and updated.
 
 **Alternative Methods:**
 
 - **External Download**: Download from dbt Cloud, Paradime, or other platforms
 - **Pipeline Integration**: Use existing dbt build workflows
 
-**Key Requirement**: `manifest.json` and `catalog.json` available for Recce Cloud upload.
 
 ### 3. Verification
 
@@ -105,5 +108,4 @@ jobs:
 
 ## Next Steps
 
-- ✅ **CD Setup Complete** → Base sessions auto-update on merge + schedule
-- 🔄 **Add CI**: [Setup CI](./setup-ci.md) for PR validation
+**[Setup CI](./setup-ci.md)** to automatically validate PR changes against your updated base session. This completes your CI/CD pipeline by adding automated data validation for every pull request.
