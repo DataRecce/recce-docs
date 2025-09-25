@@ -4,9 +4,7 @@ title: Setup CI
 
 # Setup CI
 
-Automated data validation for pull requests using Recce Cloud. Catch data issues before merging to main.
-
-> **Note**: This guide shows CI integration with Recce Cloud for centralized validation management.
+Complete CI integration with Recce Cloud for automated data validation in pull requests. Catch data issues before merging to main with centralized validation management.
 
 ## Purpose
 

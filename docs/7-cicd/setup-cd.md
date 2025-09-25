@@ -4,9 +4,7 @@ title: Setup CD
 
 # Setup CD
 
-Automated continuous deployment (CD) for Recce Cloud base session updates. Ensures your comparison baseline stays current without manual intervention.
-
-> **Note**: This guide uses `recce-cloud-cicd-action` which is specifically designed for Recce Cloud integration.
+Complete CD integration with Recce Cloud for automated base session updates. Ensures your comparison baseline stays current without manual intervention using `recce-cloud-cicd-action`.
 
 ## Purpose
 
