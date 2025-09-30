@@ -43,7 +43,7 @@ dbt docs generate --target-path target-base --target <your_prod_target>
 Deploy → Jobs → Production job → Recent run → Download artifacts
 
 **Method 3: dbt Docs server**<br>
-Download directly from URLs:
+Download the artifacts directly from dbt docs server:
 
 - `<dbt_docs_url>/manifest.json`
 - `<dbt_docs_url>/catalog.json`
@@ -68,7 +68,7 @@ Deploy → Jobs → CI job → Recent run → Download artifacts
 - Web interface: Click "Update" on the session you want to update in Recce Cloud.
 - CLI command:
 ```
-bashrecce upload-session --session-id <your_session_id>
+recce upload-session --session-id <your_session_id>
 ```
 Find your session ID in Recce Cloud web interface when clicking "Update" on any session.
 
@@ -94,10 +94,10 @@ Configure connection to your data warehouse to enable query result comparisons.
 
 **Connection setup:**
 
-1. Navigate to [settings](https://cloud.reccehq.com/settings#organization)
+1. Navigate to [settings](https://cloud.reccehq.com/settings#organization){target="_blank"}
 2. Add Connection
 
-Your connection credentials are secure. See our [security practices](https://reccehq.com/security/) for details.
+Your connection credentials are secure. See our [security practices](https://reccehq.com/security/){target="_blank"} for details.
 
 <!-- insert a video -->
 
