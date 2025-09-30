@@ -174,8 +174,5 @@ Start your free trial to access CI/CD automation features. No credit card requir
 
 See the CI/CD sections for complete setup guides:
 
-<!-- - Setup CD -->
-<!-- - CI pipeline configuration -->
-- [Development workflow setup](7-cicd/scenario-dev/)
-- [Open source CI/CD setup](7-cicd/scenario-ci/)
-- [Best practices for environment preparation](7-cicd/best-practices-prep-env)
+- [Setup CD](/7-cicd/setup-cd/)
+- [Setup CI](/7-cicd/setup-ci/)
