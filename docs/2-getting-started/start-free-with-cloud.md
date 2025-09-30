@@ -44,14 +44,14 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 ### Connect to view all your PRs
 
 - **Best if**: You have a current PR and GitHub permissions
-- **You get**: List all your PRs and create sessions for any of them
+- **You get**: List all your PRs and validate any of them
 - **Setup**: Connect GitHub (installs Recce app) and upload your PR snapshots
-- **Immediate value**: See all PRs and create validation sessions
+- **Immediate value**: See all opened PRs and do validation
 - ✨ **You'll know it's working when**: Your PRs appear in the project
 
 ## Step 2: Launch Recce → See Metadata Diffing
 
-**What your just unlocked**:
+**What you just unlocked**:
 
 - ✅ **Lineage visualization** of your models
 - ✅ **Metadata comparison** between changes and production
