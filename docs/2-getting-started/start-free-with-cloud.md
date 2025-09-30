@@ -33,7 +33,7 @@ Later, CI/CD automation ([Setup CI](../7-cicd/setup-ci.md) and [Setup CD](../7-c
 ### Upload your artifacts
 
 - **Best if**: You want to try without GitHub permissions
-- **You get**: Create your first Recce session with your actual dbt project
+- **You get**: Launch Recce with your actual dbt project
 - **Setup**: Upload your development and production artifacts locally
 - **Immediate value**: See your real project lineage and metadata diffs
 - ✨ **You'll know it's working when**: Your models appear in the lineage graph
@@ -49,9 +49,9 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 - **Immediate value**: See all PRs and create validation sessions
 - ✨ **You'll know it's working when**: Your PRs appear in the project
 
-## Step 2: Explore Your Session → See Metadata Diffing
+## Step 2: Launch Recce → See Metadata Diffing
 
-**What your session unlocked**:
+**What your just unlocked**:
 
 - ✅ **Lineage visualization** of your models
 - ✅ **Metadata comparison** between changes and production
@@ -76,7 +76,7 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 
 ✨ **You'll know it's working when**: You can run "Value Diff" and see actual row count comparisons
 
-## Step 4: Automate Everything → CI/CD Session Management
+## Step 4: Automate Everything → CI/CD Integration
 
 - **What you'll unlock**: Automatic session management for every PR
 - **Setup needed**: [Set up automated workflows](../7-cicd/scenario-ci.md)
@@ -85,7 +85,7 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
     - **PR sessions** auto-create for validation on every push ([Setup CI](../7-cicd/setup-ci.md))
 - **Ultimate value**:
     - ✅ **Automatic PR validation** - sessions created and updated on every push
-    - ✅ **Team workflows** - standardized session-based validation across team
+    - ✅ **Team workflows** - standardized validation across team
     - ✅ **Current baselines** - your base sessions stay up-to-date automatically
 
 ## What's Next?
