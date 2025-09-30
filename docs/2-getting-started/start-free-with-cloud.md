@@ -8,12 +8,32 @@ title: Start free with Cloud
 
 👉 **[Start Free →](https://cloud.reccehq.com)**
 
+## Understanding Recce Sessions
+
+A session captures a snapshot of your dbt project, storing artifacts (`manifest.json` and `catalog.json`) that enable data comparison and validation.
+
+### Session Types
+
+- **Base Session**: Your production baseline - what you compare changes against
+- **Dev Session**: For ad-hoc exploration and validation during development
+- **PR Session**: Automated sessions created for pull requests
+
+### How Sessions Work
+
+Launch Recce from your current session (PR or Dev) against the base to:
+
+- **Compare data** between your changes and the baseline
+- **Validate changes** before merging to UAT/PROD
+- **Track impact** on downstream models
+
+Later, CI/CD automation ([Setup CI](../7-cicd/setup-ci.md) and [Setup CD](../7-cicd/setup-cd.md)) will manage sessions automatically - keeping base sessions current and creating PR sessions on every push.
+
 ## Step 1: Get Ready to Launch Recce
 
 ### Upload your artifacts
 
 - **Best if**: You want to try without GitHub permissions
-- **You get**: Launch Recce with your actual dbt project
+- **You get**: Create your first Recce session with your actual dbt project
 - **Setup**: Upload your development and production artifacts locally
 - **Immediate value**: See your real project lineage and metadata diffs
 - ✨ **You'll know it's working when**: Your models appear in the lineage graph
@@ -21,17 +41,17 @@ title: Start free with Cloud
 <br>
 If you don't have a dbt project, you can just click "Launch" to see the Jaffle Shop sample project loaded.
 
-### Connect to view all your PR
+### Connect to view all your PRs
 
 - **Best if**: You have a current PR and GitHub permissions
-- **You get**: List all your PRs and validate any of them
+- **You get**: List all your PRs and create sessions for any of them
 - **Setup**: Connect GitHub (installs Recce app) and upload your PR snapshots
-- **Immediate value**: See all PRs and do validation
-- ✨ **You'll know it's working when**: Your PRs appear in a the project
+- **Immediate value**: See all PRs and create validation sessions
+- ✨ **You'll know it's working when**: Your PRs appear in the project
 
-## Step 2: Launch Recce → See Metadata Diffing
+## Step 2: Explore Your Session → See Metadata Diffing
 
-**What you just unlocked**:
+**What your session unlocked**:
 
 - ✅ **Lineage visualization** of your models
 - ✅ **Metadata comparison** between changes and production
@@ -56,14 +76,17 @@ If you don't have a dbt project, you can just click "Launch" to see the Jaffle S
 
 ✨ **You'll know it's working when**: You can run "Value Diff" and see actual row count comparisons
 
-## Step 4: Automate Everything → CI/CD Integration
+## Step 4: Automate Everything → CI/CD Session Management
 
-- **What you'll unlock**: Automatic validation on every PR
+- **What you'll unlock**: Automatic session management for every PR
 - **Setup needed**: [Set up automated workflows](../7-cicd/scenario-ci.md)
+- **How it works**:
+    - **Base sessions** auto-update when you merge to main ([Setup CD](../7-cicd/setup-cd.md))
+    - **PR sessions** auto-create for validation on every push ([Setup CI](../7-cicd/setup-ci.md))
 - **Ultimate value**:
-    - ✅ **Automatic PR checks** - validation runs on every push
-    - ✅ **Team workflows** - standardized validation across team
-    - ✅ **PR blocking** - prevent bad changes from merging
+    - ✅ **Automatic PR validation** - sessions created and updated on every push
+    - ✅ **Team workflows** - standardized session-based validation across team
+    - ✅ **Current baselines** - your base sessions stay up-to-date automatically
 
 ## What's Next?
 
