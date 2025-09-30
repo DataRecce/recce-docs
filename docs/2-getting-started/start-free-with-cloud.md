@@ -6,7 +6,7 @@ title: Start free with Cloud
 
 **Launch Recce in under 2 minutes**. Each following feature provides additional value. The progressive features help you get more value from Recce over time.
 
-👉 **[Start Free →](https://cloud.reccehq.com)**
+👉 **[Start Free →](https://cloud.reccehq.com){target="_blank"}**
 
 ## Model Changes and Impact Analysis
 
