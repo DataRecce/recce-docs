@@ -107,7 +107,7 @@ Recce supports several data diffing methods. See Data Diffing sections for detai
 
 - [Row Count Diff](/5-data-diffing/row-count-diff)
 - [Profile Diff](/5-data-diffing/profile-diff/)
-- [Value Diff](5-data-diffing/value-diff/)
+- [Value Diff](/5-data-diffing/value-diff/)
 - [Top-K Diff](/5-data-diffing/topK-diff/)
 - [Histogram Diff](/5-data-diffing/histogram-diff/)
 - [Query](/5-data-diffing/query/)
