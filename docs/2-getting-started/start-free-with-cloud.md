@@ -10,17 +10,26 @@ title: Start free with Cloud
 
 ## Model Changes and Impact Analysis
 
-Recce shows what changed between **base** and **current** environments and helps assess potential impact.
+Recce shows what changed between **base** and **current** environments and helps assess potential impact. The most common case is comparing your development branch against your production or main branch to see what your changes will impact. 
 
-**Upload your metadata:**
+You can: 
 
-1. Click "Update" in base session to upload baseline metadata
-2. Click "Update" in current session to upload comparison metadata
-3. Click "Launch" to compare current against base
-
-**Or explore with sample data:** Skip uploads and launch with pre-loaded sample data.
+- Explore with the pre-loaded Jaffle Shop data
+- Upload your metadata (see below)
+- **Skip manual upload go directly to [CI/CD automation](#cicd-automation)** 
 
 <!-- insert a video -->
+
+### Upload Metadata
+- Web interface: Click "Update" on the session you want to update in Recce Cloud.
+    1. Click "Update" in base session to upload baseline metadata
+    2. Click "Update" in current session to upload comparison metadata
+    3. Click "Launch" to compare current against base
+- CLI command:
+```
+recce upload-session --session-id <your_session_id>
+```
+Find your session ID in Recce Cloud web interface when clicking "Update" on any session.
 
 ### Required Files
 
@@ -62,15 +71,6 @@ dbt docs generate --target <your_dev_target>
 
 **Method 2: dbt Cloud**<br>
 Deploy → Jobs → CI job → Recent run → Download artifacts
-
-
-### Upload Files
-- Web interface: Click "Update" on the session you want to update in Recce Cloud.
-- CLI command:
-```
-recce upload-session --session-id <your_session_id>
-```
-Find your session ID in Recce Cloud web interface when clicking "Update" on any session.
 
 
 ## Data Warehouse Diffing {#data-diffing}
@@ -122,7 +122,8 @@ Connect your GitHub repo to see all PRs in one place and validate changes before
 - Repository admin access for initial setup
 - Active PRs with model changes
 
-**Note:** You'll need administrative access to the GitHub organization you want to connect. Please ensure you have the necessary permissions for **GitHub App installations**.
+!!!Note
+    You'll need administrative access to the GitHub organization you want to connect. Please ensure you have the necessary permissions for **GitHub App installations**.
 
 ### GitHub Connection
 
@@ -151,9 +152,16 @@ Once connected, Recce displays all open and draft PRs in your dashboard.
 
 ## CI/CD Automation {#cicd-automation}
 
-Set up CI/CD to automatically upload metadata and run validation checks on every PR. Available with Team plan (free trial included).
+Set up CI/CD to automatically upload metadata and run validation checks on every PR. 
+
+!!!Note
+    Available with Team plan (free trial included).
 
 ### Setup Requirements
+See the CI/CD sections for complete setup guides:
+
+- [Setup CD](/7-cicd/setup-cd/)
+- [Setup CI](/7-cicd/setup-ci/)
 
 - GitHub integration configured
 - Team plan subscription or free trial
@@ -166,13 +174,6 @@ Set up CI/CD to automatically upload metadata and run validation checks on every
 - Integrated PR status checks
 - Validation results directly in PR
 
-### Team Plan Trial
 
-Start your free trial to access CI/CD automation features. No credit card required for trial period.
 
-### Setup Details
 
-See the CI/CD sections for complete setup guides:
-
-- [Setup CD](/7-cicd/setup-cd/)
-- [Setup CI](/7-cicd/setup-ci/)
