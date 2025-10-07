@@ -39,6 +39,10 @@
 	font-weight: bold;
 } */
 
+.md-nav__item--section>.md-nav__link {
+	color: #000 !important;
+}
+
 .md-nav__link[href]:hover {
 	color: #ff6e42;
 }

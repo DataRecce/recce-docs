@@ -63,6 +63,7 @@ nav:
           - 4-downstream-impacts/breaking-change-analysis.md
           #- 4-downstream-impacts/transformation-types.md
       - Data Diffing:
+          - 5-data-diffing/connect-to-warehouse.md
           - 5-data-diffing/row-count-diff.md
           - 5-data-diffing/profile-diff.md
           - 5-data-diffing/value-diff.md
