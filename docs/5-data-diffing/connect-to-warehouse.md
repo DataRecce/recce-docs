@@ -3,15 +3,15 @@ title: Connect to Warehouse
 ---
 
 ## Recce OSS
-If you use the open source setup, you can connect to your warehouse the same way as dbt. No additional settings need to be configured. Recce uses the dbt library with your profiles to connect to your warehouse.
-
+Recce OSS supports all warehouses that dbt supports. It uses the same configuration as dbt, simply use your existing dbt profiles to connect to your warehouse. No additional setup required.
 
 ## Recce Cloud
 If you use Recce Cloud, here are the warehouse connection settings. We currently support:
 
-- Snowflake
-- Databricks
+- [Snowflake](#snowflake)
+- [Databricks](#databricks)
 
+Others are coming in future releases
 
 ### Snowflake
 We only support password-based authentication.
