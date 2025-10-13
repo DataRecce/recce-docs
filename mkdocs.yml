@@ -128,13 +128,13 @@ theme:
   custom_dir: docs/overrides
   palette:
     # Palette toggle for light mode
-    - scheme: default
+    - scheme: secondary
       primary: deep orange
       toggle:
         icon: material/brightness-4 # Icon to switch to dark mode
         name: Switch to dark mode
     # Palette toggle for dark mode
-    - scheme: slate
+    - scheme: secondary-dark
       primary: deep orange
       toggle:
         icon: material/brightness-7 # Icon to switch back to light mode
@@ -154,7 +154,7 @@ plugins:
         - skip-glightbox
   - social:
       cards_layout_options:
-        background_color: "#ff6e41"
+        background_color: "#2A6CA7"
 
 watch:
   - docs
