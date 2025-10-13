@@ -1,3 +1,28 @@
+/*--md-default-fg-color--light*/
+[data-md-color-scheme="secondary"] {
+  --md-primary-fg-color:        #2A6CA7;
+  --md-primary-fg-color--light: #79B0E2;
+  --md-primary-fg-color--dark:  #193E5C;
+  --md-typeset-a-color:         #ff6e42;
+  --md-default-fg-color--light: #252527;
+  --md-default-fg-color--dark:  #e7e7ea;
+}
+
+[data-md-color-scheme="secondary-dark"] {
+  --md-primary-fg-color:        #2A6CA7;
+  --md-primary-fg-color--light: #79B0E2;
+  --md-primary-fg-color--dark:  #193E5C;
+  --md-typeset-color:           #e8e9f1;
+  --md-typeset-a-color:         #ff6e42;
+  --md-default-fg-color--light: #e7e8ef;
+  --md-default-fg-color--dark:  #e7e7ea;
+  --md-default-bg-color:        oklch(0.248 0.016 269.03);
+  --md-default-fg-color:        #e7e8ef;
+  --md-code-bg-color:           #0b121e;
+  --md-typeset-table-color:     #07566e;
+  --md-typeset-table-color--light: rgba(0, 0, 0, 0.50);
+}
+
 .md-nav__item a.md-nav__link[href^="https://github.com/DataRecce/recce/releases"] .md-ellipsis::before {
   content: url("/assets/images/clock-regular.svg");
   display: inline-block;
@@ -14,12 +39,9 @@
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
 	font-weight: bold;
 }
-.md-typeset h1 {
-	color: --md-default-fg-color;
-}
 
 .md-typeset code:not(.md-typeset pre > code) {
-	color: #ff6e42;
+	color: var(--md-typeset-a-color);
 	display: inline-block;
 	border-radius: 3px;
 }
@@ -40,11 +62,11 @@
 } */
 
 .md-nav__item--section>.md-nav__link {
-	color: #000 !important;
+	/*color: #000 !important;*/
 }
 
 .md-nav__link[href]:hover {
-	color: #ff6e42;
+	color: var(--md-typeset-a-color);
 }
 
 /**** Blog ****/
@@ -54,7 +76,7 @@
 }
 
 .md-post__action a {
-	background-color: #ff6e42;
+	background-color: var(--md-typeset-a-color);
 	color: #fff !important;
 	padding: .3rem 1rem;
 	border-radius: 1rem;
@@ -85,7 +107,7 @@
 }
 
 .md-content__inner .mailchimp-cta {
-	background-color: #ff6e42;
+	background-color: var(--md-typeset-a-color);
 	border-radius: 1rem;
 	overflow: hidden;
 	color: #fff;
@@ -127,7 +149,7 @@
 
 .md-content__inner .mailchimp-cta #mc_embed_signup .button {
 	text-transform: uppercase;
-	color: #ff6e42;
+	color: var(--md-typeset-a-color);
 	font-weight: bold;
 	background-color: #fff;
 }
@@ -152,8 +174,8 @@
 }
 .md-typeset a:hover, .md-typeset a:focus,
 .md-post .md-post__meta a:hover, .md-post .md-post__meta a:focus {
-	border-bottom: solid #ff6e42 1px;
-	color: #ff6e42;
+	border-bottom: solid var(--md-typeset-a-color) 1px;
+	color: var(--md-typeset-a-color);
 }
 
 .md-typeset .md-button:hover, .md-typeset .md-button:focus {
@@ -192,3 +214,73 @@ h1 a:hover, h2 a:hover a, h3 a:hover {
 	border: 0;
 }
 
+/* Replace Source with Buttons */
+@media screen and (min-width: 76.25rem) {
+  [dir=ltr] .md-header__source {
+    margin-left: 0.25rem;
+  }
+}
+@media screen and (min-width: 60rem) {
+  [dir=ltr] .md-header__source {
+    margin-left: 0.25rem;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .md-header__source {
+    max-width: 15rem;
+    width: 15rem;
+  }
+}
+
+header .header-buttons {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+header .btn {
+  font-size: 0.75rem;
+  border-radius: 0.3125rem;
+  padding: 0.4rem 0.5rem;
+  transition: none;
+  border: none;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+header .btn.btn-background {
+  background-color: #FFFFFF;
+  border: solid #A0AEC0 1px;
+  color: #3B3B3B;
+}
+
+header .btn .github {
+  background-image: url('/assets/images/github-128.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 0.85rem;
+  width: 0.85rem;
+}
+
+header .btn.btn-background:hover,
+header .btn.btn-background:focus,
+header .btn.btn-background:active {
+  background-color: rgb(237, 237, 237);
+  cursor: pointer;
+}
+
+header .btn.btn-primary {
+  background-color: var(--md-typeset-a-color);
+  border: solid #df5126 1px;
+  color: #FFFFFF;
+}
+
+header .btn.btn-primary:hover,
+header .btn.btn-primary:focus,
+header .btn.btn-primary:active {
+  filter: saturate(90%);
+  cursor: pointer;
+}
