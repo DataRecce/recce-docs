@@ -16,26 +16,21 @@ After signing up, you'll enter your default project. The first step is connectin
 
 Once connected, you can:
 
-- View all open and draft PRs in your Recce dashboard
-- See limited PR summaries showing model changes
-- Track which PRs need validation
+- View all open and draft PRs
+- See PR summaries
 
 ### Setup Requirements
 
 - GitHub repository with dbt project
-- Repository admin access for initial setup
-- Active PRs with model changes
-
-!!!Note
-You'll need administrative access to the GitHub organization you want to connect. Please ensure you have the necessary permissions for **GitHub App installations**.
+- Permissions for GitHub App installations
+- (Optional) Active PRs with model changes
 
 ### Connection Steps
 
 Follow the guidance to connect your GitHub organization and link your repository:
 
-![Connect GitHub](../assets/images/2-getting-started/connect_github.png)
-
-![Link Repository](../assets/images/2-getting-started/link_repository.png)
+![Connect GitHub](../assets/images/2-getting-started/connect_github.png){ width="49%" }
+![Link Repository](../assets/images/2-getting-started/link_repository.png){ width="49%" }
 
 Once connected, your PRs will appear in the dashboard with basic change summaries:
 
@@ -43,42 +38,35 @@ Once connected, your PRs will appear in the dashboard with basic change summarie
 
 ## Step 2: Automate Metadata with CI/CD {#cicd-automation}
 
-To unlock full-featured PR summaries and easy validation with Recce, configure CI/CD automation to automatically prepare metadata for every PR.
+To enable easy validation with Recce and enrich PR summaries, configure CI/CD automation to automatically prepare metadata for every PR.
 
 ### What You'll Get
 
 With CI/CD configured, you get:
 
-- **Full-featured PR summaries** with comprehensive model impact analysis
-- **One-click "Launch Recce"** to validate changes interactively
 - Automatic metadata upload on every PR
-- Consistent validation across all PRs
-- Integrated PR status checks
-- Validation results directly in PR comments
+- **One-click "Launch Recce"** to validate changes interactively
+- **Enriched PR summaries** with comprehensive model impact analysis
 
 ### Setup Requirements
 
 - GitHub integration completed (Step 1)
-- CI/CD platform access (GitHub Actions, GitLab CI, etc.)
-- Team plan subscription or free trial
-
-!!!Note
-Available with Team plan (free trial included).
+- CI/CD jobs that generate dbt docs
 
 ### How It Works
 
-The CI/CD integration automates the metadata preparation process:
+The CI/CD integration automates the metadata upload process:
 
-1. **On PR creation/update**: CI workflow generates dbt artifacts (`manifest.json`, `catalog.json`)
-2. **Automatic upload**: Metadata is uploaded to Recce Cloud for both base and current environments
-3. **Ready to validate**: PR appears in your dashboard with full summary and "Launch Recce" button
+1. **Automatic upload**: Metadata is uploaded to Recce Cloud for both base and current environments
+2. **Ready to validate**: PR appears in your dashboard "Launch Recce" button
+3. **Enriched summaries**: Enriched PR summaries with detailed model impact analysis
 
 ### Setup Guides
 
 Follow the detailed setup guides for your CI/CD platform:
 
 - [Setup CD](/7-cicd/setup-cd/) - Configure continuous deployment for base environment metadata
-- [Setup CI](/7-cicd/setup-ci/) - Configure CI pipeline for PR environment metadata
+- [Setup CI](/7-cicd/setup-ci/) - Configure continuous integration for PR environment metadata
 
 <!-- insert a video -->
 
