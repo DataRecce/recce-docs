@@ -91,16 +91,15 @@ Go beyond metadata to see how changes affect your actual data. Configure your da
 
 ### Warehouse Connection
 
-Configure connection to your data warehouse to enable query result comparisons. For detailed connection settings, see [Connect to Warehouse](../5-data-diffing/connect-to-warehouse.md).
+Configure connection to your data warehouse to enable query result comparisons.
 
-**Connection setup:**
+**Quick setup:**
 
-1. Navigate to [settings](https://cloud.reccehq.com/settings#organization){target="_blank"}
-2. Add Connection
-3. Navigate to your [project home](https://cloud.datarecce.io/) and open the project settings by clicking the gear icon
-4. Link the newly added connection to your project
+1. In your [project home](https://cloud.datarecce.io/), click the gear icon next to **Warehouse Connection**
+2. Create a new connection or select an existing one from the dropdown
+3. Your connection is linked and ready to use
 
-Your connection credentials are secure. See our [security practices](https://reccehq.com/security/){target="_blank"} for details.
+For detailed connection settings, see [Connect to Warehouse](../5-data-diffing/connect-to-warehouse.md). Connection credentials are encrypted and secure - see our [security practices](https://reccehq.com/security/).
 
 <!-- insert a video -->
 
