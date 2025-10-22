@@ -15,6 +15,7 @@ Others are coming in future releases
 
 ### Snowflake
 We support two authentication methods for Snowflake:
+
 - **User & Password**: Traditional username and password authentication
 - **Key Pair**: More secure authentication using RSA key pairs
 
