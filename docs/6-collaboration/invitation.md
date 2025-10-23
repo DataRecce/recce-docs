@@ -8,13 +8,17 @@ To collaborate effectively within Recce Cloud, you can invite team members to jo
 
 ### Step 1: Access Organization Settings
 - Log in to your Recce Cloud account
-- Navigate to **Settings** → **Organization** from the dashboard
+- Navigate to **Settings** → **Organization** from the side panel
 - Alternatively, you can access directly via: `https://cloud.datarecce.io/settings#organization`
 - In the Organization Settings section, select your desired organization
 
-![Organization Settings]()
+![Organization Settings](){: .shadow}
 
 ### Step 2: Invite Members
+
+!!! Note
+    Please use the SSO email address if your member uses SSO login.
+
 - In the **Members** section, click the **Invite Members** button
 - Enter the email addresses of the individuals you wish to invite
 - Select the appropriate role for each invitee based on the roles below:
@@ -27,13 +31,11 @@ To collaborate effectively within Recce Cloud, you can invite team members to jo
 | **MANAGER** | Organization settings management | • Update organization info (e.g., description) |
 | **MEMBER** | Basic organization access | • View organization info and member list<br>• Leave organization |
 
-![Invite Members]()
+![Invite Members](){: .shadow}
 
 ### Step 3: Send Invitations
 - Click the **Send Invitations** button to dispatch the invites
 - Each invitee will receive an email with a link to join your organization
 - Logged-in invitees will also see notifications on their home page or can view pending invitations in **Settings** → **Organization**
 
-> **Note**: Please use the SSO email address if your member uses SSO login.
-
-![Invitation Notifications]()
+![Invitation Notifications](){: .shadow}
