@@ -73,6 +73,7 @@ nav:
       - Collaborate Validation:
           - 6-collaboration/checklist.md
           - 6-collaboration/share.md
+          - 6-collaboration/invitation.md
       - CI/CD:
           - 7-cicd/setup-cd.md
           - Development:
