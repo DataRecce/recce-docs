@@ -33,8 +33,8 @@ To collaborate effectively within Recce Cloud, you can invite team members to jo
 
 ![Invite Members](../assets/images/6-collaboration/recce-cloud-org-invitation-fs8.png){: .shadow}
 
-### Step 3: Send Invitations
-- Click the **Send Invitations** button to dispatch the invites
+### Step 3: Send Invitation
+- Click the **Send Invitation** button to dispatch the invites
 - Each invitee will receive an email with a link to join your organization
 - Logged-in invitees will also see notifications on their home page or can view pending invitations in **Settings** → **Organization**
 
@@ -43,15 +43,12 @@ To collaborate effectively within Recce Cloud, you can invite team members to jo
 When you receive an invitation to join a Recce organization, you have several ways to respond:
 
 ### Immediate Response
-- **Upon login**: You'll see a notification modal with the invitations
-- **Accept or Decline**: You can immediately accept or decline the invitation directly from the notification
-- **Quick Action**: This allows you to join the organization instantly without navigating elsewhere
+- Upon login, you'll see a notification modal with the invitations
+- You can immediately accept or decline the invitations directly from the notification without navigating elsewhere
 
 ![Invitation Notifications](../assets/images/6-collaboration/recce-cloud-org-pending-invitation-home-fs8.png){: .shadow}
 
 ### Managing Invitations Later
-If you prefer to handle invitations later or want to review multiple invitations:
-
 - Navigate to **Settings** → **Organization** in your account
 - View all pending invitations in the "Pending Invitations" section
 - Review the organization and role
