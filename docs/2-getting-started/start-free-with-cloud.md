@@ -1,34 +1,40 @@
 ---
-title: Start free with Cloud
+title: Start Free with Cloud
 ---
 
 # Start Free with Recce Cloud
 
-**Launch Recce in under 2 minutes**. Each following feature provides additional value. The progressive features help you get more value from Recce over time.
+**Launch Recce in under 2 minutes**. Each following feature provides additional value. The progressive features help you
+get more value from Recce over time.
 
 👉 **[Start Free →](https://cloud.reccehq.com){target="_blank"}**
 
 ## Model Changes and Impact Analysis
 
-Recce shows what changed between **base** and **current** environments and helps assess potential impact. The most common case is comparing your development branch against your production or main branch to see what your changes will impact. 
+Recce shows what changed between **base** and **current** environments and helps assess potential impact. The most
+common case is comparing your development branch against your production or main branch to see what your changes will
+impact.
 
-You can: 
+You can:
 
 - Explore with the pre-loaded Jaffle Shop data
 - Upload your metadata (see below)
-- **Skip manual upload go directly to [CI/CD automation](#cicd-automation)** 
+- **Skip manual upload go directly to [CI/CD automation](#cicd-automation)**
 
 <!-- insert a video -->
 
 ### Upload Metadata
+
 - Web interface: Click "Update" on the session you want to update in Recce Cloud.
-    1. Click "Update" in base session to upload baseline metadata
-    2. Click "Update" in current session to upload comparison metadata
-    3. Click "Launch" to compare current against base
+  1. Click "Update" in base session to upload baseline metadata
+  2. Click "Update" in current session to upload comparison metadata
+  3. Click "Launch" to compare current against base
 - CLI command:
+
 ```
 recce upload-session --session-id <your_session_id>
 ```
+
 Find your session ID in Recce Cloud web interface when clicking "Update" on any session.
 
 ### Required Files
@@ -46,7 +52,6 @@ Choose one method:
 ```
 dbt docs generate --target-path target-base --target <your_prod_target>
 ```
-
 
 **Method 2: dbt Cloud**<br>
 Deploy → Jobs → Production job → Recent run → Download artifacts
@@ -72,10 +77,10 @@ dbt docs generate --target <your_dev_target>
 **Method 2: dbt Cloud**<br>
 Deploy → Jobs → CI job → Recent run → Download artifacts
 
-
 ## Data Warehouse Diffing {#data-diffing}
 
-Go beyond metadata to see how changes affect your actual data. Configure your data warehouse connection to compare query results and catch issues before they impact production.
+Go beyond metadata to see how changes affect your actual data. Configure your data warehouse connection to compare query
+results and catch issues before they impact production.
 
 ### Setup Requirements
 
@@ -99,7 +104,8 @@ Configure connection to your data warehouse to enable query result comparisons.
 2. Create a new connection or select an existing one from the dropdown
 3. Your connection is linked and ready to use
 
-For detailed connection settings, see [Connect to Warehouse](../5-data-diffing/connect-to-warehouse.md). Connection credentials are encrypted and secure - see our [security practices](https://reccehq.com/security/).
+For detailed connection settings, see [Connect to Warehouse](../5-data-diffing/connect-to-warehouse.md). Connection
+credentials are encrypted and secure - see our [security practices](https://reccehq.com/security/).
 
 <!-- insert a video -->
 
@@ -114,52 +120,56 @@ Recce supports several data diffing methods. See Data Diffing sections for detai
 - [Histogram Diff](/5-data-diffing/histogram-diff/)
 - [Query](/5-data-diffing/query/)
 
-## GitHub Integration {#github-integration}
+## Cloud-based Git Platform Integration {#git-integration}
 
-Connect your GitHub repo to see all PRs in one place and validate changes before they hit production.
+Connect your GitHub or GitLab repository to see all PRs/MRs in one place and validate changes before they hit
+production.
 
 ### Setup Requirements
 
-- GitHub repository with dbt project
-- Repository admin access for initial setup
-- Active PRs with model changes
+| GitHub                                                                                                                 | GitLab                                                                                                                                    |
+|------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| • GitHub repository with dbt project<br>• Repository admin access for initial setup<br>• Active PRs with model changes | • GitLab project with dbt project<br>• Project maintainer or owner access for initial setup<br>• Active merge requests with model changes |
 
 !!!Note
-    You'll need administrative access to the GitHub organization you want to connect. Please ensure you have the necessary permissions for **GitHub App installations**.
+    You'll need administrative access to the Organization/Group you want to connect. Please ensure you have the necessary
+    permissions for **App installations** (GitHub) or **Providing a Personal Access Token** (GitLab).
 
-### GitHub Connection
+### Connection
 
-Connect your repository to track pull requests and validate changes.
+Connect your repository to track pull requests/merge requests and validate changes.
+
+!!!Note
+    Keep **Connection setup** note the same as before if there was one specific to this section.
 
 **Connection setup:**
 
-1. Navigate to settings
-2. Connect GitHub repository
-3. Authorize Recce access
-4. Select repository
+| GitHub                                                                                                       | GitLab                                                                                                                                                                                                                    |
+|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. Navigate to settings<br>2. Connect GitHub repository<br>3. Authorize Recce access<br>4. Select repository | 1. Navigate to settings<br>2. Connect GitLab by providing a Personal Access Token ([see our directions here](../7-cicd/gitlab-pat-guide.md))<br>3. Connect a project by adding a GitLab Project or URL to a Recce Project |
 
 <!-- insert a video -->
 
-### How to Use PR Tracking
+### How to Use PR/MR Tracking
 
-Once connected, Recce displays all open and draft PRs in your dashboard.
+Once connected, Recce displays all open and draft PRs/MRs in your dashboard.
 
-### PR Validation Workflow
+### PR/MR Validation Workflow
 
-- View open/draft PRs in dashboard
-- Select PR to validate
-- Upload PR metadata (until CI/CD is configured)
+- View open/draft PRs/MRs in dashboard
+- Select PR/MR to validate
+- Upload PR/MR metadata (until CI/CD is configured)
 - Launch Recce to analyze changes
-
 
 ## CI/CD Automation {#cicd-automation}
 
-Set up CI/CD to automatically upload metadata and run validation checks on every PR. 
+Set up CI/CD to automatically upload metadata and run validation checks on every PR.
 
 !!!Note
     Available with Team plan (free trial included).
 
 ### Setup Requirements
+
 See the CI/CD sections for complete setup guides:
 
 - [Setup CD](/7-cicd/setup-cd/)
