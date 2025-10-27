@@ -71,6 +71,7 @@ nav:
           - 5-data-diffing/histogram-diff.md
           - 5-data-diffing/query.md
       - Collaborate Validation:
+          - 6-collaboration/invitation.md
           - 6-collaboration/checklist.md
           - 6-collaboration/share.md
       - CI/CD:
