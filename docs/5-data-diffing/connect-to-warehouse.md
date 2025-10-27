@@ -15,7 +15,7 @@ Others are coming in future releases
 
 ### Security
 
-Recce Cloud protects all sensitive credentials (such as passwords, tokens, and private keys) using envelope encryption with AWS KMS. Credentials are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted credentials exist only in memory during connection establishment and are never written to disk. AWS KMS keys rotate automatically every 365 days to maintain security best practices.
+Recce Cloud protects all warehouse connection config (such as passwords, tokens, and private keys) using envelope encryption with AWS KMS. Credentials are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted credentials exist only in memory during connection establishment and are never written to disk. AWS KMS keys rotate automatically every 365 days to maintain security best practices.
 
 ### Snowflake
 We support two authentication methods for Snowflake:
