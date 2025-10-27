@@ -43,6 +43,8 @@ We support two authentication methods for Snowflake:
 | `private_key`            | Your RSA private key in PEM format or Base64-encoded DER format                 | Yes      |
 | `private_key_passphrase` | Passphrase for the private key (only required if your private key is encrypted) | No       |
 
+**Security**: Recce Cloud protects your uploaded private keys using envelope encryption with AWS KMS. Private keys are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted keys exist only in memory during authentication and are never written to disk. AWS KMS keys rotate automatically every 365 days, and encrypted passphrases (if provided) receive the same protection.
+
 For more information on setting up key pair authentication, refer to [Snowflake's key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 
 
