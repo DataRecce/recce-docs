@@ -4,7 +4,7 @@ title: Invitation
 
 ## Inviting Team Members to Your Recce Organization
 
-To collaborate effectively within Recce Cloud, you can invite team members to join your organization. Team members will be able to share session metadata and launch Recce instances from shared sessions. Follow these steps to send invitations:
+To collaborate effectively within Recce Cloud, you can invite team members to join your organization. Follow these steps to send invitations:
 
 ### Step 1: Access Organization Settings
 - Log in to your Recce Cloud account
