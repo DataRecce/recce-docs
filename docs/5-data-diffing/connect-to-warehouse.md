@@ -13,6 +13,10 @@ If you use Recce Cloud, here are the warehouse connection settings. We currently
 
 Others are coming in future releases
 
+### Security
+
+Recce Cloud protects all sensitive credentials (such as passwords, tokens, and private keys) using envelope encryption with AWS KMS. Credentials are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted credentials exist only in memory during connection establishment and are never written to disk. AWS KMS keys rotate automatically every 365 days to maintain security best practices.
+
 ### Snowflake
 We support two authentication methods for Snowflake:
 
@@ -42,8 +46,6 @@ We support two authentication methods for Snowflake:
 | `user`                   | The user to log in as                                                           | Yes      |
 | `private_key`            | Your RSA private key in PEM format or Base64-encoded DER format                 | Yes      |
 | `private_key_passphrase` | Passphrase for the private key (only required if your private key is encrypted) | No       |
-
-**Security**: Recce Cloud protects your uploaded private keys using envelope encryption with AWS KMS. Private keys are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted keys exist only in memory during authentication and are never written to disk. AWS KMS keys rotate automatically every 365 days, and encrypted passphrases (if provided) receive the same protection.
 
 For more information on setting up key pair authentication, refer to [Snowflake's key pair authentication documentation](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 
