@@ -59,6 +59,7 @@ dbt-build:
 ```
 
 The included Recce Cloud component automatically:
+
 - Creates a session in Recce Cloud for the merge request
 - Uploads your dbt artifacts (`manifest.json` and `catalog.json`)
 - Provides session URL for validation review
