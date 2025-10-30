@@ -1,5 +1,5 @@
 ---
-title: Setup CI
+title: Setup CI for GitHub
 ---
 
 # Setup CI

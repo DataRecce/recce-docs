@@ -1,5 +1,5 @@
 ---
-title: Setup CD
+title: Setup CD for GitHub
 ---
 
 # Setup CD

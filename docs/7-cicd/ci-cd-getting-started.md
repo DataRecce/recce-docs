@@ -45,7 +45,6 @@ If your dbt project uses GitHub:
 
 1. [Setup CI](./github/setup-ci.md) - Auto-validate changes in every PR
 2. [Setup CD](./github/setup-cd.md) - Auto-update baseline on merge to main
-3. [Open Source Setup](./github/scenario-ci.md) - Alternative approach for open source projects
 
 ### GitLab
 If your dbt project uses GitLab:

@@ -83,7 +83,7 @@ nav:
               - 7-cicd/github/setup-ci.md
               #- 7-cicd/cloud-recce-summary.md
               #- 7-cicd/cloud-preset-checks.md
-              - 7-cicd/github/scenario-ci.md
+#              - 7-cicd/github/scenario-ci.md
               - 7-cicd/github/setup-cd.md
 
           # GitLab CI/CD
