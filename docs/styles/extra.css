@@ -16,6 +16,11 @@
   --md-typeset-a-color:         #ff6e42;
   --md-default-fg-color--light: #e7e8ef;
   --md-default-fg-color--dark:  #e7e7ea;
+  --md-code-hl-operator-color:  var(--md-default-fg-color--dark);
+  --md-code-hl-punctuation-color: var(--md-default-fg-color--dark);
+  --md-code-hl-comment-color:   var(--md-default-fg-color--dark);
+  --md-code-hl-generic-color:   var(--md-default-fg-color--dark);
+  --md-code-hl-variable-color:  var(--md-default-fg-color--dark);
   --md-default-bg-color:        oklch(0.248 0.016 269.03);
   --md-default-fg-color:        #e7e8ef;
   --md-code-bg-color:           #0b121e;
