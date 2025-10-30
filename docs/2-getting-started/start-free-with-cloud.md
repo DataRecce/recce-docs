@@ -172,11 +172,13 @@ Set up CI/CD to automatically upload metadata and run validation checks on every
 
 See the CI/CD sections for complete setup guides:
 
-- [Setup CD](/7-cicd/setup-cd/)
-- [Setup CI](/7-cicd/setup-ci/)
-
-- GitHub integration configured
-- Team plan subscription or free trial
+- [Getting Started with CI/CD](../7-cicd/ci-cd-getting-started.md)
+- GitHub CI/CD
+    - [Setup CI for GitHub](../7-cicd/github/setup-ci.md)
+    - [Setup CD for GitHub](../7-cicd/github/setup-cd.md)
+- GitLab CI/CD
+    - [Setup CI for Gitlab](../7-cicd/gitlab/setup-ci.md)
+    - [Setup CD for Gitlab](../7-cicd/gitlab/setup-cd.md)
 
 ### Automation Benefits
 

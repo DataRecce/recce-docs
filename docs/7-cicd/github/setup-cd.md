@@ -1,5 +1,5 @@
 ---
-title: Setup CD
+title: Setup CD for GitHub
 ---
 
 # Setup CD
@@ -16,7 +16,7 @@ Set up automatic updates for your Recce Cloud base sessions. Keep your data comp
 
 ## Prerequisites
 
-You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
+You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
 
 ## Implementation
 
@@ -102,7 +102,7 @@ jobs:
 - ✅ **Workflow completes** without errors in Actions tab
 - ✅ **Base session updated** in Recce Cloud
 
-![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-cd.png){: .shadow}
+![Recce Cloud showing updated base sessions](/assets/images/7-cicd/verify-setup-cd.png){: .shadow}
 
 ## Next Steps
 

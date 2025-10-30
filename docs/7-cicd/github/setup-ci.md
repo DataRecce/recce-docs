@@ -1,5 +1,5 @@
 ---
-title: Setup CI
+title: Setup CI for GitHub
 ---
 
 # Setup CI
@@ -16,7 +16,7 @@ Automatically validate your data changes in every pull request using Recce Cloud
 
 ## Prerequisites
 
-You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
+You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
 
 ## Implementation
 
@@ -100,7 +100,7 @@ jobs:
 - ✅ **Workflow completes** without errors in Actions tab
 - ✅ **PR session updated** in Recce Cloud
 
-![Recce Cloud showing PR validation session](../assets/images/7-cicd/verify-setup-ci.png){: .shadow}
+![Recce Cloud showing PR validation session](/assets/images/7-cicd/verify-setup-ci.png){: .shadow}
 
 #### Review PR Session
 
