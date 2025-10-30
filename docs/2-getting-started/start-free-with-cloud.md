@@ -14,13 +14,13 @@ Setup steps:
 2. [Data Warehouse Diffing](#data-diffing)
 3. [CI/CD Automation](#cicd-automation)
 
-Fall back to [manual](#manual) if you unable to finish the setup. 
+Fall back to [manual](#manual) if you unable to finish the setup.
 
 
 ## Prerequisites
 1. Admin access for git platform
 2. Data warehouse credentials with read access
-3. 
+3.
 
 
 ## Git Platform Integration {#git-integration}
