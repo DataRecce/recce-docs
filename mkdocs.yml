@@ -76,7 +76,7 @@ nav:
           - 6-collaboration/share.md
       - CI/CD:
           # Brief intro explaining GitHub vs GitLab paths
-          - 7-cicd/getting-started.md
+          - 7-cicd/ci-cd-getting-started.md
 
           # GitHub CI/CD
           - Using GitHub:

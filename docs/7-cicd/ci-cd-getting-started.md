@@ -1,8 +1,8 @@
 ---
-title: Getting Started
+title: CI/CD Getting Started
 ---
 
-# Getting Started
+# CI/CD Getting Started
 
 Automate data validation in your development workflow. Catch data issues before they reach production with continuous integration and delivery built specifically for dbt projects.
 
@@ -14,6 +14,9 @@ Set up automated workflows that:
 - **Validate every PR/MR** - Run data validation checks automatically when changes are proposed
 - **Prevent regressions** - Catch data quality issues before they reach production
 - **Save team time** - Eliminate manual validation steps for every change
+
+!!!note
+    CI/CD automation requires Recce Cloud Team plan. A free trial is available.
 
 ## Understanding CI vs CD
 
@@ -50,9 +53,6 @@ If your dbt project uses GitLab:
 2. [Setup CI](./gitlab/setup-ci.md) - Auto-validate changes in every MR
 1. [Setup CD](./gitlab/setup-cd.md) - Auto-update baseline on merge to main
 3. [GitLab Personal Access Token Guide](./gitlab/gitlab-pat-guide.md) - Required for GitLab integration
-
-!!!note
-    CI/CD automation requires Recce Cloud Team plan. A free trial is available.
 
 ## Prerequisites
 
