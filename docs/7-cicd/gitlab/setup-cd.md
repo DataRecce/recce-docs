@@ -198,9 +198,9 @@ To enable automatic baseline updates:
 #### Verify Success
 
 - ✅ **Pipeline completes** without errors in CI/CD → Pipelines
-- ✅ **Base session updated** in Recce Cloud dashboard
+- ✅ **Base session updated** in Recce Cloud
 
-![Recce Cloud dashboard showing updated base sessions](../../assets/images/7-cicd/verify-setup-cd.png){: .shadow}
+![Recce Cloud showing updated base sessions](../../assets/images/7-cicd/verify-setup-cd.png){: .shadow}
 
 #### Verify Scheduled Runs
 

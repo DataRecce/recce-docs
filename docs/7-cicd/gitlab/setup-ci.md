@@ -120,7 +120,7 @@ include:
 #### Verify Success
 
 - ✅ **Pipeline completes** without errors in CI/CD → Pipelines
-- ✅ **MR session updated** in Recce Cloud dashboard
+- ✅ **MR session updated** in Recce Cloud
 - ✅ **Session URL** appears in pipeline job output
 
 ![Recce Cloud showing MR validation session](../../assets/images/7-cicd/verify-setup-ci.png){: .shadow}
@@ -129,7 +129,7 @@ include:
 
 To analyze the MR changes in detail:
 
-- Go to your [Recce Cloud dashboard](https://cloud.reccehq.com)
+- Go to your [Recce Cloud](https://cloud.reccehq.com)
 - Find the MR session that was created
 - Launch Recce instance to explore data differences
 

@@ -98,7 +98,7 @@ jobs:
 #### Verify Success
 
 - ✅ **Workflow completes** without errors in Actions tab
-- ✅ **PR session updated** in Recce Cloud dashboard
+- ✅ **PR session updated** in Recce Cloud
 
 ![Recce Cloud showing PR validation session](../assets/images/7-cicd/verify-setup-ci.png){: .shadow}
 
@@ -106,6 +106,6 @@ jobs:
 
 To analyze the PR changes in detail:
 
-- Go to your [Recce Cloud dashboard](https://cloud.reccehq.com)
+- Go to your [Recce Cloud](https://cloud.reccehq.com)
 - Find the PR session that was created
 - Launch Recce instance to explore data differences
