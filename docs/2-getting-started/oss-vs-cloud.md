@@ -1,10 +1,10 @@
 ---
-title: Choose Your Approach
+title: Choose best for you
 ---
 
-# Choose Your Approach
+# Choose what's best for you
 
-Recce offers two ways to validate your data changes. **We recommend starting with Recce Cloud** for the easiest setup and team collaboration.
+Recce offers two ways to validate your data changes: Open Source and Recce Cloud. **We recommend starting with Recce Cloud** for the easiest setup and team collaboration.
 
 ## Quick Comparison
 
