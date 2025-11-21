@@ -91,9 +91,9 @@ nav:
               - 7-cicd/gitlab/setup-ci.md
               - 7-cicd/gitlab/setup-cd.md
               - 7-cicd/gitlab/gitlab-pat-guide.md
-
+          - 7-cicd/pr_mr_summary.md
           #- 7-cicd/recce-debug.md # content outdated
-          - 7-cicd/scenario-dev.md
+          - 7-cicd/scenario-dev.md          
           - 7-cicd/scenario-pr-review.md
           - 7-cicd/best-practices-prep-env.md
           #- 7-cicd/recce-summary.md content outdated
