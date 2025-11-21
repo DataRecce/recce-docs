@@ -70,6 +70,7 @@ nav:
           - 5-data-diffing/topK-diff.md
           - 5-data-diffing/histogram-diff.md
           - 5-data-diffing/query.md
+          - 5-data-diffing/mcp-server.md
       - Collaborate Validation:
           - 6-collaboration/invitation.md
           - 6-collaboration/checklist.md
