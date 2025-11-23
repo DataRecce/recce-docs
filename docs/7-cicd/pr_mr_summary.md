@@ -7,13 +7,18 @@ When the CI task is executed, it generates a lineage and checks report for your 
 AI Summary leverages state-of-the-art AI agents to understand your changes by analyzing your PR information and updated metadata. It proactively thinks and decides what to validate by data diffing in your data warehouse, then provides comprehensive insights to help you make informed decisions.
 
 Features
+
 - Automatically identify what to validate
 - Explore changes through data diffing in Recce
 - Generate actionable insights to guide your merge decision
 
 ## How to Use
 
-### 1. Trigger via GitHub PR Comment (GitHub only)
+### 1. Trigger via Recce Cloud UI
+
+Go to the Recce Cloud PR/MR session list and click the **"Execute Recce AI Summary"** button to manually trigger the analysis.
+
+### 2. Trigger via GitHub PR Comment (GitHub only)
 
 In your GitHub PR page, simply comment `/recce` to trigger the AI Summary generation. The Recce bot will respond with emoji feedback to show the progress of the analysis.
 
@@ -24,10 +29,6 @@ In your GitHub PR page, simply comment `/recce` to trigger the AI Summary genera
 - 👀 : Request received
 - 🚀 : Summary is generating
 - 👍 : Summary is generated
-
-### 2. Trigger via Recce Cloud UI
-
-Go to the Recce Cloud PR/MR session list and click the **"Execute Recce AI Summary"** button to manually trigger the analysis.
 
 ### 3. Trigger via CI Automation (Coming Soon)
 
