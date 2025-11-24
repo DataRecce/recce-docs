@@ -70,9 +70,10 @@ jobs:
         env:
           DBT_ENV_SECRET_KEY: ${{ secrets.DBT_ENV_SECRET_KEY }}
 
-      - name: Update Recce Cloud Base Session
-        uses: DataRecce/recce-cloud-cicd-action@v0.1
-        # This action automatically uploads artifacts to Recce Cloud
+      - name: Upload to Recce Cloud
+        run: |
+          pip install recce-cloud
+          recce-cloud upload --type prod
 ```
 
 ### 2. Artifact Preparation Options
@@ -102,7 +103,7 @@ jobs:
 - ✅ **Workflow completes** without errors in Actions tab
 - ✅ **Base session updated** in Recce Cloud
 
-![Recce Cloud showing updated base sessions](/assets/images/7-cicd/verify-setup-cd.png){: .shadow}
+![Recce Cloud showing updated base sessions](../../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
 
 ## Next Steps
 

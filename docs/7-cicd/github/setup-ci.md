@@ -70,9 +70,10 @@ jobs:
         env:
           DBT_ENV_SECRET_KEY: ${{ secrets.DBT_ENV_SECRET_KEY }}
 
-      - name: Update Recce PR Session
-        uses: DataRecce/recce-cloud-cicd-action@v0.1
-        # This action automatically creates a PR session in Recce Cloud
+      - name: Upload to Recce Cloud
+        run: |
+          pip install recce-cloud
+          recce-cloud upload
 ```
 
 ### 2. Artifact Preparation Options
@@ -100,7 +101,7 @@ jobs:
 - ✅ **Workflow completes** without errors in Actions tab
 - ✅ **PR session updated** in Recce Cloud
 
-![Recce Cloud showing PR validation session](/assets/images/7-cicd/verify-setup-ci.png){: .shadow}
+![Recce Cloud showing PR validation session](../../assets/images/7-cicd/verify-setup-github-ci.png){: .shadow}
 
 #### Review PR Session
 

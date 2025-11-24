@@ -24,14 +24,9 @@ You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Clou
 
 Add to your `.gitlab-ci.yml`:
 ```yaml
-include:
-  - component: gitlab.com/recce/recce-cloud-cicd-component/recce-cloud@1.2.0
-    inputs:
-      stage: test
-
 stages:
   - build
-  - test
+  - upload
 
 variables:
   DBT_TARGET: "ci"
@@ -56,46 +51,47 @@ dbt-build:
     expire_in: 1 week
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+recce-upload:
+  stage: upload
+  image: python:3.11-slim
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload
+  dependencies:
+    - dbt-build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 ```
 
-The included Recce Cloud component automatically:
+The `recce-cloud upload` command automatically:
 
+- Detects your GitLab CI environment
 - Creates a session in Recce Cloud for the merge request
 - Uploads your dbt artifacts (`manifest.json` and `catalog.json`)
-- Provides session URL for validation review
+- Links the session to your MR
 
-### 2. Component Configuration Options
+### 2. Configuration Options
 
-The component accepts optional inputs for customization:
+The `recce-cloud upload` command supports customization via flags:
+
 ```yaml
-include:
-  - component: gitlab.com/recce/recce-cloud-cicd-component/recce-cloud@1.2.0
-    inputs:
-      stage: test                        # Pipeline stage (default: test)
-      dbt_target_path: target            # Path to dbt artifacts (default: target)
-      base_branch: main                  # Base branch for comparison (default: main)
-      gitlab_token: $CUSTOM_GITLAB_TOKEN # Custom GitLab token (default: $CI_JOB_TOKEN)
+recce-upload:
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload --target-path custom-target --type cr
 ```
 
-**Default Configuration** (shown in example above):
+**Available options:**
 
-- Component uses `$CI_JOB_TOKEN` automatically (no manual token setup required)
-- Uploads from `target/` directory by default
-- Compares against `main` branch
+- `--target-path`: Path to dbt artifacts directory (default: `target`)
+- `--type`: Session type - `cr`, `prod`, or `dev` (auto-detected by default)
+- `--cr`: Override MR number (auto-detected by default)
+- `--dry-run`: Preview what would be uploaded without actually uploading
 
-**Custom Token** (optional):
+**Authentication:**
 
-If you need to use a custom GitLab token instead of the default `$CI_JOB_TOKEN`:
-
-1. Create a [Project Access Token](../gitlab-pat-guide.md) with `api` scope
-2. Add it as a [CI/CD variable](https://docs.gitlab.com/ee/ci/variables/) in your project
-3. Reference it in the component inputs:
-```yaml
-include:
-  - component: gitlab.com/recce/recce-cloud-cicd-component/recce-cloud@1.2.0
-    inputs:
-      gitlab_token: $CUSTOM_GITLAB_TOKEN
-```
+The command automatically uses your GitLab CI environment for authentication (via `CI_JOB_TOKEN`). No additional token setup required.
 
 ### 3. Artifact Preparation Options
 
@@ -123,7 +119,7 @@ include:
 - ✅ **MR session updated** in Recce Cloud
 - ✅ **Session URL** appears in pipeline job output
 
-![Recce Cloud showing MR validation session](../../assets/images/7-cicd/verify-setup-ci.png){: .shadow}
+![Recce Cloud showing MR validation session](../../assets/images/7-cicd/verify-setup-gitlab-ci.png){: .shadow}
 
 #### Review MR Session
 
@@ -187,14 +183,9 @@ dbt-build:
 
 Here's a full working example combining dbt build and Recce validation:
 ```yaml
-include:
-  - component: gitlab.com/recce/recce-cloud-cicd-component/recce-cloud@1.2.0
-    inputs:
-      stage: test
-
 stages:
   - build
-  - test
+  - upload
 
 variables:
   DBT_TARGET: "ci"
@@ -202,9 +193,8 @@ variables:
 dbt-build:
   stage: build
   image: python:3.11-slim
-  before_script:
-    - pip install -r requirements.txt
   script:
+    - pip install -r requirements.txt
     - dbt deps
     - dbt build --target $DBT_TARGET
     - dbt docs generate --target $DBT_TARGET
@@ -214,6 +204,15 @@ dbt-build:
     expire_in: 1 week
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-```
 
-See the [complete example project](https://gitlab.com/recce/jaffle-shop-snowflake/-/blob/main/.gitlab-ci.yml) for a full working configuration.
+recce-upload:
+  stage: upload
+  image: python:3.11-slim
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload
+  dependencies:
+    - dbt-build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+```

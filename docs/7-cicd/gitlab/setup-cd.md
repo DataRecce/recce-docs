@@ -22,24 +22,14 @@ You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Clou
 
 ### 1. Core Workflow
 
-GitLab's CD setup uses the same Recce Cloud component as CI, but with different trigger rules. Add to your `.gitlab-ci.yml`:
+Add to your `.gitlab-ci.yml`:
 ```yaml
-include:
-  - component: gitlab.com/recce/recce-cloud-cicd-component/recce-cloud@1.2.0
-    inputs:
-      stage: upload
-
 stages:
   - build
   - upload
 
 variables:
   DBT_TARGET_PROD: "prod"
-
-# Disable the default component job
-recce-cloud-upload:
-  rules:
-    - when: never
 
 # Production build - runs on schedule or manual trigger
 prod-build:
@@ -65,11 +55,14 @@ prod-build:
       when: manual
 
 # Production Recce upload
-recce-cloud-upload-prod:
-  extends: recce-cloud-upload
-  needs:
-    - job: prod-build
-      artifacts: true
+recce-upload-prod:
+  stage: upload
+  image: python:3.11-slim
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload --type prod
+  dependencies:
+    - prod-build
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -85,21 +78,11 @@ This configuration:
 
 ### 2. Unified CI/CD Configuration
 
-The Recce Cloud component can handle both CI (MR validation) and CD (base session updates) in a single configuration. Here's the combined approach:
+You can handle both CI (MR validation) and CD (base session updates) in a single configuration:
 ```yaml
-include:
-  - component: gitlab.com/recce/recce-cloud-cicd-component/recce-cloud@1.2.0
-    inputs:
-      stage: upload
-
 stages:
   - build
   - upload
-
-# Disable the default component job
-recce-cloud-upload:
-  rules:
-    - when: never
 
 # MR build - runs on merge requests
 mr-build:
@@ -135,20 +118,26 @@ prod-build:
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 # MR Recce upload
-recce-cloud-upload-mr:
-  extends: recce-cloud-upload
-  needs:
-    - job: mr-build
-      artifacts: true
+recce-upload-mr:
+  stage: upload
+  image: python:3.11-slim
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload
+  dependencies:
+    - mr-build
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 # Production Recce upload
-recce-cloud-upload-prod:
-  extends: recce-cloud-upload
-  needs:
-    - job: prod-build
-      artifacts: true
+recce-upload-prod:
+  stage: upload
+  image: python:3.11-slim
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload --type prod
+  dependencies:
+    - prod-build
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
@@ -156,7 +145,7 @@ recce-cloud-upload-prod:
 
 This unified approach:
 
-- Uses the same component for both CI and CD
+- Uses the same `recce-cloud upload` command for both CI and CD
 - Separates MR validation from production updates via `rules`
 - Maintains different dbt targets for each environment
 - Reduces configuration duplication
@@ -200,7 +189,7 @@ To enable automatic baseline updates:
 - ✅ **Pipeline completes** without errors in CI/CD → Pipelines
 - ✅ **Base session updated** in Recce Cloud
 
-![Recce Cloud showing updated base sessions](../../assets/images/7-cicd/verify-setup-cd.png){: .shadow}
+![Recce Cloud showing updated base sessions](../../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
 
 #### Verify Scheduled Runs
 
@@ -253,7 +242,7 @@ recce-cloud-upload-prod:
 
 ## Complete Example
 
-See the [complete working example](https://gitlab.com/recce/jaffle-shop-snowflake/-/blob/main/.gitlab-ci.yml) showing unified CI/CD configuration with the Recce Cloud component.
+Here's a complete working example with unified CI/CD configuration using `recce-cloud` CLI. This example can be used as a reference for your own setup.
 
 ## Next Steps
 
