@@ -105,6 +105,28 @@ jobs:
 
 ![Recce Cloud showing updated base sessions](../../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
 
+#### Expected Output
+
+When the upload succeeds, you'll see output like this in your workflow logs:
+
+```
+─────────────────────────── CI Environment Detection ───────────────────────────
+Platform: github-actions
+Session Type: prod
+Commit SHA: def456ab...
+Source Branch: main
+Repository: your-org/your-repo
+Info: Using GITHUB_TOKEN for platform-specific authentication
+────────────────────────── Creating/touching session ───────────────────────────
+Session ID: abc123-def456-ghi789
+Uploading manifest from path "target/manifest.json"
+Uploading catalog from path "target/catalog.json"
+Notifying upload completion...
+──────────────────────────── Uploaded Successfully ─────────────────────────────
+Uploaded dbt artifacts to Recce Cloud for session ID "abc123-def456-ghi789"
+Artifacts from: "/home/runner/work/your-repo/your-repo/target"
+```
+
 ## Next Steps
 
 **[Setup CI](./setup-ci.md)** to automatically validate PR changes against your updated base session. This completes your CI/CD pipeline by adding automated data validation for every pull request.

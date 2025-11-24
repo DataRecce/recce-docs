@@ -191,6 +191,28 @@ To enable automatic baseline updates:
 
 ![Recce Cloud showing updated base sessions](../../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
 
+#### Expected Output
+
+When the upload succeeds, you'll see output like this in your pipeline logs:
+
+```
+─────────────────────────── CI Environment Detection ───────────────────────────
+Platform: gitlab-ci
+Session Type: prod
+Commit SHA: a1b2c3d4...
+Source Branch: main
+Repository: your-org/your-project
+Info: Using CI_JOB_TOKEN for platform-specific authentication
+────────────────────────── Creating/touching session ───────────────────────────
+Session ID: abc123-def456-ghi789
+Uploading manifest from path "target/manifest.json"
+Uploading catalog from path "target/catalog.json"
+Notifying upload completion...
+──────────────────────────── Uploaded Successfully ─────────────────────────────
+Uploaded dbt artifacts to Recce Cloud for session ID "abc123-def456-ghi789"
+Artifacts from: "/builds/your-org/your-project/target"
+```
+
 #### Verify Scheduled Runs
 
 1. Go to **CI/CD → Schedules**

@@ -121,6 +121,32 @@ The command automatically uses your GitLab CI environment for authentication (vi
 
 ![Recce Cloud showing MR validation session](../../assets/images/7-cicd/verify-setup-gitlab-ci.png){: .shadow}
 
+#### Expected Output
+
+When the upload succeeds, you'll see output like this in your pipeline logs:
+
+```
+─────────────────────────── CI Environment Detection ───────────────────────────
+Platform: gitlab-ci
+MR Number: 4
+MR URL: https://gitlab.com/recce/staging-jaffle-shop-snowflake/-/merge_requests/4
+Session Type: cr
+Commit SHA: c928e3d5...
+Base Branch: main
+Source Branch: feature/replace-recce-cicd-component-with-recce-cloud-cli
+Repository: recce/staging-jaffle-shop-snowflake
+Info: Using CI_JOB_TOKEN for platform-specific authentication
+────────────────────────── Creating/touching session ───────────────────────────
+Session ID: f8b0f7ca-ea59-411d-abd8-88b80b9f87ad
+Uploading manifest from path "target/manifest.json"
+Uploading catalog from path "target/catalog.json"
+Notifying upload completion...
+──────────────────────────── Uploaded Successfully ─────────────────────────────
+Uploaded dbt artifacts to Recce Cloud for session ID "f8b0f7ca-ea59-411d-abd8-88b80b9f87ad"
+Artifacts from: "/builds/recce/staging-jaffle-shop-snowflake/target"
+Change request: https://gitlab.com/recce/staging-jaffle-shop-snowflake/-/merge_requests/4
+```
+
 #### Review MR Session
 
 To analyze the MR changes in detail:
@@ -128,12 +154,6 @@ To analyze the MR changes in detail:
 - Go to your [Recce Cloud](https://cloud.reccehq.com)
 - Find the MR session that was created
 - Launch Recce instance to explore data differences
-
-Or use the session launch URL from the pipeline output:
-```bash
-# Pipeline output example
-RECCE_SESSION_LAUNCH_URL: https://cloud.reccehq.com/launch/abc123
-```
 
 ## Troubleshooting
 

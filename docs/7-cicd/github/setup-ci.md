@@ -103,6 +103,32 @@ jobs:
 
 ![Recce Cloud showing PR validation session](../../assets/images/7-cicd/verify-setup-github-ci.png){: .shadow}
 
+#### Expected Output
+
+When the upload succeeds, you'll see output like this in your workflow logs:
+
+```
+─────────────────────────── CI Environment Detection ───────────────────────────
+Platform: github-actions
+PR Number: 42
+PR URL: https://github.com/your-org/your-repo/pull/42
+Session Type: cr
+Commit SHA: abc123de...
+Base Branch: main
+Source Branch: feature/your-feature
+Repository: your-org/your-repo
+Info: Using GITHUB_TOKEN for platform-specific authentication
+────────────────────────── Creating/touching session ───────────────────────────
+Session ID: f8b0f7ca-ea59-411d-abd8-88b80b9f87ad
+Uploading manifest from path "target/manifest.json"
+Uploading catalog from path "target/catalog.json"
+Notifying upload completion...
+──────────────────────────── Uploaded Successfully ─────────────────────────────
+Uploaded dbt artifacts to Recce Cloud for session ID "f8b0f7ca-ea59-411d-abd8-88b80b9f87ad"
+Artifacts from: "/home/runner/work/your-repo/your-repo/target"
+Change request: https://github.com/your-org/your-repo/pull/42
+```
+
 #### Review PR Session
 
 To analyze the PR changes in detail:
