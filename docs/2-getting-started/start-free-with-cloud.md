@@ -109,8 +109,8 @@ See the CI/CD sections for complete setup guides:
     - [Setup CI for GitHub](../7-cicd/github/setup-ci.md)
     - [Setup CD for GitHub](../7-cicd/github/setup-cd.md)
 - GitLab CI/CD
-    - [Setup CI for Gitlab](../7-cicd/gitlab/setup-ci.md)
-    - [Setup CD for Gitlab](../7-cicd/gitlab/setup-cd.md)
+    - [Setup CI for GitLab](../7-cicd/gitlab/setup-ci.md)
+    - [Setup CD for GitLab](../7-cicd/gitlab/setup-cd.md)
 
 ### Automation Benefits
 

@@ -74,8 +74,8 @@ If your dbt project uses GitLab:
 
 ## Next steps
 
-1. Start with relevant CD setup ([Gitlab](./gitlab/setup-cd.md) or [Github](./github/setup-cd.md)) to establish automatic baseline (production artifacts) updates.
-2. Configure CI setup ([Gitlab](./gitlab/setup-ci.md) or [Github](./github/setup-ci.md)) to enable PR/MR validation
+1. Start with relevant CD setup ([GitLab](./gitlab/setup-cd.md) or [GitHub](./github/setup-cd.md)) to establish automatic baseline (production artifacts) updates.
+2. Configure CI setup ([GitLab](./gitlab/setup-ci.md) or [GitHub](./github/setup-ci.md)) to enable PR/MR validation
 3. Review [best practices](./best-practices-prep-env.md) for environment preparation
 
 ## Related workflows
