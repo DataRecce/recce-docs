@@ -7,20 +7,11 @@ Recce exposes its tools to AI agents, enabling integration with tools like Claud
 
 ## Installation
 
-1. Install Recce with the MCP extra dependency:
+Install Recce with the MCP extra dependency:
 
-   ```shell
-   pip install 'recce[mcp]'
-   ```
-
-2. Verify the MCP server works by starting it in your dbt project:
-
-   ```shell
-   cd my-dbt-project/
-   recce mcp-server
-   ```
-
-   You should see the message: `Starting Recce MCP Server in stdio mode...` Stop the server with `Ctrl+C` once confirmed.
+```shell
+pip install 'recce[mcp]'
+```
 
 ## Method 1: MCP Server (stdio)
 
