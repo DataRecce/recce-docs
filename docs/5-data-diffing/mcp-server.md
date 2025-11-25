@@ -29,6 +29,12 @@ Configure Recce as an MCP server with stdio transport. Claude Code will automati
     claude
     ```
 
+    In the claude interact use the slash command `/mcp` to see if the recce mcp is connected
+    
+    ```
+     ❯ 1. recce            ✔ connected · Enter to view details 
+    ```
+
 3. Ask Claude Code about your changes
 
     ```shell
