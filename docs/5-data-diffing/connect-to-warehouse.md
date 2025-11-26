@@ -73,5 +73,5 @@ For more information on setting up key pair authentication, refer to [Snowflake'
 | Field          | Description                                                                                | Examples                      |
 | -------------- | ------------------------------------------------------------------------------------------ | ----------------------------- |
 | `project`      | The GCP project to connect to                                                              | `GCP_PROJECT_ID`              |
-| `dataset`      | The BigQuery dataset to connect to                                                         | `DBT_DATASET_NAME`            |
+| `dataset`      | The default BigQuery dataset to connect to                                                         | `DBT_DATASET_NAME`            |
 | `keyfile_json` | The [keyfile](https://docs.getdbt.com/guides/bigquery?step=7#generate-bigquery-credentials) generated from your GCP service account to connect to BigQuery               | `keyfile_json: type: xxx project_id: xxx private_key_id: xxx ...` |
