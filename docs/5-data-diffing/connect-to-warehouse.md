@@ -53,7 +53,8 @@ For more information on setting up key pair authentication, refer to [Snowflake'
 
 ### Databricks
 
-We only support token-based authentication.
+!!!info "Important"
+    We currently only support token-based authentication.
 
 | Field       | Description                                                                                   | Examples                      |
 | ----------- | --------------------------------------------------------------------------------------------- | ----------------------------- |
@@ -66,7 +67,8 @@ We only support token-based authentication.
 
 ### BigQuery
 
-We only support service account json of authentication methods. More details [here](https://docs.getdbt.com/docs/core/connect-data-platform/bigquery-setup#service-account-json).
+!!!info "Important"
+    For authentication, we currently provide support for service account JSON only. More details [here](https://docs.getdbt.com/docs/core/connect-data-platform/bigquery-setup#service-account-json).
 
 | Field          | Description                                                                                | Examples                      |
 | -------------- | ------------------------------------------------------------------------------------------ | ----------------------------- |
