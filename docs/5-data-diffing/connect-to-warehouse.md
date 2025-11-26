@@ -10,6 +10,7 @@ If you use Recce Cloud, here are the warehouse connection settings. We currently
 
 - [Snowflake](#snowflake)
 - [Databricks](#databricks)
+- [BigQuery](#bigquery)
 
 Others are coming in future releases
 
@@ -61,3 +62,14 @@ We only support token-based authentication.
 | `catalog`   | The catalog used to connect to the warehouse. This is optional if you are using Unity Catalog | `MY_CATALOG`                  |
 | `schema`    | The default schema to connect to                                                              | `MY_SCHEMA`                   |
 | `token`     | The Personal Access Token (PAT) to connect to Databricks                                      | `dapiXXXXXXXXXXXXXXXXXXXXXXX` |
+
+
+### BigQuery
+
+We only support service account json of authentication methods. More details [here](https://docs.getdbt.com/docs/core/connect-data-platform/bigquery-setup#service-account-json).
+
+| Field          | Description                                                                                | Examples                      |
+| -------------- | ------------------------------------------------------------------------------------------ | ----------------------------- |
+| `project`      | The GCP project to connect to                                                              | `GCP_PROJECT_ID`              |
+| `dataset`      | The BigQuery dataset to connect to                                                         | `DBT_DATASET_NAME`            |
+| `keyfile_json` | The [keyfile](https://docs.getdbt.com/guides/bigquery?step=7#generate-bigquery-credentials) generated from your GCP service account to connect to BigQuery               | `keyfile_json: type: xxx project_id: xxx private_key_id: xxx ...` |
