@@ -49,7 +49,7 @@ Connect your repository to track pull requests/merge requests and validate chang
 
 | GitHub                                                                                                       | GitLab                                                                                                                                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1. Navigate to settings<br>2. Connect GitHub repository<br>3. Authorize Recce access<br>4. Select repository | 1. Navigate to settings<br>2. Connect GitLab by providing a Personal Access Token ([see our directions here](../7-cicd/gitlab-pat-guide.md))<br>3. Connect a project by adding a GitLab Project or URL to a Recce Project |
+| 1. Navigate to settings<br>2. Connect GitHub repository<br>3. Authorize Recce access<br>4. Select repository | 1. Navigate to settings<br>2. Connect GitLab by providing a Personal Access Token ([see our directions here](./gitlab-pat-guide.md))<br>3. Connect a project by adding a GitLab Project or URL to a Recce Project |
 
 
 ### How to Use PR/MR Tracking

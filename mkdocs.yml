@@ -75,29 +75,13 @@ nav:
           - 6-collaboration/checklist.md
           - 6-collaboration/share.md
       - CI/CD:
-          # Brief intro explaining GitHub vs GitLab paths
           - 7-cicd/ci-cd-getting-started.md
-
-          # GitHub CI/CD
-          - Using GitHub:
-              - 7-cicd/github/setup-ci.md
-              #- 7-cicd/cloud-recce-summary.md
-              #- 7-cicd/cloud-preset-checks.md
-#              - 7-cicd/github/scenario-ci.md
-              - 7-cicd/github/setup-cd.md
-
-          # GitLab CI/CD
-          - Using GitLab:
-              - 7-cicd/gitlab/setup-ci.md
-              - 7-cicd/gitlab/setup-cd.md
-              - 7-cicd/gitlab/gitlab-pat-guide.md
-
-          #- 7-cicd/recce-debug.md # content outdated
+          - 7-cicd/setup-cd.md
+          - 7-cicd/setup-ci.md
           - 7-cicd/scenario-dev.md
           - 7-cicd/scenario-pr-review.md
-          - 7-cicd/best-practices-prep-env.md
-          #- 7-cicd/recce-summary.md content outdated
           - 7-cicd/preset-checks.md
+          - 7-cicd/best-practices-prep-env.md
 
       - Technical Concepts:
           - 8-technical-concepts/state-file.md
