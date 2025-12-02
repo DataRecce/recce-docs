@@ -2,29 +2,33 @@
 title: Setup CD
 ---
 
-# Setup CD
+# Setup CD - Auto-Update Baseline
 
 Set up automatic updates for your Recce Cloud base sessions. Keep your data comparison baseline current every time you merge to main, with no manual work required.
 
-## Purpose
+## What This Does
 
-**Automated Base Session Management** eliminates manual baseline maintenance.
+**Automated Base Session Management** eliminates manual baseline maintenance:
 
-- **Triggers**: PR merge to main + scheduled updates
-- **Action**: Auto-update base Recce session
-- **Benefit**: Current comparison baseline for future PRs
+- **Triggers**: Merge to main + scheduled updates + manual runs
+- **Action**: Auto-update base Recce session with latest production artifacts
+- **Benefit**: Current comparison baseline for all future PRs/MRs
 
 ## Prerequisites
 
-You need `manifest.json` and `catalog.json` files (dbt artifacts) for Recce Cloud. See [Start Free with Cloud](../2-getting-started/start-free-with-cloud.md) for instructions on preparing these files.
+Before setting up CD, ensure you have:
 
-## Implementation
+- ✅ **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- ✅ **Repository connected** to Recce Cloud - [Git integration guide](../2-getting-started/start-free-with-cloud.md#git-integration)
+- ✅ **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
 
-### 1. Core Workflow
+## Setup
+
+### GitHub Actions
 
 Create `.github/workflows/cd-workflow.yml`:
 
-```yaml
+```yaml linenums="1" hl_lines="42-43"
 name: Update Base Recce Session
 
 on:
@@ -54,56 +58,282 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Prepare dbt artifacts
         run: |
-          # Install dbt packages
           dbt deps
-
-          # Optional: Build tables to ensure they're materialized and updated
-          # dbt build --target prod
-
-          # Required: Generate artifacts (provides all we need)
+          # Optional: dbt build --target prod
           dbt docs generate --target prod
         env:
           DBT_ENV_SECRET_KEY: ${{ secrets.DBT_ENV_SECRET_KEY }}
 
-      - name: Update Recce Cloud Base Session
-        uses: DataRecce/recce-cloud-cicd-action@v0.1
-        # This action automatically uploads artifacts to Recce Cloud
+      - name: Upload to Recce Cloud
+        run: |
+          pip install recce-cloud
+          recce-cloud upload --type prod
 ```
 
-### 2. Artifact Preparation Options
+**Key points:**
 
-**Default: Fresh Build** (shown in example above)
+- Authentication is automatic via `GITHUB_TOKEN`
+- `recce-cloud upload --type prod` tells Recce this is a baseline session
+- `dbt docs generate` creates the required `manifest.json` and `catalog.json`
 
-- `dbt docs generate` is required and provides the needed `manifest.json` and `catalog.json` artifacts.
-- `dbt build` is optional but ensures tables are materialized and updated.
+### GitLab CI/CD
 
-**Alternative Methods:**
+Add to your `.gitlab-ci.yml`:
 
-- **External Download**: Download from dbt Cloud, Paradime, or other platforms
-- **Pipeline Integration**: Use existing dbt build workflows
+```yaml linenums="1" hl_lines="30-31"
+stages:
+  - build
+  - upload
 
+variables:
+  DBT_TARGET_PROD: "prod"
 
-### 3. Verification
+# Production build - runs on schedule or main branch push
+prod-build:
+  stage: build
+  image: python:3.11-slim
+  script:
+    - pip install -r requirements.txt
+    - dbt deps
+    # Optional: dbt build --target $DBT_TARGET_PROD
+    - dbt docs generate --target $DBT_TARGET_PROD
+  artifacts:
+    paths:
+      - target/
+    expire_in: 7 days
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-#### Manual Trigger Test
+# Upload to Recce Cloud
+recce-upload-prod:
+  stage: upload
+  image: python:3.11-slim
+  script:
+    - pip install recce-cloud
+    - recce-cloud upload --type prod
+  dependencies:
+    - prod-build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
 
-1. Go to **Actions** tab in your repository
-2. Select "Update Base Recce Session" workflow
-3. Click **Run workflow** button
-4. Monitor the run for successful completion
+**Key points:**
 
-#### Verify Success
+- Authentication is automatic via `CI_JOB_TOKEN`
+- Configure schedule in **CI/CD → Schedules** (e.g., `0 2 * * *` for daily at 2 AM UTC)
+- `recce-cloud upload --type prod` tells Recce this is a baseline session
 
-- ✅ **Workflow completes** without errors in Actions tab
-- ✅ **Base session updated** in Recce Cloud
+### Platform Comparison
 
-![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-cd.png){: .shadow}
+| Aspect               | GitHub Actions                      | GitLab CI/CD                                                                   |
+| -------------------- | ----------------------------------- | ------------------------------------------------------------------------------ |
+| **Config file**      | `.github/workflows/cd-workflow.yml` | `.gitlab-ci.yml`                                                               |
+| **Trigger on merge** | `on: push: branches: ["main"]`      | `if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH` |
+| **Schedule setup**   | In workflow YAML (`schedule:`)      | In UI: **CI/CD → Schedules**                                                   |
+| **Authentication**   | Automatic (`GITHUB_TOKEN`)          | Automatic (`CI_JOB_TOKEN`)                                                     |
+| **Manual trigger**   | `workflow_dispatch:`                | Pipeline run from UI                                                           |
+
+## Verification
+
+### Test the Workflow
+
+**GitHub:**
+
+1. Go to **Actions** tab → Select "Update Base Recce Session"
+2. Click **Run workflow** → Monitor for completion
+
+**GitLab:**
+
+1. Go to **CI/CD → Pipelines** → Click **Run pipeline**
+2. Select **main** branch → Monitor for completion
+
+### Verify Success
+
+Look for these indicators:
+
+- ✅ **Workflow/Pipeline completes** without errors
+- ✅ **Base session updated** in [Recce Cloud](https://cloud.reccehq.com)
+
+**GitHub:**
+
+![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
+
+**GitLab:**
+
+![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
+
+### Expected Output
+
+When the upload succeeds, you'll see output like this in your workflow logs:
+
+**GitHub:**
+
+```hl_lines="2 3 13"
+─────────────────────────── CI Environment Detection ───────────────────────────
+Platform: github-actions
+Session Type: prod
+Commit SHA: def456ab...
+Source Branch: main
+Repository: your-org/your-repo
+Info: Using GITHUB_TOKEN for platform-specific authentication
+────────────────────────── Creating/touching session ───────────────────────────
+Session ID: abc123-def456-ghi789
+Uploading manifest from path "target/manifest.json"
+Uploading catalog from path "target/catalog.json"
+Notifying upload completion...
+──────────────────────────── Uploaded Successfully ─────────────────────────────
+Uploaded dbt artifacts to Recce Cloud for session ID "abc123-def456-ghi789"
+Artifacts from: "/home/runner/work/your-repo/your-repo/target"
+```
+
+**GitLab:**
+
+```hl_lines="2 3 13"
+─────────────────────────── CI Environment Detection ───────────────────────────
+Platform: gitlab-ci
+Session Type: prod
+Commit SHA: a1b2c3d4...
+Source Branch: main
+Repository: your-org/your-project
+Info: Using CI_JOB_TOKEN for platform-specific authentication
+────────────────────────── Creating/touching session ───────────────────────────
+Session ID: abc123-def456-ghi789
+Uploading manifest from path "target/manifest.json"
+Uploading catalog from path "target/catalog.json"
+Notifying upload completion...
+──────────────────────────── Uploaded Successfully ─────────────────────────────
+Uploaded dbt artifacts to Recce Cloud for session ID "abc123-def456-ghi789"
+Artifacts from: "/builds/your-org/your-project/target"
+```
+
+## Advanced Options
+
+### Custom Artifact Path
+
+If your dbt artifacts are in a non-standard location:
+
+```bash
+recce-cloud upload --type prod --target-path custom-target
+```
+
+### External Artifact Sources
+
+You can download artifacts from external sources before uploading:
+
+```yaml
+# GitHub example
+- name: Download from dbt Cloud
+  run: |
+    # Your download logic here
+    # Artifacts should end up in target/ directory
+
+- name: Upload to Recce Cloud
+  run: |
+    pip install recce-cloud
+    recce-cloud upload --type prod
+```
+
+### Dry Run Testing
+
+Test your configuration without actually uploading:
+
+```bash
+recce-cloud upload --type prod --dry-run
+```
+
+## Troubleshooting
+
+### Missing dbt artifacts
+
+**Error**: `Missing manifest.json` or `Missing catalog.json`
+
+**Solution**: Ensure `dbt docs generate` runs successfully before upload:
+
+**GitHub:**
+
+```yaml
+- name: Prepare dbt artifacts
+  run: |
+    dbt deps
+    dbt docs generate --target prod  # Required
+```
+
+**GitLab:**
+
+```yaml
+prod-build:
+  script:
+    - dbt deps
+    - dbt docs generate --target $DBT_TARGET_PROD # Required
+  artifacts:
+    paths:
+      - target/
+```
+
+### Authentication issues
+
+**Error**: `Failed to create session: 401 Unauthorized`
+
+**Solutions**:
+
+1. Verify your repository is connected in [Recce Cloud settings](https://cloud.reccehq.com/settings)
+2. **For GitHub**: Ensure workflow has default `GITHUB_TOKEN` permissions
+3. **For GitLab**: Verify project has GitLab integration configured
+   - Check that you've created a [Personal Access Token](../2-getting-started/gitlab-pat-guide.md)
+   - Ensure the token has appropriate scope (`api` or `read_api`)
+   - Verify the project is connected in Recce Cloud settings
+
+### Upload failures
+
+**Error**: `Failed to upload manifest/catalog`
+
+**Solutions**:
+
+1. Check network connectivity to Recce Cloud
+2. Verify artifact files exist in `target/` directory
+3. Review workflow/pipeline logs for detailed error messages
+4. **For GitLab**: Ensure artifacts are passed between jobs:
+
+   ```yaml
+   prod-build:
+     artifacts:
+       paths:
+         - target/ # Must include dbt artifacts
+
+   recce-upload-prod:
+     dependencies:
+       - prod-build # Required to access artifacts
+   ```
+
+### Session not appearing
+
+**Issue**: Upload succeeds but session doesn't appear in Recce Cloud
+
+**Solutions**:
+
+1. Check you're viewing the correct repository in Recce Cloud
+2. Verify you're looking at the production/base sessions (not PR/MR sessions)
+3. Check session filters in Recce Cloud (may be hidden by filters)
+4. Refresh the Recce Cloud page
+
+### Schedule not triggering (GitLab only)
+
+**Issue**: Scheduled pipeline doesn't run
+
+**Solutions**:
+
+1. Verify schedule is **Active** in CI/CD → Schedules
+2. Check schedule timezone settings (UTC by default)
+3. Ensure target branch (`main`) exists
+4. Review project's CI/CD minutes quota
+5. Verify schedule owner has appropriate permissions
 
 ## Next Steps
 
-**[Setup CI](./setup-ci.md)** to automatically validate PR changes against your updated base session. This completes your CI/CD pipeline by adding automated data validation for every pull request.
+**[Setup CI](./setup-ci.md)** to automatically validate PR/MR changes against your updated base session. This completes your CI/CD pipeline by adding automated data validation for every pull request or merge request.

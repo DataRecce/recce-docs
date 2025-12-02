@@ -49,33 +49,43 @@ Both CI and CD workflows follow the same pattern:
 
 ## Getting Started with your CI/CD
 
-Recce currently integrates with both GitHub Actions and GitLab CI/CD. If you use another CI/CD product and interested in Recce, [let us know](https://cal.com/team/recce/chat).
+Recce integrates with both GitHub Actions and GitLab CI/CD using the lightweight `recce-cloud` CLI. If you use another CI/CD platform and are interested in Recce, [let us know](https://cal.com/team/recce/chat).
 
 ## Prerequisites
 
 Before setting up, ensure you have:
 
-- **Recce Cloud account** You can signup and start your free trial [here](https://cloud.reccehq.com/)
-- **Repository connected** to Recce Cloud ([setup guide](../2-getting-started/start-free-with-cloud.md#git-integration))
-- **dbt artifacts generated** (`manifest.json` and `catalog.json`) from your project
+- ✅ **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- ✅ **Repository connected** to Recce Cloud - [Git integration guide](../2-getting-started/start-free-with-cloud.md#git-integration)
+  - For GitLab: [Create a Personal Access Token](../2-getting-started/gitlab-pat-guide.md) if not already done
+- ✅ **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your project
 
-### GitHub
-If your dbt project uses GitHub:
+## Setup Steps
 
-1. [Setup CD](./github/setup-cd.md) - Auto-update baseline on merge to main
-2. [Setup CI](./github/setup-ci.md) - Auto-validate changes in every PR
+Both GitHub and GitLab follow the same simple pattern:
 
-### GitLab
-If your dbt project uses GitLab:
+### 1. Setup CD - Auto-update baseline
+[**Setup CD Guide**](./setup-cd.md) - Configure automatic baseline updates when you merge to main
 
-1. [Setup CD](./gitlab/setup-cd.md) - Auto-update baseline on merge to main
-2. [Setup CI](./gitlab/setup-ci.md) - Auto-validate changes in every MR
-3. [GitLab Personal Access Token Guide](./gitlab/gitlab-pat-guide.md) - Required for GitLab integration
+- Updates your production baseline artifacts automatically
+- Runs on merge to main + optional scheduled updates
+- Works with both GitHub Actions and GitLab CI/CD
 
-## Next steps
+### 2. Setup CI - Auto-validate PRs/MRs
+[**Setup CI Guide**](./setup-ci.md) - Enable automatic validation for every PR/MR
 
-1. Start with relevant CD setup ([Gitlab](./gitlab/setup-cd.md) or [Github](./github/setup-cd.md)) to establish automatic baseline (production artifacts) updates.
-2. Configure CI setup ([Gitlab](./gitlab/setup-ci.md) or [Github](./github/setup-ci.md)) to enable PR/MR validation
+- Validates data changes in every pull request or merge request
+- Catches issues before they reach production
+- Works with both GitHub Actions and GitLab CI/CD
+
+## Why This Order?
+
+Start with **CD first** to establish your baseline (production artifacts), then add **CI** for PR/MR validation. CI validation compares your PR/MR changes against the baseline created by CD.
+
+## Next Steps
+
+1. **[Setup CD](./setup-cd.md)** - Establish automatic baseline updates
+2. **[Setup CI](./setup-ci.md)** - Enable PR/MR validation
 3. Review [best practices](./best-practices-prep-env.md) for environment preparation
 
 ## Related workflows
