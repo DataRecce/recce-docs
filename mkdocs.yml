@@ -70,6 +70,7 @@ nav:
           - 5-data-diffing/topK-diff.md
           - 5-data-diffing/histogram-diff.md
           - 5-data-diffing/query.md
+          - 5-data-diffing/mcp-server.md
       - Collaborate Validation:
           - 6-collaboration/invitation.md
           - 6-collaboration/checklist.md
@@ -78,7 +79,9 @@ nav:
           - 7-cicd/ci-cd-getting-started.md
           - 7-cicd/setup-cd.md
           - 7-cicd/setup-ci.md
-          - 7-cicd/scenario-dev.md
+          - 7-cicd/pr_mr_summary.md
+          #- 7-cicd/recce-debug.md # content outdated
+          - 7-cicd/scenario-dev.md          
           - 7-cicd/scenario-pr-review.md
           - 7-cicd/preset-checks.md
           - 7-cicd/best-practices-prep-env.md
