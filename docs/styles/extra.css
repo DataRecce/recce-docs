@@ -125,7 +125,7 @@
 .md-content__inner .mailchimp-cta::before {
   content: "";
   position: absolute;
-  background-image: url('/assets/images/Logo_Recce_white-fs8.png');
+  background-image: url('/assets/images/Logo-Recce-white-fs8.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 20%;
