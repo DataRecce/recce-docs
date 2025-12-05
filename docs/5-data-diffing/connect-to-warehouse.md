@@ -11,6 +11,7 @@ If you use Recce Cloud, here are the warehouse connection settings. We currently
 - [Snowflake](#snowflake)
 - [Databricks](#databricks)
 - [BigQuery](#bigquery)
+- [Redshift](#redshift)
 
 Others are coming in future releases
 
@@ -29,7 +30,7 @@ We support two authentication methods for Snowflake:
 | Field       | Description                               | Examples                 |
 | ----------- | ----------------------------------------- | ------------------------ |
 | `account`   | The Snowflake account to connect to       | `xxxxxx.us-central1.gcp` |
-| `database`  | The default database to connect to        | `MYDB`                   |
+| `database`  | The default database to connect to        | `MY_DB`                   |
 | `schema`    | The default schema to connect to          | `PUBLIC`                 |
 | `warehouse` | The warehouse to use when running queries | `WH_LOAD`                |
 
@@ -37,8 +38,8 @@ We support two authentication methods for Snowflake:
 
 | Field      | Description               | Examples |
 | ---------- | ------------------------- | -------- |
-| `user`     | The user to log in as     | `MYUSER` |
-| `password` | The password for the user | `MYPASS` |
+| `user`     | The user to log in as     | `MY_USER` |
+| `password` | The password for the user | `MY_PASS` |
 
 #### Key Pair Authentication
 
@@ -75,3 +76,19 @@ For more information on setting up key pair authentication, refer to [Snowflake'
 | `project`      | The GCP project to connect to                                                              | `GCP_PROJECT_ID`              |
 | `dataset`      | The default BigQuery dataset to connect to                                                         | `DBT_DATASET_NAME`            |
 | `keyfile_json` | The [keyfile](https://docs.getdbt.com/guides/bigquery?step=7#generate-bigquery-credentials) generated from your GCP service account to connect to BigQuery               | `keyfile_json: type: xxx project_id: xxx private_key_id: xxx ...` |
+
+
+### Redshift
+
+!!!info "Important"
+    We currently support Database (Password-based authentication) only. More details [here](https://docs.getdbt.com/docs/core/connect-data-platform/redshift-setup#authentication-parameters).
+
+| Field       | Description                                                                                   | Examples                      |
+| ----------- | --------------------------------------------------------------------------------------------- | ----------------------------- |
+| `host`      | Host of your cluster                                                                  | `hostname.region.redshift.amazonaws.com`  |
+| `user` | Account username to log into your cluster                                    | `MY_USER`         |
+| `password`   | Password for authentication | `MY_PASS`                  |
+| `dbname`    | The default database to connect to                                                              | `MY_DB`                   |
+| `schema`     | The default schema to connect to                                      | `MY_SCHEMA` |
+| `port`          | Port for your Redshift environment | `5439`|
+
