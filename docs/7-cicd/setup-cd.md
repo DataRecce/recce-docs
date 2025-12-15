@@ -46,6 +46,8 @@ jobs:
   update-base-session:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout code
@@ -72,11 +74,13 @@ jobs:
         run: |
           pip install recce-cloud
           recce-cloud upload --type prod
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 **Key points:**
 
-- Authentication is automatic via `GITHUB_TOKEN`
+- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) is passed explicitly for Recce Cloud authentication
 - `recce-cloud upload --type prod` tells Recce this is a baseline session
 - `dbt docs generate` creates the required `manifest.json` and `catalog.json`
 
@@ -136,7 +140,7 @@ recce-upload-prod:
 | **Config file**      | `.github/workflows/cd-workflow.yml` | `.gitlab-ci.yml`                                                               |
 | **Trigger on merge** | `on: push: branches: ["main"]`      | `if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH` |
 | **Schedule setup**   | In workflow YAML (`schedule:`)      | In UI: **CI/CD → Schedules**                                                   |
-| **Authentication**   | Automatic (`GITHUB_TOKEN`)          | Automatic (`CI_JOB_TOKEN`)                                                     |
+| **Authentication**   | Explicit (`GITHUB_TOKEN`)           | Automatic (`CI_JOB_TOKEN`)                                                     |
 | **Manual trigger**   | `workflow_dispatch:`                | Pipeline run from UI                                                           |
 
 ## Verification
@@ -283,7 +287,7 @@ prod-build:
 **Solutions**:
 
 1. Verify your repository is connected in [Recce Cloud settings](https://cloud.reccehq.com/settings)
-2. **For GitHub**: Ensure workflow has default `GITHUB_TOKEN` permissions
+2. **For GitHub**: Ensure `GITHUB_TOKEN` is passed explicitly to the upload step and the job has `contents: read` permission
 3. **For GitLab**: Verify project has GitLab integration configured
    - Check that you've created a [Personal Access Token](../2-getting-started/gitlab-pat-guide.md)
    - Ensure the token has appropriate scope (`api` or `read_api`)
