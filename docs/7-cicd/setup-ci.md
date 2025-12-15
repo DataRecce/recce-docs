@@ -44,6 +44,9 @@ jobs:
   validate-changes:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - name: Checkout PR branch
@@ -72,11 +75,13 @@ jobs:
         run: |
           pip install recce-cloud
           recce-cloud upload
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 **Key points:**
 
-- Authentication is automatic via `GITHUB_TOKEN`
+- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) is passed explicitly for Recce Cloud authentication
 - `recce-cloud upload` (without `--type`) auto-detects this is a PR session
 - `dbt docs generate` creates the required `manifest.json` and `catalog.json`
 
@@ -133,7 +138,7 @@ recce-upload:
 | -------------------- | ----------------------------------- | -------------------------------------------------- |
 | **Config file**      | `.github/workflows/ci-workflow.yml` | `.gitlab-ci.yml`                                   |
 | **Trigger**          | `on: pull_request:`                 | `if: $CI_PIPELINE_SOURCE == "merge_request_event"` |
-| **Authentication**   | Automatic (`GITHUB_TOKEN`)          | Automatic (`CI_JOB_TOKEN`)                         |
+| **Authentication**   | Explicit (`GITHUB_TOKEN`)           | Automatic (`CI_JOB_TOKEN`)                         |
 | **Session type**     | Auto-detected from PR context       | Auto-detected from MR context                      |
 | **Artifact passing** | Not needed (single job)             | Use `artifacts:` + `dependencies:`                 |
 
