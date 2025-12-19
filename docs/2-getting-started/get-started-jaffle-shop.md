@@ -83,9 +83,8 @@ Jaffle Shop is an example project officially provided by [dbt Labs](https://www.
    Click the `Run Diff` or press `Cmd + Shift + Enter`
    Click on the 🔑 icon next to the `order_id` column to compare records that are uniquely identified by their `order_id`.
    ![Query in Recce](../assets/images/2-getting-started/jaffle-shop-query.png)
-9.  Click the `+` to add the query result to checklist
-   ![Add query to checklist](../assets/images/2-getting-started/jaffle-shop-check-buttun.png
-)
+9.  Click the blue `Add to Checklist` button on the right bottom corner to add the query result to checklist
+   ![Add query to checklist](../assets/images/2-getting-started/jaffle-shop-check-buttun.png)
 
 ## What’s Next
 By following this DuckDB tutorial, you’ve seen how Recce works locally.
