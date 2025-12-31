@@ -53,9 +53,13 @@ For more information on setting up key pair authentication, refer to [Snowflake'
 
 
 ### Databricks
+We support two authentication methods for Databricks:
 
-!!!info "Important"
-    We currently only support token-based authentication.
+- **Token-based**: Require Personal Access Token (PAT)
+- **OAuth Client-based (M2M)**: Auto-enabled in every account with expected settings
+More details [here](https://docs.getdbt.com/docs/core/connect-data-platform/databricks-setup#examples)).
+
+#### Common Fields
 
 | Field       | Description                                                                                   | Examples                      |
 | ----------- | --------------------------------------------------------------------------------------------- | ----------------------------- |
@@ -63,7 +67,22 @@ For more information on setting up key pair authentication, refer to [Snowflake'
 | `http_path` | The HTTP path to your SQL Warehouse or all-purpose cluster                                    | `/SQL/YOUR/HTTP/PATH`         |
 | `catalog`   | The catalog used to connect to the warehouse. This is optional if you are using Unity Catalog | `MY_CATALOG`                  |
 | `schema`    | The default schema to connect to                                                              | `MY_SCHEMA`                   |
-| `token`     | The Personal Access Token (PAT) to connect to Databricks                                      | `dapiXXXXXXXXXXXXXXXXXXXXXXX` |
+
+#### Token-based Authentication
+
+| Field      | Description                                              | Examples                      |
+| ---------- | -------------------------------------------------------- | ----------------------------- |
+| `token`    | The Personal Access Token (PAT) to connect to Databricks | `dapiXXXXXXXXXXXXXXXXXXXXXXX` |
+
+#### OAuth Client-based Authentication (M2M)
+
+| Field                 | Description                                                                     | Required |
+| ----------------------| ------------------------------------------------------------------------------- | -------- |
+| `auth_type`           | The type of authorization needed to connect to Databricks. Default as `oauth`   | Yes      |
+| `client_id`           | The client ID for your Databricks OAuth application                             | Yes      |
+| `client_secret`       | The client secret for your Databricks OAuth application                         | Yes      |
+
+For more information on setting up OAuth Client-based authentication, refer to [Databricks's Oauth Client-based authentication documentation]((https://docs.getdbt.com/docs/core/connect-data-platform/databricks-setup?tokenoauth=oauth#examples)).
 
 
 ### BigQuery
