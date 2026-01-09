@@ -1,5 +1,5 @@
 ---
-title: PR/MR Data Review Summary
+title: PR/MR Data Review
 ---
 Recce provides a data review summary for each PR to help you understand changes and their impact. Using state-of-the-art AI agents, it analyzes your PR information and metadata updates to determine what should be validated through data diffing in your data warehouse, then delivers comprehensive insights for informed decision-making.
 
