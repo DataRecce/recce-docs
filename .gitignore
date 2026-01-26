@@ -1,5 +1,6 @@
 venv/
 .DS_Store
+.mcp.json
 site/
 node_modules/
 .cache/
