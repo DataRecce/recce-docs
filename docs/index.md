@@ -1,8 +1,10 @@
 # What is Recce (Data Review Agent)
 
-Recce is a Data Review Agent that automates data PR review, catching issues before production so you find problems (before your boss does).
+Know exactly how code changes impact your data.
 
-Your code review passes. Data still breaks dashboards, reports, and pipelines. Someone else finds it first. That's why you need Recce (pronounced REK-ee, rhymes with 'techie').
+Recce is a Data Review Agent that automates data validation for pull requests. When you open a PR, it compares your dev environment against production and surfaces schema changes, data diffs, row counts, and downstream impacts. You see what changed, what it affects, and what passed, all before you merge.
+
+No more merging PRs where the pipeline succeeded but the data is quietly wrong.
 
 ## How Recce Works
 
@@ -20,7 +22,7 @@ You review the agent's findings, add notes, and approve with confidence, not bli
 
 1. PR Created
 2. Recce Triggered
-3. Agent Analyzed Data Diffs
+3. Agent Analyzes Production vs. Development Data 
 4. Agent Generates Review Summary
 5. Human Explore in Recce Instance
 6. Human Reviews Approves
@@ -45,12 +47,11 @@ With CI/CD:
 
 - **Business-critical data:** Data that's customer-facing or revenue-impacting
 - **Team collaboration:** When reviewers need to understand impact, not just see code changes
-- **Systematic validation:** When you need consistent review across senior and junior team members
+- **Standardized validation:** When you need consistent review across senior and junior team members
 - **Unknown unknowns:** When you can't predict what might break from a change
 
 ## When Not to Use
 
-- Ad-hoc queries with no downstream consumers
 - Teams that accept errors on production and fix later
 - Exploratory analysis that won't go to production
 
