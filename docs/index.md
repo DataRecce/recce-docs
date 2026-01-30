@@ -1,109 +1,69 @@
----
-title: Introduction
----
+# What is Recce (Data Review Agent)
+
+Know exactly how code changes impact your data.
+
+Recce is a Data Review Agent that automates data validation for pull requests. When you open a PR, it compares your dev environment against production and surfaces schema changes, data diffs, row counts, and downstream impacts. You see what changed, what it affects, and what passed, all before you merge.
+
+No more merging PRs where the pipeline succeeded but the data is quietly wrong.
+
+## How Recce Works
+
+When you open a PR with data changes, Recce automatically:
+
+1. **Runs data diffing:** The best practice to validate data changes
+2. **Analyzes impact:** Identifies what changed down to the column level using Column-Level Lineage (CLL)
+3. **Reviews first:** The agent provides a data review summary explaining the change and its impact
+4. **Surfaces what matters:** Shows only impacted items, not every downstream table
+5. **Opens exploration:** Spins up a Recce instance where you can run additional diffs, explore lineage, and investigate deeper
+
+You review the agent's findings, add notes, and approve with confidence, not blind trust.
+
+![How Recce Works](assets/images/1-whats-recce/how-recce-work.png)
+
+1. PR Created
+2. Recce Triggered
+3. Agent Analyzes Production vs. Development Data 
+4. Agent Generates Review Summary
+5. Human Explore in Recce Instance
+6. Human Reviews Approves
+7. PR Merges
 
 
-# What is Recce?
+Example of Recce agent summary in a GitHub PR comment: 
+![How Recce Works](assets/images/1-whats-recce/agent-data-review-example.png)
 
-Recce (pronounced "wreck-E"), short for reconnaissance, helps data teams cut guesswork on downstream impact, streamline collaboration, and ship changes faster—building trust through clarity.
+## Automate Agent Data Review with CI/CD
 
-## Open Source vs Cloud
-Recce started as an [open source project](https://github.com/datarecce/recce) and now offers a Cloud version for teams seeking enhanced collaboration.
+Recce delivers value through CI/CD integration. Without it, you waste time triaging false alerts from source data updates and manually comparing environments hoping you caught everything.
 
-Our **Open Source Project** is perfect for developers who want to try locally and contribute feedback, while our **Cloud** product provides data teams with real-time collaboration, automatic checklist sync, and PR gating.
+With CI/CD:
 
-[Compare options and choose what fits your team](2-getting-started/oss-vs-cloud.md). 
+- Every PR gets automatic validation
+- Base and current environments are set up automatically
+- Agent reviews before you do
+- Checks accumulate as organizational knowledge (preset checks)
 
-<!-- ## Recce Cloud
+## When to Use Recce
 
-Ready to collaborate and move faster as a team? Recce Cloud adds real-time collaboration, automatic checklist sync, and PR gating, so nothing gets merged without a full review.
+- **Business-critical data:** Data that's customer-facing or revenue-impacting
+- **Team collaboration:** When reviewers need to understand impact, not just see code changes
+- **Standardized validation:** When you need consistent review across senior and junior team members
+- **Unknown unknowns:** When you can't predict what might break from a change
 
-- Share checklists across development stages
-- Invite stakeholders to review data changes
-- Block merges until all checks are approved
-- Launch Recce from your automated workflows with full context
+## When Not to Use
 
-👉 [Start free with cloud](2-getting-started/start-free-with-cloud.md)
+- Teams that accept errors on production and fix later
+- Exploratory analysis that won't go to production
 
-Recce Cloud is a hosted version of Recce that standardizes your workflow, keeps teams aligned, and reduces errors, so you can ship data changes with confidence. -->
+## FAQ
 
+**Does Recce work without CI/CD?**
+Yes, you can run Recce locally for dev sessions. But CI/CD unlocks the full value: automatic validation on every PR without manual setup.
 
-<!-- ## Quick Start
+**What data platforms does Recce support?**
+Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](5-data-diffing/connect-to-warehouse/) for setup.
 
-You can launch Recce in any dbt project in just two commands:
-
-```bash
-# cd into your dbt project
-pip install -U recce
-recce server
-```
-
-This starts Recce locally, where you can explore lineage and run queries. To unlock the full set of diffing tools, such as data comparisons and impact checks, you’ll need to prepare two environments to compare against. You can follow our [5-minute Jaffle Shop tutorial](https://docs.reccehq.com/get-started-jaffle-shop/) to try it out step-by-step.
-
-Recce is the foundation of the workflow. It helps you explore changes, validate before merge, and provide full context to reviewers and stakeholders. Once you're comfortable using it locally, you can explore advanced collaboration features through Recce Cloud.
-
-<iframe src="https://www.loom.com/embed/77a85411dbd046bf802d7786b2d47bf5?sid=40245a99-03d7-4687-b5fb-3d509489fc3b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 100%; height: 500px;"></iframe> -->
-
-<!-- ### Explore the Live Demos
-
-Want to see Recce in action without setting anything up? Check out the [interactive demos](https://reccehq.com/demo/).  -->
-
-## Why Recce
-
-[dbt](https://www.getdbt.com/) introduced software best practices to data projects: modular SQL, version-controlled code, and reproducible pipelines.
-
-But “bad merges” still happen. Silent data errors slip into production breaking metrics, breaking stakeholder trust.
-
-As teams scale and more people contribute to data projects, it becomes harder to validate changes with confidence, especially when the impact spans multiple models or business domains.
-
-Recce brings data reconnaissance into the workflow. We make it easy to create and standardize a data validation workflow by enabling you to:
-
-- Instantly trace dependencies down to the column level
-- Compare data and metrics before and after a change
-- Share a clear, explainable checklist with teammates and stakeholders
-
-The only way to know the impact of a change is to compare what it actually changes. Recce makes that fast, visible, and collaborative.
-
-## Who is Recce for?
-
-Recce helps teams catch issues early, understand the impact of changes, and build trust in every data release. It fits naturally into the data workflow so validation becomes part of how you build, not something extra to worry about.
-
-- **Data engineers** use Recce to check for downstream impact and make sure changes are safe before releasing.
-- **Analysts** use Recce to review their own work, compare data before and after, and confirm that key metrics still make sense.
-- **Stakeholders** use Recce to review updates with clear context, without reading SQL or digging into warehouse tables.
-
-## What You Get
-
-Recce gives you a clear, fast way to understand what your data changes are doing and why they matter. It helps you catch problems early, verify metrics, and share your findings with others all as part of your normal workflow.
-
-![Lineage graph supports model/column levels navigation and breaking change analysis](assets/images/1-whats-recce/lineage-readme1.png)
-
-Lineage graph supports model/column levels navigation and breaking change analysis.
-
-![Model and column level diff](assets/images/1-whats-recce/diff-readme2.png)
-
-Model and column level diff
-
-![Checklist for collaboration](assets/images/1-whats-recce/checklist-readme3.png)
-
-Checklist for collaboration
-
-### What’s included
-
-- **Lineage and impact mapping:** Quickly see which models and columns are affected by a change. Navigate lineage down to the column level, and spot breaking changes with clear visual cues.
-- **Metric and data comparisons:** Use Profile, Value, Top-K, and Histogram Diffs to compare results before and after changes. Validate things like row counts, category distributions, and numeric ranges without writing extra SQL.
-- **Query diff:** Write and compare any two queries side by side. This is helpful when validating fixes or reviewing changes with teammates.
-- **Checklist for reviews and approvals:** Turn your validation steps into a checklist. Add notes, rerun checks, and share the results with reviewers or stakeholders. In Recce Cloud, checklists can sync automatically and even block changes until checks are approved.
-- **Secure by design:** Recce is SOC 2 compliant to meet enterprise security standards. It runs locally or in your private environment, and your data stays in your warehouse.
-
-<!-- ### Learn More
-
-Want to dive deeper? Check out the full documentation for setup guides, feature overviews, and use case tutorials.
-
-- [Getting Started](https://docs.reccehq.com/get-started/)
-- [Features Overview](https://docs.reccehq.com/features/lineage/)
-- [Writing Checks and Using Checklists](https://docs.reccehq.com/features/checklist/)
-- [State File and Configuration](https://docs.reccehq.com/features/state-file/)
-- [Running Recce in CI/CD](https://docs.reccehq.com/guides/scenario-ci/)
-- [Breaking Change Analysis](https://docs.reccehq.com/features/breaking-change-analysis/) -->
-
+## Related
+- Interactive Demo: [Try the Data Review Agent](https://reccehq.com/demo/)
+- Tutorial: [Get Started with Recce Cloud](2-getting-started/start-free-with-cloud/)
+- Blog: [The Problem with Data PR Reviews: Where Do You Even Start?](https://blog.reccehq.com/guided-data-review)
