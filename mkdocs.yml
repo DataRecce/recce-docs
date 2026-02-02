@@ -11,6 +11,9 @@ site_url: https://docs.reccehq.com
 extra_css:
   - styles/extra.css
 
+extra_javascript:
+  - javascripts/hubspot-form.js
+
 extra:
   generator: false
   social:
