@@ -12,6 +12,12 @@
 {{ super() }}
 {% endblock %}
 
+{% block scripts %}
+{{ super() }}
+<!-- HubSpot Forms Embed Script -->
+<script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+{% endblock %}
+
 {% block header %}
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N34SPDW8"

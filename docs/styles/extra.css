@@ -289,3 +289,74 @@ header .btn.btn-primary:active {
   filter: saturate(90%);
   cursor: pointer;
 }
+
+/**** HubSpot Newsletter Form ****/
+
+.hubspot-newsletter-wrapper {
+  background-color: var(--md-primary-fg-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  color: #fff;
+}
+
+.hubspot-newsletter-wrapper h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+#hubspot-newsletter-form .hs-form-field {
+  margin-bottom: 0.75rem;
+}
+
+#hubspot-newsletter-form .hs-form-field label {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+#hubspot-newsletter-form .hs-input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  font-size: 0.8rem;
+}
+
+#hubspot-newsletter-form .hs-input:focus {
+  outline: none;
+  border-color: var(--md-typeset-a-color);
+  box-shadow: 0 0 0 2px rgba(255, 110, 66, 0.2);
+}
+
+#hubspot-newsletter-form .hs-button {
+  background-color: var(--md-typeset-a-color);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#hubspot-newsletter-form .hs-button:hover {
+  background-color: #e04f23;
+}
+
+#hubspot-newsletter-form .hs-error-msgs {
+  color: #ffcccc;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+#hubspot-newsletter-form .submitted-message {
+  color: #fff;
+  font-weight: 500;
+}
