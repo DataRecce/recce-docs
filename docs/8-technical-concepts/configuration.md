@@ -4,6 +4,33 @@ title: Configuration
 
 The config file for Recce is located in recce.yml. Currently, only preset checks are configurable.
 
+## Environment Variables
+
+Recce supports configuration through environment variables. These settings take effect when running `recce-cloud upload` or related CLI commands.
+
+### BigQuery Location
+
+When using the BigQuery adapter, specify the dataset location with `RECCE_BQ_LOCATION`. This tells Recce where your BigQuery datasets reside.
+
+| Variable | CLI Flag | Description |
+| --- | --- | --- |
+| `RECCE_BQ_LOCATION` | `--bq-location` | BigQuery dataset location (e.g., `US`, `EU`, `asia-northeast1`) |
+
+**Examples**
+
+Set the location via environment variable:
+```bash
+export RECCE_BQ_LOCATION=US
+recce-cloud upload
+```
+
+Or pass it directly as a CLI flag:
+```bash
+recce-cloud upload --bq-location EU
+```
+
+The CLI flag takes precedence over the environment variable.
+
 ## Preset Checks
 
 [Preset checks](../7-cicd/preset-checks.md) can be generated when executing `recce server` or `recce run`.
