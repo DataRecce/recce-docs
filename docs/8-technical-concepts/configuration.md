@@ -44,7 +44,7 @@ checks:
 | `select` | The node selection syntax to select. See [more](https://docs.getdbt.com/reference/node-selection/syntax) | `string` | |
 | `exclude` | the node selection syntax to exclude. See [more](https://docs.getdbt.com/reference/node-selection/syntax) | `string` | |
 | `packages` | The package filter | `string[]` | |
-| `view_mode` | The quick filter to select changed model and 1st degree of upstream. | `all`, `changed_model` | |
+| `view_mode` | The quick filter to select changed model and 1st degree of upstream. | `all`, `changed_models` | |
 
 **Notes**
 
@@ -81,7 +81,7 @@ checks:
 | `select` | The node selection syntax to select. See [more](https://docs.getdbt.com/reference/node-selection/syntax) | `string` | |
 | `exclude` | the node selection syntax to exclude. See [more](https://docs.getdbt.com/reference/node-selection/syntax) | `string` | |
 | `packages` | The package filter | `string[]` | |
-| `view_mode` | The quick filter to select changed model and 1st degree of upstream. | `all`, `changed_model` | |
+| `view_mode` | The quick filter to select changed model and 1st degree of upstream. | `all`, `changed_models` | |
 
 **Notes**
 
@@ -116,7 +116,7 @@ checks:
 | `select` | The node selection syntax to select. See [more](https://docs.getdbt.com/reference/node-selection/syntax) | `string` | |
 | `exclude` | the node selection syntax to exclude. See [more](https://docs.getdbt.com/reference/node-selection/syntax) | `string` | |
 | `packages` | The package filter | `string[]` | |
-| `view_mode` | The quick filter to select changed model and 1st degree of upstream. | `all`, `changed_model` | |
+| `view_mode` | The quick filter to select changed model and 1st degree of upstream. | `all`, `changed_models` | |
 
 **Examples**
 
