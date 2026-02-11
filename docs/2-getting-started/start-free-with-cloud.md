@@ -150,7 +150,7 @@ The workflows use two types of secrets:
 
 The Base environment should reflect the dbt configuration in the main branch. Example workflow file: `base-workflow.yml`
 
-```yml
+```yaml
 name: Update Base Metadata
 on:
   push:
@@ -217,7 +217,7 @@ To integrate into your own configuration, ensure your workflow includes the bold
 
 The Current environment should reflect the dbt configuration in the PR branch. Recce provides an example workflow file: `pr-workflow.yml`
 
-```yml
+```yaml
 name: Validate PR Changes
 on:
   pull_request:
