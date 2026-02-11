@@ -80,5 +80,5 @@ Once you have your Personal Access Token:
 
 ## Related Documentation
 
-- [Cloud-based Git Platform Integration](./start-free-with-cloud.md#git-integration)
+- [Connect Git Provider](./start-free-with-cloud.md#2-connect-git-provider)
 - [CI/CD Getting Started](../7-cicd/ci-cd-getting-started.md)
