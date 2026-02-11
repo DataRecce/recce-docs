@@ -18,24 +18,24 @@ Set up automatic updates for your Recce Cloud base sessions. Keep your data comp
 
 Before setting up CD, ensure you have:
 
-- ✅ **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- ✅ **Repository connected** to Recce Cloud - [Git integration guide](../2-getting-started/start-free-with-cloud.md#git-integration)
-- ✅ **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
+- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
 
 ## Setup
 
 ### GitHub Actions
 
-Create `.github/workflows/cd-workflow.yml`:
+Create `.github/workflows/base-workflow.yml`:
 
-```yaml linenums="1" hl_lines="42-43"
-name: Update Base Recce Session
+```yaml linenums="1"
+name: Update Base Metadata
 
 on:
   push:
     branches: ["main"]
   schedule:
-    - cron: "0 2 * * *" # Daily at 2 AM UTC
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -65,10 +65,14 @@ jobs:
       - name: Prepare dbt artifacts
         run: |
           dbt deps
-          # Optional: dbt build --target prod
+          dbt build --target prod
           dbt docs generate --target prod
         env:
-          DBT_ENV_SECRET_KEY: ${{ secrets.DBT_ENV_SECRET_KEY }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
 
       - name: Upload to Recce Cloud
         run: |
@@ -80,9 +84,9 @@ jobs:
 
 **Key points:**
 
-- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) is passed explicitly for Recce Cloud authentication
-- `recce-cloud upload --type prod` tells Recce this is a baseline session
-- `dbt docs generate` creates the required `manifest.json` and `catalog.json`
+- `dbt build` and `dbt docs generate` create the required artifacts (`manifest.json` and `catalog.json`)
+- `recce-cloud upload --type prod` uploads the Base metadata to Recce Cloud
+- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Recce Cloud
 
 ### GitLab CI/CD
 
@@ -137,7 +141,7 @@ recce-upload-prod:
 
 | Aspect               | GitHub Actions                      | GitLab CI/CD                                                                   |
 | -------------------- | ----------------------------------- | ------------------------------------------------------------------------------ |
-| **Config file**      | `.github/workflows/cd-workflow.yml` | `.gitlab-ci.yml`                                                               |
+| **Config file**      | `.github/workflows/base-workflow.yml` | `.gitlab-ci.yml`                                                               |
 | **Trigger on merge** | `on: push: branches: ["main"]`      | `if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH` |
 | **Schedule setup**   | In workflow YAML (`schedule:`)      | In UI: **CI/CD → Schedules**                                                   |
 | **Authentication**   | Explicit (`GITHUB_TOKEN`)           | Automatic (`CI_JOB_TOKEN`)                                                     |
@@ -161,8 +165,8 @@ recce-upload-prod:
 
 Look for these indicators:
 
-- ✅ **Workflow/Pipeline completes** without errors
-- ✅ **Base session updated** in [Recce Cloud](https://cloud.reccehq.com)
+- [x] **Workflow/Pipeline completes** without errors
+- [x] **Base session updated** in [Recce Cloud](https://cloud.reccehq.com)
 
 **GitHub:**
 

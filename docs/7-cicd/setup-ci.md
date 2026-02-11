@@ -18,18 +18,18 @@ Automatically validate your data changes in every pull request or merge request 
 
 Before setting up CI, ensure you have:
 
-- ✅ **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- ✅ **Repository connected** to Recce Cloud - [Git integration guide](../2-getting-started/start-free-with-cloud.md#git-integration)
-- ✅ **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
-- ✅ **CD configured** - [Setup CD](./setup-cd.md) to establish baseline for comparisons
+- [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
+- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **CD configured** - [Setup CD](./setup-cd.md) to establish baseline for comparisons
 
 ## Setup
 
 ### GitHub Actions
 
-Create `.github/workflows/ci-workflow.yml`:
+Create `.github/workflows/pr-workflow.yml`:
 
-```yaml linenums="1" hl_lines="41-42"
+```yaml linenums="1"
 name: Validate PR Changes
 
 on:
@@ -66,10 +66,15 @@ jobs:
       - name: Build current branch artifacts
         run: |
           dbt deps
-          # Optional: dbt build --target ci
+          dbt build --target ci
           dbt docs generate --target ci
         env:
-          DBT_ENV_SECRET_KEY: ${{ secrets.DBT_ENV_SECRET_KEY }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_SCHEMA: "PR_${{ github.event.pull_request.number }}"
 
       - name: Upload to Recce Cloud
         run: |
@@ -81,9 +86,10 @@ jobs:
 
 **Key points:**
 
-- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) is passed explicitly for Recce Cloud authentication
+- Creates a per-PR schema (`PR_123`, `PR_456`, etc.) using the dynamic `SNOWFLAKE_SCHEMA` environment variable to isolate each PR's data
+- `dbt build` and `dbt docs generate` create the required artifacts (`manifest.json` and `catalog.json`)
 - `recce-cloud upload` (without `--type`) auto-detects this is a PR session
-- `dbt docs generate` creates the required `manifest.json` and `catalog.json`
+- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Recce Cloud
 
 ### GitLab CI/CD
 
@@ -136,7 +142,7 @@ recce-upload:
 
 | Aspect               | GitHub Actions                      | GitLab CI/CD                                       |
 | -------------------- | ----------------------------------- | -------------------------------------------------- |
-| **Config file**      | `.github/workflows/ci-workflow.yml` | `.gitlab-ci.yml`                                   |
+| **Config file**      | `.github/workflows/pr-workflow.yml` | `.gitlab-ci.yml`                                   |
 | **Trigger**          | `on: pull_request:`                 | `if: $CI_PIPELINE_SOURCE == "merge_request_event"` |
 | **Authentication**   | Explicit (`GITHUB_TOKEN`)           | Automatic (`CI_JOB_TOKEN`)                         |
 | **Session type**     | Auto-detected from PR context       | Auto-detected from MR context                      |
@@ -162,9 +168,9 @@ recce-upload:
 
 Look for these indicators:
 
-- ✅ **Workflow/Pipeline completes** without errors
-- ✅ **PR/MR session created** in [Recce Cloud](https://cloud.reccehq.com)
-- ✅ **Session URL** appears in workflow/pipeline output
+- [x] **Workflow/Pipeline completes** without errors
+- [x] **PR/MR session created** in [Recce Cloud](https://cloud.reccehq.com)
+- [x] **Session URL** appears in workflow/pipeline output
 
 **GitHub:**
 
