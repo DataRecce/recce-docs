@@ -18,9 +18,9 @@ Set up automatic updates for your Recce Cloud base sessions. Keep your data comp
 
 Before setting up CD, ensure you have:
 
-- ✅ **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- ✅ **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
-- ✅ **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
+- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
 
 ## Setup
 
@@ -165,8 +165,8 @@ recce-upload-prod:
 
 Look for these indicators:
 
-- ✅ **Workflow/Pipeline completes** without errors
-- ✅ **Base session updated** in [Recce Cloud](https://cloud.reccehq.com)
+- [x] **Workflow/Pipeline completes** without errors
+- [x] **Base session updated** in [Recce Cloud](https://cloud.reccehq.com)
 
 **GitHub:**
 
