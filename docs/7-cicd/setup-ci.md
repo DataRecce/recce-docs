@@ -27,7 +27,7 @@ Before setting up CI, ensure you have:
 
 ### GitHub Actions
 
-Create `.github/workflows/ci-workflow.yml`:
+Create `.github/workflows/pr-workflow.yml`:
 
 ```yaml linenums="1" hl_lines="41-42"
 name: Validate PR Changes
