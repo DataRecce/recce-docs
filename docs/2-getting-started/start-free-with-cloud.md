@@ -295,7 +295,7 @@ In Recce Cloud, verify you see:
 - Production Metadata: Updated automatically
 - PR Sessions: all open PRs appear in the list. Only PRs with uploaded metadata can be launched for review.
 
-<!-- TODO: Add screenshot showing Recce Cloud after CI/CD setup -->
+![Recce Cloud dashboard after setup](../assets/images/2-getting-started/cloud-onboarding-completed.png){: .shadow}
 
 ### 5. Final Steps
 
