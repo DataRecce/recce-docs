@@ -19,7 +19,7 @@ Automatically validate your data changes in every pull request or merge request 
 Before setting up CI, ensure you have:
 
 - ✅ **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- ✅ **Repository connected** to Recce Cloud - [Git integration guide](../2-getting-started/start-free-with-cloud.md#git-integration)
+- ✅ **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
 - ✅ **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
 - ✅ **CD configured** - [Setup CD](./setup-cd.md) to establish baseline for comparisons
 
