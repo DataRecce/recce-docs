@@ -84,7 +84,6 @@ jobs:
 
 **Key points:**
 
-- Runs on merge to main, daily schedule, and manual trigger
 - `dbt build` and `dbt docs generate` create the required artifacts (`manifest.json` and `catalog.json`)
 - `recce-cloud upload --type prod` uploads the Base metadata to Recce Cloud
 - [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Recce Cloud
