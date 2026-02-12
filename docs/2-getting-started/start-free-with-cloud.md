@@ -6,6 +6,10 @@ title: Get Started with Recce Cloud
 
 This tutorial helps analytics engineers and data engineers set up Recce Cloud to automate data review on pull requests.
 
+[**Get Started**](https://cloud.reccehq.com/onboarding/get-started) 
+
+<div style="aspect-ratio: 16 / 9; width: 100%;"><iframe src="https://www.loom.com/embed/25aa05fb20b24da5bd5a744cf7d0b372" title="Recce Cloud Getting Started" allow="fullscreen" loading="lazy" style="width: 100%; height: 100%; border: 0;"></iframe></div>
+
 ## Goal
 
 Reviewing data changes in PRs is error-prone without visibility into downstream impact. After setup, the Recce agent reviews your data changes on every PR—showing what changed and what it affects.
