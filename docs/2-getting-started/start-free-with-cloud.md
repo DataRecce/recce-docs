@@ -8,7 +8,7 @@ This tutorial helps analytics engineers and data engineers set up Recce Cloud to
 
 [**Get Started**](https://cloud.reccehq.com/onboarding/get-started) 
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/25aa05fb20b24da5bd5a744cf7d0b372" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="aspect-ratio: 16 / 9; width: 100%;"><iframe src="https://www.loom.com/embed/25aa05fb20b24da5bd5a744cf7d0b372" title="Recce Cloud Getting Started" allow="fullscreen" loading="lazy" style="width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## Goal
 
