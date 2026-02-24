@@ -55,7 +55,7 @@ Switch to your base branch and generate artifacts to a separate directory:
 git stash                                # save uncommitted changes
 git checkout main                        # switch to base branch
 dbt docs generate --target-path target-base  # generate base artifacts
-git checkout -                           # switch back
+git checkout <your-branch>                # switch back
 git stash pop                            # restore changes
 ```
 

@@ -84,9 +84,7 @@ This walks you through:
 3. Generating base dbt artifacts (`target-base/manifest.json`)
 4. Starting the Recce MCP server
 
-When setup completes, you'll see confirmation that the MCP server is running and connected:
-
-<!-- TODO: Add screenshot of successful /recce-setup output -->
+When setup completes, you'll see confirmation that the MCP server is running and connected.
 
 Once connected, Claude has access to all of Recce's validation tools. Try asking a question about your data changes:
 
@@ -96,36 +94,16 @@ You: What schema changes happened in my current branch?
 
 Claude calls Recce's `schema_diff` tool behind the scenes and responds with a summary of added, removed, or modified columns across your changed models.
 
-<!-- TODO: Add screenshot of Claude responding with schema diff results -->
-
 ## Available commands
 
 | Command | Description |
 |---------|-------------|
 | `/recce-setup` | Guided setup — installs dependencies, generates artifacts, starts the MCP server |
 | `/recce-pr [url]` | Analyze data impact of a pull request (auto-detects PR from current branch) |
-| `/recce-check [type] [selector]` | Run validation checks (row-count, schema, profile, query-diff) |
+| `/recce-check [type] [model]` | Run validation checks (row-count, schema, profile, query-diff) |
 | `/recce-ci` | Generate GitHub Actions workflows for Recce Cloud CI/CD |
 
 ## Example workflows
-
-### Validate changes on your current branch
-
-First, run setup, then ask Claude about your changes:
-
-```
-/recce-setup
-```
-
-Then in the same session:
-
-```
-You: What data changes happened in my current branch?
-```
-
-Claude uses the MCP server tools to compare your branch against main, showing lineage changes, schema diffs, and row count impacts across your modified models.
-
-<!-- TODO: Add screenshot of a full validation conversation in Claude Code -->
 
 ### Analyze a pull request
 
