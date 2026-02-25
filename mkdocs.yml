@@ -4,7 +4,7 @@ site_description: >-
   pull requests with schema diffs, row count diffs, and data diffing via Claude
   Code, Cursor, and Windsurf using the Recce MCP server.
 
-copyright: Copyright &copy; 2025 Recce <br />
+copyright: Copyright &copy; 2026 Recce <br />
 
 # Repository
 repo_name: datarecce/recce
