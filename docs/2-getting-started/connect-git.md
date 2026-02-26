@@ -6,9 +6,9 @@ Recce Cloud supports GitHub and GitLab. Using a different provider? Contact us a
 
 ## Prerequisites
 
-- [ ] Recce Cloud account (free trial at cloud.reccehq.com)
-- [ ] Repository admin access (required to authorize app installation)
-- [ ] dbt project in the repository
+- [x] Recce Cloud account (free trial at cloud.reccehq.com)
+- [x] Repository admin access (required to authorize app installation)
+- [x] dbt project in the repository
 
 ## How It Works
 
@@ -40,7 +40,7 @@ Then select the repository containing your dbt project. This becomes your Recce 
 
 **Expected result:** Repository connected. Your Recce Cloud project is ready to use.
 
-<!-- TODO: add screenshot -->
+![alt text](../assets/images/2-getting-started/connect-github.png){: .shadow}
 
 ## Connect GitLab
 
@@ -66,26 +66,20 @@ Navigate to Settings → Git Provider. Select GitLab, paste token.
 In Recce Cloud, navigate to your repository. You should see:
 
 - Connection status: "Connected"
-- Repository branches visible
+- Organization Project is linked to a git repository
+
+![alt text](../assets/images/2-getting-started/connect-gitlab.png){: .shadow}
+![alt text](../assets/images/2-getting-started/org-projects.png){: .shadow}
 
 ## Troubleshooting
 
-### Error: "Repository not found"
-
-**Cause:** Token lacks access to the repository (GitLab) or app not authorized for repo (GitHub).
-**Solution:** Ensure proper permissions are granted.
-
-### Error: "Invalid token" (GitLab)
-
-**Cause:** Token expired or incorrect scope.
-**Solution:** Generate new token with `api` scope.
-
-### Error: "Cannot post PR comments" (GitLab)
-
-**Cause:** Using `read_api` instead of `api` scope.
-**Solution:** Regenerate token with `api` scope.
+| Issue | Solution |
+| --- | --- |
+| Repository not found | Ensure proper permissions are granted (GitLab: token access, GitHub: app authorized) |
+| Invalid token (GitLab) | Generate new token with `api` scope |
+| Cannot post PR comments (GitLab) | Regenerate token with `api` scope instead of `read_api` |
 
 ## Next Steps
 
 - [Connect Data Warehouse](connect-to-warehouse.md)
-- [Add Recce to CI/CD](../7-cicd/setup-ci.md)
+- [Add Recce to CI/CD](../7-cicd/ci-cd-getting-started.md)
