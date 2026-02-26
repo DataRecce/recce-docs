@@ -60,7 +60,7 @@ You can use the Recce Web Agent to help automate your setup. Currently it handle
 
 The agent covers common setups and continues to expand coverage. If your setup isn't supported yet, the agent directs you to the Setup Guide below for manual configuration. Need help? Contact us at support@reccehq.com.
 
-**Coming soon**: The agent will guide you through steps 1–3, including warehouse connection, Git connection, and CI/CD configuration.
+The agent will guide you through steps 1–3, including Git connection, data warehouse connection, and CI/CD configuration.
 
 ---
 
@@ -70,20 +70,20 @@ This guide explains each onboarding step in detail.
 
 First, go to [cloud.reccehq.com](https://cloud.reccehq.com) and create your free account.
 
-### 1. Connect Data Warehouse
-
-1. Select your data warehouse (e.g. Snowflake)
-2. Provide your read-only warehouse credentials
-
-> **Note**: This guide uses Snowflake. For supported warehouses, see [Connect to Warehouse](../5-data-diffing/connect-to-warehouse.md).
-
-### 2. Connect Git Provider
+### 1. Connect Git Provider
 
 1. Click **Connect GitHub**
 2. Authorize the Recce app installation
 3. Select the repositories you want to connect
 
-> **Note**: This guide uses GitHub. For GitLab setup, see [GitLab Personal Access Token](gitlab-pat-guide.md).
+> **Note**: This guide uses GitHub. For supported Git providers, see [Connect to Git](connect-git.md)
+
+### 2. Connect Data Warehouse
+
+1. Select your data warehouse (e.g. Snowflake)
+2. Provide your read-only warehouse credentials
+
+> **Note**: This guide uses Snowflake. For supported warehouses, see [Connect to Warehouse](connect-to-warehouse.md).
 
 ### 3. Add Recce to CI/CD
 

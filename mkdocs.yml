@@ -55,6 +55,7 @@ nav:
           - 2-getting-started/oss-vs-cloud.md
           - 2-getting-started/start-free-with-cloud.md
           - 2-getting-started/connect-git.md
+          - 2-getting-started/connect-to-warehouse.md
           #- 2-getting-started/cloud-5min-tutorial.md
           - 2-getting-started/installation.md
           - Claude Plugin: 2-getting-started/claude-plugin.md
@@ -70,7 +71,6 @@ nav:
           - 4-downstream-impacts/breaking-change-analysis.md
           #- 4-downstream-impacts/transformation-types.md
       - Data Diffing:
-          - 5-data-diffing/connect-to-warehouse.md
           - 5-data-diffing/row-count-diff.md
           - 5-data-diffing/profile-diff.md
           - 5-data-diffing/value-diff.md

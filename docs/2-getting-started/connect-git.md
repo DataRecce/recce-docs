@@ -87,5 +87,5 @@ In Recce Cloud, navigate to your repository. You should see:
 
 ## Next Steps
 
-- [Connect Data Warehouse](../5-data-diffing/connect-to-warehouse.md)
+- [Connect Data Warehouse](connect-to-warehouse.md)
 - [Add Recce to CI/CD](../7-cicd/setup-ci.md)

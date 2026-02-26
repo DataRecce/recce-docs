@@ -106,4 +106,4 @@ Navigate to Organization Settings in Recce Cloud. Your data warehouse should sho
 ## Next Steps
 
 - [Add Recce to CI/CD](../7-cicd/setup-ci.md)
-- [Run Your First Data Diff](row-count-diff.md)
+- [Run Your First Data Diff](../5-data-diffing/row-count-diff.md)
