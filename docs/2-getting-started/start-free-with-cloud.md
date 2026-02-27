@@ -12,7 +12,7 @@ This tutorial helps analytics engineers and data engineers set up Recce Cloud to
 
 ## Goal
 
-Reviewing data changes in PRs is error-prone without visibility into downstream impact. After setup, the Recce agent reviews your data changes on every PR—showing what changed and what it affects.
+Reviewing data changes in pull requests (PRs) is error-prone without visibility into downstream impact. After completing this tutorial, the Recce agent reviews your data changes on every PR—showing what changed and what it affects.
 
 To validate changes, Recce compares **Base** vs **Current** environments:
 
@@ -22,7 +22,7 @@ To validate changes, Recce compares **Base** vs **Current** environments:
 Recce requires dbt artifacts from both environments. This guide covers:
 
 - dbt profile configuration for Base and Current
-- CI/CD workflow setup
+- CI/CD (Continuous Integration/Continuous Deployment) workflow setup
 
 For accurate comparisons, both environments should use consistent data ranges. See [Best Practices for Preparing Environments](../7-cicd/best-practices-prep-env.md) for environment strategies.
 
@@ -225,7 +225,7 @@ This sample workflow:
 - **Calls `dbt docs generate`** to generate artifacts
 - **Calls `recce-cloud upload --type prod`** to upload the Base metadata, using `GITHUB_TOKEN` for authentication
 
-To integrate into your own configuration, ensure your workflow includes the bolded steps.
+To integrate into your own configuration, ensure your workflow calls `dbt docs generate` and `recce-cloud upload --type prod`.
 
 #### Set Up Current Metadata Updates
 
@@ -293,7 +293,7 @@ This sample workflow:
 - **Calls `dbt docs generate --target ci`** to generate artifacts for the PR branch
 - **Calls `recce-cloud upload`** to upload the Current metadata, using `GITHUB_TOKEN` for authentication
 
-To integrate into your own configuration, ensure your workflow includes the bolded steps.
+To integrate into your own configuration, ensure your workflow calls `dbt docs generate --target ci` and `recce-cloud upload`.
 
 ### 4. Merge the CI/CD change
 
@@ -309,7 +309,7 @@ In Recce Cloud, verify you see:
 - Production Metadata: Updated automatically
 - PR Sessions: all open PRs appear in the list. Only PRs with uploaded metadata can be launched for review.
 
-![Recce Cloud dashboard after setup](../assets/images/2-getting-started/cloud-onboarding-completed.png){: .shadow}
+![Recce Cloud dashboard showing connected GitHub integration, warehouse connection, and production metadata status](../assets/images/2-getting-started/cloud-onboarding-completed.png){: .shadow}
 
 ### 5. Final Steps
 

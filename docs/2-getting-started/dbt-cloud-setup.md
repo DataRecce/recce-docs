@@ -4,27 +4,29 @@ title: dbt Cloud Setup
 
 # dbt Cloud Setup
 
-This guide helps you set up Recce Cloud when your dbt project runs on dbt Cloud. Since dbt Cloud manages your dbt runs, you'll retrieve artifacts via the dbt Cloud API instead of generating them locally.
+When your dbt project runs on dbt Cloud, validating pull request (PR) data changes requires retrieving artifacts from the dbt Cloud API rather than generating them locally.
 
 ## Goal
 
-After completing this setup, you'll have automated data validation on every pull request, with Recce comparing your PR changes against production. The workflow retrieves dbt artifacts directly from dbt Cloud and uploads them to Recce Cloud for validation.
+After completing this tutorial, every PR triggers automated data validation. Recce compares your PR changes against production, with results visible in Recce Cloud.
 
 ## Prerequisites
 
 - [x] **Recce Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
-- [x] **dbt Cloud account**: with CI and CD jobs configured
+- [x] **dbt Cloud account**: with CI (continuous integration) and CD (continuous deployment) jobs configured
 - [x] **dbt Cloud API token**: with read access to job artifacts
 - [x] **GitHub repository**: with admin access to add workflows and secrets
 - [x] **Data warehouse**: read access for data diffing
 
-## How it works
+## How Recce retrieves dbt Cloud artifacts
 
-When your dbt project runs on dbt Cloud, the artifacts (`manifest.json`, `catalog.json`) are stored in dbt Cloud rather than your local environment. To use Recce, you'll:
+Recce needs both base (production) and current (PR) dbt artifacts to compare changes. When using dbt Cloud, these artifacts live in dbt Cloud's API rather than your local filesystem. Your GitHub Actions workflow retrieves them via API calls before running Recce validation.
 
-1. Retrieve Base artifacts from your CD job (production runs)
-2. Retrieve Current artifacts from your CI job (PR runs)
-3. Upload both to Recce Cloud for validation
+The workflow:
+
+1. Retrieves Base artifacts from your CD job (production deployments that run on merge to main)
+2. Retrieves Current artifacts from your CI job (PR-triggered builds that validate changes)
+3. Uploads both to Recce Cloud for validation
 
 ## Setup steps
 
@@ -248,9 +250,9 @@ The workflow retrieves Base artifacts from the CD job run that matches the PR's 
 - Rebase your PR to a commit that has CD artifacts
 - Modify the workflow to use the latest CD run instead of commit-matched artifacts
 
-## Related
+## Next steps
 
 - [Get Started with Recce Cloud](./start-free-with-cloud.md) - Standard setup for self-hosted dbt
-- [Setup CD](../7-cicd/setup-cd.md) - CD workflow configuration
-- [Setup CI](../7-cicd/setup-ci.md) - CI workflow configuration
-- [Best Practices for Preparing Environments](../7-cicd/best-practices-prep-env.md) - Environment strategy guidance
+- [Configure CD to establish your production baseline](../7-cicd/setup-cd.md)
+- [Configure CI for automated PR validation](../7-cicd/setup-ci.md)
+- [Learn environment strategies for reliable comparisons](../7-cicd/best-practices-prep-env.md)
