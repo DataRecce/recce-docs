@@ -89,17 +89,16 @@ First, go to [cloud.reccehq.com](https://cloud.reccehq.com) and create your free
 
 Before proceeding, identify your setup:
 
-!!! info "Choose your setup"
+**Choose your setup**
+1. How do you run dbt?
 
-    **How do you run dbt?**
+  - **You own your dbt run** (GitHub Actions, GitLab CI, CircleCI): Continue with this guide
+  - **You run dbt on a platform** (dbt Cloud, Paradigms, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
 
-    - **You own your dbt run** (GitHub Actions, GitLab CI, CircleCI): Continue with this guide
-    - **You run dbt on a platform** (dbt Cloud, Paradigms, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
+2. How complex is your environment?
 
-    **How complex is your environment?**
-
-    - **Simple** (single prod schema, PR schemas): Continue with this guide
-    - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
+  - **Simple** (prod and dev targets): Continue with this guide. We use per-PR schemas for fast setup. To learn why, see [Environment Setup](environment-setup.md).
+  - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
 
 This step adds CI/CD workflow files to your repository. The agent creates these automatically. For manual setup, create and merge a PR with the templates below.
 
