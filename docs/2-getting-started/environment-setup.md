@@ -16,6 +16,15 @@ Configure your dbt targets and CI/CD environment variables to support base vs cu
 - [x] **CI/CD platform**: GitHub Actions, GitLab CI, or similar
 - [x] **Warehouse access**: Credentials with permissions to create schemas dynamically
 
+## How CI/CD works with Recce
+
+Recce uses both continuous delivery (CD) and continuous integration (CI) to automate data validation:
+
+- **CD (Continuous Delivery)**: Runs after merge to main. Updates baseline artifacts with latest production state.
+- **CI (Continuous Integration)**: Runs on PR/MR. Validates proposed changes against baseline.
+
+**Set up CD first**, then CI. CD establishes your baseline (production artifacts), which CI uses for comparison.
+
 ## Why separate schemas matter
 
 Recce compares two sets of data to validate changes:
@@ -29,8 +38,8 @@ Common patterns include:
 
 | Pattern | Base Schema | Current Schema | Best For |
 |---------|-------------|----------------|----------|
-| Schema-per-PR | `public` (prod) | `pr_123` | Teams with many concurrent PRs |
 | Shared dev | `public` (prod) | `dev` | Solo developers or small teams |
+| Schema-per-PR | `public` (prod) | `pr_123` | Teams with many concurrent PRs |
 | Staging-based | `staging` | `pr_123` | Teams wanting consistent source data |
 
 ## Configure profiles.yml
@@ -242,7 +251,7 @@ Benefits:
 - Faster diffs with limited data ranges
 - Reduced warehouse costs
 
-See [Best Practices for Preparing Environments](../7-cicd/best-practices-prep-env.md) for detailed strategies on limiting data ranges and managing source data consistency.
+See [Environment Best Practices](environment-best-practices.md) for detailed strategies on limiting data ranges and managing source data consistency.
 
 ## Verification
 
@@ -300,5 +309,6 @@ If schemas are not resolving correctly, add debugging to your workflow:
 ## Related
 
 - [Get Started with Recce Cloud](start-free-with-cloud.md) - Complete onboarding guide
-- [Best Practices for Preparing Environments](../7-cicd/best-practices-prep-env.md) - Strategies for source data and schema management
-- [Setup CI](../7-cicd/setup-ci.md) - CI workflow configuration details
+- [Environment Best Practices](environment-best-practices.md) - Strategies for source data and schema management
+- [Setup CD](setup-cd.md) - CD workflow for GitHub Actions and GitLab CI
+- [Setup CI](setup-ci.md) - CI workflow for GitHub Actions and GitLab CI
