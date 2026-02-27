@@ -30,7 +30,7 @@ For accurate validation, these must point to different schemas in your warehouse
 Recce uses both continuous delivery (CD) and continuous integration (CI) to automate data validation:
 
 - **CD (Continuous Delivery)**: Runs after merge to main. Updates baseline artifacts with latest production state.
-- **CI (Continuous Integration)**: Runs on PR/MR. Validates proposed changes against baseline.
+- **CI (Continuous Integration)**: Runs on PR. Validates proposed changes against baseline.
 
 **Set up CD first**, then CI. CD establishes your baseline (production artifacts), which CI uses for comparison.
 
@@ -185,7 +185,7 @@ Launch Recce and check **Environment Info** in the top-right corner. You should 
 | Profile not found | Verify `profiles.yml` is accessible in CI (check path or use `DBT_PROFILES_DIR`) |
 | Connection timeout | Check warehouse IP allowlists include CI runner IP ranges |
 
-## Related
+## Next steps
 
 - [Get Started with Recce Cloud](start-free-with-cloud.md) - Complete onboarding guide
 - [Environment Best Practices](environment-best-practices.md) - Strategies for source data and schema management

@@ -4,7 +4,9 @@ title: Setup CD
 
 # Setup CD - Auto-Update Baseline
 
-Set up automatic updates for your Recce Cloud base sessions. Keep your data comparison baseline current every time you merge to main, with no manual work required.
+Manually updating your Recce Cloud baseline after every merge is tedious and error-prone. This guide shows you how to automate baseline updates so your data comparison stays current without manual intervention.
+
+After completing this guide, your continuous deployment (CD) workflow automatically uploads dbt artifacts to Recce Cloud whenever code merges to main.
 
 ## What This Does
 
@@ -12,7 +14,7 @@ Set up automatic updates for your Recce Cloud base sessions. Keep your data comp
 
 - **Triggers**: Merge to main + scheduled updates + manual runs
 - **Action**: Auto-update base Recce session with latest production artifacts
-- **Benefit**: Current comparison baseline for all future PRs/MRs
+- **Benefit**: Current comparison baseline for all future PRs
 
 ## Prerequisites
 
@@ -177,11 +179,11 @@ Look for these indicators:
 
 **GitHub:**
 
-![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
+![Recce Cloud Sessions page displaying a successfully uploaded production baseline from GitHub Actions](../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
 
 **GitLab:**
 
-![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
+![Recce Cloud Sessions page displaying a successfully uploaded production baseline from GitLab CI](../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
 
 ### Expected Output
 
