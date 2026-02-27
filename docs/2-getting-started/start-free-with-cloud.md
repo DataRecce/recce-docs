@@ -100,9 +100,12 @@ Before proceeding, identify your setup:
   - **Simple** (prod and dev targets): Continue with this guide. We use per-PR schemas for fast setup. To learn why, see [Environment Setup](environment-setup.md).
   - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
 
-This step adds CI/CD workflow files to your repository. The agent creates these automatically. For manual setup, create and merge a PR with the templates below.
+3. What's your CI/CD platform?
 
-> **Note**: This guide uses GitHub Actions. For other CI/CD platforms, see [Setup CD](../7-cicd/setup-cd.md) and [Setup CI](../7-cicd/setup-ci.md).
+  - **GitHub Actions**: Continue with this guide
+  - **Other platforms** (GitLab CI, CircleCI, etc.): See [Setup CD](../7-cicd/setup-cd.md) and [Setup CI](../7-cicd/setup-ci.md)
+
+This step adds CI/CD workflow files to your repository. The agent creates these automatically. For manual setup, create and merge a PR with the templates below.
 
 #### Set Up Profile.yml
 
