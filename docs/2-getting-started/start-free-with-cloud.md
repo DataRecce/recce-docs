@@ -87,9 +87,10 @@ First, go to [cloud.reccehq.com](https://cloud.reccehq.com) and create your free
 
 ### 3. Add Recce to CI/CD
 
-Before proceeding, identify your setup:
+This step adds CI/CD workflow files to your repository. The web agent detects your setup and guides you through. For manual setup, use the templates below.
 
-**Choose your setup**
+#### Choose your setup
+
 1. How do you run dbt?
 
   - **You own your dbt run** (GitHub Actions, GitLab CI, CircleCI): Continue with this guide
@@ -104,8 +105,6 @@ Before proceeding, identify your setup:
 
   - **GitHub Actions**: Continue with this guide
   - **Other platforms** (GitLab CI, CircleCI, etc.): See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md)
-
-This step adds CI/CD workflow files to your repository. The agent creates these automatically. For manual setup, create and merge a PR with the templates below.
 
 #### Set Up Profile.yml
 
