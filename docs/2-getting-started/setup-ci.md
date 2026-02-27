@@ -22,6 +22,13 @@ Before setting up CI, ensure you have:
 - [x] **Repository connected** to Recce Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
 - [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
 - [x] **CD configured** - [Setup CD](setup-cd.md) to establish baseline for comparisons
+- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `ci` target for per-PR schemas
+
+## Environment strategy
+
+This workflow uses **per-PR schemas** with the `ci` target as the current environment. Each PR gets an isolated schema (e.g., `pr_123`) that compares against the base artifacts from CD.
+
+See [Environment Setup](environment-setup.md) for profiles.yml configuration and why per-PR schemas are recommended.
 
 ## Setup
 

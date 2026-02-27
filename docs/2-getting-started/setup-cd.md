@@ -21,6 +21,13 @@ Before setting up CD, ensure you have:
 - [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
 - [x] **Repository connected** to Recce Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
 - [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `prod` target for base artifacts
+
+## Environment strategy
+
+This workflow uses the **main branch** with the `prod` target as the base environment. The base artifacts represent your production state, which PRs compare against.
+
+See [Environment Setup](environment-setup.md) for profiles.yml configuration.
 
 ## Setup
 
