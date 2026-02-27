@@ -54,6 +54,7 @@ nav:
       - Getting Started:
           - 2-getting-started/oss-vs-cloud.md
           - 2-getting-started/start-free-with-cloud.md
+          - dbt Cloud Setup: 2-getting-started/dbt-cloud-setup.md
           #- 2-getting-started/cloud-5min-tutorial.md
           - 2-getting-started/installation.md
           - Claude Plugin: 2-getting-started/claude-plugin.md

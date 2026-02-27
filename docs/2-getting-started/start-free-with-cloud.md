@@ -94,7 +94,7 @@ This step adds CI/CD workflow files to your repository. The web agent detects yo
 1. How do you run dbt?
     - **You own your dbt run**
         - **GitHub Actions**: Continue with this guide
-        - **GitLab CI, CircleCI**: See [Setup CD](../7-cicd/setup-cd.md) and [Setup CI](../7-cicd/setup-ci.md)
+        - **GitLab CI, CircleCI**: See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md)
     - **You run dbt on a platform** (dbt Cloud, Paradime, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
 
 2. How complex is your environment?
