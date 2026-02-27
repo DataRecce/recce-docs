@@ -92,16 +92,14 @@ This step adds CI/CD workflow files to your repository. The web agent detects yo
 #### Choose your setup
 
 1. How do you run dbt?
-
-  - **You own your dbt run**
-    - **GitHub Actions**: Continue with this guide
-    - **GitLab CI, CircleCI**: See [Setup CD](../7-cicd/setup-cd.md) and [Setup CI](../7-cicd/setup-ci.md)
-  - **You run dbt on a platform** (dbt Cloud, Paradigms, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
+    - **You own your dbt run**
+        - **GitHub Actions**: Continue with this guide
+        - **GitLab CI, CircleCI**: See [Setup CD](../7-cicd/setup-cd.md) and [Setup CI](../7-cicd/setup-ci.md)
+    - **You run dbt on a platform** (dbt Cloud, Paradime, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
 
 2. How complex is your environment?
-
-  - **Simple** (prod and dev targets): Continue with this guide. We use per-PR schemas for fast setup. To learn why, see [Environment Setup](environment-setup.md).
-  - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
+    - **Simple** (prod and dev targets): Continue with this guide. We use per-PR schemas for fast setup. To learn why, see [Environment Setup](environment-setup.md).
+    - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
 
 #### Set Up Profile.yml
 
