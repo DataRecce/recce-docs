@@ -63,6 +63,8 @@ nav:
           - 3-visualized-change/code-change.md
           - 3-visualized-change/column-level-lineage.md
           - 3-visualized-change/multi-models.md
+      - Using Recce:
+          - 3-using-recce/admin-setup.md
       - Downstream Impacts:
           #- 4-downstream-impacts/metadata-first.md
           - 4-downstream-impacts/impact-radius.md
@@ -78,7 +80,6 @@ nav:
           - 5-data-diffing/query.md
           - MCP Server (AI Agents): 5-data-diffing/mcp-server.md
       - Collaborate Validation:
-          - 6-collaboration/invitation.md
           - 6-collaboration/checklist.md
           - 6-collaboration/share.md
       - CI/CD:
