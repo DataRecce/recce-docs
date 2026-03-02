@@ -74,6 +74,8 @@ jaffle_shop:
       threads: 4
 ```
 
+After saving, your profile supports three targets: `dev` for local development, `ci` for PR validation, and `prod` for production.
+
 Key points:
 
 - The `ci` target uses `env_var('CI_SCHEMA')` for dynamic schema assignment
@@ -98,7 +100,7 @@ variables:
   CI_SCHEMA: "mr_${CI_MERGE_REQUEST_IID}"
 ```
 
-This creates schemas like `pr_123`, `pr_456` for each PR automatically.
+This creates schemas like `pr_123`, `pr_456` for each PR automatically. When a PR opens, the workflow sets `CI_SCHEMA` and dbt writes to that isolated schema.
 
 For complete workflow examples, see [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md).
 
