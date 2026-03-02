@@ -51,14 +51,27 @@ Update the organization name to match your company or team.
 
 **Expected result:** New project appears in the project list and sidebar.
 
-### 4. Invite team members
+### 4. Rename your project (optional)
+
+Update the project name if needed.
+
+1. In Organization Settings, navigate to **Projects**
+2. Click on the project you want to rename
+3. Enter the new project name
+4. Click **Save**
+
+**Expected result:** Project name updates in the sidebar and project list.
+
+### 5. Invite team members
 
 Add collaborators to your organization.
 
 1. In Organization Settings, find the **Members** section
 2. Click **Invite Members**
 3. Enter email addresses (use SSO email if members use SSO login)
-4. Select a role for each invitee:
+4. Select a role for each invitee
+5. Click **Send Invitation**
+6. Tell invitees: when they log in, a modal appears asking them to accept the invitation. See [For Invited Users](#for-invited-users)
 
 | Role | Permissions |
 |------|-------------|
@@ -69,23 +82,10 @@ Add collaborators to your organization.
 !!! tip "SSO login requires Team plan or above"
     SSO login is available on the Team plan and above. See [Pricing](https://www.reccehq.com/pricing) for plan details.
 
-1. Click **Send Invitation**
 
 **Expected result:** Invitees receive email invitations and see notifications when logged in.
 
 ![Invite Members dialog with email input field and role selection](../assets/images/6-collaboration/recce-cloud-org-invitation-fs8.png){: .shadow}
-
-## Additional Settings
-
-### Rename your project
-
-Update the project name if needed.
-
-1. Navigate to your project → click **Settings**
-2. Enter the new project name
-3. Click **Save**
-
-**Expected result:** Project name updates in the sidebar and project list.
 
 ## Verify Success
 
@@ -113,7 +113,7 @@ When you receive an invitation:
 
 ![Recce Cloud home page showing pending invitation notification modal](../assets/images/6-collaboration/recce-cloud-org-pending-invitation-home-fs8.png){: .shadow}
 
-## Next Steps
+<!-- ## Next Steps
 
 - [Data Developer Workflow](data-developer.md) — Learn how developers validate changes
-- [Data Reviewer Workflow](data-reviewer.md) — Learn how reviewers approve PRs
+- [Data Reviewer Workflow](data-reviewer.md) — Learn how reviewers approve PRs -->
