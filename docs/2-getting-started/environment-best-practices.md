@@ -119,7 +119,7 @@ Recce uses base and current environment artifacts (`manifest.json`, `catalog.jso
 **Recommended approaches:**
 
 - **Recce Cloud** - Automatic artifact management via `recce-cloud upload`. See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md).
-- **dbt Cloud** - Download artifacts from dbt Cloud jobs. See [dbt Cloud Setup](dbt-cloud-setup.md).
+- **dbt Cloud** - Download artifacts from dbt Cloud jobs. See dbt Cloud Setup (separate guide).
 
 **Alternative approaches** (for custom setups):
 

@@ -159,6 +159,12 @@ theme:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        '7-cicd/setup-cd.md': '2-getting-started/setup-cd.md'
+        '7-cicd/setup-ci.md': '2-getting-started/setup-ci.md'
+        '7-cicd/ci-cd-getting-started.md': '2-getting-started/environment-setup.md'
+        '7-cicd/best-practices-prep-env.md': '2-getting-started/environment-best-practices.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
