@@ -156,6 +156,10 @@ theme:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        '5-data-diffing/connect-to-warehouse.md': '2-getting-started/connect-to-warehouse.md'
+        '2-getting-started/gitlab-pat-guide.md': '2-getting-started/connect-git.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
