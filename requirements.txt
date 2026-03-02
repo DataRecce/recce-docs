@@ -1,3 +1,4 @@
+mkdocs<2
 mkdocs-material
 mkdocs-glightbox
 mkdocs-material[imaging]
