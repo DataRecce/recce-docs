@@ -156,6 +156,9 @@ theme:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        '6-collaboration/invitation.md': '3-using-recce/admin-setup.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
