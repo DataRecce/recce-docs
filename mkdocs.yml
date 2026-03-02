@@ -87,7 +87,7 @@ nav:
           - 7-cicd/setup-ci.md
           - 7-cicd/pr-mr-summary.md
           #- 7-cicd/recce-debug.md # content outdated
-          - 7-cicd/scenario-dev.md          
+          - 7-cicd/scenario-dev.md
           - 7-cicd/scenario-pr-review.md
           - 7-cicd/preset-checks.md
           - 7-cicd/best-practices-prep-env.md
