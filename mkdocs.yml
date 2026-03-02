@@ -154,6 +154,11 @@ theme:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        '2-getting-started/installation.md': '2-getting-started/oss-setup.md'
+        '2-getting-started/get-started-jaffle-shop.md': '2-getting-started/jaffle-shop-tutorial.md'
+        '2-getting-started/oss-vs-cloud.md': '1-whats-recce/cloud-vs-oss.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
