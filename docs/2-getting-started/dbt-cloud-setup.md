@@ -4,7 +4,7 @@ title: dbt Cloud Setup
 
 # dbt Cloud Setup
 
-When your dbt project runs on dbt Cloud, validating pull request (PR) data changes requires retrieving artifacts from the dbt Cloud API rather than generating them locally.
+When your dbt project runs on dbt Cloud, validating PR data changes requires retrieving artifacts from the dbt Cloud API rather than generating them locally.
 
 ## Goal
 
