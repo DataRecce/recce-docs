@@ -12,9 +12,9 @@ When you sign up for Recce Cloud, you get one organization and one project. Afte
 
 ## Prerequisites
 
-- [ ] Recce Cloud account with owner/admin access
-- [ ] Git repository connected to Recce Cloud
-- [ ] Team members' email addresses
+- [x] Recce Cloud account with owner/admin access
+- [x] Git repository connected to Recce Cloud
+- [x] Team members' email addresses
 
 ## Steps
 
