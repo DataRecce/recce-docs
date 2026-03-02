@@ -12,8 +12,8 @@ This tutorial uses [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_
 
 ## Prerequisites
 
-- [ ] Python 3.9+ installed
-- [ ] Git installed
+- [x] Python 3.9+ installed
+- [x] Git installed
 
 ## Steps
 

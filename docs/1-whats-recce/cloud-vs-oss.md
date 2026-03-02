@@ -45,7 +45,7 @@ The Agent runs automatically when you open a PR. It:
 
 **During development:**
 
-The Agent works with your CLI through MCP (Model Context Protocol, a standard for AI assistants to interact with tools):
+The Agent works with your CLI through [Recce MCP](/5-data-diffing/mcp-server/) (Model Context Protocol):
 
 - Answers questions about your changes
 - Suggests validation approaches
@@ -62,6 +62,7 @@ The Agent works with your CLI through MCP (Model Context Protocol, a standard fo
 Recce Cloud is free to start. See [Pricing](https://www.reccehq.com/pricing) for plan details.
 
 **Choose Cloud when:**
+
 - You want automated validation on every PR
 - You want Agent assistance during development
 - Your team reviews data changes in PRs
@@ -78,6 +79,7 @@ You get:
 - Checklist to track your checks
 
 **Choose OSS when:**
+
 - Exploring Recce before adopting Cloud
 - Working in environments without external connectivity
 - Contributing to Recce development
@@ -87,7 +89,7 @@ You get:
 | Feature | Cloud | OSS |
 |---------|-------|-----|
 | Lineage Diff | :white_check_mark: | :white_check_mark: |
-| Data diff (row count, schema, profile, value, top-k, histogram diff) | :white_check_mark: | :white_check_mark: |
+| Data diff<br> (row count, schema, profile, value, top-k, histogram diff) | :white_check_mark: | :white_check_mark: |
 | Query diff | :white_check_mark: | :white_check_mark: |
 | Checklist | :white_check_mark: | :white_check_mark: |
 | Recce Agent on PRs | :white_check_mark: | :x: |

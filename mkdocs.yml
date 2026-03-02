@@ -54,8 +54,6 @@ nav:
           - Changelog: "https://reccehq.com/changelog/"
       - Getting Started:
           - 2-getting-started/start-free-with-cloud.md
-          #- 2-getting-started/cloud-5min-tutorial.md
-          - 2-getting-started/installation.md
           - Claude Plugin: 2-getting-started/claude-plugin.md
           - 2-getting-started/oss-setup.md
           - 2-getting-started/jaffle-shop-tutorial.md

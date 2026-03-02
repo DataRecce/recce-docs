@@ -4,7 +4,7 @@ title: OSS Setup
 
 # Set Up Recce OSS
 
-When you change dbt models, you need to compare the data before and after to catch unintended impacts. Recce OSS lets you run this validation locally.
+When you change data models, you need to compare the data before and after to catch unintended impacts. Recce OSS lets you run this validation locally.
 
 **Goal:** Install and run Recce locally for manual data validation.
 
@@ -12,9 +12,9 @@ Recce OSS gives you the core validation engine to run locally. For the full expe
 
 ## Prerequisites
 
-- [ ] Python 3.9+ installed
-- [ ] A dbt project with at least one model
-- [ ] Git installed (for version comparison)
+- [x] Python 3.9+ installed
+- [x] A dbt project with at least one model
+- [x] Git installed (for version comparison)
 
 ## Steps
 
