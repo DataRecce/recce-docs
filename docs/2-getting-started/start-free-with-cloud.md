@@ -89,7 +89,7 @@ First, go to [cloud.reccehq.com](https://cloud.reccehq.com) and create your free
 
 This step adds CI/CD workflow files to your repository. The agent creates these automatically. For manual setup, create and merge a PR with the templates below.
 
-> **Note**: This guide uses GitHub Actions. For other CI/CD platforms, see [Setup CD](../7-cicd/setup-cd.md) and [Setup CI](../7-cicd/setup-ci.md).
+> **Note**: This guide uses GitHub Actions. For other CI/CD platforms, see [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md).
 
 #### Set Up Profile.yml
 
@@ -330,7 +330,7 @@ You can now:
 
 ## Related Resources
 
-- [CI/CD Getting Started](../7-cicd/ci-cd-getting-started.md)
-- [Setup CD](../7-cicd/setup-cd.md)
-- [Setup CI](../7-cicd/setup-ci.md)
-- [Best Practices for Preparing Environments](../7-cicd/best-practices-prep-env.md)
+- [Environment Setup](environment-setup.md)
+- [Setup CD](setup-cd.md)
+- [Setup CI](setup-ci.md)
+- [Environment Best Practices](environment-best-practices.md)
