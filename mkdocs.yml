@@ -58,6 +58,9 @@ nav:
           - 2-getting-started/installation.md
           - Claude Plugin: 2-getting-started/claude-plugin.md
           - 2-getting-started/get-started-jaffle-shop.md
+      - Using Recce:
+          - 3-using-recce/data-developer.md
+          - 3-using-recce/data-reviewer.md
       - Visualized Change:
           - 3-visualized-change/lineage.md
           - 3-visualized-change/code-change.md
