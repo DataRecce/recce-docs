@@ -155,6 +155,25 @@ theme:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        # PR 6 redirects - Lineage and Data Diffing consolidation
+        '3-visualized-change/lineage.md': '5-what-you-can-explore/lineage-diff.md'
+        '4-downstream-impacts/impact-radius.md': '5-what-you-can-explore/impact-radius.md'
+        '4-downstream-impacts/breaking-change-analysis.md': '5-what-you-can-explore/breaking-change-analysis.md'
+        '5-data-diffing/row-count-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/profile-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/value-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/topK-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/histogram-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/query.md': '5-what-you-can-explore/data-diffing.md'
+        # PR 7 redirects - CI/CD reorganization
+        '7-cicd/preset-checks.md': '6-collaboration/preset-checks.md'
+        # PR 8 redirects - Reference section
+        '8-technical-concepts/configuration.md': '7-reference/configuration.md'
+        '8-technical-concepts/state-file.md': '7-reference/state-file.md'
+        # PR 9 redirects - Community section
+        '1-whats-recce/community-support.md': '8-community/support.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
