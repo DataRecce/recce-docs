@@ -92,9 +92,10 @@ nav:
           - 7-cicd/preset-checks.md
           - 7-cicd/best-practices-prep-env.md
 
-      - Technical Concepts:
-          - 8-technical-concepts/state-file.md
-          - 8-technical-concepts/configuration.md
+      - Reference:
+          - 7-reference/configuration.md
+          - 7-reference/state-file.md
+          - 7-reference/cli-reference.md
 
   - Blog: "https://blog.reccehq.com"
   - Changelog: "https://reccehq.com/changelog/"
