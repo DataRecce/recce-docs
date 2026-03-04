@@ -210,11 +210,11 @@ When connected, the MCP server exposes these tools to your AI agent:
 | `query` | Run arbitrary SQL against your warehouse |
 | `query_diff` | Run the same SQL against both branches and compare results |
 | `list_checks` | List all validation checks in the current session with their status |
-| `run_check` | Execute a specific validation check by ID |
+| `run_check` | Run a specific validation check by ID |
 
-### Additional check types via `run_check`
+### Check types available through `run_check`
 
-These check types work through preset checks configured in `recce.yml` or created in the Recce instance. Your AI agent executes them with the `run_check` tool:
+These check types are accessible as preset checks configured in `recce.yml` or created in the Recce instance. Your AI agent runs them with the `run_check` tool:
 
 | Check type | Description |
 |------------|-------------|
@@ -224,7 +224,7 @@ These check types work through preset checks configured in `recce.yml` or create
 
 See [Preset checks](../7-cicd/preset-checks.md) for how to configure these check types.
 
-!!! note "Server modes"
+!!! note "MCP server modes"
     The MCP server supports three modes: **server** (default), **preview**, and **read-only**. In preview and read-only modes, only `lineage_diff` and `schema_diff` are available — tools that query your warehouse are disabled.
 
 ## Troubleshooting
