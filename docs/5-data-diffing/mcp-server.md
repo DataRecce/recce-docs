@@ -35,7 +35,7 @@ Recce compares your current branch's dbt models against a baseline from your mai
 
 ## Prerequisites
 
-Before starting the MCP server, generate both artifact sets.
+Before starting the MCP server, generate your development artifacts. Base artifacts are recommended for full diffing but not required.
 
 ### Generate development artifacts
 
@@ -61,8 +61,8 @@ git stash pop                            # restore changes
 
 This creates `target-base/manifest.json` and `target-base/catalog.json`. The MCP server compares these two artifact sets to produce diffs.
 
-!!! warning
-    The MCP server will not start if either `target/manifest.json` or `target-base/manifest.json` is missing.
+!!! note
+    If `target-base/` is missing, the MCP server starts in **single-environment mode** — all tools remain available, but diff results show no changes because both sides reference the same data. Generate base artifacts to enable real comparisons.
 
 ## Installation
 
@@ -227,21 +227,29 @@ See [Preset checks](../7-cicd/preset-checks.md) for how to configure these check
 !!! note "MCP server modes"
     The MCP server supports three modes: **server** (default), **preview**, and **read-only**. In **server** mode, all of the tools listed above are available. In **preview** and **read-only** modes, only `lineage_diff` and `schema_diff` are available — tools that query your warehouse are disabled.
 
+    If base artifacts (`target-base/`) are not present, the server starts in **single-environment mode** where all tools work but diffs show no changes. Diff responses include a `_warning` field reminding you to generate base artifacts.
+
 ## Troubleshooting
 
 ### MCP server fails to start
 
-The most common cause is missing dbt artifacts. Check that both artifact directories exist:
+The most common cause is missing development artifacts. Check that your development artifacts exist:
 
 ```shell
-ls target/manifest.json target-base/manifest.json
+ls target/manifest.json
 ```
 
-If either file is missing, follow the [Prerequisites](#prerequisites) section above.
+If missing, run `dbt docs generate` in your current branch. See [Prerequisites](#prerequisites).
 
-### "No such file or directory: target-base/manifest.json"
+### Diff results show no changes
 
-You need to generate base artifacts. See [Prerequisites](#prerequisites).
+If the server starts but all diffs return empty results, you are likely in single-environment mode (missing base artifacts). Generate base artifacts to enable real comparisons:
+
+```shell
+git stash && git checkout main
+dbt docs generate --target-path target-base
+git checkout <your-branch> && git stash pop
+```
 
 ### Port already in use (SSE mode)
 
