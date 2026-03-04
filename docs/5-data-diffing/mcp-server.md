@@ -207,11 +207,25 @@ When connected, the MCP server exposes these tools to your AI agent:
 | `schema_diff` | Detect schema changes (added, removed, or modified columns and type changes) |
 | `row_count_diff` | Compare row counts between branches |
 | `profile_diff` | Statistical profiling comparison (min, max, avg, nulls, and more) |
-| `value_diff` | Compare actual data values between branches |
-| `top_k_diff` | Compare top-K value distributions |
-| `histogram_diff` | Compare value distributions as histograms |
 | `query` | Run arbitrary SQL against your warehouse |
 | `query_diff` | Run the same SQL against both branches and compare results |
+| `list_checks` | List all validation checks in the current session with their status |
+| `run_check` | Execute a specific validation check by ID |
+
+### Additional check types via `run_check`
+
+These check types work through preset checks configured in `recce.yml` or created in the Recce instance. Your AI agent executes them with the `run_check` tool:
+
+| Check type | Description |
+|------------|-------------|
+| `value_diff` | Compare actual data values row by row between branches |
+| `top_k_diff` | Compare top-K value distributions |
+| `histogram_diff` | Compare value distributions as histograms |
+
+See [Preset checks](../7-cicd/preset-checks.md) for how to configure these check types.
+
+!!! note "Server modes"
+    The MCP server supports three modes: **server** (default), **preview**, and **read-only**. In preview and read-only modes, only `lineage_diff` and `schema_diff` are available — tools that query your warehouse are disabled.
 
 ## Troubleshooting
 
