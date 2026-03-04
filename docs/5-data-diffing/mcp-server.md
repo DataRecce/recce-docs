@@ -225,7 +225,7 @@ These check types are accessible as preset checks configured in `recce.yml` or c
 See [Preset checks](../7-cicd/preset-checks.md) for how to configure these check types.
 
 !!! note "MCP server modes"
-    The MCP server supports three modes: **server** (default), **preview**, and **read-only**. In preview and read-only modes, only `lineage_diff` and `schema_diff` are available — tools that query your warehouse are disabled.
+    The MCP server supports three modes: **server** (default), **preview**, and **read-only**. In **server** mode, all of the tools listed above are available. In **preview** and **read-only** modes, only `lineage_diff` and `schema_diff` are available — tools that query your warehouse are disabled.
 
 ## Troubleshooting
 
