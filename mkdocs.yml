@@ -54,6 +54,7 @@ nav:
       - Getting Started:
           - 2-getting-started/oss-vs-cloud.md
           - 2-getting-started/start-free-with-cloud.md
+          - dbt Cloud Setup: 2-getting-started/dbt-cloud-setup.md
           - Environment Setup: 2-getting-started/environment-setup.md
           - Environment Best Practices: 2-getting-started/environment-best-practices.md
           - Setup CD: 2-getting-started/setup-cd.md
