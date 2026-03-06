@@ -4,7 +4,9 @@ title: Setup CD
 
 # Setup CD - Auto-Update Baseline
 
-Set up automatic updates for your Recce Cloud base sessions. Keep your data comparison baseline current every time you merge to main, with no manual work required.
+Manually updating your Recce Cloud baseline after every merge is tedious and error-prone. This guide shows you how to automate baseline updates so your data comparison stays current without manual intervention.
+
+After completing this guide, your continuous deployment (CD) workflow automatically uploads dbt artifacts to Recce Cloud whenever code merges to main.
 
 ## What This Does
 
@@ -12,15 +14,22 @@ Set up automatic updates for your Recce Cloud base sessions. Keep your data comp
 
 - **Triggers**: Merge to main + scheduled updates + manual runs
 - **Action**: Auto-update base Recce session with latest production artifacts
-- **Benefit**: Current comparison baseline for all future PRs/MRs
+- **Benefit**: Current comparison baseline for all future PRs
 
 ## Prerequisites
 
 Before setting up CD, ensure you have:
 
 - [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
+- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
 - [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `prod` target for base artifacts
+
+## Environment strategy
+
+This workflow uses the **main branch** with the `prod` target as the base environment. The base artifacts represent your production state, which PRs compare against.
+
+See [Environment Setup](environment-setup.md) for profiles.yml configuration.
 
 ## Setup
 
@@ -170,11 +179,11 @@ Look for these indicators:
 
 **GitHub:**
 
-![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
+![Recce Cloud Sessions page displaying a successfully uploaded production baseline from GitHub Actions](../assets/images/7-cicd/verify-setup-github-cd.png){: .shadow}
 
 **GitLab:**
 
-![Recce Cloud showing updated base sessions](../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
+![Recce Cloud Sessions page displaying a successfully uploaded production baseline from GitLab CI](../assets/images/7-cicd/verify-setup-gitlab-cd.png){: .shadow}
 
 ### Expected Output
 
@@ -293,7 +302,7 @@ prod-build:
 1. Verify your repository is connected in [Recce Cloud settings](https://cloud.reccehq.com/settings)
 2. **For GitHub**: Ensure `GITHUB_TOKEN` is passed explicitly to the upload step and the job has `contents: read` permission
 3. **For GitLab**: Verify project has GitLab integration configured
-   - Check that you've created a [Personal Access Token](../2-getting-started/gitlab-pat-guide.md)
+   - Check that you've created a [Personal Access Token](gitlab-pat-guide.md)
    - Ensure the token has appropriate scope (`api` or `read_api`)
    - Verify the project is connected in Recce Cloud settings
 
@@ -344,4 +353,4 @@ prod-build:
 
 ## Next Steps
 
-**[Setup CI](./setup-ci.md)** to automatically validate PR/MR changes against your updated base session. This completes your CI/CD pipeline by adding automated data validation for every pull request or merge request.
+**[Setup CI](setup-ci.md)** to automatically validate PR/MR changes against your updated base session. This completes your CI/CD pipeline by adding automated data validation for every pull request or merge request.

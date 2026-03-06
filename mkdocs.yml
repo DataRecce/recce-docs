@@ -49,20 +49,32 @@ nav:
   - Guides:
       - What's Recce:
           - index.md
+          - 1-whats-recce/cloud-vs-oss.md
           - 1-whats-recce/community-support.md
           - Changelog: "https://reccehq.com/changelog/"
       - Getting Started:
-          - 2-getting-started/oss-vs-cloud.md
           - 2-getting-started/start-free-with-cloud.md
-          #- 2-getting-started/cloud-5min-tutorial.md
-          - 2-getting-started/installation.md
+          - dbt Cloud Setup: 2-getting-started/dbt-cloud-setup.md
+          - Environment Setup: 2-getting-started/environment-setup.md
+          - Environment Best Practices: 2-getting-started/environment-best-practices.md
+          - Setup CD: 2-getting-started/setup-cd.md
+          - Setup CI: 2-getting-started/setup-ci.md
           - Claude Plugin: 2-getting-started/claude-plugin.md
-          - 2-getting-started/get-started-jaffle-shop.md
+          - 2-getting-started/oss-setup.md
+          - 2-getting-started/jaffle-shop-tutorial.md
       - Visualized Change:
           - 3-visualized-change/lineage.md
           - 3-visualized-change/code-change.md
           - 3-visualized-change/column-level-lineage.md
           - 3-visualized-change/multi-models.md
+      - Using Recce:
+          - 3-using-recce/admin-setup.md
+          - 3-using-recce/data-developer.md
+          - 3-using-recce/data-reviewer.md
+      - What the Agent Does:
+          - 4-what-the-agent-does/index.md
+          - 4-what-the-agent-does/automated-validation.md
+          - 4-what-the-agent-does/impact-analysis.md
       - Downstream Impacts:
           #- 4-downstream-impacts/metadata-first.md
           - 4-downstream-impacts/impact-radius.md
@@ -78,23 +90,22 @@ nav:
           - 5-data-diffing/query.md
           - MCP Server (AI Agents): 5-data-diffing/mcp-server.md
       - Collaborate Validation:
-          - 6-collaboration/invitation.md
           - 6-collaboration/checklist.md
           - 6-collaboration/share.md
       - CI/CD:
-          - 7-cicd/ci-cd-getting-started.md
-          - 7-cicd/setup-cd.md
-          - 7-cicd/setup-ci.md
           - 7-cicd/pr-mr-summary.md
           #- 7-cicd/recce-debug.md # content outdated
-          - 7-cicd/scenario-dev.md          
+          - 7-cicd/scenario-dev.md
           - 7-cicd/scenario-pr-review.md
           - 7-cicd/preset-checks.md
-          - 7-cicd/best-practices-prep-env.md
 
       - Technical Concepts:
           - 8-technical-concepts/state-file.md
           - 8-technical-concepts/configuration.md
+
+      - Community:
+          - 8-community/support.md
+          - 8-community/changelog.md
 
   - Blog: "https://blog.reccehq.com"
   - Changelog: "https://reccehq.com/changelog/"
@@ -157,7 +168,14 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        # PR 6 redirects - Lineage and Data Diffing consolidation
+        '6-collaboration/invitation.md': '3-using-recce/admin-setup.md'
+        '2-getting-started/installation.md': '2-getting-started/oss-setup.md'
+        '2-getting-started/get-started-jaffle-shop.md': '2-getting-started/jaffle-shop-tutorial.md'
+        '2-getting-started/oss-vs-cloud.md': '1-whats-recce/cloud-vs-oss.md'
+        '7-cicd/setup-cd.md': '2-getting-started/setup-cd.md'
+        '7-cicd/setup-ci.md': '2-getting-started/setup-ci.md'
+        '7-cicd/ci-cd-getting-started.md': '2-getting-started/environment-setup.md'
+        '7-cicd/best-practices-prep-env.md': '2-getting-started/environment-best-practices.md'
         '3-visualized-change/lineage.md': '5-what-you-can-explore/lineage-diff.md'
         '4-downstream-impacts/impact-radius.md': '5-what-you-can-explore/impact-radius.md'
         '4-downstream-impacts/breaking-change-analysis.md': '5-what-you-can-explore/breaking-change-analysis.md'
@@ -167,12 +185,9 @@ plugins:
         '5-data-diffing/topK-diff.md': '5-what-you-can-explore/data-diffing.md'
         '5-data-diffing/histogram-diff.md': '5-what-you-can-explore/data-diffing.md'
         '5-data-diffing/query.md': '5-what-you-can-explore/data-diffing.md'
-        # PR 7 redirects - CI/CD reorganization
         '7-cicd/preset-checks.md': '6-collaboration/preset-checks.md'
-        # PR 8 redirects - Reference section
         '8-technical-concepts/configuration.md': '7-reference/configuration.md'
         '8-technical-concepts/state-file.md': '7-reference/state-file.md'
-        # PR 9 redirects - Community section
         '1-whats-recce/community-support.md': '8-community/support.md'
   - glightbox:
       skip_classes:
