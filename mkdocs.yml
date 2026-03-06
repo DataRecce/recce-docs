@@ -69,6 +69,10 @@ nav:
           - 3-visualized-change/multi-models.md
       - Using Recce:
           - 3-using-recce/admin-setup.md
+      - What the Agent Does:
+          - 4-what-the-agent-does/index.md
+          - 4-what-the-agent-does/automated-validation.md
+          - 4-what-the-agent-does/impact-analysis.md
       - Downstream Impacts:
           #- 4-downstream-impacts/metadata-first.md
           - 4-downstream-impacts/impact-radius.md
