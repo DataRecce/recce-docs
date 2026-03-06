@@ -177,6 +177,19 @@ plugins:
         '7-cicd/setup-ci.md': '2-getting-started/setup-ci.md'
         '7-cicd/ci-cd-getting-started.md': '2-getting-started/environment-setup.md'
         '7-cicd/best-practices-prep-env.md': '2-getting-started/environment-best-practices.md'
+        '3-visualized-change/lineage.md': '5-what-you-can-explore/lineage-diff.md'
+        '4-downstream-impacts/impact-radius.md': '5-what-you-can-explore/impact-radius.md'
+        '4-downstream-impacts/breaking-change-analysis.md': '5-what-you-can-explore/breaking-change-analysis.md'
+        '5-data-diffing/row-count-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/profile-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/value-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/topK-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/histogram-diff.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/query.md': '5-what-you-can-explore/data-diffing.md'
+        '7-cicd/preset-checks.md': '6-collaboration/preset-checks.md'
+        '8-technical-concepts/configuration.md': '7-reference/configuration.md'
+        '8-technical-concepts/state-file.md': '7-reference/state-file.md'
+        '1-whats-recce/community-support.md': '8-community/support.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
