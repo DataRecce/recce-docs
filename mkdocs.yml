@@ -99,9 +99,10 @@ nav:
           - 7-cicd/scenario-pr-review.md
           - 7-cicd/preset-checks.md
 
-      - Technical Concepts:
-          - 8-technical-concepts/state-file.md
-          - 8-technical-concepts/configuration.md
+      - Reference:
+          - 7-reference/configuration.md
+          - 7-reference/state-file.md
+          - 7-reference/cli-reference.md
 
       - Community:
           - 8-community/support.md
