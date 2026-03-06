@@ -224,16 +224,14 @@ These check types are accessible as preset checks configured in `recce.yml` or c
 
 See [Preset checks](../7-cicd/preset-checks.md) for how to configure these check types.
 
-!!! note "MCP server modes"
-    The MCP server supports three modes: **server** (default), **preview**, and **read-only**. In **server** mode, all of the tools listed above are available. In **preview** and **read-only** modes, only `lineage_diff` and `schema_diff` are available — tools that query your warehouse are disabled.
-
-    If base artifacts (`target-base/`) are not present, the server starts in **single-environment mode** where all tools work but diffs show no changes. Diff responses include a `_warning` field reminding you to generate base artifacts.
+!!! note
+    If base artifacts (`target-base/`) are not present, the server starts in **single-environment mode** — all tools remain available, but diff results show no changes. Generate base artifacts to enable real comparisons.
 
 ## Troubleshooting
 
 ### MCP server fails to start
 
-The most common cause is missing development artifacts. Check that your development artifacts exist:
+The most common cause is missing dbt artifacts. Check that your dbt artifacts exist:
 
 ```shell
 ls target/manifest.json
@@ -243,13 +241,7 @@ If missing, run `dbt docs generate` in your current branch. See [Prerequisites](
 
 ### Diff results show no changes
 
-If the server starts but all diffs return empty results, you are likely in single-environment mode (missing base artifacts). Generate base artifacts to enable real comparisons:
-
-```shell
-git stash && git checkout main
-dbt docs generate --target-path target-base
-git checkout <your-branch> && git stash pop
-```
+If the server starts but all diffs return empty results, you are likely in single-environment mode (missing base artifacts). Follow the [Generate base artifacts](#generate-base-artifacts) steps to enable real comparisons.
 
 ### Port already in use (SSE mode)
 
