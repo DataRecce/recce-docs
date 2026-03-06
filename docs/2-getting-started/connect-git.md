@@ -1,4 +1,4 @@
-# Connect Git Provider
+# Connect Your Repository
 
 **Goal:** Connect your GitHub or GitLab repository to Recce Cloud for automated PR data review.
 
