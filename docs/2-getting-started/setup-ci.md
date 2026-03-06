@@ -2,26 +2,35 @@
 title: Setup CI
 ---
 
-# Setup CI - Auto-Validate PRs/MRs
+# Setup CI - Auto-Validate PRs
 
-Automatically validate your data changes in every pull request or merge request using Recce Cloud. Catch data issues before they reach production, with validation results right in your PR/MR.
+Manual data validation before merging is error-prone and slows down PR reviews. This guide shows you how to set up continuous integration (CI) that automatically validates data changes in every pull request (PR).
+
+After completing this guide, your CI workflow validates every PR against your production baseline, with results appearing in Recce Cloud.
 
 ## What This Does
 
-**Automated PR/MR Validation** prevents data regressions before merge:
+**Automated PR Validation** prevents data regressions before merge:
 
-- **Triggers**: PR/MR opened or updated against main
+- **Triggers**: PR opened or updated against main
 - **Action**: Auto-update Recce session for validation
-- **Benefit**: Automated data validation and comparison visible in your PR/MR
+- **Benefit**: Automated data validation and comparison visible in your PR
 
 ## Prerequisites
 
 Before setting up CI, ensure you have:
 
 - [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
+- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
 - [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
-- [x] **CD configured** - [Setup CD](./setup-cd.md) to establish baseline for comparisons
+- [x] **CD configured** - [Setup CD](setup-cd.md) to establish baseline for comparisons
+- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `ci` target for per-PR schemas
+
+## Environment strategy
+
+This workflow uses **per-PR schemas** with the `ci` target as the current environment. Each PR gets an isolated schema (e.g., `pr_123`) that compares against the base artifacts from CD.
+
+See [Environment Setup](environment-setup.md) for profiles.yml configuration and why per-PR schemas are recommended.
 
 ## Setup
 
@@ -150,7 +159,7 @@ recce-upload:
 
 ## Verification
 
-### Test with a PR/MR
+### Test with a PR
 
 **GitHub:**
 
@@ -169,16 +178,16 @@ recce-upload:
 Look for these indicators:
 
 - [x] **Workflow/Pipeline completes** without errors
-- [x] **PR/MR session created** in [Recce Cloud](https://cloud.reccehq.com)
+- [x] **PR session created** in [Recce Cloud](https://cloud.reccehq.com)
 - [x] **Session URL** appears in workflow/pipeline output
 
 **GitHub:**
 
-![Recce Cloud showing PR validation session](../assets/images/7-cicd/verify-setup-github-ci.png){: .shadow}
+![Recce Cloud Sessions page displaying a PR validation session created from GitHub Actions](../assets/images/7-cicd/verify-setup-github-ci.png){: .shadow}
 
 **GitLab:**
 
-![Recce Cloud showing MR validation session](../assets/images/7-cicd/verify-setup-gitlab-ci.png){: .shadow}
+![Recce Cloud Sessions page displaying a MR validation session created from GitLab CI](../assets/images/7-cicd/verify-setup-gitlab-ci.png){: .shadow}
 
 ### Expected Output
 
@@ -232,12 +241,12 @@ Artifacts from: "/builds/your-org/your-project/target"
 Change request: https://gitlab.com/your-org/your-project/-/merge_requests/4
 ```
 
-### Review PR/MR Session
+### Review PR Session
 
 To analyze the changes in detail:
 
 1. Go to your [Recce Cloud](https://cloud.reccehq.com)
-2. Find the PR/MR session that was created
+2. Find the PR session that was created
 3. Launch Recce instance to explore data differences
 
 ## Advanced Options
@@ -269,18 +278,17 @@ If CI is not working, the issue is likely in your CD setup. Most problems are sh
 - Upload errors
 - Sessions not appearing
 
-**→ See the [Setup CD Troubleshooting section](./setup-cd.md#troubleshooting)** for detailed solutions.
+**→ See the [Setup CD Troubleshooting section](setup-cd.md#troubleshooting)** for detailed solutions.
 
 **CI-specific tip:** If CD works but CI doesn't, verify:
 
-1. PR/MR trigger conditions in your workflow configuration
-2. The PR/MR is targeting the correct base branch (usually `main`)
-3. You're looking at PR/MR sessions in Recce Cloud (not production sessions)
+1. PR trigger conditions in your workflow configuration
+2. The PR is targeting the correct base branch (usually `main`)
+3. You're looking at PR sessions in Recce Cloud (not production sessions)
 
 ## Next Steps
 
-After setting up CI, explore these workflow guides:
+After setting up CI, explore these guides:
 
-- [PR/MR review workflow](./scenario-pr-review.md) - Collaborate with teammates using Recce
-- [Preset checks](./preset-checks.md) - Configure automatic validation checks
-- [Best practices](./best-practices-prep-env.md) - Environment preparation tips
+- [Environment Best Practices](environment-best-practices.md) - Strategies for source data and schema management
+- [Get Started with Recce Cloud](start-free-with-cloud.md) - Complete onboarding guide
