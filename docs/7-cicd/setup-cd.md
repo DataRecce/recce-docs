@@ -293,7 +293,7 @@ prod-build:
 1. Verify your repository is connected in [Recce Cloud settings](https://cloud.reccehq.com/settings)
 2. **For GitHub**: Ensure `GITHUB_TOKEN` is passed explicitly to the upload step and the job has `contents: read` permission
 3. **For GitLab**: Verify project has GitLab integration configured
-   - Check that you've created a [Personal Access Token](../2-getting-started/gitlab-pat-guide.md)
+   - Check that you've created a [Personal Access Token](../2-getting-started/connect-git.md#connect-gitlab)
    - Ensure the token has appropriate scope (`api` or `read_api`)
    - Verify the project is connected in Recce Cloud settings
 
