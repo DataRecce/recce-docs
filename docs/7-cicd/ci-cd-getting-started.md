@@ -65,14 +65,14 @@ Before setting up, ensure you have:
 Both GitHub and GitLab follow the same simple pattern:
 
 ### 1. Setup CD - Auto-update baseline
-[**Setup CD Guide**](./setup-cd.md) - Configure automatic baseline updates when you merge to main
+[**Setup CD Guide**](../2-getting-started/setup-cd.md) - Configure automatic baseline updates when you merge to main
 
 - Updates your production baseline artifacts automatically
 - Runs on merge to main + optional scheduled updates
 - Works with both GitHub Actions and GitLab CI/CD
 
 ### 2. Setup CI - Auto-validate PRs/MRs
-[**Setup CI Guide**](./setup-ci.md) - Enable automatic validation for every PR/MR
+[**Setup CI Guide**](../2-getting-started/setup-ci.md) - Enable automatic validation for every PR/MR
 
 - Validates data changes in every pull request or merge request
 - Catches issues before they reach production
@@ -84,9 +84,9 @@ Start with **CD first** to establish your baseline (production artifacts), then 
 
 ## Next Steps
 
-1. **[Setup CD](./setup-cd.md)** - Establish automatic baseline updates
-2. **[Setup CI](./setup-ci.md)** - Enable PR/MR validation
-3. Review [best practices](./best-practices-prep-env.md) for environment preparation
+1. **[Setup CD](../2-getting-started/setup-cd.md)** - Establish automatic baseline updates
+2. **[Setup CI](../2-getting-started/setup-ci.md)** - Enable PR/MR validation
+3. Review [Environment Best Practices](../2-getting-started/environment-best-practices.md) for environment preparation
 
 ## Related workflows
 
