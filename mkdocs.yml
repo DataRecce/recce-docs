@@ -69,6 +69,8 @@ nav:
           - 3-visualized-change/multi-models.md
       - Using Recce:
           - 3-using-recce/admin-setup.md
+          - 3-using-recce/data-developer.md
+          - 3-using-recce/data-reviewer.md
       - What the Agent Does:
           - 4-what-the-agent-does/index.md
           - 4-what-the-agent-does/automated-validation.md
