@@ -92,14 +92,19 @@ This step adds CI/CD workflow files to your repository. The web agent detects yo
 #### Choose your setup
 
 1. How do you run dbt?
-    - **You own your dbt run**
-        - **GitHub Actions**: Continue with this guide
-        - **GitLab CI, CircleCI**: See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md)
-    - **You run dbt on a platform** (dbt Cloud, Paradime, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
+
+  - **You own your dbt run** (GitHub Actions, GitLab CI, CircleCI): Continue with this guide
+  - **You run dbt on a platform** (dbt Cloud, Paradime, etc.): See [dbt Cloud Setup](dbt-cloud-setup.md)
 
 2. How complex is your environment?
-    - **Simple** (prod and dev targets): Continue with this guide. We use per-PR schemas for fast setup. To learn why, see [Environment Setup](environment-setup.md).
-    - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
+
+  - **Simple** (prod and dev targets): Continue with this guide. We use per-PR schemas for fast setup. To learn why, see [Environment Setup](environment-setup.md).
+  - **Advanced** (multiple schemas, staging environments): See [Environment Setup](environment-setup.md)
+
+3. What's your CI/CD platform?
+
+  - **GitHub Actions**: Continue with this guide
+  - **Other platforms** (GitLab CI, CircleCI, etc.): See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md)
 
 #### Set Up Profile.yml
 
@@ -340,7 +345,7 @@ You can now:
 
 ## Related Resources
 
-- [CI/CD Getting Started](../7-cicd/ci-cd-getting-started.md)
-- [Setup CD](../7-cicd/setup-cd.md)
-- [Setup CI](../7-cicd/setup-ci.md)
-- [Best Practices for Preparing Environments](../7-cicd/best-practices-prep-env.md)
+- [Environment Setup](environment-setup.md)
+- [Setup CD](setup-cd.md)
+- [Setup CI](setup-ci.md)
+- [Environment Best Practices](environment-best-practices.md)
