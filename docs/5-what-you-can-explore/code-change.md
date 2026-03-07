@@ -69,3 +69,16 @@ After reviewing code changes, you can:
 
 !!! tip "Best Practice"
     Always review code changes alongside data validation checks to ensure your modifications produce the expected results and don't break downstream dependencies.
+
+## When to Use
+
+- Review what SQL logic changed before running data diffs
+- Understand the scope of a PR during code review
+- Identify which columns or joins were modified
+- Document changes for team communication
+
+## Related
+
+- [Breaking Change Analysis](breaking-change-analysis.md) - Classify impact severity
+- [Impact Radius](impact-radius.md) - See affected downstream models
+- [Data Diffing](data-diffing.md) - Validate data changes

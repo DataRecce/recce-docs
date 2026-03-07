@@ -113,6 +113,19 @@ Our breaking change analysis is intentionally conservative to prioritize safety.
 1. Adding a `LEFT JOIN` to a table and selecting columns from it. This is often used to enrich the current model with additional dimension table data without affecting existing downstream tables.
 1. All modified python models or seeds are treated as breaking change.
 
+## When to Use
+
+- Determine which downstream models need validation after a change
+- Prioritize review effort based on impact severity
+- Understand if a refactor will break dependent models
+- Assess risk before merging model changes
+
 ## Technology
 
-Breaking Change Analysis is powered by the SQL analysis and AST diff capabilities of [SQLGlot](https://github.com/tobymao/sqlglot) to  compare two SQL semantic trees.
+Breaking Change Analysis is powered by the SQL analysis and AST diff capabilities of [SQLGlot](https://github.com/tobymao/sqlglot) to compare two SQL semantic trees.
+
+## Related
+
+- [Impact Radius](impact-radius.md) - Visualize affected downstream models
+- [Column-Level Lineage](column-level-lineage.md) - Trace column dependencies
+- [Code Change](code-change.md) - Review the actual SQL modifications

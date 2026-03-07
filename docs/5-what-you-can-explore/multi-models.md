@@ -100,3 +100,16 @@ Another difference is that in dbt, you cannot select removed models. However, in
 - ["result" method](https://docs.getdbt.com/reference/node-selection/syntax#the-result-status) not supported
 - ["source_status" method](https://docs.getdbt.com/reference/node-selection/syntax#the-source_status-status) not supported.
 - [YAML selectors](https://docs.getdbt.com/reference/node-selection/yaml-selectors) not supported.
+
+## When to Use
+
+- Run Row Count Diff across multiple related models at once
+- Perform bulk Value Diff on a set of staging models
+- Validate all models in a specific path or tag
+- Compare schema changes across an entire model group
+
+## Related
+
+- [Lineage Diff](lineage-diff.md) - Visualize model dependencies and changes
+- [Data Diffing](data-diffing.md) - Run diffs on selected models
+- [Impact Radius](impact-radius.md) - See downstream effects of changes

@@ -24,7 +24,7 @@ Common use-cases for column-level lineage are:
 
     ![alt text](../assets/images/3-visualized-change/cll-3.png){: .shadow}
 
-# Transformation Types
+## Transformation Types
 
 The transformation type is also displayed for each column, which will help you understand how the column was generated or modified.
 
@@ -35,5 +35,18 @@ The transformation type is also displayed for each column, which will help you u
 | Derived | The column is created through transformations applied to upstream columns, such as calculations, conditions, functions, or aggregations. |
 | Source | The column is not derived from any upstream data. It may originate from a seed/source node, literal value or data generation function. |
 | Unknown | We have no information about the transformation type. This could be due to a parse error or other unknown reason. |
+
+## When to Use
+
+- Trace where a column's data originates
+- Understand which downstream columns depend on a specific column
+- Assess the impact of modifying a column's logic
+- Debug data quality issues by following the transformation chain
+
+## Related
+
+- [Impact Radius](impact-radius.md) - See column-level impact on downstream models
+- [Breaking Change Analysis](breaking-change-analysis.md) - Classify change severity
+- [Data Diffing](data-diffing.md) - Validate column-level data changes
 
 

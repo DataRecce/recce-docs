@@ -135,6 +135,13 @@ With the insights from the two features above, Recce determines the impact radiu
 2. If a model has a **[non-breaking change](breaking-change-analysis.md#non-breaking-change)**, include only the downstream columns and models of newly added columns.
 3. If a model has a **[partial breaking change](breaking-change-analysis.md#partial-breaking-change)**, include the downstream columns and models of added, removed, or modified columns.
 
+## When to Use
+
+- Identify which downstream models need validation after a change
+- Prioritize data diff effort based on actual impact
+- Assess risk before merging model modifications
+- Understand the blast radius of column-level changes
+
 ## Related
 
 - [Breaking Change Analysis](breaking-change-analysis.md) - Understand how changes are classified
