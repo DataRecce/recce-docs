@@ -1,6 +1,12 @@
 ---
 title: Setup CI
+description: >-
+  Set up continuous integration to automatically validate dbt data changes on
+  every pull request. Prevent data quality regressions before merge.
 ---
+
+!!! tip "Following the onboarding guide?"
+    Return to [Get Started with Recce Cloud](start-free-with-cloud.md#3-add-recce-to-cicd) after completing this page.
 
 # Setup CI - Auto-Validate PRs
 
@@ -20,11 +26,11 @@ After completing this guide, your CI workflow validates every PR against your pr
 
 Before setting up CI, ensure you have:
 
-- [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
-- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
-- [x] **CD configured** - [Setup CD](setup-cd.md) to establish baseline for comparisons
-- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `ci` target for per-PR schemas
+- [ ] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [ ] **Repository connected** to Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
+- [ ] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [ ] **CD configured** - [Setup CD](setup-cd.md) to establish baseline for comparisons
+- [ ] **Environment configured** - [Environment Setup](environment-setup.md) with `ci` target for per-PR schemas
 
 ## Environment strategy
 
@@ -98,7 +104,7 @@ jobs:
 - Creates a per-PR schema (`PR_123`, `PR_456`, etc.) using the dynamic `SNOWFLAKE_SCHEMA` environment variable to isolate each PR's data
 - `dbt build` and `dbt docs generate` create the required artifacts (`manifest.json` and `catalog.json`)
 - `recce-cloud upload` (without `--type`) auto-detects this is a PR session
-- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Recce Cloud
+- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Cloud
 
 ### GitLab CI/CD
 
@@ -177,9 +183,9 @@ recce-upload:
 
 Look for these indicators:
 
-- [x] **Workflow/Pipeline completes** without errors
-- [x] **PR session created** in [Recce Cloud](https://cloud.reccehq.com)
-- [x] **Session URL** appears in workflow/pipeline output
+- [ ] **Workflow/Pipeline completes** without errors
+- [ ] **PR session created** in [Cloud](https://cloud.reccehq.com)
+- [ ] **Session URL** appears in workflow/pipeline output
 
 **GitHub:**
 
@@ -245,7 +251,7 @@ Change request: https://gitlab.com/your-org/your-project/-/merge_requests/4
 
 To analyze the changes in detail:
 
-1. Go to your [Recce Cloud](https://cloud.reccehq.com)
+1. Go to your [Cloud](https://cloud.reccehq.com)
 2. Find the PR session that was created
 3. Launch Recce instance to explore data differences
 
@@ -284,11 +290,11 @@ If CI is not working, the issue is likely in your CD setup. Most problems are sh
 
 1. PR trigger conditions in your workflow configuration
 2. The PR is targeting the correct base branch (usually `main`)
-3. You're looking at PR sessions in Recce Cloud (not production sessions)
+3. You're looking at PR sessions in Cloud (not production sessions)
 
 ## Next Steps
 
 After setting up CI, explore these guides:
 
 - [Environment Best Practices](environment-best-practices.md) - Strategies for source data and schema management
-- [Get Started with Recce Cloud](start-free-with-cloud.md) - Complete onboarding guide
+- [Get Started with Cloud](start-free-with-cloud.md) - Complete onboarding guide

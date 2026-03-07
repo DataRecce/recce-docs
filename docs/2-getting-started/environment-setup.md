@@ -1,6 +1,12 @@
 ---
 title: Environment Setup
+description: >-
+  Configure dbt profiles and CI/CD environment variables for Recce data validation.
+  Set up isolated schemas for base vs current comparison on pull requests.
 ---
+
+!!! tip "Following the onboarding guide?"
+    Return to [Get Started with Recce Cloud](start-free-with-cloud.md#3-add-recce-to-cicd) after completing this page.
 
 # Environment Setup
 
@@ -12,9 +18,9 @@ Set up isolated schemas for base vs current comparison. After completing this gu
 
 ## Prerequisites
 
-- [x] **dbt project**: A working dbt project with `profiles.yml` configured
-- [x] **CI/CD platform**: GitHub Actions, GitLab CI, or similar
-- [x] **Warehouse access**: Credentials with permissions to create schemas dynamically
+- [ ] **dbt project**: A working dbt project with `profiles.yml` configured
+- [ ] **CI/CD platform**: GitHub Actions, GitLab CI, or similar
+- [ ] **Warehouse access**: Credentials with permissions to create schemas dynamically
 
 ## Why separate schemas matter
 
@@ -60,7 +66,7 @@ jaffle_shop:
       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       database: analytics
       warehouse: COMPUTE_WH
-      schema: "{{ env_var('CI_SCHEMA') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
       threads: 4
 
     prod:
@@ -78,7 +84,7 @@ After saving, your profile supports three targets: `dev` for local development, 
 
 Key points:
 
-- The `ci` target uses `env_var('CI_SCHEMA')` for dynamic schema assignment
+- The `ci` target uses `env_var('SNOWFLAKE_SCHEMA')` for dynamic schema assignment (other warehouses use their own variable name)
 - The `prod` target uses a fixed schema (`public`) for consistency
 - Adapt this pattern for other warehouses (BigQuery uses `dataset` instead of `schema`)
 
@@ -90,17 +96,17 @@ Your CI/CD workflow sets the schema dynamically for each PR. The key configurati
 
 ```yaml
 env:
-  CI_SCHEMA: "pr_${{ github.event.pull_request.number }}"
+  SNOWFLAKE_SCHEMA: "PR_${{ github.event.pull_request.number }}"
 ```
 
 **GitLab CI:**
 
 ```yaml
 variables:
-  CI_SCHEMA: "mr_${CI_MERGE_REQUEST_IID}"
+  SNOWFLAKE_SCHEMA: "MR_${CI_MERGE_REQUEST_IID}"
 ```
 
-This creates schemas like `pr_123`, `pr_456` for each PR automatically. When a PR opens, the workflow sets `CI_SCHEMA` and dbt writes to that isolated schema.
+This creates schemas like `PR_123`, `PR_456` for each PR automatically. When a PR opens, the workflow sets `SNOWFLAKE_SCHEMA` and dbt writes to that isolated schema.
 
 For complete workflow examples, see [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md).
 

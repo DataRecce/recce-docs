@@ -1,12 +1,18 @@
 ---
 title: Setup CD
+description: >-
+  Automate baseline updates for Recce Cloud with a continuous deployment workflow.
+  Keep your dbt validation baseline current after every merge to main.
 ---
+
+!!! tip "Following the onboarding guide?"
+    Return to [Get Started with Recce Cloud](start-free-with-cloud.md#3-add-recce-to-cicd) after completing this page.
 
 # Setup CD - Auto-Update Baseline
 
 Manually updating your Recce Cloud baseline after every merge is tedious and error-prone. This guide shows you how to automate baseline updates so your data comparison stays current without manual intervention.
 
-After completing this guide, your continuous deployment (CD) workflow automatically uploads dbt artifacts to Recce Cloud whenever code merges to main.
+After completing this guide, your continuous deployment (CD) workflow automatically uploads dbt artifacts to Cloud whenever code merges to main.
 
 ## What This Does
 
@@ -20,10 +26,10 @@ After completing this guide, your continuous deployment (CD) workflow automatica
 
 Before setting up CD, ensure you have:
 
-- [x] **Recce Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [x] **Repository connected** to Recce Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
-- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
-- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `prod` target for base artifacts
+- [ ] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [ ] **Repository connected** to Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
+- [ ] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [ ] **Environment configured** - [Environment Setup](environment-setup.md) with `prod` target for base artifacts
 
 ## Environment strategy
 
@@ -94,8 +100,8 @@ jobs:
 **Key points:**
 
 - `dbt build` and `dbt docs generate` create the required artifacts (`manifest.json` and `catalog.json`)
-- `recce-cloud upload --type prod` uploads the Base metadata to Recce Cloud
-- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Recce Cloud
+- `recce-cloud upload --type prod` uploads the Base metadata to Cloud
+- [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) authenticates with Cloud
 
 ### GitLab CI/CD
 
@@ -162,7 +168,7 @@ recce-upload-prod:
 
 **GitHub:**
 
-1. Go to **Actions** tab → Select "Update Base Recce Session"
+1. Go to **Actions** tab → Select "Update Base Metadata"
 2. Click **Run workflow** → Monitor for completion
 
 **GitLab:**
@@ -174,8 +180,8 @@ recce-upload-prod:
 
 Look for these indicators:
 
-- [x] **Workflow/Pipeline completes** without errors
-- [x] **Base session updated** in [Recce Cloud](https://cloud.reccehq.com)
+- [ ] **Workflow/Pipeline completes** without errors
+- [ ] **Base session updated** in [Cloud](https://cloud.reccehq.com)
 
 **GitHub:**
 
@@ -299,12 +305,12 @@ prod-build:
 
 **Solutions**:
 
-1. Verify your repository is connected in [Recce Cloud settings](https://cloud.reccehq.com/settings)
+1. Verify your repository is connected in [Cloud settings](https://cloud.reccehq.com/settings)
 2. **For GitHub**: Ensure `GITHUB_TOKEN` is passed explicitly to the upload step and the job has `contents: read` permission
 3. **For GitLab**: Verify project has GitLab integration configured
    - Check that you've created a [Personal Access Token](gitlab-pat-guide.md)
    - Ensure the token has appropriate scope (`api` or `read_api`)
-   - Verify the project is connected in Recce Cloud settings
+   - Verify the project is connected in Cloud settings
 
 ### Upload failures
 
@@ -312,7 +318,7 @@ prod-build:
 
 **Solutions**:
 
-1. Check network connectivity to Recce Cloud
+1. Check network connectivity to Cloud
 2. Verify artifact files exist in `target/` directory
 3. Review workflow/pipeline logs for detailed error messages
 4. **For GitLab**: Ensure artifacts are passed between jobs:
@@ -330,14 +336,14 @@ prod-build:
 
 ### Session not appearing
 
-**Issue**: Upload succeeds but session doesn't appear in Recce Cloud
+**Issue**: Upload succeeds but session doesn't appear in Cloud
 
 **Solutions**:
 
-1. Check you're viewing the correct repository in Recce Cloud
+1. Check you're viewing the correct repository in Cloud
 2. Verify you're looking at the production/base sessions (not PR/MR sessions)
-3. Check session filters in Recce Cloud (may be hidden by filters)
-4. Refresh the Recce Cloud page
+3. Check session filters in Cloud (may be hidden by filters)
+4. Refresh the Cloud page
 
 ### Schedule not triggering (GitLab only)
 
