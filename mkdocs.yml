@@ -62,11 +62,6 @@ nav:
           - Claude Plugin: 2-getting-started/claude-plugin.md
           - 2-getting-started/oss-setup.md
           - 2-getting-started/jaffle-shop-tutorial.md
-      - Visualized Change:
-          - 3-visualized-change/lineage.md
-          - 3-visualized-change/code-change.md
-          - 3-visualized-change/column-level-lineage.md
-          - 3-visualized-change/multi-models.md
       - Using Recce:
           - 3-using-recce/admin-setup.md
           - 3-using-recce/data-developer.md
@@ -75,20 +70,14 @@ nav:
           - 4-what-the-agent-does/index.md
           - 4-what-the-agent-does/automated-validation.md
           - 4-what-the-agent-does/impact-analysis.md
-      - Downstream Impacts:
-          #- 4-downstream-impacts/metadata-first.md
-          - 4-downstream-impacts/impact-radius.md
-          - 4-downstream-impacts/breaking-change-analysis.md
-          #- 4-downstream-impacts/transformation-types.md
-      - Data Diffing:
-          - 5-data-diffing/connect-to-warehouse.md
-          - 5-data-diffing/row-count-diff.md
-          - 5-data-diffing/profile-diff.md
-          - 5-data-diffing/value-diff.md
-          - 5-data-diffing/topK-diff.md
-          - 5-data-diffing/histogram-diff.md
-          - 5-data-diffing/query.md
-          - MCP Server (AI Agents): 5-data-diffing/mcp-server.md
+      - What You Can Explore:
+          - 5-what-you-can-explore/lineage-diff.md
+          - 5-what-you-can-explore/code-change.md
+          - 5-what-you-can-explore/column-level-lineage.md
+          - 5-what-you-can-explore/impact-radius.md
+          - 5-what-you-can-explore/breaking-change-analysis.md
+          - 5-what-you-can-explore/data-diffing.md
+          - 5-what-you-can-explore/multi-models.md
       - Collaborate Validation:
           - 6-collaboration/checklist.md
           - 6-collaboration/share.md
@@ -178,6 +167,9 @@ plugins:
         '7-cicd/ci-cd-getting-started.md': '2-getting-started/environment-setup.md'
         '7-cicd/best-practices-prep-env.md': '2-getting-started/environment-best-practices.md'
         '3-visualized-change/lineage.md': '5-what-you-can-explore/lineage-diff.md'
+        '3-visualized-change/code-change.md': '5-what-you-can-explore/code-change.md'
+        '3-visualized-change/column-level-lineage.md': '5-what-you-can-explore/column-level-lineage.md'
+        '3-visualized-change/multi-models.md': '5-what-you-can-explore/multi-models.md'
         '4-downstream-impacts/impact-radius.md': '5-what-you-can-explore/impact-radius.md'
         '4-downstream-impacts/breaking-change-analysis.md': '5-what-you-can-explore/breaking-change-analysis.md'
         '5-data-diffing/row-count-diff.md': '5-what-you-can-explore/data-diffing.md'
