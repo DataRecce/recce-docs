@@ -80,13 +80,13 @@ nav:
           - 5-what-you-can-explore/multi-models.md
       - Collaborate Validation:
           - 6-collaboration/checklist.md
+          - 6-collaboration/preset-checks.md
           - 6-collaboration/share.md
       - CI/CD:
           - 7-cicd/pr-mr-summary.md
           #- 7-cicd/recce-debug.md # content outdated
           - 7-cicd/scenario-dev.md
           - 7-cicd/scenario-pr-review.md
-          - 7-cicd/preset-checks.md
 
       - Reference:
           - 7-reference/configuration.md

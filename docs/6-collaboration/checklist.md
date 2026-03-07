@@ -2,42 +2,51 @@
 title: Checklist
 ---
 
-## What's Checklist
+# Checklist
 
-Save your validation checks to the Recce checklist with a description of your findings.
+Save validation checks to track your findings and share them with reviewers. The checklist becomes your proof-of-correctness for modeling changes.
 
-These checks can later be added to your pull request comment as proof-of-correctness for your modeling changes.
+## How It Works
+
+When you run a diff or query in Recce, you can add the result to your checklist. Each check captures:
+
+- The validation type (schema diff, row count, query, etc.)
+- The result at the time of capture
+- Your notes explaining what the result means
 
 <figure markdown>
   ![Recce Checklist](../assets/images/6-collaboration/checklist.png)
-  <figcaption>Checklist</figcaption>
+  <figcaption>Checklist with saved validation checks</figcaption>
 </figure>
 
+### Adding Checks
 
-## Diffs performed via the Explore Change dropdown menu
-
-For the majority of diffs, which are performed via the Explore Change dropdown menu, the Check can be added by clicking the Add to Checklist button in the results panel:
+For diffs performed via the Explore Change dropdown menu, click **Add to Checklist** in the results panel:
 
 <figure markdown>
   ![Add a Check by clicking the Add to Checklist button in the diff results panel](../assets/images/6-collaboration/add-to-checklist-button.png){: .shadow}
-  <figcaption>Add a Check by clicking the Add to Checklist button in the diff results panel</figcaption>
+  <figcaption>Add to Checklist button in diff results panel</figcaption>
 </figure>
-
-An example performing a Top-K diff and adding the results to the Checklist:
 
 <figure markdown>
   ![Example adding a Top-K Diff to the Checklist](../assets/images/6-collaboration/add-to-checklist.gif){: .shadow}
-  <figcaption>Example adding a Top-K Diff to the Checklist</figcaption>
+  <figcaption>Example: Adding a Top-K Diff to the Checklist</figcaption>
 </figure>
 
-## Add to Checklist
+### Re-running Checks
 
-The Recce Checklist provides a way to record the results of a data check during change exploration. The purpose of adding Checks to the Checklist is to enable you to:
+After making additional changes to your models, re-run checks from the checklist to verify your updates. This lets you iterate until all validations pass.
 
-- Save Checks with notes of your interpretation of the data
-- Re-run checks following further data modeling changes
-- Share Checks as part of PR or stakeholder review
+For checks you want to run on every PR automatically, see [Preset Checks](preset-checks.md).
 
-## Preset Check
+## When to Use
 
-Preset checks can be the fixed checks that are generated every time a new Recce instance is initiated.
+- **During development** - Save checks as you validate each change, building evidence as you go
+- **Before creating a PR** - Compile all validations that prove your changes are correct
+- **For recurring validations** - Use [Preset Checks](preset-checks.md) to automate checks that should run on every PR
+- **Stakeholder review** - [Share](share.md) your checklist to give reviewers full context
+
+## Related
+
+- [Preset Checks](preset-checks.md) - Automate recurring validation checks
+- [Share](share.md) - Share your checklist with reviewers
