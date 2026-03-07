@@ -37,6 +37,8 @@ For diffs performed via the Explore Change dropdown menu, click **Add to Checkli
 
 After making additional changes to your models, re-run checks from the checklist to verify your updates. This lets you iterate until all validations pass.
 
+For checks you want to run on every PR automatically, see [Preset Checks](preset-checks.md).
+
 ## When to Use
 
 - **During development** - Save checks as you validate each change, building evidence as you go

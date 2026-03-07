@@ -87,7 +87,6 @@ nav:
           #- 7-cicd/recce-debug.md # content outdated
           - 7-cicd/scenario-dev.md
           - 7-cicd/scenario-pr-review.md
-          - 7-cicd/preset-checks.md
 
       - Reference:
           - 7-reference/configuration.md

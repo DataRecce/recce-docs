@@ -8,26 +8,23 @@ Share your validation results with team members and stakeholders.
 
 **Goal:** Give reviewers access to your Recce session so they can explore validation results.
 
-## Prerequisites
 
-- [x] Recce session with checks in your checklist
-- [x] Recce Cloud account (for full session sharing)
+## Recce Cloud
 
-## Sharing Methods
+Share your session by copying the URL directly from your browser. Team members with organization access can view any session immediately.
 
-Choose the method that fits your collaboration needs:
+To invite team members to your organization, see [Admin Setup](../3-using-recce/admin-setup.md#5-invite-team-members).
+
+## Recce OSS
+
+For local Recce sessions, use these sharing methods:
 
 | Method | Best For | Requires |
 |--------|----------|----------|
 | **Copy to Clipboard** | Quick screenshots in PR comments | Nothing |
-| **Recce Cloud Sharing** | Full interactive session access | Recce Cloud account |
+| **Upload to Recce Cloud** | Full interactive session access | Recce Cloud account |
 
-<figure markdown>
-  ![Click Share](../assets/images/6-collaboration/share-button.png){: .shadow}
-  <figcaption>Access sharing options from the Share button</figcaption>
-</figure>
-
-## Method 1: Copy to Clipboard
+### Copy to Clipboard
 
 For quick sharing of specific results, use **Copy to Clipboard** in any diff result. Paste the screenshot directly into PR comments, Slack, or other channels.
 
@@ -39,9 +36,9 @@ For quick sharing of specific results, use **Copy to Clipboard** in any diff res
 !!! note "Browser Compatibility"
     Firefox does not support copying images to the clipboard. Recce displays a modal where you can download or right-click to copy the image.
 
-## Method 2: Recce Cloud Sharing
+### Upload to Recce Cloud
 
-When reviewers need full context, share via Recce Cloud. This creates a read-only link with complete access to your validation results.
+When reviewers need full context, upload your session to Recce Cloud. This creates a shareable link with complete access to your validation results.
 
 **Benefits:**
 
@@ -53,7 +50,7 @@ When reviewers need full context, share via Recce Cloud. This creates a read-onl
 !!! warning "Access Control"
     Anyone with the link can view your session after signing into Recce Cloud. For restricted access, [contact our team](https://cal.com/team/recce/chat).
 
-### First-Time Setup
+#### First-time setup
 
 1. Launch Recce server and click **Use Recce Cloud** if not already connected
 
@@ -72,7 +69,7 @@ When reviewers need full context, share via Recce Cloud. This creates a read-onl
     recce connect-to-cloud
     ```
 
-### Manual Configuration (Advanced)
+#### Manual configuration (advanced)
 
 For containerized environments or manual setup:
 
@@ -93,9 +90,16 @@ For containerized environments or manual setup:
     api_token: <your_api_token>
     ```
 
-### Command Line Sharing
+#### Share from UI or CLI
 
-Share existing state files directly from the terminal:
+**From UI:** Click the **Share** button and select Recce Cloud.
+
+<figure markdown>
+  ![Click Share](../assets/images/6-collaboration/share-button.png){: .shadow}
+  <figcaption>Access sharing options from the Share button</figcaption>
+</figure>
+
+**From CLI:** Share existing state files directly from the terminal:
 
 ```bash
 # If already connected to Recce Cloud
@@ -112,12 +116,12 @@ recce share --api-token <your_api_token> <your_state_file>
 Confirm sharing works:
 
 1. Add a check to your checklist
-2. Click **Share** and select Recce Cloud
-3. Copy the generated link
-4. Open the link in an incognito window
-5. Verify you can view the session after signing in
+2. Share via your preferred method (URL for Cloud, Share button for OSS)
+3. Open the link in an incognito window
+4. Verify you can view the session
 
 ## Related
 
+- [Admin Setup](../3-using-recce/admin-setup.md) - Invite team members to your organization
 - [Checklist](checklist.md) - Save validation checks to share
 - [Preset Checks](preset-checks.md) - Automate recurring checks

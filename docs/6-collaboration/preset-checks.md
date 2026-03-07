@@ -10,48 +10,74 @@ Define validation checks that run automatically for every PR. Preset checks ensu
 
 ## Prerequisites
 
-- [x] Recce installed in your dbt project
-- [x] At least one check you want to automate
+- [x] Recce Cloud account or Recce installed in your dbt project
+- [x] At least one validation check you want to automate
 
-## Configure a Preset Check
+## Recce Cloud
 
-### 1. Create a Check Template
+Create preset checks directly in the Recce Cloud interface. When a PR is created, preset checks run automatically.
 
-Start by adding a check to your checklist manually:
+### From the checklist
 
-1. Run a diff or query in Recce
+Mark any existing check as a preset check:
+
+1. Run a diff or query in your Recce session
 2. Add the result to your checklist
+3. Open the check menu and select **Mark as Preset Check**
 
-    ![Add check to checklist](../assets/images/7-cicd/preset-checks-prep.png){: .shadow}
+<!-- TODO: Add screenshot showing "Mark as Preset Check" option in check menu -->
 
-3. Open the check menu and select **Get Preset Check Template**
-4. Copy the YAML config from the dialog
+### From project settings
 
-    ![Get preset check template](../assets/images/7-cicd/preset-checks-template.png){: .shadow}
+Create preset checks directly in your project configuration:
 
-### 2. Add to recce.yml
+1. Navigate to your project's **Preset Checks** page
+2. Click **Add Preset Check**
+3. Configure the check type and parameters
 
-Paste the config into `recce.yml` at your project root:
+<!-- TODO: Add screenshot of Project > Preset Checks page -->
 
-```yaml
-# recce.yml
-checks:
-  - name: Query diff of customers
-    description: |
-      This is the demo preset check.
+When preset checks are configured, they run automatically each time a PR is created.
 
-      Please run the query and paste the screenshot to the PR comment.
-    type: query_diff
-    params:
-      sql_template: select * from {{ ref("customers") }}
-    view_options:
-      primary_keys:
-        - customer_id
-```
+## Recce OSS
 
-## Running Preset Checks
+For local Recce, configure preset checks in `recce.yml` and run them manually or in CI.
 
-### In Recce Server
+### Configure in recce.yml
+
+1. Start by adding a check to your checklist manually:
+
+    1. Run a diff or query in Recce
+    2. Add the result to your checklist
+
+        ![Add check to checklist](../assets/images/7-cicd/preset-checks-prep.png){: .shadow}
+
+    3. Open the check menu and select **Get Preset Check Template**
+    4. Copy the YAML config from the dialog
+
+        ![Get preset check template](../assets/images/7-cicd/preset-checks-template.png){: .shadow}
+
+2. Paste the config into `recce.yml` at your project root:
+
+    ```yaml
+    # recce.yml
+    checks:
+      - name: Query diff of customers
+        description: |
+          This is the demo preset check.
+
+          Please run the query and paste the screenshot to the PR comment.
+        type: query_diff
+        params:
+          sql_template: select * from {{ ref("customers") }}
+        view_options:
+          primary_keys:
+            - customer_id
+    ```
+
+### Run preset checks
+
+#### In Recce server
 
 When you launch Recce, preset checks appear in your checklist automatically (but not yet executed):
 
@@ -59,7 +85,7 @@ When you launch Recce, preset checks appear in your checklist automatically (but
 
 Click **Run Query** to execute each check.
 
-### With recce run
+#### With recce run
 
 Execute all preset checks from the command line:
 
@@ -92,7 +118,7 @@ View results by launching the server with the state file:
 recce server recce_state.json
 ```
 
-## Verification
+### Verification
 
 Confirm preset checks work:
 
@@ -101,7 +127,7 @@ Confirm preset checks work:
 3. Verify the check appears in output with `[Success]` status
 4. Launch `recce server recce_state.json` and confirm the check appears in your checklist
 
-## Troubleshooting
+### Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
