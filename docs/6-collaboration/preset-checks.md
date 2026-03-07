@@ -25,7 +25,7 @@ Mark any existing check as a preset check:
 2. Add the result to your checklist
 3. Open the check menu and select **Mark as Preset Check**
 
-<!-- TODO: Add screenshot showing "Mark as Preset Check" option in check menu -->
+![Mark as Preset Check from checklist](../assets/images/6-collaboration/mark-preset-check.png){: .shadow}
 
 ### From project settings
 
@@ -35,7 +35,9 @@ Create preset checks directly in your project configuration:
 2. Click **Add Preset Check**
 3. Configure the check type and parameters
 
-<!-- TODO: Add screenshot of Project > Preset Checks page -->
+![Project Preset Checks page](../assets/images/6-collaboration/preset-check-in-cloud.png){: .shadow}
+
+![Create Preset Checks directly in Recce Cloud](../assets/images/6-collaboration/create-preset-check-in-cloud.png){: .shadow}
 
 When preset checks are configured, they run automatically each time a PR is created.
 
