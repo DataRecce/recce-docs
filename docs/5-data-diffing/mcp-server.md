@@ -1,28 +1,28 @@
 ---
-title: Recce MCP Server — dbt Data Validation for AI Agents
+title: Recce MCP Server — Data Validation for AI Agents
 description: >-
   Connect the Recce MCP server to Claude Code, Cursor, or Windsurf to validate
-  dbt data changes through natural language. Supports schema diff, row count diff,
-  value diff, and more via the Model Context Protocol (MCP).
+  data changes through natural language. Supports Schema Diff, Row Count Diff,
+  Value Diff, and more via the Model Context Protocol (MCP).
 ---
 
-# Recce MCP Server for dbt
+# Recce MCP Server
 
-Recce is a dbt data validation tool that compares your development branch against your base branch (typically main) and surfaces schema changes, row count differences, and data diffs. Its MCP server makes these capabilities available to any AI code agent — including Claude Code, Cursor, and Windsurf — so you can validate data changes through natural language without leaving your editor.
+When data models change, downstream dashboards and reports can break without warning. The Recce MCP server lets your AI agent validate those changes before they reach production — directly from your editor, through natural language.
 
-[MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard that lets AI assistants call external tools directly. Recce implements an MCP server so your AI agent can run data diffs against your warehouse on your behalf.
+[MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard that lets AI assistants call external tools. Recce implements an MCP server so your AI agent can run data diffs against your warehouse on your behalf.
 
-Unlike general-purpose database tools, Recce's MCP server is built specifically for dbt branch comparison. It reads dbt artifacts (`manifest.json`, `catalog.json`) to understand your model graph, so your AI agent can reason about lineage, column-level changes, and statistical differences — not just raw SQL.
+Unlike general-purpose database tools, Recce's MCP server is purpose-built for branch comparison. It reads dbt artifacts (`manifest.json`, `catalog.json`) to understand your model graph, so your AI agent can reason about lineage, column-level changes, and statistical differences — not just raw SQL.
 
 !!! tip "Claude Code users: skip to the easy path"
-    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) handles all of the setup below automatically — prerequisites, artifact generation, and server startup — in two commands. If you use Claude Code, start there.
+    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) handles all setup automatically — prerequisites, artifact generation, and server startup — in two commands. If you use Claude Code, start there.
 
-## What you can do with Recce MCP
+## What you can do
 
-Once connected, you can ask your AI agent questions like:
+Once connected, ask your AI agent questions like:
 
 - "What schema changes happened in this branch?"
-- "Show me the row count diff for all modified models"
+- "Show me the Row Count Diff for all modified models"
 - "Are there any breaking column changes in this PR?"
 - "Profile the orders table and compare it against production"
 - "Run a custom SQL query against both dev and prod and show the differences"
@@ -31,11 +31,11 @@ Your agent translates these into the appropriate Recce tool calls and returns th
 
 ## How it works
 
-Recce compares your current branch's dbt models against a baseline from your main branch. To do this, it needs two sets of dbt artifacts (the `manifest.json` and `catalog.json` metadata files that dbt generates) — one representing your current work and one representing your base branch. The MCP server reads both artifact sets and runs diffs against your warehouse when your AI agent requests them.
+Recce compares your current branch against a baseline from your main branch. It needs two sets of dbt artifacts — one representing your current work and one representing your base branch. The MCP server reads both artifact sets and runs diffs against your warehouse when your AI agent requests them.
 
 ## Prerequisites
 
-Before starting the MCP server, generate your development artifacts. Base artifacts are recommended for full diffing but not required.
+Before starting the MCP server, you need dbt artifacts for your current branch. Base artifacts are recommended for full diffing but not required.
 
 ### Generate development artifacts
 
@@ -49,14 +49,10 @@ This creates `target/manifest.json` and `target/catalog.json`.
 
 ### Generate base artifacts
 
-Switch to your base branch and generate artifacts to a separate directory:
+Generate artifacts from your base branch to a separate directory:
 
 ```shell
-git stash                                # save uncommitted changes
-git checkout main                        # switch to base branch
-dbt docs generate --target-path target-base  # generate base artifacts
-git checkout <your-branch>                # switch back
-git stash pop                            # restore changes
+dbt docs generate --target-path target-base
 ```
 
 This creates `target-base/manifest.json` and `target-base/catalog.json`. The MCP server compares these two artifact sets to produce diffs.
@@ -76,13 +72,13 @@ Recce works with all major dbt adapters, including Snowflake, BigQuery, Redshift
 
 ## Configuration
 
-Choose the tab for your AI agent. If you're unsure which transport to use: **stdio** is simpler (no separate process to manage) and works for most setups. Use **SSE** only if you need to share a single Recce server across multiple tools simultaneously.
+Choose the tab for your AI agent. **stdio** is simpler (no separate process to manage) and works for most setups. Use **SSE** only if you need to share a single Recce server across multiple tools simultaneously.
 
 === "Claude Code"
 
     ### Option A: Recce plugin (recommended)
 
-    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) is the easiest way to get started. Unlike manual MCP configuration, the plugin provides guided setup, handles prerequisite checks, generates artifacts, and starts the MCP server for you — all through interactive commands.
+    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) provides guided setup, handles prerequisite checks, generates artifacts, and starts the MCP server — all through interactive commands.
 
     ```
     /plugin marketplace add DataRecce/recce-claude-plugin
@@ -94,7 +90,7 @@ Choose the tab for your AI agent. If you're unsure which transport to use: **std
 
     ### Option B: Stdio
 
-    Configure Recce as an MCP server with stdio transport. Claude Code automatically launches the server when you start a session — no separate process to manage.
+    Configure Recce as an MCP server with stdio transport. Claude Code automatically launches the server when you start a session.
 
     ```shell
     cd my-dbt-project/
@@ -199,7 +195,7 @@ Choose the tab for your AI agent. If you're unsure which transport to use: **std
 
 ## Available tools
 
-When connected, the MCP server exposes these tools to your AI agent:
+The MCP server exposes these tools to your AI agent:
 
 | Tool | Description |
 |------|-------------|
@@ -274,19 +270,19 @@ See the [Claude Plugin guide](../2-getting-started/claude-plugin.md) for full se
 
 ## FAQ
 
-**Which AI agents does Recce MCP support?**
+**"How do I validate data changes in my PR using an AI agent?"**
 
-Recce MCP works with any MCP-compatible AI agent, including Claude Code, Cursor, and Windsurf. It supports both stdio and SSE transport modes.
+Connect Recce's MCP server to your AI agent (Claude Code, Cursor, or Windsurf), then ask questions in natural language. Your agent calls the appropriate validation tools and returns the results.
 
-**What dbt adapters are supported?**
+**"Which dbt adapters work with Recce MCP?"**
 
 Recce works with all major dbt adapters: Snowflake, BigQuery, Redshift, Databricks, DuckDB, and others.
 
-**Do I need Recce Cloud to use the MCP server?**
+**"Do I need Recce Cloud to use the MCP server?"**
 
-No. The MCP server is part of Recce OSS and is free to use. [Recce Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
+No. The MCP server is part of Recce OSS and free to use. [Recce Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
 
-**What is the Model Context Protocol?**
+**"What is MCP and how does Recce use it?"**
 
 [MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard that allows AI agents to call external tools. Recce implements an MCP server so AI agents can run data diffs against your warehouse on demand.
 
