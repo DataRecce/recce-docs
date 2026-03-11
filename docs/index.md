@@ -14,8 +14,8 @@ Recce is a Data Review Agent that automates data validation for pull requests. W
 
 Recce is the product. The agent automates validation on your PRs. You can run Recce through Cloud (hosted, automated) or open source (local, manual).
 
-[**Get Started with Cloud**](2-getting-started/start-free-with-cloud.md){ .md-button .md-button--primary }
-[**Set Up Open Source**](2-getting-started/oss-setup.md){ .md-button }
+[**Get Started with Cloud**](getting-started/start-free-with-cloud.md){ .md-button .md-button--primary }
+[**Set Up Open Source**](getting-started/oss-setup.md){ .md-button }
 
 ## How Recce Works
 
@@ -29,7 +29,7 @@ When you open a PR with data changes, Recce automatically:
 
 You review the agent's findings, add notes, and approve with confidence, not blind trust.
 
-![How Recce Works](assets/images/1-whats-recce/how-recce-work.png)
+![How Recce Works](assets/images/whats-recce/how-recce-work.png)
 
 1. PR Created
 2. Recce Triggered
@@ -41,7 +41,7 @@ You review the agent's findings, add notes, and approve with confidence, not bli
 
 
 Example of Recce agent summary in a GitHub PR comment:
-![How Recce Works](assets/images/1-whats-recce/agent-data-review-example.png)
+![How Recce Works](assets/images/whats-recce/agent-data-review-example.png)
 
 ## Automate Agent Data Review with CI/CD
 
@@ -72,9 +72,9 @@ With CI/CD:
 Yes, you can run Recce locally for dev sessions. But CI/CD unlocks the full value: automatic validation on every PR without manual setup.
 
 **What data platforms does Recce support?**
-Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](2-getting-started/connect-to-warehouse.md) for setup.
+Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](setup-guides/connect-to-warehouse.md) for setup.
 
 ## Next Steps
 - Interactive Demo: [Try the Data Review Agent](https://reccehq.com/demo/)
-- Tutorial: [Get Started with Recce Cloud](2-getting-started/start-free-with-cloud.md)
+- Tutorial: [Get Started with Recce Cloud](getting-started/start-free-with-cloud.md)
 - Blog: [The Problem with Data PR Reviews: Where Do You Even Start?](https://blog.reccehq.com/guided-data-review)
