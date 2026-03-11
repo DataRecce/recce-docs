@@ -20,13 +20,13 @@ Set up automated workflows that:
 !!!note
     CI/CD automation requires a Cloud Plan. Get started for free [here](https://cloud.reccehq.com/).
 
-## What is CI/CD? 
+## What is CI/CD?
 
 Recce uses both continuous integration (CI) and continuous delivery (CD) to automate data validation:
 
 **Continuous Integration (CI)**
 
-- **When**: Runs when you open a new or update a Pull Request/Merge Request 
+- **When**: Runs when you open a new or update a Pull Request/Merge Request
 - **Purpose**: Validates proposed changes against baseline (typically this mean production)
 - **Benefit**: Catches issues before merge, with results in your PR/MR
 
@@ -60,7 +60,7 @@ Before setting up, ensure you have:
 
 - [ ] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
 - [ ] **Repository connected** to Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
-  - For GitLab: [Create a Personal Access Token](../2-getting-started/gitlab-pat-guide.md) if not already done
+  - For GitLab: [Create a Personal Access Token](../2-getting-started/connect-git.md#connect-gitlab) if not already done
 - [ ] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your project
 
 ## Setup Steps

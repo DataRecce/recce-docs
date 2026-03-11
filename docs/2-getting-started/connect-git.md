@@ -88,4 +88,4 @@ In Cloud, navigate to your repository. You should see:
 ## Next Steps
 
 - [Connect Data Warehouse](connect-to-warehouse.md)
-- [Add Recce to CI/CD](environment-setup.md)
+- [Add Recce to CI/CD](../7-cicd/ci-cd-getting-started.md)

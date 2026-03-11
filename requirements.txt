@@ -1,4 +1,6 @@
+mkdocs<2
 mkdocs-material
 mkdocs-redirects
 mkdocs-glightbox
+mkdocs-redirects
 mkdocs-material[imaging]

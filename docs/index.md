@@ -72,7 +72,7 @@ With CI/CD:
 Yes, you can run Recce locally for dev sessions. But CI/CD unlocks the full value: automatic validation on every PR without manual setup.
 
 **What data platforms does Recce support?**
-Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](5-data-diffing/connect-to-warehouse.md) for setup.
+Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](2-getting-started/connect-to-warehouse.md) for setup.
 
 ## Next Steps
 - Interactive Demo: [Try the Data Review Agent](https://reccehq.com/demo/)

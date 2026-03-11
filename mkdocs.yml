@@ -86,6 +86,7 @@ nav:
           - 5-what-you-can-explore/breaking-change-analysis.md
           - 5-what-you-can-explore/data-diffing.md
           - 5-what-you-can-explore/multi-models.md
+          - MCP Server (AI Agents): 5-data-diffing/mcp-server.md
       - Collaborate Validation:
           - 6-collaboration/checklist.md
           - 6-collaboration/preset-checks.md
@@ -186,6 +187,8 @@ plugins:
         '5-data-diffing/topK-diff.md': '5-what-you-can-explore/data-diffing.md'
         '5-data-diffing/histogram-diff.md': '5-what-you-can-explore/data-diffing.md'
         '5-data-diffing/query.md': '5-what-you-can-explore/data-diffing.md'
+        '5-data-diffing/connect-to-warehouse.md': '2-getting-started/connect-to-warehouse.md'
+        '2-getting-started/gitlab-pat-guide.md': '2-getting-started/connect-git.md'
         '7-cicd/preset-checks.md': '6-collaboration/preset-checks.md'
         '8-technical-concepts/configuration.md': '7-reference/configuration.md'
         '8-technical-concepts/state-file.md': '7-reference/state-file.md'

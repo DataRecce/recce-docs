@@ -118,5 +118,5 @@ Navigate to Organization Settings in Cloud. Your data warehouse should appear.
 
 ## Next Steps
 
-- [Add Recce to CI/CD](setup-ci.md)
+- [Add Recce to CI/CD](../7-cicd/ci-cd-getting-started.md)
 - [Run Your First Data Diff](../5-data-diffing/row-count-diff.md)
