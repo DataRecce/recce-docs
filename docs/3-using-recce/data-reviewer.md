@@ -13,9 +13,9 @@ Review data changes in pull requests using Recce. Your admin set up Recce for yo
 
 ## Prerequisites
 
-- [ ] Recce Cloud account (via team invitation)
-- [ ] Access to the project in Cloud
-- [ ] PR with Recce validation results
+- [x] Recce Cloud account (via team invitation)
+- [x] Access to the project in Cloud
+- [x] PR with Recce validation results
 
 ## Reviewing a PR
 

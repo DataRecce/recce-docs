@@ -58,10 +58,10 @@ Recce integrates with both GitHub Actions and GitLab CI/CD using the lightweight
 
 Before setting up, ensure you have:
 
-- [ ] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [ ] **Repository connected** to Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
+- [x] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [x] **Repository connected** to Cloud - [Connect Git Provider](../2-getting-started/start-free-with-cloud.md#2-connect-git-provider)
   - For GitLab: [Create a Personal Access Token](../2-getting-started/connect-git.md#connect-gitlab) if not already done
-- [ ] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your project
+- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your project
 
 ## Setup Steps
 

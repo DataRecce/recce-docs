@@ -25,10 +25,10 @@ For accurate comparisons, both environments should use consistent data ranges. S
 
 ## Prerequisites
 
-- [ ]  **Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
-- [ ]  **dbt project in a git repository that runs successfully:** your environment can execute `dbt build` and `dbt docs generate`
-- [ ]  **Repository admin access for setup**: required to add workflows and secrets
-- [ ]  **Data warehouse**: read access to your warehouse for data diffing
+- [x]  **Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
+- [x]  **dbt project in a git repository that runs successfully:** your environment can execute `dbt build` and `dbt docs generate`
+- [x]  **Repository admin access for setup**: required to add workflows and secrets
+- [x]  **Data warehouse**: read access to your warehouse for data diffing
 
 ## Onboarding Process Overview
 
@@ -137,9 +137,9 @@ You can now:
 
 ## Verification Checklist
 
-- [ ]  **Base workflow**: Trigger manually, check Base metadata appears in Cloud
-- [ ]  **Current workflow**: Create a test PR, verify PR session appears
-- [ ]  **Data diff**: Open PR session, run Row Count Diff
+- [x]  **Base workflow**: Trigger manually, check Base metadata appears in Cloud
+- [x]  **Current workflow**: Create a test PR, verify PR session appears
+- [x]  **Data diff**: Open PR session, run Row Count Diff
 
 ## Troubleshooting
 

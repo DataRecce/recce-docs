@@ -13,9 +13,9 @@ Cloud supports GitHub and GitLab. Using a different provider? Contact us at supp
 
 ## Prerequisites
 
-- [ ] Cloud account (free trial at cloud.reccehq.com)
-- [ ] Repository admin access (required to authorize app installation)
-- [ ] dbt project in the repository
+- [x] Cloud account (free trial at cloud.reccehq.com)
+- [x] Repository admin access (required to authorize app installation)
+- [x] dbt project in the repository
 
 ## How It Works
 

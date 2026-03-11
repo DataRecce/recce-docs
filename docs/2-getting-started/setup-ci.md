@@ -26,11 +26,11 @@ After completing this guide, your CI workflow validates every PR against your pr
 
 Before setting up CI, ensure you have:
 
-- [ ] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [ ] **Repository connected** to Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
-- [ ] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
-- [ ] **CD configured** - [Setup CD](setup-cd.md) to establish baseline for comparisons
-- [ ] **Environment configured** - [Environment Setup](environment-setup.md) with `ci` target for per-PR schemas
+- [x] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [x] **Repository connected** to Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
+- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **CD configured** - [Setup CD](setup-cd.md) to establish baseline for comparisons
+- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `ci` target for per-PR schemas
 
 ## Environment strategy
 
@@ -183,9 +183,9 @@ recce-upload:
 
 Look for these indicators:
 
-- [ ] **Workflow/Pipeline completes** without errors
-- [ ] **PR session created** in [Cloud](https://cloud.reccehq.com)
-- [ ] **Session URL** appears in workflow/pipeline output
+- [x] **Workflow/Pipeline completes** without errors
+- [x] **PR session created** in [Cloud](https://cloud.reccehq.com)
+- [x] **Session URL** appears in workflow/pipeline output
 
 **GitHub:**
 

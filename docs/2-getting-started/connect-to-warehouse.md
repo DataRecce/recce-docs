@@ -13,8 +13,8 @@ Cloud supports **[Snowflake](#connect-snowflake), [Databricks](#connect-databric
 
 ## Prerequisites
 
-- [ ] Warehouse credentials with read access
-- [ ] Network access configured (IP whitelisting if required)
+- [x] Warehouse credentials with read access
+- [x] Network access configured (IP whitelisting if required)
 
 ## Security
 

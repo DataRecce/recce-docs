@@ -26,10 +26,10 @@ After completing this guide, your continuous deployment (CD) workflow automatica
 
 Before setting up CD, ensure you have:
 
-- [ ] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
-- [ ] **Repository connected** to Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
-- [ ] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
-- [ ] **Environment configured** - [Environment Setup](environment-setup.md) with `prod` target for base artifacts
+- [x] **Cloud account** - [Start free trial](https://cloud.reccehq.com/)
+- [x] **Repository connected** to Cloud - [Connect Git Provider](start-free-with-cloud.md#2-connect-git-provider)
+- [x] **dbt artifacts** - Know how to generate `manifest.json` and `catalog.json` from your dbt project
+- [x] **Environment configured** - [Environment Setup](environment-setup.md) with `prod` target for base artifacts
 
 ## Environment strategy
 
@@ -180,8 +180,8 @@ recce-upload-prod:
 
 Look for these indicators:
 
-- [ ] **Workflow/Pipeline completes** without errors
-- [ ] **Base session updated** in [Cloud](https://cloud.reccehq.com)
+- [x] **Workflow/Pipeline completes** without errors
+- [x] **Base session updated** in [Cloud](https://cloud.reccehq.com)
 
 **GitHub:**
 

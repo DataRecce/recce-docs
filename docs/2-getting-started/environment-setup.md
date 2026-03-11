@@ -18,9 +18,9 @@ Set up isolated schemas for base vs current comparison. After completing this gu
 
 ## Prerequisites
 
-- [ ] **dbt project**: A working dbt project with `profiles.yml` configured
-- [ ] **CI/CD platform**: GitHub Actions, GitLab CI, or similar
-- [ ] **Warehouse access**: Credentials with permissions to create schemas dynamically
+- [x] **dbt project**: A working dbt project with `profiles.yml` configured
+- [x] **CI/CD platform**: GitHub Actions, GitLab CI, or similar
+- [x] **Warehouse access**: Credentials with permissions to create schemas dynamically
 
 ## Why separate schemas matter
 

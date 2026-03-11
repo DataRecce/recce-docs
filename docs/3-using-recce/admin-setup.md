@@ -15,9 +15,9 @@ When you sign up for Cloud, you get one organization and one project. After conn
 
 ## Prerequisites
 
-- [ ] Cloud account with owner/admin access
-- [ ] Git repository connected to Cloud
-- [ ] Team members' email addresses
+- [x] Cloud account with owner/admin access
+- [x] Git repository connected to Cloud
+- [x] Team members' email addresses
 
 ## Steps
 

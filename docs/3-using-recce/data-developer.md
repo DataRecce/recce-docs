@@ -13,9 +13,9 @@ Validate data changes throughout your development lifecycle. This guide covers v
 
 ## Prerequisites
 
-- [ ] Recce Cloud account
-- [ ] dbt project with CI/CD configured for Recce
-- [ ] Access to your data warehouse
+- [x] Recce Cloud account
+- [x] dbt project with CI/CD configured for Recce
+- [x] Access to your data warehouse
 
 ## Development Stages
 
@@ -29,8 +29,10 @@ Validate changes locally before pushing to remote. Dev sessions let you run Recc
 2. Navigate to your project
 3. Click **New Dev Session**
 4. Upload your dbt artifacts:
+   
    - `target/manifest.json`
    - `target/catalog.json`
+  
 5. Select your base environment for comparison
 
 **Expected result:** Dev session opens with lineage diff showing your changes.

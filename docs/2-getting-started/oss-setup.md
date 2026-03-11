@@ -15,9 +15,9 @@ The open source version gives you the core validation engine to run locally. For
 
 ## Prerequisites
 
-- [ ] Python 3.9+ installed
-- [ ] A dbt project with at least one model
-- [ ] Git installed (for version comparison)
+- [x] Python 3.9+ installed
+- [x] A dbt project with at least one model
+- [x] Git installed (for version comparison)
 
 ## Steps
 

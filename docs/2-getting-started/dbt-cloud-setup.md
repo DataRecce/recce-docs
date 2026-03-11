@@ -15,10 +15,10 @@ After completing this tutorial, every PR triggers automated data validation. Rec
 
 ## Prerequisites
 
-- [ ] **Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
-- [ ] **dbt Cloud account**: with CI (continuous integration) and CD (continuous deployment) jobs configured
-- [ ] **dbt Cloud API token**: with read access to job artifacts
-- [ ] **GitHub repository**: with admin access to add workflows and secrets
+- [x] **Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
+- [x] **dbt Cloud account**: with CI (continuous integration) and CD (continuous deployment) jobs configured
+- [x] **dbt Cloud API token**: with read access to job artifacts
+- [x] **GitHub repository**: with admin access to add workflows and secrets
 
 ## How Recce retrieves dbt Cloud artifacts
 
