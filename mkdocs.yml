@@ -53,9 +53,9 @@ nav:
           - 1-whats-recce/community-support.md
           - Changelog: "https://reccehq.com/changelog/"
       - Getting Started:
-          - 2-getting-started/start-free-with-cloud.md
+          - Start with Cloud: 2-getting-started/start-free-with-cloud.md
           - 2-getting-started/oss-setup.md
-          - 2-getting-started/jaffle-shop-tutorial.md
+          - Tutorial (OSS): 2-getting-started/jaffle-shop-tutorial.md
       - Setup Guides:
           - Connect Your Repository: 2-getting-started/connect-git.md
           - Connect Data Warehouse: 2-getting-started/connect-to-warehouse.md
@@ -65,20 +65,12 @@ nav:
           - Setup CD: 2-getting-started/setup-cd.md
           - Setup CI: 2-getting-started/setup-ci.md
           - Claude Plugin: 2-getting-started/claude-plugin.md
-      - Visualized Change:
-          - 3-visualized-change/lineage.md
-          - 3-visualized-change/code-change.md
-          - 3-visualized-change/column-level-lineage.md
-          - 3-visualized-change/multi-models.md
       - Using Recce:
           - 3-using-recce/admin-setup.md
           - 3-using-recce/data-developer.md
           - 3-using-recce/data-reviewer.md
-      - What the Agent Does:
-          - 4-what-the-agent-does/index.md
-          - 4-what-the-agent-does/automated-validation.md
-          - 4-what-the-agent-does/impact-analysis.md
       - What You Can Explore:
+          - 5-what-you-can-explore/summary.md
           - 5-what-you-can-explore/lineage-diff.md
           - 5-what-you-can-explore/code-change.md
           - 5-what-you-can-explore/column-level-lineage.md

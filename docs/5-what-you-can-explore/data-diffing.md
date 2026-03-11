@@ -252,5 +252,6 @@ Write custom SQL to compare any query results between environments.
 
 ## Related
 
+- [Validation Techniques](../3-using-recce/data-developer.md#validation-techniques) - How to use data diffing in your workflow
 - [Lineage Diff](lineage-diff.md) - Visualize change impact
 - [Checklist](../6-collaboration/checklist.md) - Save validation results

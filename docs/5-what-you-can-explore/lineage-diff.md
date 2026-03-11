@@ -135,6 +135,7 @@ Schema diff identifies structural changes to your models:
 
 ## Related
 
+- [Validation Techniques](../3-using-recce/data-developer.md#validation-techniques) - How to use lineage in your workflow
 - [Code Change](code-change.md) - View SQL changes for a model
 - [Column-Level Lineage](column-level-lineage.md) - Trace column dependencies
 - [Multi-Model Selection](multi-models.md) - Batch operations on models

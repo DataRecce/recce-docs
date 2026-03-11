@@ -36,6 +36,26 @@ For diffs performed via the Explore Change dropdown menu, click **Add to Checkli
   <figcaption>Example: Adding a Top-K Diff to the Checklist</figcaption>
 </figure>
 
+### Writing Descriptions
+
+Add descriptions to help reviewers understand each check:
+
+- **What changed** - The specific model or column being validated
+- **Why it matters** - Business context or downstream impact
+- **What to verify** - Expected behavior or acceptable thresholds
+
+Good descriptions reduce back-and-forth and speed up PR approval.
+
+### Approving Checks
+
+Reviewers approve individual checks as they verify each validation. When configured as a required PR check, all checks must be approved before the PR can be merged.
+
+This ensures:
+
+- Every validation is reviewed, not just glanced at
+- Multiple reviewers can collaborate on approval
+- Clear audit trail of who verified what
+
 ### Re-running Checks
 
 After making additional changes to your models, re-run checks from the checklist to verify your updates. This lets you iterate until all validations pass.

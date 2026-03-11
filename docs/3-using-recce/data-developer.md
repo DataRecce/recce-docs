@@ -21,7 +21,14 @@ Validate data changes throughout your development lifecycle. This guide covers v
 
 ### Before PR: Dev Sessions
 
-Validate changes locally before pushing to remote. Dev sessions let you run Recce validation without creating a PR.
+Validate changes locally before pushing to remote. Dev sessions let you run Recce validation without creating a PR. Since your CD workflow automatically maintains the base environment, you just upload your local `target/` artifacts as the current environment to compare against production.
+
+#### When to Use Dev Sessions
+
+- Testing changes before committing
+- Validating complex refactoring locally
+- Exploring impact without creating a PR
+- Sharing work-in-progress with teammates
 
 #### Upload via Web UI
 
@@ -29,13 +36,12 @@ Validate changes locally before pushing to remote. Dev sessions let you run Recc
 2. Navigate to your project
 3. Click **New Dev Session**
 4. Upload your dbt artifacts:
-   
-   - `target/manifest.json`
-   - `target/catalog.json`
-  
-5. Select your base environment for comparison
+    - `target/manifest.json`
+    - `target/catalog.json`
 
-**Expected result:** Dev session opens with lineage diff showing your changes.
+**Expected result:** Dev session created. Recce validates your changes against the production base.
+
+![Dev session view in Recce Cloud](../assets/images/3-using-recce/dev-session-view.png){: .shadow}
 
 #### Upload via CLI
 
@@ -54,12 +60,15 @@ This uploads your current `target/` artifacts and creates a dev session.
 | `manifest.json` | `target/` | `dbt run`, `dbt build`, or `dbt compile` |
 | `catalog.json` | `target/` | `dbt docs generate` |
 
-#### When to Use Dev Sessions
+#### Review Your Changes
 
-- Testing changes before committing
-- Validating complex refactoring locally
-- Exploring impact without creating a PR
-- Sharing work-in-progress with teammates
+After uploading, you can review your changes in Cloud:
+
+1. **Trigger agent review** - Click **Data Review** to generate a summary of your changes
+2. **Read the summary** - The agent analyzes impact, runs validation checks, and explains what changed
+3. **Launch Recce instance** - Click **Launch Recce** to explore lineage, run data diffs, and investigate deeper
+
+![Data review summary in dev session](../assets/images/3-using-recce/dev-session-data-review.png){: .shadow}  
 
 ### After PR: CI/CD Validation
 
@@ -74,12 +83,7 @@ Once you push changes and open a PR, the Recce Agent validates automatically.
 
 #### Understanding the Agent Summary
 
-The summary includes:
-
-- **Change overview** - Which models changed and how
-- **Impact analysis** - Downstream models affected
-- **Validation results** - Schema diffs, row counts, and other checks
-- **Recommendations** - Suggested actions for review
+The summary shows key changes, impact analysis, checklist results, and suggested actions. See [Reading the Summary](../5-what-you-can-explore/summary.md#reading-the-summary) for details.
 
 #### Fixing Issues
 
@@ -104,7 +108,7 @@ Each push triggers a new validation cycle:
 
 ### Check Lineage First
 
-Start with lineage diff to understand your change scope:
+Start with [lineage diff](../5-what-you-can-explore/lineage-diff.md) to understand your change scope:
 
 - Modified models highlighted in the DAG
 - Downstream impact visible at a glance
@@ -112,7 +116,7 @@ Start with lineage diff to understand your change scope:
 
 ### Validate Metadata
 
-Low-cost checks using model metadata:
+Low-cost checks using model metadata. See [Data Diffing](../5-what-you-can-explore/data-diffing.md) for details:
 
 - **Schema diff** - Column additions, removals, type changes
 - **Row count diff** - Record count comparison (uses warehouse metadata)
@@ -141,15 +145,41 @@ ORDER BY month DESC
 
 Add queries to your checklist for repeated use.
 
+### Add to Checklist
+
+After running validation checks, add them to your checklist for reviewers:
+
+1. Run a validation (row count, profile, value diff, etc.)
+2. Click **Add to Checklist** to save the result
+3. Add a description explaining what the check validates and what reviewers should look for
+
+Write clear descriptions that help reviewers understand:
+
+- **What changed** - The specific model or column being validated
+- **Why it matters** - Business context or downstream impact
+- **What to verify** - Expected behavior or acceptable thresholds
+
+Good descriptions reduce back-and-forth and speed up PR approval. See [Checklist](../6-collaboration/checklist.md) for more details.
+
 ## Verification
 
 Confirm your workflow works:
+
+**Before PR:**
 
 1. Make a small model change locally
 2. Generate artifacts: `dbt build && dbt docs generate`
 3. Upload dev session: `recce-cloud upload --type dev`
 4. Verify session appears in Cloud
-5. Create PR and confirm agent posts summary
+5. Launch Recce to explore changes, or click **Data Review** to trigger agent validation
+6. Iterate on your changes until validation passes
+
+**After PR:**
+
+1. Create PR and confirm agent posts summary
+2. Launch Recce and add validation checks to checklist
+3. Push a fix and confirm agent re-validates
+4. Confirm reviewers can approve checks
 
 ## Troubleshooting
 
@@ -164,4 +194,4 @@ Confirm your workflow works:
 
 - [Data Reviewer Workflow](data-reviewer.md) - How reviewers use Recce
 - [Admin Setup](admin-setup.md) - Set up your organization
-- [PR/MR Data Review](../7-cicd/pr-mr-summary.md) - Understanding agent summaries
+- [Data Review Summary](../5-what-you-can-explore/summary.md) - Understanding agent summaries

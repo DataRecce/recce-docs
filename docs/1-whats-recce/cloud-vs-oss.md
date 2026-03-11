@@ -125,5 +125,4 @@ Cloud accesses your dbt artifacts (manifest.json, catalog.json) and runs queries
 
 ## Next Steps
 
-- [What the Agent Does](../4-what-the-agent-does/index.md): How the agent validates your changes
 - [Data Developer Workflow](../3-using-recce/data-developer.md): Using Recce throughout development

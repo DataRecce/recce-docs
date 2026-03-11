@@ -1,17 +1,20 @@
 ---
-title: Jaffle Shop Tutorial
+title: Jaffle Shop Tutorial (OSS)
 description: >-
-  Walk through a hands-on dbt validation tutorial using the Jaffle Shop example
-  project. Make a model change and validate the data impact with Recce.
+  Walk through a hands-on dbt validation tutorial using Recce open source and the
+  Jaffle Shop example project. Make a model change and validate the data impact locally.
 ---
 
-# Jaffle Shop Tutorial
+# Jaffle Shop Tutorial (OSS)
+
+!!! note "This tutorial is for Recce Open Source"
+    This tutorial uses Recce OSS for local validation. For automated PR validation with Recce Cloud, see [Get Started with Cloud](start-free-with-cloud.md).
 
 When you change a dbt model, how do you know what data actually changed? Running your model isn't enough. You need to compare outputs against the previous version.
 
-**Goal:** Make a model change and validate the data impact using Recce with the dbt Labs example project.
+**Goal:** Make a model change and validate the data impact using Recce OSS with the dbt Labs example project.
 
-This tutorial uses DuckDB for a local, file-based setup. No cloud warehouse needed.
+This tutorial uses DuckDB for a local, file-based setup. No cloud warehouse or Recce Cloud account needed.
 
 You'll work with [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb), a sample project from dbt Labs. You'll modify a model, see how the change affects downstream data, and add a validation to your checklist.
 

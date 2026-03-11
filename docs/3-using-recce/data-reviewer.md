@@ -21,7 +21,7 @@ Review data changes in pull requests using Recce. Your admin set up Recce for yo
 
 ### 1. Find the Data Review Summary
 
-When a PR modifies dbt models, the Recce Agent posts a summary comment:
+When a PR modifies dbt models, the Recce Agent posts a summary comment. See [Data Review Summary](../5-what-you-can-explore/summary.md) for details on what the agent analyzes.
 
 1. Open the PR in GitHub/GitLab
 2. Scroll to the Recce bot comment
@@ -31,16 +31,24 @@ When a PR modifies dbt models, the Recce Agent posts a summary comment:
 
 ### 2. Understand the Summary
 
-The summary includes:
+The summary shows key changes, impact analysis, checklist results, and suggested actions. See [Reading the Summary](../5-what-you-can-explore/summary.md#reading-the-summary) for details.
 
-| Section | What It Shows |
-|---------|---------------|
-| **Change Overview** | Which models changed and the type of change |
-| **Impact Analysis** | Downstream models affected by the changes |
-| **Validation Results** | Schema diffs, row counts, and check outcomes |
-| **Recommendations** | Suggested actions based on findings |
+### 3. Review the Checklist
 
-### 3. Explore in Cloud
+Verify the checklist covers the impacts identified in the summary. Check each validation result for Pass, Warning, or Fail status. If impacted models lack validation checks, consider running additional diffs in Cloud.
+
+Approve individual checks as you review them to track your progress and signal to other reviewers which validations have been verified.
+
+![Approved checks in Recce Cloud](../assets/images/3-using-recce/approve-checks.png){: .shadow}
+
+
+#### Activity
+
+Alongside the checklist, use the Activity panel to ask questions and have conversations with your team. Leave comments, request clarifications, or discuss specific validation results directly in the session.
+
+![Checklist UI in Recce Cloud](../assets/images/3-using-recce/checklist-review.png){: .shadow}
+
+### 4. Explore in Cloud
 
 For deeper investigation:
 
@@ -50,23 +58,11 @@ For deeper investigation:
 
 **What you can do:**
 
-- View lineage diff to see affected models
+- View [lineage diff](../5-what-you-can-explore/lineage-diff.md) to see affected models
 - Drill into schema changes per model
-- Run additional data diffs (row count, profile, value)
+- Run additional [data diffs](../5-what-you-can-explore/data-diffing.md) (row count, profile, value, etc.)
 - Execute custom queries to investigate specific concerns
 
-### 4. Review Validation Results
-
-Check each validation result:
-
-- **Pass** - Change validated successfully
-- **Warning** - Review recommended but not blocking
-- **Fail** - Issue detected that needs attention
-
-For failures, click through to see:
-- What was compared
-- Expected vs actual results
-- Specific differences found
 
 ### 5. Approve or Request Changes
 
@@ -84,7 +80,12 @@ Based on your review:
 - Impact scope is broader than expected
 - Questions about specific changes
 
-Leave comments referencing specific validation results to help the developer address issues.
+#### PR Blocking Checks
+
+Recce checks appear as status checks on your PR. When configured as required checks, reviewers must approve all checks in the checklist before the PR can be merged.
+
+![Recce checks in PR](../assets/images/3-using-recce/pr-blocking-checks.png){: .shadow}
+
 
 ## Common Review Scenarios
 
@@ -125,5 +126,6 @@ Confirm you can review PRs:
 
 - [Data Developer Workflow](data-developer.md) - How developers validate changes
 - [Admin Setup](admin-setup.md) - Organization and team setup
+- [Data Review Summary](../5-what-you-can-explore/summary.md) - Understanding the agent summary
 - [Checklist](../6-collaboration/checklist.md) - Track validation checks across PRs
 - [Share Validation Results](../6-collaboration/share.md) - Share findings with your team
