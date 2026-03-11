@@ -1,5 +1,8 @@
 ---
 title: Environment Best Practices
+description: >-
+  Best practices for preparing reliable dbt validation environments. Avoid
+  misleading data diffing results from source drift, stale branches, and environment collisions.
 ---
 
 # Environment Best Practices

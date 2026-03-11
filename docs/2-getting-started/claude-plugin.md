@@ -1,5 +1,5 @@
 ---
-title: Recce Claude Plugin — AI-Assisted dbt Data Validation in Claude Code
+title: Recce Claude Plugin - AI-Assisted dbt Data Validation in Claude Code
 description: >-
   Install and use the Recce Claude Plugin to validate dbt data changes
   directly in Claude Code. Automates MCP server setup, artifact generation,
@@ -10,11 +10,11 @@ description: >-
 
 Recce is a dbt data validation tool that compares your development branch against your base branch and surfaces schema changes, row count differences, and data diffs before you merge. The Recce Claude Plugin brings this capability into Claude Code, making it accessible through natural language and interactive slash commands.
 
-If you're reviewing dbt pull requests with Claude Code, the plugin connects Claude directly to your data warehouse so you can ask questions like "What changed in the orders model?" and get validated answers — without writing a single query by hand.
+If you're reviewing dbt pull requests with Claude Code, the plugin connects Claude directly to your data warehouse so you can ask questions like "What changed in the orders model?" and get validated answers without writing a single query by hand.
 
 ## Why use the plugin?
 
-Without Recce, reviewing data changes in a dbt PR means manually querying your warehouse, comparing results across branches, and hoping you've checked the right models. With the Recce Claude Plugin, Claude does this for you — it runs schema diffs, row count comparisons, and statistical profiles across your modified models and reports back in plain language.
+Without Recce, reviewing data changes in a dbt PR means manually querying your warehouse, comparing results across branches, and hoping you've checked the right models. With the Recce Claude Plugin, Claude does this for you. It runs schema diffs, row count comparisons, and statistical profiles across your modified models and reports back in plain language.
 
 The plugin also handles all of the setup that the [MCP server](../5-data-diffing/mcp-server.md) requires manually:
 
@@ -31,7 +31,7 @@ The plugin also handles all of the setup that the [MCP server](../5-data-diffing
 
 - Claude Code 1.0.33 or higher
 - Python 3.8+
-- dbt (any adapter — Snowflake, BigQuery, Redshift, Databricks, DuckDB, and others)
+- dbt (any adapter: Snowflake, BigQuery, Redshift, Databricks, DuckDB, and others)
 - Git
 
 ## Installation
@@ -71,7 +71,7 @@ Navigate to the **Installed** tab to confirm `recce-quickstart` appears.
 
 ## Getting started
 
-Make sure you're on your feature branch — Recce compares your current branch against main. Then navigate to your dbt project and run the setup command:
+Make sure you're on your feature branch. Recce compares your current branch against main. Then navigate to your dbt project and run the setup command:
 
 ```
 /recce-setup
@@ -98,7 +98,7 @@ Claude calls Recce's `schema_diff` tool behind the scenes and responds with a su
 
 | Command | Description |
 |---------|-------------|
-| `/recce-setup` | Guided setup — installs dependencies, generates artifacts, starts the MCP server |
+| `/recce-setup` | Guided setup: installs dependencies, generates artifacts, starts the MCP server |
 | `/recce-pr [url]` | Analyze data impact of a pull request (auto-detects PR from current branch) |
 | `/recce-check [type] [model]` | Run validation checks (row-count, schema, profile, query-diff) |
 | `/recce-ci` | Generate GitHub Actions workflows for Recce Cloud CI/CD |
@@ -185,13 +185,13 @@ Recce works with any dbt adapter, including Snowflake, BigQuery, Redshift, Datab
 
 [MCP](https://modelcontextprotocol.io) is an open standard that lets AI agents like Claude Code call external tools. Recce implements an MCP server so Claude can run data diffs against your warehouse on demand.
 
-**Can I use the plugin without Recce Cloud?**
+**Can I use the plugin without Cloud?**
 
-Yes. The plugin works with Recce OSS for local validation. [Recce Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
+Yes. The plugin works with the open source version for local validation. [Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
 
-## What's next
+## Next Steps
 
-- [Recce MCP Server](../5-data-diffing/mcp-server.md) — configure Recce with Cursor, Windsurf, and other AI agents, or explore advanced MCP options
-- [Row Count Diff](../5-data-diffing/row-count-diff.md) — understand row count validation
-- [Profile Diff](../5-data-diffing/profile-diff.md) — statistical profiling comparisons
-- [CI/CD Setup](../7-cicd/ci-cd-getting-started.md) — automate validation in your workflow
+- [Recce MCP Server](../5-data-diffing/mcp-server.md): configure Recce with Cursor, Windsurf, and other AI agents, or explore advanced MCP options
+- [Row Count Diff](../5-data-diffing/row-count-diff.md): understand row count validation
+- [Profile Diff](../5-data-diffing/profile-diff.md): statistical profiling comparisons
+- [CI/CD Setup](environment-setup.md): automate validation in your workflow

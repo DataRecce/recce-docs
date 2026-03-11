@@ -1,5 +1,8 @@
 ---
 title: Code Change
+description: >-
+  Compare SQL code changes between branches in your dbt project. Visualize
+  exactly what was modified in each model for pull request review.
 ---
 
 # Code Change

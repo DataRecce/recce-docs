@@ -1,5 +1,8 @@
 ---
 title: Changelog
+description: >-
+  Stay up to date with Recce releases, new data validation features, and
+  improvements to dbt pull request review.
 ---
 
 # Changelog

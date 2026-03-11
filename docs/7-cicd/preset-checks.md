@@ -1,5 +1,8 @@
 ---
 title: Preset Checks
+description: >-
+  Define preset validation checks that run automatically for every Recce
+  instance. Standardize dbt data quality checks across all pull requests.
 ---
 
 In a dbt project, there may be some checks that need to be conducted for every PR. For example, this could be an SQL query, or checking whether an important model has had a schema change.

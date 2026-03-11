@@ -1,20 +1,23 @@
 ---
 title: OSS Setup
+description: >-
+  Install and run open source Recce locally for manual dbt validation. Compare data
+  before and after model changes to catch unintended impacts.
 ---
 
-# Set Up Recce OSS
+# Set Up Open Source Recce
 
-When you change data models, you need to compare the data before and after to catch unintended impacts. Recce OSS lets you run this validation locally.
+When you change data models, you need to compare the data before and after to catch unintended impacts. The open source version lets you run this validation locally.
 
 **Goal:** Install and run Recce locally for manual data validation.
 
-Recce OSS gives you the core validation engine to run locally. For the full experience with Recce Agent assistance on PRs and during development, see [Cloud vs Open Source](../1-whats-recce/cloud-vs-oss.md).
+The open source version gives you the core validation engine to run locally. For the full experience with Recce Agent assistance on PRs and during development, see [Cloud vs Open Source](../1-whats-recce/cloud-vs-oss.md).
 
 ## Prerequisites
 
-- [x] Python 3.9+ installed
-- [x] A dbt project with at least one model
-- [x] Git installed (for version comparison)
+- [ ] Python 3.9+ installed
+- [ ] A dbt project with at least one model
+- [ ] Git installed (for version comparison)
 
 ## Steps
 
@@ -125,7 +128,7 @@ curl -H "Authorization: Token $DBT_CLOUD_API_TOKEN" \
 Then generate current artifacts locally (`dbt docs generate`) and run `recce server` as usual.
 
 !!! tip "Recce Cloud automates this"
-    With Recce Cloud, the Agent retrieves artifacts automatically — no manual downloads. See [Start Free with Cloud](start-free-with-cloud.md).
+    With Cloud, the agent retrieves artifacts automatically, no manual downloads needed. See [Start Free with Cloud](start-free-with-cloud.md).
 
 ## Troubleshooting
 
@@ -137,5 +140,5 @@ Then generate current artifacts locally (`dbt docs generate`) and run `recce ser
 
 ## Next Steps
 
-- [Cloud vs Open Source](../1-whats-recce/cloud-vs-oss.md) — Compare OSS and Cloud features
-- [Start Free with Cloud](start-free-with-cloud.md) — Get Recce Agent on your PRs and CLI
+- [Cloud vs Open Source](../1-whats-recce/cloud-vs-oss.md): Compare OSS and Cloud features
+- [Start Free with Cloud](start-free-with-cloud.md): Get the agent on your PRs and CLI

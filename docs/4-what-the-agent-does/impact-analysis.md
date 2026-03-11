@@ -1,5 +1,8 @@
 ---
 title: Impact Analysis
+description: >-
+  Understand how the Recce Agent maps the full downstream impact of your dbt
+  model changes using data lineage and column-level analysis.
 ---
 
 # Impact Analysis
@@ -62,7 +65,7 @@ When you modify a column like `stg_orders.status`:
 
 This lets you know that your seemingly simple column change affects models you may not have considered.
 
-## Related
+## Next Steps
 
 - [Impact Radius](../4-downstream-impacts/impact-radius.md) - Visualize affected models
 - [Breaking Change Analysis](../4-downstream-impacts/breaking-change-analysis.md) - Understand change types

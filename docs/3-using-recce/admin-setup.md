@@ -1,20 +1,23 @@
 ---
 title: Admin Setup
+description: >-
+  Configure your Recce Cloud organization for team collaboration on dbt validation.
+  Manage projects, invite members, and set up pull request review workflows.
 ---
 
 # Set Up Your Organization
 
 After connecting your Git repo to Recce Cloud, you need to configure your organization so your team can collaborate on PR validation.
 
-**Goal:** Configure your Recce Cloud organization for team collaboration.
+**Goal:** Configure your Cloud organization for team collaboration.
 
-When you sign up for Recce Cloud, you get one organization and one project. After connecting to Git, your organization and project names automatically map to your Git provider's names. You can rename them and invite team members.
+When you sign up for Cloud, you get one organization and one project. After connecting to Git, your organization and project names automatically map to your Git provider's names. You can rename them and invite team members.
 
 ## Prerequisites
 
-- [x] Recce Cloud account with owner/admin access
-- [x] Git repository connected to Recce Cloud
-- [x] Team members' email addresses
+- [ ] Cloud account with owner/admin access
+- [ ] Git repository connected to Cloud
+- [ ] Team members' email addresses
 
 ## Steps
 
@@ -22,7 +25,7 @@ When you sign up for Recce Cloud, you get one organization and one project. Afte
 
 Navigate to your organization configuration.
 
-1. Log in to [Recce Cloud](https://cloud.reccehq.com)
+1. Log in to [Cloud](https://cloud.reccehq.com)
 2. Click **Settings** → **Organization** in the side panel
 
 **Expected result:** Organization settings page displays your current organization.
@@ -37,7 +40,7 @@ Update the organization name to match your company or team.
 2. Enter your preferred name
 3. Click **Save**
 
-**Expected result:** Organization name updates across all Recce Cloud pages.
+**Expected result:** Organization name updates across all Cloud pages.
 
 ### 3. Set up additional projects (monorepo)
 
@@ -108,12 +111,12 @@ Confirm your setup by checking:
 
 When you receive an invitation:
 
-1. **Immediate response:** A notification modal appears on login — accept or decline directly
+1. **Immediate response:** A notification modal appears on login. Accept or decline directly
 2. **Later:** Navigate to **Settings** → **Organization** to view pending invitations
 
 ![Recce Cloud home page showing pending invitation notification modal](../assets/images/6-collaboration/recce-cloud-org-pending-invitation-home-fs8.png){: .shadow}
 
-<!-- ## Next Steps
+## Next Steps
 
-- [Data Developer Workflow](data-developer.md) — Learn how developers validate changes
-- [Data Reviewer Workflow](data-reviewer.md) — Learn how reviewers approve PRs -->
+- [Data Developer Workflow](data-developer.md): Learn how developers validate changes
+- [Data Reviewer Workflow](data-reviewer.md): Learn how reviewers approve PRs

@@ -1,5 +1,8 @@
 ---
 title: Checklist
+description: >-
+  Save validation checks to the Recce checklist as proof-of-correctness for
+  your dbt modeling changes in pull request review.
 ---
 
 # Checklist

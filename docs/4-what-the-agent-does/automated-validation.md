@@ -1,5 +1,8 @@
 ---
 title: Automated Validation
+description: >-
+  See how the Recce Agent automatically runs the right dbt validation checks
+  on each pull request based on what changed in your data models.
 ---
 
 # Automated Validation
@@ -8,7 +11,7 @@ Manual data validation slows down every pull request. Developers must remember w
 
 ## How It Works
 
-When a PR is opened or updated, the Recce Agent analyzes your changes and determines what needs validation.
+When a PR is opened or updated, the agent analyzes your changes and determines what needs validation.
 
 ### 1. PR Triggers the Agent
 
@@ -54,8 +57,8 @@ You can trigger the data review summary in three ways:
 2. **Manual trigger from UI** - Click the Data Review button in a PR/MR session
 3. **GitHub comment** - Comment `/recce` on your GitHub PR to generate a new summary
 
-## Related
+## Next Steps
 
 - [Impact Analysis](impact-analysis.md) - How the agent analyzes change scope
 - [PR/MR Data Review Summary](../7-cicd/pr-mr-summary.md) - Understanding the summary output
-- [Setup CI](../7-cicd/setup-ci.md) - Configure automated validation
+- [Setup CI](../2-getting-started/setup-ci.md) - Configure automated validation

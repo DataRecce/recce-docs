@@ -1,5 +1,8 @@
 ---
 title: Configuration
+description: >-
+  Reference for the recce.yml configuration file. Define preset checks and
+  parameters for automated dbt data validation.
 ---
 
 # Configuration

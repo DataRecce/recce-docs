@@ -1,12 +1,15 @@
 ---
 title: Connect to Warehouse
+description: >-
+  Configure warehouse connections for Recce data diffing. Supports Snowflake,
+  Databricks, BigQuery, and Redshift for both OSS and Cloud.
 ---
 
-## Recce OSS
-Recce OSS supports all warehouses that dbt supports. It uses the same configuration as dbt, simply use your existing dbt profiles to connect to your warehouse. No additional setup required.
+## Open Source
+The open source version supports all warehouses that dbt supports. It uses the same configuration as dbt, simply use your existing dbt profiles to connect to your warehouse. No additional setup required.
 
 ## Recce Cloud
-If you use Recce Cloud, here are the warehouse connection settings. We currently support:
+If you use Cloud, here are the warehouse connection settings. We currently support:
 
 - [Snowflake](#snowflake)
 - [Databricks](#databricks)
@@ -17,7 +20,7 @@ Others are coming in future releases
 
 ### Security
 
-Recce Cloud protects all warehouse connection config (such as passwords, tokens, and private keys) using envelope encryption with AWS KMS. Credentials are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted credentials exist only in memory during connection establishment and are never written to disk. AWS KMS keys rotate automatically every 365 days to maintain security best practices.
+Cloud protects all warehouse connection config (such as passwords, tokens, and private keys) using envelope encryption with AWS KMS. Credentials are encrypted at rest using AES-256, with encryption keys managed by AWS KMS. Decrypted credentials exist only in memory during connection establishment and are never written to disk. AWS KMS keys rotate automatically every 365 days to maintain security best practices.
 
 ### Snowflake
 We support two authentication methods for Snowflake:

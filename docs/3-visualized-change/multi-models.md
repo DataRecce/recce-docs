@@ -1,5 +1,8 @@
 ---
-title: Multi-Models 
+title: Multi-Models
+description: >-
+  Select multiple dbt models in the lineage DAG to run batch data diffing
+  operations like row count diff and value diff across your project.
 ---
 
 

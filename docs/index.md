@@ -1,10 +1,21 @@
+---
+title: "Recce: Data Review Agent for dbt Pull Requests"
+description: >-
+  Recce automates data validation for dbt pull requests. Compare schema changes,
+  row counts, and data diffs between environments to catch data quality issues
+  before they reach production.
+---
+
 # What is Recce (Data Review Agent)
 
-Know exactly how code changes impact your data.
+No more merging PRs where the pipeline succeeded but the data is quietly wrong.
 
 Recce is a Data Review Agent that automates data validation for pull requests. When you open a PR, it compares your dev environment against production and surfaces schema changes, data diffs, row counts, and downstream impacts. You see what changed, what it affects, and what passed, all before you merge.
 
-No more merging PRs where the pipeline succeeded but the data is quietly wrong.
+Recce is the product. The agent automates validation on your PRs. You can run Recce through Cloud (hosted, automated) or open source (local, manual).
+
+[**Get Started with Cloud**](2-getting-started/start-free-with-cloud.md){ .md-button .md-button--primary }
+[**Set Up Open Source**](2-getting-started/oss-setup.md){ .md-button }
 
 ## How Recce Works
 
@@ -22,14 +33,14 @@ You review the agent's findings, add notes, and approve with confidence, not bli
 
 1. PR Created
 2. Recce Triggered
-3. Agent Analyzes Production vs. Development Data 
+3. Agent Analyzes Production vs. Development Data
 4. Agent Generates Review Summary
 5. Human Explore in Recce Instance
 6. Human Reviews Approves
 7. PR Merges
 
 
-Example of Recce agent summary in a GitHub PR comment: 
+Example of Recce agent summary in a GitHub PR comment:
 ![How Recce Works](assets/images/1-whats-recce/agent-data-review-example.png)
 
 ## Automate Agent Data Review with CI/CD
@@ -47,7 +58,7 @@ With CI/CD:
 
 - **Business-critical data:** Data that's customer-facing or revenue-impacting
 - **Team collaboration:** When reviewers need to understand impact, not just see code changes
-- **Standardized validation:** When you need consistent review across senior and junior team members
+- **Standardized validation:** When you need consistent pull request review across senior and junior team members
 - **Unknown unknowns:** When you can't predict what might break from a change
 
 ## When Not to Use
@@ -61,9 +72,9 @@ With CI/CD:
 Yes, you can run Recce locally for dev sessions. But CI/CD unlocks the full value: automatic validation on every PR without manual setup.
 
 **What data platforms does Recce support?**
-Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](5-data-diffing/connect-to-warehouse/) for setup.
+Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](5-data-diffing/connect-to-warehouse.md) for setup.
 
-## Related
+## Next Steps
 - Interactive Demo: [Try the Data Review Agent](https://reccehq.com/demo/)
-- Tutorial: [Get Started with Recce Cloud](2-getting-started/start-free-with-cloud/)
+- Tutorial: [Get Started with Recce Cloud](2-getting-started/start-free-with-cloud.md)
 - Blog: [The Problem with Data PR Reviews: Where Do You Even Start?](https://blog.reccehq.com/guided-data-review)

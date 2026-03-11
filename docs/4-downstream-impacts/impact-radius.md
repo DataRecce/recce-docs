@@ -1,5 +1,8 @@
 ---
 title: Impact Radius
+description: >-
+  Analyze the downstream impact of dbt model changes at the column level.
+  Go beyond state:modified+ to see exactly which columns are affected.
 ---
 
 **Impact Radius** helps you analyze changes and identify downstream impacts at the column level.

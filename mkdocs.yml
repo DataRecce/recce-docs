@@ -54,14 +54,22 @@ nav:
           - Changelog: "https://reccehq.com/changelog/"
       - Getting Started:
           - 2-getting-started/start-free-with-cloud.md
-          - dbt Cloud Setup: 2-getting-started/dbt-cloud-setup.md
+          - 2-getting-started/oss-setup.md
+          - 2-getting-started/jaffle-shop-tutorial.md
+      - Setup Guides:
+          - Connect Your Repository: 2-getting-started/connect-git.md
+          - Connect Data Warehouse: 2-getting-started/connect-to-warehouse.md
           - Environment Setup: 2-getting-started/environment-setup.md
           - Environment Best Practices: 2-getting-started/environment-best-practices.md
+          - dbt Cloud Setup: 2-getting-started/dbt-cloud-setup.md
           - Setup CD: 2-getting-started/setup-cd.md
           - Setup CI: 2-getting-started/setup-ci.md
           - Claude Plugin: 2-getting-started/claude-plugin.md
-          - 2-getting-started/oss-setup.md
-          - 2-getting-started/jaffle-shop-tutorial.md
+      - Visualized Change:
+          - 3-visualized-change/lineage.md
+          - 3-visualized-change/code-change.md
+          - 3-visualized-change/column-level-lineage.md
+          - 3-visualized-change/multi-models.md
       - Using Recce:
           - 3-using-recce/admin-setup.md
           - 3-using-recce/data-developer.md

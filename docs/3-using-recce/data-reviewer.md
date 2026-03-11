@@ -1,5 +1,8 @@
 ---
 title: Data Reviewer Workflow
+description: >-
+  Review and approve dbt data changes in pull requests using Recce. Understand
+  data diffing results and downstream impacts to merge with confidence.
 ---
 
 # Data Reviewer Workflow
@@ -10,9 +13,9 @@ Review data changes in pull requests using Recce. Your admin set up Recce for yo
 
 ## Prerequisites
 
-- [x] Recce Cloud account (via team invitation)
-- [x] Access to the project in Recce Cloud
-- [x] PR with Recce validation results
+- [ ] Recce Cloud account (via team invitation)
+- [ ] Access to the project in Cloud
+- [ ] PR with Recce validation results
 
 ## Reviewing a PR
 
@@ -37,11 +40,11 @@ The summary includes:
 | **Validation Results** | Schema diffs, row counts, and check outcomes |
 | **Recommendations** | Suggested actions based on findings |
 
-### 3. Explore in Recce Cloud
+### 3. Explore in Cloud
 
 For deeper investigation:
 
-1. Click **Launch Recce** in the PR comment (or go to Recce Cloud)
+1. Click **Launch Recce** in the PR comment (or go to Cloud)
 2. Select the PR session from the list
 3. Explore the changes interactively
 
@@ -118,8 +121,9 @@ Confirm you can review PRs:
 3. Click Launch Recce to open the session
 4. Navigate the lineage and view a diff result
 
-## Related
+## Next Steps
 
 - [Data Developer Workflow](data-developer.md) - How developers validate changes
 - [Admin Setup](admin-setup.md) - Organization and team setup
-- [Checklist](../6-collaboration/checklist.md) - Adding checks to track
+- [Checklist](../6-collaboration/checklist.md) - Track validation checks across PRs
+- [Share Validation Results](../6-collaboration/share.md) - Share findings with your team

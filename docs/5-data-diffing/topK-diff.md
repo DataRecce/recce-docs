@@ -1,5 +1,8 @@
 ---
 title: Top-K Diff
+description: >-
+  Compare the distribution of categorical columns between environments.
+  View the top values and their frequencies for dbt data quality checks.
 ---
 
 # Top-K Diff

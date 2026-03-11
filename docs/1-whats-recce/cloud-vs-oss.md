@@ -1,5 +1,8 @@
 ---
 title: Cloud vs Open Source
+description: >-
+  Compare Recce Cloud and open source Recce to choose the right dbt validation approach
+  for your pull request review workflow.
 ---
 
 # Cloud vs Open Source
@@ -25,14 +28,14 @@ flowchart LR
 
 | | Cloud | Open Source |
 |--|-------|-------------|
-| **Experience** | Recce Agent works alongside you | You run validation manually |
+| **Experience** | The agent works alongside you | You run validation manually |
 | **PR validation** | Agent validates automatically, posts summary | You run checks, copy results to PR |
 | **During development** | CLI + Agent assistance | CLI tools only |
 | **Learning curve** | Agent guides you through validation | Learn the tools, run them yourself |
 
 ## Cloud
 
-Recce Cloud connects to your Git repository and data warehouse so the Recce Agent can validate your data changes automatically. When you open a PR, the Agent analyzes your changes, runs validation checks, and posts findings directly to your PR — no manual work required.
+Recce Cloud connects to your Git repository and data warehouse so the Recce Agent can validate your data changes automatically. When you open a PR, the agent analyzes your changes, runs validation checks, and posts findings directly to your PR. No manual work required.
 
 **On pull requests:**
 
@@ -45,7 +48,7 @@ The Agent runs automatically when you open a PR. It:
 
 **During development:**
 
-The Agent works with your CLI through [Recce MCP](/5-data-diffing/mcp-server/) (Model Context Protocol):
+The agent works with your CLI using [Recce MCP](../5-data-diffing/mcp-server.md). MCP (Model Context Protocol) is an open standard that lets AI tools call Recce directly. With it, the agent can:
 
 - Answers questions about your changes
 - Suggests validation approaches
@@ -54,12 +57,12 @@ The Agent works with your CLI through [Recce MCP](/5-data-diffing/mcp-server/) (
 **For your team:**
 
 - Define what "correct" means for your repo with preset checks that apply across all PRs
-- Share validation standards as institutional knowledge — everyone validates the same way
+- Share validation standards as institutional knowledge so everyone validates the same way
 - Developers and reviewers collaborate on validation, going back and forth until the change is verified
 
 **Pricing:**
 
-Recce Cloud is free to start. See [Pricing](https://www.reccehq.com/pricing) for plan details.
+Cloud is free to start. See [Pricing](https://www.reccehq.com/pricing) for plan details.
 
 **Choose Cloud when:**
 
@@ -69,7 +72,7 @@ Recce Cloud is free to start. See [Pricing](https://www.reccehq.com/pricing) for
 
 ## Open Source
 
-Recce OSS is the core validation engine you run locally. You control when and how validation happens — run checks, explore results, and decide what to share. Everything stays on your machine unless you export it.
+The open source version is the core validation engine you run locally. You control when and how validation happens. Run checks, explore results, and decide what to share. Everything stays on your machine unless you export it.
 
 You get:
 
@@ -77,6 +80,7 @@ You get:
 - Data comparison (row count, schema, profile, value, top-k, histogram diff)
 - Query diff for custom validations
 - Checklist to track your checks
+- [Recce MCP](../5-data-diffing/mcp-server.md) for AI-assisted validation with Claude, Cursor, and other AI clients
 
 **Choose OSS when:**
 
@@ -88,17 +92,17 @@ You get:
 
 | Feature | Cloud | OSS |
 |---------|-------|-----|
-| Lineage Diff | :white_check_mark: | :white_check_mark: |
-| Data diff<br> (row count, schema, profile, value, top-k, histogram diff) | :white_check_mark: | :white_check_mark: |
-| Query diff | :white_check_mark: | :white_check_mark: |
-| Checklist | :white_check_mark: | :white_check_mark: |
-| Recce Agent on PRs | :white_check_mark: | :x: |
-| Agent CLI assistance | :white_check_mark: | Manual |
-| Preset checks across PRs | :white_check_mark: | Manual |
-| Shared validation standards | :white_check_mark: | Manual |
-| Developer-reviewer collaboration | :white_check_mark: | Manual |
-| PR comments & summaries | :white_check_mark: | :x: |
-| LLM-powered insights | :white_check_mark: | :x: |
+| Lineage Diff | Yes | Yes |
+| Data diff<br> (row count, schema, profile, value, top-k, histogram diff) | Yes | Yes |
+| Query diff | Yes | Yes |
+| Checklist | Yes | Yes |
+| Agent on PRs | Yes | No |
+| Agent CLI assistance (MCP) | Yes | Yes |
+| Preset checks across PRs | Yes | Manual |
+| Shared validation standards | Yes | Manual |
+| Developer-reviewer collaboration | Yes | Manual |
+| PR comments & summaries | Yes | No |
+| LLM-powered insights | Yes | No |
 
 ## FAQ
 
@@ -108,18 +112,18 @@ Yes. OSS and Cloud use the same validation engine. Your existing checklists and 
 
 **Does Cloud require a different setup than OSS?**
 
-Cloud connects to your Git repository and data warehouse directly. You don't need to generate artifacts locally — the Agent handles that automatically.
+Cloud connects to your Git repository and data warehouse directly. You don't need to generate artifacts locally. The agent handles that automatically.
 
-**What data does Recce Cloud access?**
+**What data does Cloud access?**
 
-Recce Cloud accesses your dbt artifacts (manifest.json, catalog.json) and runs queries against your data warehouse to perform validation. Your data stays in your warehouse.
+Cloud accesses your dbt artifacts (manifest.json, catalog.json) and runs queries against your data warehouse to perform validation. Your data stays in your warehouse.
 
 ## Getting Started
 
 - **Cloud:** [Start Free with Cloud](../2-getting-started/start-free-with-cloud.md)
 - **OSS:** [OSS Setup](../2-getting-started/oss-setup.md)
 
-## Related
+## Next Steps
 
-- [What the Agent Does](../5-what-the-agent-does/index.md) — How the Recce Agent validates your changes
-- [Data Developer Workflow](../3-using-recce/data-developer.md) — Using Recce throughout development
+- [What the Agent Does](../4-what-the-agent-does/index.md): How the agent validates your changes
+- [Data Developer Workflow](../3-using-recce/data-developer.md): Using Recce throughout development

@@ -1,5 +1,8 @@
 ---
 title: State File
+description: >-
+  Reference for the Recce state file format. Stores validation results, checks,
+  and environment information for dbt pull request review.
 ---
 
 # State File

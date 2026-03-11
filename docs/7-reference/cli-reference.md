@@ -1,17 +1,20 @@
 ---
 title: CLI Reference
+description: >-
+  Command-line reference for the open source and Recce Cloud CLIs. Run dbt validation,
+  data diffing, and artifact uploads from your terminal.
 ---
 
 # CLI Reference
 
-This reference documents the command-line interfaces for Recce OSS (`recce`) and Recce Cloud (`recce-cloud`).
+This reference documents the command-line interfaces for the open source CLI (`recce`) and the Recce Cloud CLI (`recce-cloud`).
 
 ## Overview
 
 Recce provides two CLI tools:
 
 - **`recce`** - The open source CLI for local data validation and diffing
-- **`recce-cloud`** - The cloud CLI for uploading artifacts to Recce Cloud in CI/CD workflows
+- **`recce-cloud`** - The cloud CLI for uploading artifacts to Cloud in CI/CD workflows
 
 ## recce Commands
 
@@ -36,7 +39,7 @@ recce server [OPTIONS] [STATE_FILE]
 | Option | Description |
 |--------|-------------|
 | `--review` | Enable review mode. Uses dbt artifacts from the state file instead of `target/` and `target-base/` directories. |
-| `--api-token <token>` | API token for Recce Cloud connection. |
+| `--api-token <token>` | API token for Cloud connection. |
 
 **Examples:**
 
@@ -58,7 +61,7 @@ Start server in review mode (uses artifacts from state file):
 recce server --review my_recce_state.json
 ```
 
-Start server with Recce Cloud connection:
+Start server with Cloud connection:
 
 ```bash
 recce server --api-token <your_api_token>
@@ -172,7 +175,7 @@ recce debug
 
 ## recce-cloud Commands
 
-The `recce-cloud` CLI is a lightweight tool for uploading dbt artifacts to Recce Cloud in CI/CD pipelines.
+The `recce-cloud` CLI is a lightweight tool for uploading dbt artifacts to Cloud in CI/CD pipelines.
 
 ### Installation
 
@@ -182,7 +185,7 @@ pip install recce-cloud
 
 ### recce-cloud upload
 
-Uploads dbt artifacts to Recce Cloud.
+Uploads dbt artifacts to Cloud.
 
 **Syntax:**
 
@@ -256,7 +259,7 @@ Uploading manifest from path "target/manifest.json"
 Uploading catalog from path "target/catalog.json"
 Notifying upload completion...
 ──────────────────────────── Uploaded Successfully ─────────────────────────────
-Uploaded dbt artifacts to Recce Cloud for session ID "f8b0f7ca-ea59-411d-abd8-88b80b9f87ad"
+Uploaded dbt artifacts to Cloud for session ID "f8b0f7ca-ea59-411d-abd8-88b80b9f87ad"
 ```
 
 ## Common Workflows
@@ -292,5 +295,5 @@ recce server --review recce_state.json
 
 - [Configuration](./configuration.md) - Preset check configuration in `recce.yml`
 - [State File](./state-file.md) - State file format and usage
-- [Setup CI](../7-cicd/setup-ci.md) - CI/CD integration guide
-- [Setup CD](../7-cicd/setup-cd.md) - CD workflow setup
+- [Setup CI](../2-getting-started/setup-ci.md) - CI/CD integration guide
+- [Setup CD](../2-getting-started/setup-cd.md) - CD workflow setup

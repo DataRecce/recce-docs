@@ -1,5 +1,8 @@
 ---
 title: Best Practices for Preparing Environments
+description: >-
+  Prepare reliable CI environments for Recce data diffing. Handle source data
+  drift, time-consuming transformations, and warehouse cleanup.
 ---
 
 Recce is designed to compare two environments in your data project. To use it effectively, it is crucial to prepare environments through CI.

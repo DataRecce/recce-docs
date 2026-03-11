@@ -1,5 +1,8 @@
 ---
 title: Row Count Diff
+description: >-
+  Compare row counts between base and current environments to quickly detect
+  data volume changes in your dbt models during pull request review.
 ---
 
 # Row Count Diff

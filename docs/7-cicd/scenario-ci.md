@@ -1,5 +1,8 @@
 ---
 title: Setup CI in Open Source
+description: >-
+  Integrate open source Recce with GitHub Actions for automated data diffing in your
+  CI/CD pipeline. Compare dbt models between environments on every pull request.
 ---
 
 # Recce CI integration with GitHub Action

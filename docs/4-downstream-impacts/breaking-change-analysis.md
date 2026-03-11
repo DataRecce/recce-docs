@@ -1,5 +1,8 @@
 ---
 title: Breaking Change Analysis
+description: >-
+  Categorize dbt model changes as breaking, partial breaking, or non-breaking.
+  Assess downstream impact before merging your pull request.
 ---
 
 **Breaking Change Analysis** examines modified models and categorizes changes into three types:

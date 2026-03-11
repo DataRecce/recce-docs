@@ -1,5 +1,8 @@
 ---
 title: Column-Level Lineage
+description: >-
+  Trace upstream and downstream column relationships in your dbt project.
+  Use column-level lineage for impact analysis and root cause investigation.
 ---
 
 Column-Level Lineage provides visibility into the upstream and downstream relationships of a column.

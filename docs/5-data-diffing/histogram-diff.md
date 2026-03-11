@@ -1,5 +1,8 @@
 ---
 title: Histogram Diff
+description: >-
+  Compare the distribution of numeric columns between environments using
+  histogram overlay charts for dbt data validation.
 ---
 
 # Histogram Diff

@@ -1,5 +1,8 @@
 ---
 title: Value Diff
+description: >-
+  Compare row-level values between environments using primary keys. See matched
+  counts and percentages for each column in your dbt data diffing workflow.
 ---
 
 

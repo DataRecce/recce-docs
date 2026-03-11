@@ -1,5 +1,5 @@
 ---
-title: Recce MCP Server — dbt Data Validation for AI Agents
+title: Recce MCP Server - dbt Data Validation for AI Agents
 description: >-
   Connect the Recce MCP server to Claude Code, Cursor, or Windsurf to validate
   dbt data changes through natural language. Supports schema diff, row count diff,
@@ -8,14 +8,14 @@ description: >-
 
 # Recce MCP Server for dbt
 
-Recce is a dbt data validation tool that compares your development branch against your base branch (typically main) and surfaces schema changes, row count differences, and data diffs. Its MCP server makes these capabilities available to any AI code agent — including Claude Code, Cursor, and Windsurf — so you can validate data changes through natural language without leaving your editor.
+Recce is a dbt data validation tool that compares your development branch against your base branch (typically main) and surfaces schema changes, row count differences, and data diffs. Its MCP server makes these capabilities available to any AI code agent, including Claude Code, Cursor, and Windsurf, so you can validate data changes through natural language without leaving your editor.
 
 [MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard that lets AI assistants call external tools directly. Recce implements an MCP server so your AI agent can run data diffs against your warehouse on your behalf.
 
-Unlike general-purpose database tools, Recce's MCP server is built specifically for dbt branch comparison. It reads dbt artifacts (`manifest.json`, `catalog.json`) to understand your model graph, so your AI agent can reason about lineage, column-level changes, and statistical differences — not just raw SQL.
+Unlike general-purpose database tools, Recce's MCP server is built specifically for dbt branch comparison. It reads dbt artifacts (`manifest.json`, `catalog.json`) to understand your model graph, so your AI agent can reason about lineage, column-level changes, and statistical differences, not just raw SQL.
 
 !!! tip "Claude Code users: skip to the easy path"
-    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) handles all of the setup below automatically — prerequisites, artifact generation, and server startup — in two commands. If you use Claude Code, start there.
+    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) handles all of the setup below automatically (prerequisites, artifact generation, and server startup) in two commands. If you use Claude Code, start there.
 
 ## What you can do with Recce MCP
 
@@ -31,7 +31,7 @@ Your agent translates these into the appropriate Recce tool calls and returns th
 
 ## How it works
 
-Recce compares your current branch's dbt models against a baseline from your main branch. To do this, it needs two sets of dbt artifacts (the `manifest.json` and `catalog.json` metadata files that dbt generates) — one representing your current work and one representing your base branch. The MCP server reads both artifact sets and runs diffs against your warehouse when your AI agent requests them.
+Recce compares your current branch's dbt models against a baseline from your main branch. To do this, it needs two sets of dbt artifacts (the `manifest.json` and `catalog.json` metadata files that dbt generates): one representing your current work and one representing your base branch. The MCP server reads both artifact sets and runs diffs against your warehouse when your AI agent requests them.
 
 ## Prerequisites
 
@@ -82,7 +82,7 @@ Choose the tab for your AI agent. If you're unsure which transport to use: **std
 
     ### Option A: Recce plugin (recommended)
 
-    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) is the easiest way to get started. Unlike manual MCP configuration, the plugin provides guided setup, handles prerequisite checks, generates artifacts, and starts the MCP server for you — all through interactive commands.
+    The [Recce Claude Plugin](../2-getting-started/claude-plugin.md) is the easiest way to get started. Unlike manual MCP configuration, the plugin provides guided setup, handles prerequisite checks, generates artifacts, and starts the MCP server for you, all through interactive commands.
 
     ```
     /plugin marketplace add DataRecce/recce-claude-plugin
@@ -94,7 +94,7 @@ Choose the tab for your AI agent. If you're unsure which transport to use: **std
 
     ### Option B: Stdio
 
-    Configure Recce as an MCP server with stdio transport. Claude Code automatically launches the server when you start a session — no separate process to manage.
+    Configure Recce as an MCP server with stdio transport. Claude Code automatically launches the server when you start a session. No separate process to manage.
 
     ```shell
     cd my-dbt-project/
@@ -270,16 +270,16 @@ Recce works with all major dbt adapters: Snowflake, BigQuery, Redshift, Databric
 
 **Do I need Recce Cloud to use the MCP server?**
 
-No. The MCP server is part of Recce OSS and is free to use. [Recce Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
+No. The MCP server is part of the open source version and is free to use. [Recce Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
 
 **What is the Model Context Protocol?**
 
 [MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard that allows AI agents to call external tools. Recce implements an MCP server so AI agents can run data diffs against your warehouse on demand.
 
-## What's next
+## Next Steps
 
-- [Recce Claude Plugin](../2-getting-started/claude-plugin.md) — guided setup for Claude Code users with interactive commands
-- [Row Count Diff](row-count-diff.md) — understand row count validation
-- [Profile Diff](profile-diff.md) — statistical profiling comparisons
-- [Value Diff](value-diff.md) — row-by-row data validation
-- [CI/CD Setup](../7-cicd/ci-cd-getting-started.md) — automate validation in your workflow
+- [Recce Claude Plugin](../2-getting-started/claude-plugin.md): guided setup for Claude Code users with interactive commands
+- [Row Count Diff](row-count-diff.md): understand row count validation
+- [Profile Diff](profile-diff.md): statistical profiling comparisons
+- [Value Diff](value-diff.md): row-by-row data validation
+- [CI/CD Setup](../2-getting-started/environment-setup.md): automate validation in your workflow

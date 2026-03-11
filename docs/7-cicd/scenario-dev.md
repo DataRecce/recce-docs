@@ -1,5 +1,8 @@
 ---
 title: Development Overview
+description: >-
+  Use Recce during dbt development to compare your changes against production.
+  Run data diffing and validation queries before opening a pull request.
 ---
 
 In developing a project with dbt, there are numerous methods available to help you query warehouse data for validation. Recce allows for further comparison with production or a specific baseline environment.

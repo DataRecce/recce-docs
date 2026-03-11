@@ -1,5 +1,8 @@
 ---
 title: dbt Cloud Setup
+description: >-
+  Integrate Recce with dbt Cloud for automated pull request data validation.
+  Retrieve dbt Cloud artifacts and compare PR changes against production.
 ---
 
 # dbt Cloud Setup
@@ -12,14 +15,14 @@ After completing this tutorial, every PR triggers automated data validation. Rec
 
 ## Prerequisites
 
-- [x] **Recce Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
-- [x] **dbt Cloud account**: with CI (continuous integration) and CD (continuous deployment) jobs configured
-- [x] **dbt Cloud API token**: with read access to job artifacts
-- [x] **GitHub repository**: with admin access to add workflows and secrets
+- [ ] **Cloud account**: free trial at [cloud.reccehq.com](https://cloud.reccehq.com)
+- [ ] **dbt Cloud account**: with CI (continuous integration) and CD (continuous deployment) jobs configured
+- [ ] **dbt Cloud API token**: with read access to job artifacts
+- [ ] **GitHub repository**: with admin access to add workflows and secrets
 
 ## How Recce retrieves dbt Cloud artifacts
 
-Recce needs both base (production) and current (PR) dbt artifacts to compare changes. When using dbt Cloud, these artifacts live in dbt Cloud's API rather than your local filesystem. Your GitHub Actions workflows retrieve them via API calls and upload to Recce Cloud.
+Recce needs both base (production) and current (PR) dbt artifacts to compare changes. When using dbt Cloud, these artifacts live in dbt Cloud's API rather than your local filesystem. Your GitHub Actions workflows retrieve them via API calls and upload to Cloud.
 
 Two workflows handle this:
 
@@ -208,7 +211,7 @@ After setting up:
 2. **Create a test PR** with a small model change
 3. **Wait for dbt Cloud CI job** to complete
 4. **Check GitHub Actions** - the Recce PR workflow should run after dbt Cloud CI completes
-5. **Open Recce Cloud** - the PR session appears with validation results
+5. **Open Cloud** - the PR session appears with validation results
 
 !!! tip
     Run the base workflow first to establish your production baseline. The PR workflow compares against this baseline.
@@ -233,7 +236,7 @@ If your CD job runs on a schedule:
 
 ## Next steps
 
-- [Get Started with Recce Cloud](./start-free-with-cloud.md) - Standard setup for self-hosted dbt
-- [Configure CD to establish your production baseline](../7-cicd/setup-cd.md)
-- [Configure CI for automated PR validation](../7-cicd/setup-ci.md)
-- [Learn environment strategies for reliable comparisons](../7-cicd/best-practices-prep-env.md)
+- [Get Started with Cloud](./start-free-with-cloud.md) - Standard setup for self-hosted dbt
+- [Configure CD to establish your production baseline](setup-cd.md)
+- [Configure CI for automated PR validation](setup-ci.md)
+- [Learn environment strategies for reliable comparisons](environment-best-practices.md)

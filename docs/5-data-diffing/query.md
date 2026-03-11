@@ -1,5 +1,8 @@
 ---
 title: Query
+description: >-
+  Run ad-hoc SQL queries and diff results between environments for custom
+  dbt data validation. Supports dbt macros and Jinja templates.
 ---
 
 Query page provides an AdHoc query interface to run arbitrary query or diff the query result between two environments. If you're a dbt user, you can use any dbt macros that are installed in your project.

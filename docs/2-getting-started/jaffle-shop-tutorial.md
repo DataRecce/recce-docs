@@ -1,19 +1,24 @@
 ---
 title: Jaffle Shop Tutorial
+description: >-
+  Walk through a hands-on dbt validation tutorial using the Jaffle Shop example
+  project. Make a model change and validate the data impact with Recce.
 ---
 
 # Jaffle Shop Tutorial
 
-When you change a dbt model, how do you know what data actually changed? Running your model isn't enough — you need to compare outputs against the previous version.
+When you change a dbt model, how do you know what data actually changed? Running your model isn't enough. You need to compare outputs against the previous version.
 
 **Goal:** Make a model change and validate the data impact using Recce with the dbt Labs example project.
 
-This tutorial uses [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb), a sample project from dbt Labs. You'll modify a model, see how the change affects downstream data, and add a validation to your checklist.
+This tutorial uses DuckDB for a local, file-based setup. No cloud warehouse needed.
+
+You'll work with [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb), a sample project from dbt Labs. You'll modify a model, see how the change affects downstream data, and add a validation to your checklist.
 
 ## Prerequisites
 
-- [x] Python 3.9+ installed
-- [x] Git installed
+- [ ] Python 3.9+ installed
+- [ ] Git installed
 
 ## Steps
 
@@ -105,7 +110,7 @@ renamed as (
 )
 ```
 
-This removes the cents-to-dollars conversion — downstream models will now show values 100x larger.
+This removes the cents-to-dollars conversion, so downstream models will now show values 100x larger.
 
 **Expected result:** `stg_payments.sql` outputs `amount` in cents instead of dollars.
 
@@ -171,5 +176,5 @@ Confirm you completed the tutorial:
 
 ## Next Steps
 
-- [OSS Setup](oss-setup.md) — Set up Recce with your own dbt project
-- [Cloud vs Open Source](../1-whats-recce/cloud-vs-oss.md) — Compare OSS and Cloud features
+- [OSS Setup](oss-setup.md): Set up Recce with your own dbt project
+- [Cloud vs Open Source](../1-whats-recce/cloud-vs-oss.md): Compare OSS and Cloud features

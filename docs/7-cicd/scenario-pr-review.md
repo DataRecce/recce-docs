@@ -1,5 +1,8 @@
 ---
 title: PR Review
+description: >-
+  Use Recce to gather validation evidence for pull request review. Add lineage
+  diagrams, data diffs, and checklist results to your PR comments.
 ---
 
 When you've finished developing your feature, we should turn the pull request (PR) into [ready for review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request) state. At this point, the PR submitter needs to provide the necessary information for the PR reviewer. Some projects may offer a PR template. In the dbt official blog, [this article](https://docs.getdbt.com/blog/analytics-pull-request-template) provides an excellent example.

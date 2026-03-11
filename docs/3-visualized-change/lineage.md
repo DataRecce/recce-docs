@@ -1,5 +1,8 @@
 ---
 title: Lineage Diff
+description: >-
+  Visualize how dbt model changes impact your data pipeline with Lineage Diff.
+  Trace data lineage and identify downstream impacts for pull request review.
 ---
 
 # Understanding Lineage Diff

@@ -1,14 +1,17 @@
 ---
 title: What the Agent Does
+description: >-
+  Learn how the Recce Agent automates dbt validation on pull requests, from
+  impact analysis and data diffing to posting review summaries.
 ---
 
 # What the Recce Agent Does
 
-Data validation for pull requests is time-consuming. You need to understand what changed, identify downstream impacts, run the right checks, and communicate findings to reviewers. The Recce Agent automates this entire workflow.
+Data validation for pull requests is time-consuming. You need to understand what changed, identify downstream impacts, run the right checks, and communicate findings to reviewers. The agent automates this entire workflow.
 
 ## How It Works
 
-The Recce Agent monitors your pull requests and acts as an automated data reviewer. When you open or update a PR that modifies dbt models, the agent:
+The agent monitors your pull requests and acts as an automated data reviewer. When you open or update a PR that modifies dbt models, the agent:
 
 1. **Analyzes your changes** - Reads dbt artifacts and compares your branch against the base branch
 2. **Identifies impact** - Traces lineage to find all affected models and columns
@@ -27,7 +30,7 @@ This happens automatically in your CI/CD pipeline. No manual intervention requir
 
 ## Agent Capabilities
 
-The Recce Agent provides three core capabilities:
+The agent provides three core capabilities:
 
 ### Automated Validation
 
@@ -47,8 +50,8 @@ After validation completes, the agent generates a comprehensive summary that exp
 
 [Learn more about the Data Review Summary](../7-cicd/pr-mr-summary.md)
 
-## Related
+## Next Steps
 
 - [Data Developer Workflow](../3-using-recce/data-developer.md) - How developers validate changes
 - [Data Reviewer Workflow](../3-using-recce/data-reviewer.md) - How reviewers approve PRs
-- [CI/CD Getting Started](../7-cicd/ci-cd-getting-started.md) - Set up automated validation
+- [CI/CD Getting Started](../2-getting-started/environment-setup.md) - Set up automated validation

@@ -1,5 +1,8 @@
 ---
 title: GitLab Personal Access Token
+description: >-
+  Create a GitLab Personal Access Token with the right permissions to integrate
+  Recce with your GitLab project for pull request review.
 ---
 
 # GitLab Personal Access Token Setup
@@ -78,7 +81,7 @@ Once you have your Personal Access Token:
 
 - Please reach out to us on [our Discord](https://discord.gg/HUUx9fyphJ) or via email at `help@reccehq.com`
 
-## Related Documentation
+## Next Steps
 
 - [Connect Git Provider](./start-free-with-cloud.md#2-connect-git-provider)
-- [CI/CD Getting Started](../7-cicd/ci-cd-getting-started.md)
+- [CI/CD Getting Started](environment-setup.md)

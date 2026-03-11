@@ -1,5 +1,8 @@
 ---
 title: Configuration
+description: >-
+  Configure Recce with recce.yml to define preset checks for automated
+  dbt data validation on every pull request.
 ---
 
 The config file for Recce is located in recce.yml. Currently, only preset checks are configurable.

@@ -1,5 +1,8 @@
 ---
 title: Data Developer Workflow
+description: >-
+  Validate dbt data changes throughout your development lifecycle. Run data diffing
+  locally and iterate on pull request feedback with Recce.
 ---
 
 # Data Developer Workflow
@@ -10,9 +13,9 @@ Validate data changes throughout your development lifecycle. This guide covers v
 
 ## Prerequisites
 
-- [x] Recce Cloud account
-- [x] dbt project with CI/CD configured for Recce
-- [x] Access to your data warehouse
+- [ ] Recce Cloud account
+- [ ] dbt project with CI/CD configured for Recce
+- [ ] Access to your data warehouse
 
 ## Development Stages
 
@@ -22,7 +25,7 @@ Validate changes locally before pushing to remote. Dev sessions let you run Recc
 
 #### Upload via Web UI
 
-1. Go to [Recce Cloud](https://cloud.reccehq.com)
+1. Go to [Cloud](https://cloud.reccehq.com)
 2. Navigate to your project
 3. Click **New Dev Session**
 4. Upload your dbt artifacts:
@@ -143,7 +146,7 @@ Confirm your workflow works:
 1. Make a small model change locally
 2. Generate artifacts: `dbt build && dbt docs generate`
 3. Upload dev session: `recce-cloud upload --type dev`
-4. Verify session appears in Recce Cloud
+4. Verify session appears in Cloud
 5. Create PR and confirm agent posts summary
 
 ## Troubleshooting
@@ -155,7 +158,7 @@ Confirm your workflow works:
 | Validation results missing | Check warehouse credentials in CI secrets |
 | Summary not appearing | Confirm `GITHUB_TOKEN` has PR write permissions |
 
-## Related
+## Next Steps
 
 - [Data Reviewer Workflow](data-reviewer.md) - How reviewers use Recce
 - [Admin Setup](admin-setup.md) - Set up your organization

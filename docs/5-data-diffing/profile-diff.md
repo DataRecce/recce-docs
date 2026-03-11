@@ -1,5 +1,8 @@
 ---
 title: Profile Diff
+description: >-
+  Compare column-level statistics like count, min, max, and average between
+  environments for dbt data validation and pull request review.
 ---
 
 # Profile Diff

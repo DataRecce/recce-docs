@@ -1,5 +1,8 @@
 ---
 title: Community & Support
+description: >-
+  Find help and connect with the Recce community through Discord, dbt Slack,
+  email, and GitHub for dbt validation and data quality support.
 ---
 
 # Community & Support
