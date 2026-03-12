@@ -92,7 +92,7 @@ Save to a file for PR comments:
 recce summary recce_state.json > recce_summary.md
 ```
 
-<!--![Static data review summary on OSS](../assets/images/what-you-can-explore/oss-static-summary.png){: .shadow}--> 
+![Static data review summary on OSS](../assets/images/what-you-can-explore/oss-static-summary.png){: .shadow}
 
 ## When to Use
 
