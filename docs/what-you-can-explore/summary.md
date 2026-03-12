@@ -42,6 +42,10 @@ When you push a commit to your PR, the Recce bot posts progress updates:
 
 ![Agent progress updates on PR](../assets/images/what-you-can-explore/ai-summary-slash-command.png){: .shadow}
 
+### Manual (PR Comment)
+
+Comment `/recce` on your GitHub PR to generate a new data review summary. The Recce bot responds with a status update while generating.
+
 ### Manual (Cloud UI)
 
 Click **Data Review** in a session to generate a summary on demand.
