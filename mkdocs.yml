@@ -49,62 +49,45 @@ nav:
   - Guides:
       - What's Recce:
           - index.md
-          - 1-whats-recce/cloud-vs-oss.md
-          - 1-whats-recce/community-support.md
+          - whats-recce/cloud-vs-oss.md
           - Changelog: "https://reccehq.com/changelog/"
       - Getting Started:
-          - 2-getting-started/start-free-with-cloud.md
-          - 2-getting-started/oss-setup.md
-          - 2-getting-started/jaffle-shop-tutorial.md
+          - Start with Cloud: getting-started/start-free-with-cloud.md
+          - getting-started/oss-setup.md
+          - Tutorial (OSS): getting-started/jaffle-shop-tutorial.md
       - Setup Guides:
-          - Connect Your Repository: 2-getting-started/connect-git.md
-          - Connect Data Warehouse: 2-getting-started/connect-to-warehouse.md
-          - Environment Setup: 2-getting-started/environment-setup.md
-          - Environment Best Practices: 2-getting-started/environment-best-practices.md
-          - dbt Cloud Setup: 2-getting-started/dbt-cloud-setup.md
-          - Setup CD: 2-getting-started/setup-cd.md
-          - Setup CI: 2-getting-started/setup-ci.md
-          - Claude Plugin: 2-getting-started/claude-plugin.md
-      - Visualized Change:
-          - 3-visualized-change/lineage.md
-          - 3-visualized-change/code-change.md
-          - 3-visualized-change/column-level-lineage.md
-          - 3-visualized-change/multi-models.md
+          - Connect Your Repository: setup-guides/connect-git.md
+          - Connect Data Warehouse: setup-guides/connect-to-warehouse.md
+          - Environment Setup: setup-guides/environment-setup.md
+          - Environment Best Practices: setup-guides/environment-best-practices.md
+          - dbt Cloud Setup: setup-guides/dbt-cloud-setup.md
+          - Setup CD: setup-guides/setup-cd.md
+          - Setup CI: setup-guides/setup-ci.md
+          - Claude Plugin: setup-guides/claude-plugin.md
+          - MCP Server (AI Agents): setup-guides/mcp-server.md
       - Using Recce:
-          - 3-using-recce/admin-setup.md
-          - 3-using-recce/data-developer.md
-          - 3-using-recce/data-reviewer.md
-      - What the Agent Does:
-          - 4-what-the-agent-does/index.md
-          - 4-what-the-agent-does/automated-validation.md
-          - 4-what-the-agent-does/impact-analysis.md
+          - using-recce/admin-setup.md
+          - using-recce/data-developer.md
+          - using-recce/data-reviewer.md
+          - using-recce/cli-commands.md
+          - Workflow in OSS: using-recce/oss-workflow.md
       - What You Can Explore:
-          - 5-what-you-can-explore/lineage-diff.md
-          - 5-what-you-can-explore/code-change.md
-          - 5-what-you-can-explore/column-level-lineage.md
-          - 5-what-you-can-explore/impact-radius.md
-          - 5-what-you-can-explore/breaking-change-analysis.md
-          - 5-what-you-can-explore/data-diffing.md
-          - 5-what-you-can-explore/multi-models.md
-          - MCP Server (AI Agents): 5-data-diffing/mcp-server.md
-      - Collaborate Validation:
-          - 6-collaboration/checklist.md
-          - 6-collaboration/preset-checks.md
-          - 6-collaboration/share.md
-      - CI/CD:
-          - 7-cicd/pr-mr-summary.md
-          #- 7-cicd/recce-debug.md # content outdated
-          - 7-cicd/scenario-dev.md
-          - 7-cicd/scenario-pr-review.md
-
+          - what-you-can-explore/summary.md
+          - what-you-can-explore/lineage-diff.md
+          - what-you-can-explore/code-change.md
+          - what-you-can-explore/column-level-lineage.md
+          - what-you-can-explore/impact-radius.md
+          - what-you-can-explore/breaking-change-analysis.md
+          - what-you-can-explore/data-diffing.md
+          - what-you-can-explore/multi-models.md
+      - Collaboration:
+          - collaboration/checklist.md
+          - collaboration/activity.md
+          - collaboration/preset-checks.md
+          - collaboration/share.md
       - Reference:
-          - 7-reference/configuration.md
-          - 7-reference/state-file.md
-          - 7-reference/cli-reference.md
-
-      - Community:
-          - 8-community/support.md
-          - 8-community/changelog.md
+          - technical-concepts/configuration.md
+          - technical-concepts/state-file.md
 
   - Blog: "https://blog.reccehq.com"
   - Changelog: "https://reccehq.com/changelog/"
@@ -167,32 +150,68 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        '6-collaboration/invitation.md': '3-using-recce/admin-setup.md'
-        '2-getting-started/installation.md': '2-getting-started/oss-setup.md'
-        '2-getting-started/get-started-jaffle-shop.md': '2-getting-started/jaffle-shop-tutorial.md'
-        '2-getting-started/oss-vs-cloud.md': '1-whats-recce/cloud-vs-oss.md'
-        '7-cicd/setup-cd.md': '2-getting-started/setup-cd.md'
-        '7-cicd/setup-ci.md': '2-getting-started/setup-ci.md'
-        '7-cicd/ci-cd-getting-started.md': '2-getting-started/environment-setup.md'
-        '7-cicd/best-practices-prep-env.md': '2-getting-started/environment-best-practices.md'
-        '3-visualized-change/lineage.md': '5-what-you-can-explore/lineage-diff.md'
-        '3-visualized-change/code-change.md': '5-what-you-can-explore/code-change.md'
-        '3-visualized-change/column-level-lineage.md': '5-what-you-can-explore/column-level-lineage.md'
-        '3-visualized-change/multi-models.md': '5-what-you-can-explore/multi-models.md'
-        '4-downstream-impacts/impact-radius.md': '5-what-you-can-explore/impact-radius.md'
-        '4-downstream-impacts/breaking-change-analysis.md': '5-what-you-can-explore/breaking-change-analysis.md'
-        '5-data-diffing/row-count-diff.md': '5-what-you-can-explore/data-diffing.md'
-        '5-data-diffing/profile-diff.md': '5-what-you-can-explore/data-diffing.md'
-        '5-data-diffing/value-diff.md': '5-what-you-can-explore/data-diffing.md'
-        '5-data-diffing/topK-diff.md': '5-what-you-can-explore/data-diffing.md'
-        '5-data-diffing/histogram-diff.md': '5-what-you-can-explore/data-diffing.md'
-        '5-data-diffing/query.md': '5-what-you-can-explore/data-diffing.md'
-        '5-data-diffing/connect-to-warehouse.md': '2-getting-started/connect-to-warehouse.md'
-        '2-getting-started/gitlab-pat-guide.md': '2-getting-started/connect-git.md'
-        '7-cicd/preset-checks.md': '6-collaboration/preset-checks.md'
-        '8-technical-concepts/configuration.md': '7-reference/configuration.md'
-        '8-technical-concepts/state-file.md': '7-reference/state-file.md'
-        '1-whats-recce/community-support.md': '8-community/support.md'
+        # Old numbered paths to new unnumbered paths
+        '1-whats-recce/cloud-vs-oss.md': 'whats-recce/cloud-vs-oss.md'
+        '1-whats-recce/community-support.md': 'whats-recce/cloud-vs-oss.md'
+        '2-getting-started/start-free-with-cloud.md': 'getting-started/start-free-with-cloud.md'
+        '2-getting-started/oss-setup.md': 'getting-started/oss-setup.md'
+        '2-getting-started/jaffle-shop-tutorial.md': 'getting-started/jaffle-shop-tutorial.md'
+        '2-getting-started/installation.md': 'getting-started/oss-setup.md'
+        '2-getting-started/get-started-jaffle-shop.md': 'getting-started/jaffle-shop-tutorial.md'
+        '2-getting-started/oss-vs-cloud.md': 'whats-recce/cloud-vs-oss.md'
+        '2-getting-started/connect-git.md': 'setup-guides/connect-git.md'
+        '2-getting-started/connect-to-warehouse.md': 'setup-guides/connect-to-warehouse.md'
+        '2-getting-started/environment-setup.md': 'setup-guides/environment-setup.md'
+        '2-getting-started/environment-best-practices.md': 'setup-guides/environment-best-practices.md'
+        '2-getting-started/dbt-cloud-setup.md': 'setup-guides/dbt-cloud-setup.md'
+        '2-getting-started/setup-cd.md': 'setup-guides/setup-cd.md'
+        '2-getting-started/setup-ci.md': 'setup-guides/setup-ci.md'
+        '2-getting-started/claude-plugin.md': 'setup-guides/claude-plugin.md'
+        '2-getting-started/gitlab-pat-guide.md': 'setup-guides/connect-git.md'
+        '3-using-recce/admin-setup.md': 'using-recce/admin-setup.md'
+        '3-using-recce/data-developer.md': 'using-recce/data-developer.md'
+        '3-using-recce/data-reviewer.md': 'using-recce/data-reviewer.md'
+        '3-visualized-change/lineage.md': 'what-you-can-explore/lineage-diff.md'
+        '3-visualized-change/code-change.md': 'what-you-can-explore/code-change.md'
+        '3-visualized-change/column-level-lineage.md': 'what-you-can-explore/column-level-lineage.md'
+        '3-visualized-change/multi-models.md': 'what-you-can-explore/multi-models.md'
+        '4-downstream-impacts/impact-radius.md': 'what-you-can-explore/impact-radius.md'
+        '4-downstream-impacts/breaking-change-analysis.md': 'what-you-can-explore/breaking-change-analysis.md'
+        '5-what-you-can-explore/summary.md': 'what-you-can-explore/summary.md'
+        '5-what-you-can-explore/lineage-diff.md': 'what-you-can-explore/lineage-diff.md'
+        '5-what-you-can-explore/code-change.md': 'what-you-can-explore/code-change.md'
+        '5-what-you-can-explore/column-level-lineage.md': 'what-you-can-explore/column-level-lineage.md'
+        '5-what-you-can-explore/impact-radius.md': 'what-you-can-explore/impact-radius.md'
+        '5-what-you-can-explore/breaking-change-analysis.md': 'what-you-can-explore/breaking-change-analysis.md'
+        '5-what-you-can-explore/data-diffing.md': 'what-you-can-explore/data-diffing.md'
+        '5-what-you-can-explore/multi-models.md': 'what-you-can-explore/multi-models.md'
+        '5-data-diffing/row-count-diff.md': 'what-you-can-explore/data-diffing.md'
+        '5-data-diffing/profile-diff.md': 'what-you-can-explore/data-diffing.md'
+        '5-data-diffing/value-diff.md': 'what-you-can-explore/data-diffing.md'
+        '5-data-diffing/topK-diff.md': 'what-you-can-explore/data-diffing.md'
+        '5-data-diffing/histogram-diff.md': 'what-you-can-explore/data-diffing.md'
+        '5-data-diffing/query.md': 'what-you-can-explore/data-diffing.md'
+        '5-data-diffing/mcp-server.md': 'setup-guides/mcp-server.md'
+        '5-data-diffing/connect-to-warehouse.md': 'setup-guides/connect-to-warehouse.md'
+        '6-collaboration/checklist.md': 'collaboration/checklist.md'
+        '6-collaboration/preset-checks.md': 'collaboration/preset-checks.md'
+        '6-collaboration/share.md': 'collaboration/share.md'
+        '6-collaboration/invitation.md': 'using-recce/admin-setup.md'
+        '7-cicd/setup-cd.md': 'setup-guides/setup-cd.md'
+        '7-cicd/setup-ci.md': 'setup-guides/setup-ci.md'
+        '7-cicd/ci-cd-getting-started.md': 'setup-guides/environment-setup.md'
+        '7-cicd/best-practices-prep-env.md': 'setup-guides/environment-best-practices.md'
+        '7-cicd/preset-checks.md': 'collaboration/preset-checks.md'
+        '7-cicd/pr-mr-summary.md': 'what-you-can-explore/summary.md'
+        '7-cicd/scenario-dev.md': 'using-recce/oss-workflow.md'
+        '7-cicd/scenario-pr-review.md': 'using-recce/oss-workflow.md'
+        '7-reference/configuration.md': 'technical-concepts/configuration.md'
+        '7-reference/state-file.md': 'technical-concepts/state-file.md'
+        '7-reference/cli-reference.md': 'using-recce/cli-commands.md'
+        '8-technical-concepts/configuration.md': 'technical-concepts/configuration.md'
+        '8-technical-concepts/state-file.md': 'technical-concepts/state-file.md'
+        '8-community/support.md': 'whats-recce/cloud-vs-oss.md'
+        '8-community/changelog.md': 'whats-recce/cloud-vs-oss.md'
   - glightbox:
       skip_classes:
         - skip-glightbox
