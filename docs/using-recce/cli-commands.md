@@ -175,6 +175,7 @@ recce server [OPTIONS] [STATE_FILE]
 |--------|-------------|
 | `--session-id <id>` | Connect to a Cloud session by ID |
 | `--review` | Review mode. Uses artifacts from state file instead of `target/` |
+| `--port <port>` | Port to run the server on. Default: `8000` |
 | `--api-token <token>` | API token for Cloud connection |
 
 **Notes:**
@@ -212,6 +213,34 @@ recce debug
 ```
 
 Checks for required artifacts and warehouse connection.
+
+#### recce --help
+
+Display all available commands and options.
+
+```bash
+recce --help
+```
+
+### Troubleshooting
+
+#### Port already in use
+
+If port 8000 is already in use, specify a different port:
+
+```bash
+recce server --port 8001
+```
+
+#### Summary fails with "state file is required for review mode"
+
+```
+recce summary recce-state.json
+[Error] Failed to generate summary
+The state file is required for review mode
+```
+
+The `recce summary` command requires artifacts embedded in the state file. State files from local sessions may not include artifacts. Export a state file from a review session or use Cloud for summary generation.
 
 ## Related
 
