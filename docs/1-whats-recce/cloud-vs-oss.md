@@ -28,10 +28,12 @@ flowchart LR
 
 | | Cloud | Open Source |
 |--|-------|-------------|
-| **Experience** | The agent works alongside you | You run validation manually |
-| **PR validation** | Agent validates automatically, posts summary | You run checks, copy results to PR |
 | **During development** | CLI + Agent assistance | CLI tools only |
+| **PR validation** | Agent validates automatically, posts summary | You run checks, copy results to PR |
+| **Collaboration** | Preset checks, shared standards, persistent history | Local only |
+| **Experience** | The agent works alongside you | You run validation manually |
 | **Learning curve** | Agent guides you through validation | Learn the tools, run them yourself |
+
 
 ## Cloud
 
@@ -90,19 +92,51 @@ You get:
 
 ## Feature Comparison
 
+### Validation Engine
+
+Both Cloud and OSS include the same validation engine.
+
 | Feature | Cloud | OSS |
 |---------|-------|-----|
 | Lineage Diff | Yes | Yes |
-| Data diff<br> (row count, schema, profile, value, top-k, histogram diff) | Yes | Yes |
-| Query diff | Yes | Yes |
-| Checklist | Yes | Yes |
-| Agent on PRs | Yes | No |
-| Agent CLI assistance (MCP) | Yes | Yes |
-| Preset checks across PRs | Yes | Manual |
-| Shared validation standards | Yes | Manual |
-| Developer-reviewer collaboration | Yes | Manual |
-| PR comments & summaries | Yes | No |
+| Schema Diff | Yes | Yes |
+| Row Count Diff | Yes | Yes |
+| Profile Diff | Yes | Yes |
+| Value Diff | Yes | Yes |
+| Top-K Diff | Yes | Yes |
+| Histogram Diff | Yes | Yes |
+| Query Diff | Yes | Yes |
+| Checklist (local) | Yes | Yes |
+
+### Data Review Agent
+
+The Data Review Agent automatically validates PRs. Cloud only.
+
+| Feature | Cloud | OSS |
+|---------|-------|-----|
+| Auto-validates when PR opens | Yes | No |
+| Posts summary to PR | Yes | No |
+| Updates on new commits | Yes | No |
 | LLM-powered insights | Yes | No |
+
+### Collaboration
+
+Team features for sharing validation standards. Cloud only.
+
+| Feature | Cloud | OSS |
+|---------|-------|-----|
+| Preset checks across PRs | Yes | No |
+| Shared validation standards | Yes | No |
+| Developer-reviewer collaboration | Yes | No |
+| Persistent validation history | Yes | No |
+
+### Access Methods
+
+| Feature | Cloud | OSS |
+|---------|-------|-----|
+| CLI | `recce-cloud` | `recce` |
+| Web UI | Yes | Local only |
+| MCP (AI agents) | Coming soon | Yes |
 
 ## FAQ
 

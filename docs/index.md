@@ -1,80 +1,110 @@
 ---
-title: "Recce: Data Review Agent for dbt Pull Requests"
+title: "Recce: Data Validation for dbt Pull Requests"
 description: >-
-  Recce automates data validation for dbt pull requests. Compare schema changes,
-  row counts, and data diffs between environments to catch data quality issues
-  before they reach production.
+  Recce helps data teams catch data changes and downstream impacts before production.
+  Validate with column-level precision, automate with agents, and standardize across your team.
 ---
 
-# What is Recce (Data Review Agent)
+# What is Recce
 
-No more merging PRs where the pipeline succeeded but the data is quietly wrong.
+Recce helps data teams catch data changes and their downstream impacts before they reach production.
 
-Recce is a Data Review Agent that automates data validation for pull requests. When you open a PR, it compares your dev environment against production and surfaces schema changes, data diffs, row counts, and downstream impacts. You see what changed, what it affects, and what passed, all before you merge.
+**The problem:** Data pipelines succeed but data is quietly wrong. PRs merge without anyone checking what actually changed in the data. Junior and senior engineers apply different standards. Validation knowledge stays in people's heads instead of becoming team practice.
 
-Recce is the product. The agent automates validation on your PRs. You can run Recce through Cloud (hosted, automated) or open source (local, manual).
+**The solution:** Recce provides a validation engine plus an AI agent that reviews your PRs automatically. The engine compares environments and visualizes impact. The agent runs validation, surfaces what changed, and explains why it matters—before you even look at the PR.
 
-[**Get Started with Cloud**](2-getting-started/start-free-with-cloud.md){ .md-button .md-button--primary }
-[**Set Up Open Source**](2-getting-started/oss-setup.md){ .md-button }
+[**Get Started with Cloud**](getting-started/start-free-with-cloud.md){ .md-button .md-button--primary }
+[**Set Up Open Source**](getting-started/oss-setup.md){ .md-button }
+
+---
 
 ## How Recce Works
 
-When you open a PR with data changes, Recce automatically:
+1. **Validation Engine:** Compares base (production) vs. current (development) environments and visualizes differences
+2. **Data Review Agent:** Automatically validates PRs, runs data diffs, and posts a summary explaining changes and their impact
 
-1. **Runs data diffing:** The best practice to validate data changes
-2. **Analyzes impact:** Identifies what changed down to the column level using Column-Level Lineage (CLL)
-3. **Reviews first:** The agent provides a data review summary explaining the change and its impact
-4. **Surfaces what matters:** Shows only impacted items, not every downstream table
-5. **Opens exploration:** Spins up a Recce instance where you can run additional diffs, explore lineage, and investigate deeper
+**Access via:**
 
-You review the agent's findings, add notes, and approve with confidence, not blind trust.
+| Method | Description |
+|--------|-------------|
+| **Cloud** | Full product: Validation engine + Data Review Agent + Collaboration. Includes `recce-cloud` CLI. |
+| **OSS** | Validation engine only. No Agent. No collaboration. Includes `recce` CLI. |
+| **MCP** | Use Recce OSS via AI agents (Claude Code, Cursor, Windsurf) with natural language. |
 
-![How Recce Works](assets/images/1-whats-recce/how-recce-work.png)
+![How Recce Works](assets/images/whats-recce/how-recce-work.png)
 
-1. PR Created
-2. Recce Triggered
-3. Agent Analyzes Production vs. Development Data
-4. Agent Generates Review Summary
-5. Human Explore in Recce Instance
-6. Human Reviews Approves
-7. PR Merges
+---
 
+## What Makes Recce Different
 
-Example of Recce agent summary in a GitHub PR comment:
-![How Recce Works](assets/images/1-whats-recce/agent-data-review-example.png)
+### Column-level impact radius
 
-## Automate Agent Data Review with CI/CD
+Validate only the columns affected by your change, not entire models.
 
-Recce delivers value through CI/CD integration. Without it, you waste time triaging false alerts from source data updates and manually comparing environments hoping you caught everything.
+When you modify a column, Recce traces its downstream dependencies using Column-Level Lineage (CLL). You see exactly which columns in which models are impacted. This means:
 
-With CI/CD:
+- Targeted validation instead of full-table comparisons
+- Faster reviews with less noise
+- Clear understanding of change propagation
 
-- Every PR gets automatic validation
-- Base and current environments are set up automatically
-- Agent reviews before you do
-- Checks accumulate as organizational knowledge (preset checks)
+### Agent as reviewer zero
+
+The agent validates first so you can focus on judgment.
+
+Instead of manually checking what changed, the agent:
+
+- Runs data diffs automatically when PRs open
+- Surfaces schema changes, row count differences, and data anomalies
+- Identifies unknown unknowns you might miss
+- Provides a summary explaining what changed and why it matters
+
+You review the agent's findings and decide what needs attention.
+
+![Agent summary in PR](assets/images/whats-recce/agent-data-review-example.png)
+
+### Collaborate and standardize
+
+Turn individual checks into team standards.
+
+**Checks:** Save validation results to a checklist. Add descriptions explaining what reviewers should verify. Share with your team.
+
+**Preset checks:** Promote recurring checks to run automatically on every PR. New team members apply the same validation standards as senior engineers.
+
+---
 
 ## When to Use Recce
 
-- **Business-critical data:** Data that's customer-facing or revenue-impacting
-- **Team collaboration:** When reviewers need to understand impact, not just see code changes
-- **Standardized validation:** When you need consistent pull request review across senior and junior team members
+- **Business-critical data:** Customer-facing or revenue-impacting pipelines where errors cost money
+- **Team collaboration:** When reviewers need to understand data impact, not just code changes
+- **Consistent standards:** When junior and senior engineers should apply the same validation rigor
 - **Unknown unknowns:** When you can't predict what might break from a change
 
 ## When Not to Use
 
-- Teams that accept errors on production and fix later
-- Exploratory analysis that won't go to production
+- Teams that accept production errors and fix later
+- Exploratory analysis that won't reach production
+
+---
 
 ## FAQ
 
-**Does Recce work without CI/CD?**
-Yes, you can run Recce locally for dev sessions. But CI/CD unlocks the full value: automatic validation on every PR without manual setup.
-
 **What data platforms does Recce support?**
-Recce works with data warehouses like Snowflake, BigQuery, Redshift, and Databricks. See [Connect to Warehouse](2-getting-started/connect-to-warehouse.md) for setup.
+
+Recce works with Snowflake, BigQuery, Redshift, Databricks, and other dbt-supported warehouses. See [Connect to Warehouse](setup-guides/connect-to-warehouse.md).
+
+**Does Recce work without CI/CD?**
+
+Yes. Run Recce locally during development or in review sessions. CI/CD unlocks automated validation on every PR.
+
+**What's the difference between Cloud and OSS?**
+
+Cloud provides hosted infrastructure, automated PR integration, and the AI agent. OSS gives you the core validation engine to run yourself. See [Cloud vs OSS](whats-recce/cloud-vs-oss.md).
+
+---
 
 ## Next Steps
-- Interactive Demo: [Try the Data Review Agent](https://reccehq.com/demo/)
-- Tutorial: [Get Started with Recce Cloud](2-getting-started/start-free-with-cloud.md)
-- Blog: [The Problem with Data PR Reviews: Where Do You Even Start?](https://blog.reccehq.com/guided-data-review)
+
+- [Interactive Demo](https://reccehq.com/demo/) - Try the Data Review Agent
+- [Get Started with Cloud](getting-started/start-free-with-cloud.md) - Automated PR validation
+- [OSS Setup](getting-started/oss-setup.md) - Self-hosted validation
+- [Blog: The Problem with Data PR Reviews](https://blog.reccehq.com/guided-data-review) - Why data validation matters
