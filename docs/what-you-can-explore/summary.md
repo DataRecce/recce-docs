@@ -32,6 +32,10 @@ The summary also generates when session metadata is updated:
 
 The summary generates automatically when you push a new commit to your PR. Your CI workflow runs `recce-cloud upload`, which triggers the agent to analyze your changes.
 
+### Manual (PR Comment)
+
+Comment `/recce` on your GitHub PR to generate a new data review summary. The Recce bot responds with a status update while generating.
+
 #### View Agent Progress
 
 When you push a commit to your PR, the Recce bot posts progress updates:
@@ -42,9 +46,6 @@ When you push a commit to your PR, the Recce bot posts progress updates:
 
 ![Agent progress updates on PR](../assets/images/what-you-can-explore/ai-summary-slash-command.png){: .shadow}
 
-### Manual (PR Comment)
-
-Comment `/recce` on your GitHub PR to generate a new data review summary. The Recce bot responds with a status update while generating.
 
 ### Manual (Cloud UI)
 
