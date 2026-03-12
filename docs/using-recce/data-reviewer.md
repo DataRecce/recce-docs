@@ -80,7 +80,7 @@ Based on your review:
 
 #### PR Blocking Checks
 
-Recce checks appear as status checks on your PR. When configured as required checks, reviewers must approve all checks in the checklist before the PR can be merged.
+Recce checks appear as status checks on your PR. The blocking is from the Recce Cloud GitHub App and runs automatically. When configured as required checks, reviewers must approve all checks in the checklist before the PR can be merged.
 
 ![Recce checks in PR](../assets/images/using-recce/pr-blocking-checks.png){: .shadow}
 
