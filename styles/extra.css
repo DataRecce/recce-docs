@@ -1,0 +1,362 @@
+/*--md-default-fg-color--light*/
+[data-md-color-scheme="secondary"] {
+  --md-primary-fg-color:        #2A6CA7;
+  --md-primary-fg-color--light: #79B0E2;
+  --md-primary-fg-color--dark:  #193E5C;
+  --md-typeset-a-color:         #ff6e42;
+  --md-default-fg-color--light: #252527;
+  --md-default-fg-color--dark:  #e7e7ea;
+}
+
+[data-md-color-scheme="secondary-dark"] {
+  --md-primary-fg-color:        #2A6CA7;
+  --md-primary-fg-color--light: #79B0E2;
+  --md-primary-fg-color--dark:  #193E5C;
+  --md-typeset-color:           #e8e9f1;
+  --md-typeset-a-color:         #ff6e42;
+  --md-default-fg-color--light: #e7e8ef;
+  --md-default-fg-color--dark:  #e7e7ea;
+  --md-code-hl-operator-color:  var(--md-default-fg-color--dark);
+  --md-code-hl-punctuation-color: var(--md-default-fg-color--dark);
+  --md-code-hl-comment-color:   var(--md-default-fg-color--dark);
+  --md-code-hl-generic-color:   var(--md-default-fg-color--dark);
+  --md-code-hl-variable-color:  var(--md-default-fg-color--dark);
+  --md-default-bg-color:        oklch(0.248 0.016 269.03);
+  --md-default-fg-color:        #e7e8ef;
+  --md-code-bg-color:           #0b121e;
+  --md-typeset-table-color:     #07566e;
+  --md-typeset-table-color--light: rgba(0, 0, 0, 0.50);
+}
+
+.md-nav__item a.md-nav__link[href^="https://github.com/DataRecce/recce/releases"] .md-ellipsis::before {
+  content: url("/assets/images/clock-regular.svg");
+  display: inline-block;
+  height: 1rem;
+  width: 0.8rem;
+  margin-right: 0.1rem;
+  vertical-align: top;
+}
+
+.md-nav__item a.md-nav__link[href^="https://"]:hover .md-ellipsis::before {
+  filter: invert(46%) sepia(13%) saturate(2575%) hue-rotate(326deg) brightness(115%) contrast(106%);
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
+	font-weight: bold;
+}
+
+.md-typeset code:not(.md-typeset pre > code) {
+	color: var(--md-typeset-a-color);
+	display: inline-block;
+	border-radius: 3px;
+}
+
+/**** Nav ****/
+
+/* .md-nav {
+	font-size: 0.8rem;
+} */
+
+/*.md-nav__title {
+	display: none;
+}*/
+
+/* .md-nav__item {
+	padding: 0.3rem 0;
+	font-weight: bold;
+} */
+
+.md-nav__item--section>.md-nav__link {
+	/*color: #000 !important;*/
+}
+
+.md-nav__link[href]:hover {
+	color: var(--md-typeset-a-color);
+}
+
+/**** Blog ****/
+
+.md-post--excerpt .md-post__content h2 {
+	line-height: 1.2;
+}
+
+.md-post__action a {
+	background-color: var(--md-typeset-a-color);
+	color: #fff !important;
+	padding: .3rem 1rem;
+	border-radius: 1rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: inline-block;
+	margin-top: 1rem;
+}
+.md-post__action a:hover {
+	border-bottom: none !important;
+}
+
+
+.md-post--excerpt {
+	padding-bottom: 2.5rem;
+	margin-bottom: 2.5rem;
+	border-bottom: dashed black 1px;
+}
+
+.md-post--excerpt:last-of-type {
+	border-bottom: none;
+}
+
+.md-content__inner .article-cta {
+	border-top: dashed 1px #d2d2d2;
+	padding-top: 1rem;
+	margin-top: 1rem;
+}
+
+.md-content__inner .mailchimp-cta {
+	background-color: var(--md-typeset-a-color);
+	border-radius: 1rem;
+	overflow: hidden;
+	color: #fff;
+	margin-top: 1rem;
+	position: relative;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.md-content__inner .mailchimp-cta::before {
+  content: "";
+  position: absolute;
+  background-image: url('/assets/images/Logo-Recce-white-fs8.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 20%;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: 0;
+}
+
+.md-content__inner .mailchimp-cta #mc_embed_signup form {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.md-content__inner .mailchimp-cta #mc_embed_signup form h2 {
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+.md-content__inner .mailchimp-cta #mc_embed_signup form h3 {
+	margin-top: 0;
+}
+
+.md-content__inner .mailchimp-cta #mc_embed_signup .button {
+	text-transform: uppercase;
+	color: var(--md-typeset-a-color);
+	font-weight: bold;
+	background-color: #fff;
+}
+
+.md-content__inner .mailchimp-cta #mc_embed_signup .button:hover {
+	background-color: #000;
+}
+
+.md-content__inner .mailchimp-cta #mc_embed_signup #mce-success-response {
+	color: #fff;
+}
+
+.md-content__inner .mailchimp-cta #mc_embed_signup div.response {
+	width: 100%;
+}
+
+
+/**** Links ****/
+
+.md-typeset a {
+
+}
+.md-typeset a:hover, .md-typeset a:focus,
+.md-post .md-post__meta a:hover, .md-post .md-post__meta a:focus {
+	border-bottom: solid var(--md-typeset-a-color) 1px;
+	color: var(--md-typeset-a-color);
+}
+
+.md-typeset .md-button:hover, .md-typeset .md-button:focus {
+	background-color: #e04f23;
+	border-color: #e04f23;
+
+}
+
+h1 a:hover, h2 a:hover a, h3 a:hover {
+	border-bottom: none;
+/*	background-color: #ff6e42;*/
+/*	color: #fff;*/
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* https://github.com/squidfunk/mkdocs-material/issues/492#issuecomment-336640342 */
+
+.video-wrapper {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+}
+.video-wrapper > iframe {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+/* Replace Source with Buttons */
+@media screen and (min-width: 76.25rem) {
+  [dir=ltr] .md-header__source {
+    margin-left: 0.25rem;
+  }
+}
+@media screen and (min-width: 60rem) {
+  [dir=ltr] .md-header__source {
+    margin-left: 0.25rem;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .md-header__source {
+    max-width: 15rem;
+    width: 15rem;
+  }
+}
+
+header .header-buttons {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+header .btn {
+  font-size: 0.75rem;
+  border-radius: 0.3125rem;
+  padding: 0.4rem 0.5rem;
+  transition: none;
+  border: none;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+  font-weight: 500;
+}
+
+header .btn.btn-background {
+  background-color: #FFFFFF;
+  border: solid #A0AEC0 1px;
+  color: #3B3B3B;
+}
+
+header .btn .github {
+  background-image: url('/assets/images/github-128.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 0.85rem;
+  width: 0.85rem;
+}
+
+header .btn.btn-background:hover,
+header .btn.btn-background:focus,
+header .btn.btn-background:active {
+  background-color: rgb(237, 237, 237);
+  cursor: pointer;
+}
+
+header .btn.btn-primary {
+  background-color: var(--md-typeset-a-color);
+  border: solid #df5126 1px;
+  color: #FFFFFF;
+}
+
+header .btn.btn-primary:hover,
+header .btn.btn-primary:focus,
+header .btn.btn-primary:active {
+  filter: saturate(90%);
+  cursor: pointer;
+}
+
+/**** HubSpot Newsletter Form ****/
+
+.hubspot-newsletter-wrapper {
+  background-color: var(--md-primary-fg-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  color: #fff;
+}
+
+.hubspot-newsletter-wrapper h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+#hubspot-newsletter-form .hs-form-field {
+  margin-bottom: 0.75rem;
+}
+
+#hubspot-newsletter-form .hs-form-field label {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+#hubspot-newsletter-form .hs-input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  font-size: 0.8rem;
+}
+
+#hubspot-newsletter-form .hs-input:focus {
+  outline: none;
+  border-color: var(--md-typeset-a-color);
+  box-shadow: 0 0 0 2px rgba(255, 110, 66, 0.2);
+}
+
+#hubspot-newsletter-form .hs-button {
+  background-color: var(--md-typeset-a-color);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#hubspot-newsletter-form .hs-button:hover {
+  background-color: #e04f23;
+}
+
+#hubspot-newsletter-form .hs-error-msgs {
+  color: #ffcccc;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+#hubspot-newsletter-form .submitted-message {
+  color: #fff;
+  font-weight: 500;
+}
