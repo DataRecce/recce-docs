@@ -13,19 +13,19 @@ Each check in your checklist has its own Activity panel. It records everything t
 
 Activity captures all events for a check:
 
-- **Created** - When the check is added to the checklist
-- **Approvals** - When the check is approved or unapproved
-- **Comments** - Questions, discussions, and clarifications about the check
-- **Description updates** - Changes to the check's description
+- **Created**: When the check is added to the checklist
+- **Approvals**: When the check is approved or unapproved
+- **Comments**: Questions, discussions, and clarifications about the check
+- **Description updates**: Changes to the check's description
 
 ![Activity panel in Recce Cloud](../assets/images/using-recce/checklist-review.png){: .shadow}
 
 ## When to Use
 
-- **Requesting context** - Ask the developer about unexpected results or ask reviewers about the acceptable thresholds
-- **Documenting decisions** - Record the process of making a decision
-- **Tracking history** - See who approved, what questions were asked, and how descriptions changed
-- **Handoff scenarios** - Give the next reviewer context on past decisions
+- **Requesting context**: Ask the developer about unexpected results or ask reviewers about the acceptable thresholds
+- **Documenting decisions**: Record the process of making a decision
+- **Tracking history**: See who approved, what questions were asked, and how descriptions changed
+- **Handoff scenarios**: Give the next reviewer context on past decisions
 
 ## Sync Comments to GitHub/GitLab
 
