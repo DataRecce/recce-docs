@@ -20,27 +20,12 @@ Activity captures all events for a check:
 
 ![Activity panel in Recce Cloud](../assets/images/using-recce/checklist-review.png){: .shadow}
 
-## Using Activity
+## When to Use
 
-### Discuss a Specific Check
-
-Use Activity to have focused conversations about a validation:
-
-- Ask why a particular diff result is expected
-- Request clarification on acceptable thresholds
-- Discuss edge cases the check might miss
-- Document why a check was approved despite warnings
-
-### Track Check History
-
-Activity shows the lifecycle of each check:
-
-- Who approved it and when
-- What questions were asked before approval
-- How the description changed over time
-- Whether it was re-run after updates
-
-This history helps new reviewers understand past decisions.
+- **Requesting context** - Ask the developer about unexpected results or ask reviewers about the acceptable thresholds
+- **Documenting decisions** - Record the process of making a decision
+- **Tracking history** - See who approved, what questions were asked, and how descriptions changed
+- **Handoff scenarios** - Give the next reviewer context on past decisions
 
 ## Sync Comments to GitHub/GitLab
 
@@ -55,13 +40,6 @@ The comment appears on the PR/MR:
 You can @mention teammates using their GitHub or GitLab username (e.g., `@john-doe`). They'll receive a notification through GitHub or GitLab. Use the exact username—Recce doesn't currently map display names to usernames.
 
 This works the same way on GitLab.
-
-## When to Use
-
-- **Requesting context** - Ask the developer about unexpected results
-- **Documenting decisions** - Explain why you approved despite a warning
-- **Iterating on checks** - Track changes as the developer updates code
-- **Handoff scenarios** - Give the next reviewer context on your findings
 
 ## Related
 
