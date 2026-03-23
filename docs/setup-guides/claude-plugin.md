@@ -86,7 +86,7 @@ This walks you through:
 
 When setup completes, you'll see confirmation that the MCP server is running and connected.
 
-Once connected, Claude has access to all 17 Recce validation tools: lineage analysis, Column-Level Lineage, row-level Value Diff, distribution comparisons, and more. Try asking questions about your data changes:
+Once connected, Claude has access to the full set of Recce validation tools, including lineage analysis, Column-Level Lineage, row-level Value Diff, distribution comparisons, and more. Try asking questions about your data changes:
 
 ```
 You: What schema changes happened in my current branch?
