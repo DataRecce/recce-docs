@@ -61,7 +61,7 @@ The user can override: request full workflow on a small edit, or lightweight on 
 2. Delegate to `recce-team:writing-content` which handles:
    - Planning (action types, doc types, source materials)
    - Structure approval
-   - Drafting in `drafts/` folder
+   - Drafting content under `docs/` in the appropriate section
    - QA review (`/recce-team:qa`)
    - AISEO review (`/recce-team:aiseo-review`)
 3. Apply MkDocs conventions below on top of the drafted content
@@ -105,11 +105,22 @@ title: [Descriptive Title]
 
 ### Image format
 
-Always use the standardized figure format with shadow styling:
+Use the standardized figure format with shadow styling. The image path is relative to the current page location:
+
+For pages in subdirectories (e.g., `docs/setup-guides/connect-git.md`):
 
 ```markdown
 <figure markdown>
   ![Alt text](../assets/images/section/filename.gif){: .shadow}
+  <figcaption>Description of what the image shows</figcaption>
+</figure>
+```
+
+For top-level pages (e.g., `docs/index.md`):
+
+```markdown
+<figure markdown>
+  ![Alt text](assets/images/section/filename.gif){: .shadow}
   <figcaption>Description of what the image shows</figcaption>
 </figure>
 ```

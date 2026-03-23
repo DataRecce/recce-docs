@@ -34,7 +34,7 @@ When reviewing pull requests that modify files under `docs/`, `mkdocs.yml`, or `
 
 - Page title (H1): Title Case
 - H2 and below: Sentence case (only capitalize first word)
-- Images must use the figure format with shadow styling:
+- Images must use the figure format with shadow styling. Path is relative to the page location (`../assets/images/` for subdirectory pages, `assets/images/` for top-level pages):
   ```
   <figure markdown>
     ![Alt text](../assets/images/section/filename.gif){: .shadow}
