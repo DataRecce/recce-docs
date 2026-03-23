@@ -8,7 +8,7 @@ description: >-
 
 # Environment Best Practices
 
-Recce compares a _base environment_ (your production or staging reference) against a _current environment_ (your PR changes). Reliable environments produce reliable validation results. When source data drifts, branches fall behind, or environments collide, Recce comparisons produce misleading results.
+Recce compares a **base** environment (your production or staging reference) against a **current** environment (your PR changes). Reliable environments produce reliable validation results. When source data drifts, branches fall behind, or environments collide, Recce comparisons produce misleading results.
 
 This guide walks you through preparing environments for accurate, efficient data validation, starting with the simplest setup and building up as needed.
 
@@ -91,9 +91,8 @@ For custom setups, upload artifacts to cloud storage (S3, GCS, Azure Blob) or us
 
 If a PR runs after other PRs merge to main, the comparison mixes changes from the current PR with changes from other merged PRs. This produces results that don't accurately reflect the current PR's impact.
 
-**GitHub:** Enable [branch protection](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch) to show when PRs are outdated.
-
-**CI check:** Add a workflow step to verify the PR is up-to-date:
+- **GitHub:** Enable [branch protection](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch) to show when PRs are outdated.
+- **CI check:** Add a workflow step to verify the PR is up-to-date:
 
 ```yaml
 - name: Check if PR is up-to-date

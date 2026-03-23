@@ -10,8 +10,8 @@ description: >-
 
 When comparing production (built with `target.name = 'prod'`) against a PR (built with `target.name = 'ci'`), some models produce different SQL, leading to data differences that have nothing to do with your code changes. This guide explains why it happens and how to fix it.
 
-!!! tip "Prerequisite"
-    Complete the [Environment Best Practices](environment-best-practices.md) guide first. This page is for teams that found environment-dependent SQL patterns using the diagnostic grep in that guide.
+## Prerequisite
+- [x] Complete the [Environment Best Practices](environment-best-practices.md) guide first. This page is for teams that found environment-dependent SQL patterns using the diagnostic grep in that guide.
 
 ## Why False Alarms Happen
 
@@ -74,18 +74,22 @@ env:
 
 Both targets share the same `target.name` behavior, so environment-dependent Jinja branches resolve identically.
 
+**Before: Shared Production Base**
+
 ```mermaid
 graph TD
-    subgraph before["Before: Shared Production Base"]
-        P1["Production<br/>(target: prod)<br/>→ takes 'if' branch"] --> R1["Recce"]
-        C1["PR Current<br/>(target: ci)<br/>→ takes 'else' branch"] --> R1
-        R1 --> FA["False alarm:<br/>different SQL branches"]
-    end
-    subgraph after["After: Isolated PR Base"]
-        P2["PR Base<br/>(target: pr_base)<br/>→ takes 'else' branch"] --> R2["Recce"]
-        C2["PR Current<br/>(target: pr_current)<br/>→ takes 'else' branch"] --> R2
-        R2 --> OK["Same SQL branches:<br/>differences = real code changes"]
-    end
+    P1["Production<br/>(target: prod)<br/>→ takes 'if' branch"] --> R1["Recce"]
+    C1["PR Current<br/>(target: ci)<br/>→ takes 'else' branch"] --> R1
+    R1 --> FA["False alarm:<br/>different SQL branches"]
+```
+
+**After: Isolated PR Base**
+
+```mermaid
+graph TD
+    P2["PR Base<br/>(target: pr_base)<br/>→ takes 'else' branch"] --> R2["Recce"]
+    C2["PR Current<br/>(target: pr_current)<br/>→ takes 'else' branch"] --> R2
+    R2 --> OK["Same SQL branches:<br/>differences = real code changes"]
 ```
 
 ### What Changes in CI
