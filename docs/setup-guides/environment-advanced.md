@@ -77,7 +77,7 @@ Both targets share the same `target.name` behavior, so environment-dependent Jin
 **Before: Shared Production Base**
 
 ```mermaid
-graph TD
+graph LR
     P1["Production<br/>(target: prod)<br/>→ takes 'if' branch"] --> R1["Recce"]
     C1["PR Current<br/>(target: ci)<br/>→ takes 'else' branch"] --> R1
     R1 --> FA["False alarm:<br/>different SQL branches"]
@@ -86,7 +86,7 @@ graph TD
 **After: Isolated PR Base**
 
 ```mermaid
-graph TD
+graph LR
     P2["PR Base<br/>(target: pr_base)<br/>→ takes 'else' branch"] --> R2["Recce"]
     C2["PR Current<br/>(target: pr_current)<br/>→ takes 'else' branch"] --> R2
     R2 --> OK["Same SQL branches:<br/>differences = real code changes"]
