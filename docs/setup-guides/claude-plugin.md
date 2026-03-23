@@ -3,7 +3,7 @@ title: Recce Claude Plugin - AI-Assisted dbt Data Validation in Claude Code
 description: >-
   Install and use the Recce Claude Plugin to validate dbt data changes
   directly in Claude Code. Automates MCP server setup, artifact generation,
-  and provides slash commands for schema diff, row count diff, and PR review.
+  and provides Column-Level Lineage, Value Diff, Schema Diff, and more.
 ---
 
 # Recce Claude Plugin for Claude Code
@@ -86,7 +86,7 @@ This walks you through:
 
 When setup completes, you'll see confirmation that the MCP server is running and connected.
 
-Once connected, Claude has access to the full set of Recce validation tools, including lineage analysis, Column-Level Lineage, row-level Value Diff, distribution comparisons, and more. Try asking questions about your data changes:
+Once connected, Claude has access to the full set of Recce validation tools, including Lineage Diff, Column-Level Lineage, row-level Value Diff, Top-K Diff, Histogram Diff, and more. Try asking questions about your data changes:
 
 ```
 You: What schema changes happened in my current branch?
