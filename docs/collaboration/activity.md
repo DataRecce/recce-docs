@@ -29,7 +29,7 @@ Activity captures all events for a check:
 
 ## Sync Comments to GitHub/GitLab
 
-Comments you post in Activity automatically sync to the PR or MR. Each comment appears as a new comment on GitHub or GitLab, with a link back to the specific check in Recce.
+When your Git provider is connected to Recce, comments you post in Activity automatically sync to the PR or MR. Each comment appears as a new comment on GitHub or GitLab, with a link back to the specific check in Recce.
 
 ![Post a comment in Recce Activity](../assets/images/collaboration/recce-activity-mention.png){: .shadow}
 
@@ -39,7 +39,9 @@ The comment appears on the PR/MR:
 
 You can @mention teammates using their GitHub or GitLab username (e.g., `@john-doe`). They'll receive a notification through GitHub or GitLab. Use the exact username—Recce doesn't currently map display names to usernames.
 
-This works the same way on GitLab.
+This works the same way on GitLab:
+
+![Comment posted to GitLab MR](../assets/images/collaboration/gitlab-mr-comment-from-recce.png){: .shadow}
 
 ## Related
 
