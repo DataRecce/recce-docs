@@ -201,7 +201,7 @@ The MCP server exposes these tools to your AI agent. Tools are grouped by availa
 
 ### Metadata and lineage tools
 
-These tools are always available, even in preview or read-only mode:
+These tools are always available because they only require dbt artifacts and do not query your data warehouse:
 
 | Tool | Description |
 |------|-------------|
@@ -229,7 +229,7 @@ These tools query your data warehouse and require server mode:
 
 ### Check management tools
 
-These tools manage persistent validation checks in the current session:
+These tools manage validation checks stored in the running Recce server instance (checks persist for the life of the server process):
 
 | Tool | Description |
 |------|-------------|
