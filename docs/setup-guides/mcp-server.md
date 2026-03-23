@@ -214,7 +214,7 @@ These tools are always available because they only require dbt artifacts and do 
 
 ### Diff tools
 
-These tools query your data warehouse and require server mode:
+These tools query your data warehouse and require an active warehouse connection:
 
 | Tool | Description |
 |------|-------------|
@@ -260,7 +260,7 @@ This planning phase helps the agent skip irrelevant models and focus warehouse q
 
 ### 2. Validate the data
 
-With a clear picture of what changed, the agent runs diff tools against the data warehouse:
+With a clear picture of what changed, the agent runs diff tools to validate the data:
 
 - **`schema_diff`**: detects structural changes (added, removed, or type-changed columns)
 - **`row_count_diff`**: checks for unexpected volume changes
@@ -344,6 +344,7 @@ No. The MCP server is part of Recce OSS and free to use. [Recce Cloud](https://c
 ## Next Steps
 
 - [Recce Claude Plugin](claude-plugin.md): guided setup for Claude Code users with interactive commands
+- [Column-Level Lineage](../what-you-can-explore/column-level-lineage.md): trace how column changes propagate through your model graph
 - [Row Count Diff](../what-you-can-explore/data-diffing.md#row-count-diff): understand row count validation
 - [Profile Diff](../what-you-can-explore/data-diffing.md#profile-diff): statistical profiling comparisons
 - [Value Diff](../what-you-can-explore/data-diffing.md#value-diff): row-by-row data validation
