@@ -3,7 +3,7 @@ title: Recce MCP Server — Data Validation for AI Agents
 description: >-
   Connect the Recce MCP server to Claude Code, Cursor, or Windsurf to validate
   data changes through natural language. Supports Schema Diff, Row Count Diff,
-  Value Diff, and more via the Model Context Protocol (MCP).
+  Value Diff, Column-Level Lineage, and more via the Model Context Protocol (MCP).
 ---
 
 # Recce MCP Server
@@ -25,6 +25,8 @@ Once connected, ask your AI agent questions like:
 - "Show me the Row Count Diff for all modified models"
 - "Are there any breaking column changes in this PR?"
 - "Profile the orders table and compare it against production"
+- "Which downstream columns are affected by this change?"
+- "Run a Value Diff on the orders model and show me which columns changed"
 - "Run a custom SQL query against both dev and prod and show the differences"
 
 Your agent translates these into the appropriate Recce tool calls and returns the results directly in your conversation.
@@ -195,33 +197,86 @@ Choose the tab for your AI agent. **stdio** is simpler (no separate process to m
 
 ## Available tools
 
-The MCP server exposes these tools to your AI agent:
+The MCP server exposes these tools to your AI agent. Tools are grouped by availability — some work in all modes, while diff tools require a running server with warehouse access.
+
+### Metadata and lineage tools
+
+These tools are always available, even in preview or read-only mode:
 
 | Tool | Description |
 |------|-------------|
-| `lineage_diff` | Compare data lineage between base and current branches |
+| `lineage_diff` | Compare data lineage between base and current branches. Returns nodes with change status and impact analysis |
 | `schema_diff` | Detect schema changes (added, removed, or modified columns and type changes) |
-| `row_count_diff` | Compare row counts between branches |
-| `profile_diff` | Statistical profiling comparison (min, max, avg, nulls, and more) |
-| `query` | Run arbitrary SQL against your warehouse |
+| `get_model` | Get column details (names, types, constraints) for a model from both base and current branches |
+| `get_cll` | Get Column-Level Lineage (CLL): trace which downstream columns are affected by changes |
+| `select_nodes` | Resolve dbt selector expressions to node IDs. Useful for planning before running diffs |
+| `get_server_info` | Get server context including adapter type, git branch, and supported tools |
+
+### Diff tools
+
+These tools query your data warehouse and require server mode:
+
+| Tool | Description |
+|------|-------------|
+| `row_count_diff` | Compare row counts between branches for specified models |
+| `profile_diff` | Statistical profiling comparison (min, max, avg, distinct count, nulls, and more) |
+| `value_diff` | Compare row-level values using primary key join. Returns per-column match rates |
+| `value_diff_detail` | Get detailed row-level diff showing actual changed, added, and removed values |
+| `top_k_diff` | Compare top-K categorical value distributions between branches |
+| `histogram_diff` | Compare numeric or datetime column distributions as histograms |
+| `query` | Run arbitrary SQL against your data warehouse (supports Jinja and dbt macros) |
 | `query_diff` | Run the same SQL against both branches and compare results |
-| `list_checks` | List all validation checks in the current session with their status |
+
+### Check management tools
+
+These tools manage persistent validation checks in the current session:
+
+| Tool | Description |
+|------|-------------|
+| `list_checks` | List all validation checks with their status and approval state |
 | `run_check` | Run a specific validation check by ID |
+| `create_check` | Create a persistent checklist item from analysis findings. Idempotent — updates existing checks with matching type and parameters |
 
-### Check types available through `run_check`
-
-These check types are accessible as preset checks configured in `recce.yml` or created in the Recce instance. Your AI agent runs them with the `run_check` tool:
-
-| Check type | Description |
-|------------|-------------|
-| `value_diff` | Compare actual data values row by row between branches |
-| `top_k_diff` | Compare top-K value distributions |
-| `histogram_diff` | Compare value distributions as histograms |
-
-See [Preset checks](../collaboration/preset-checks.md) for how to configure these check types.
+Checks can also be configured as preset checks in `recce.yml`. See [Preset checks](../collaboration/preset-checks.md) for details.
 
 !!! note
     If base artifacts (`target-base/`) are not present, the server starts in **single-environment mode** — all tools remain available, but diff results show no changes. Generate base artifacts to enable real comparisons.
+
+## How agents use these tools
+
+The metadata and diff tools work together in a structured validation workflow. A well-configured AI agent follows this pattern:
+
+### 1. Understand the change
+
+The agent starts with metadata tools to build context before querying the data warehouse:
+
+- **`get_server_info`**: confirms the connection is ready and which tools are available
+- **`lineage_diff`**: identifies which models changed and which downstream models are impacted
+- **`select_nodes`**: resolves dbt selectors (like `state:modified+`) to specific node IDs for targeted analysis
+- **`get_model`**: inspects column details of individual models before diffing
+- **`get_cll`**: traces Column-Level Lineage to understand which downstream columns are affected
+
+This planning phase helps the agent skip irrelevant models and focus warehouse queries on what matters.
+
+### 2. Validate the data
+
+With a clear picture of what changed, the agent runs diff tools against the data warehouse:
+
+- **`schema_diff`**: detects structural changes (added, removed, or type-changed columns)
+- **`row_count_diff`**: checks for unexpected volume changes
+- **`profile_diff`**: compares statistical profiles (min, max, avg, distinct count, nulls)
+- **`value_diff`** / **`value_diff_detail`**: compares actual row-level values using primary keys
+- **`top_k_diff`** / **`histogram_diff`**: detects distribution shifts in categorical or numeric columns
+- **`query`** / **`query_diff`**: runs custom SQL for cases not covered by built-in diffs
+
+### 3. Persist findings as checks
+
+After analysis, the agent calls **`create_check`** to save important findings as persistent checklist items. Each check runs automatically to produce verifiable evidence. These checks appear in Recce's validation checklist and PR comments, so reviewers can verify the results independently.
+
+The agent can also use **`list_checks`** and **`run_check`** to work with existing preset checks configured in `recce.yml`.
+
+!!! tip "Why metadata tools matter"
+    Without `select_nodes` and `get_cll`, an agent would guess which models to validate or diff every model in the project. Metadata tools let the agent focus on what actually changed and what is impacted — reducing warehouse costs and response time.
 
 ## Troubleshooting
 

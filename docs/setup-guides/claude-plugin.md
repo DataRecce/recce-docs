@@ -14,7 +14,7 @@ If you're reviewing dbt pull requests with Claude Code, the plugin connects Clau
 
 ## Why use the plugin?
 
-Without Recce, reviewing data changes in a dbt PR means manually querying your warehouse, comparing results across branches, and hoping you've checked the right models. With the Recce Claude Plugin, Claude does this for you. It runs schema diffs, row count comparisons, and statistical profiles across your modified models and reports back in plain language.
+Without Recce, reviewing data changes in a dbt PR means manually querying your warehouse, comparing results across branches, and hoping you've checked the right models. With the Recce Claude Plugin, Claude does this for you. It analyzes your model lineage, traces Column-Level Lineage, runs Schema Diff, Row Count Diff, Value Diff, and Profile Diff across your modified models and reports back in plain language.
 
 The plugin also handles all of the setup that the [MCP server](mcp-server.md) requires manually:
 
@@ -86,13 +86,27 @@ This walks you through:
 
 When setup completes, you'll see confirmation that the MCP server is running and connected.
 
-Once connected, Claude has access to all of Recce's validation tools. Try asking a question about your data changes:
+Once connected, Claude has access to all 17 Recce validation tools: lineage analysis, Column-Level Lineage, row-level Value Diff, distribution comparisons, and more. Try asking questions about your data changes:
 
 ```
 You: What schema changes happened in my current branch?
 ```
 
 Claude calls Recce's `schema_diff` tool behind the scenes and responds with a summary of added, removed, or modified columns across your changed models.
+
+```
+You: Which downstream columns are affected by my changes to the orders model?
+```
+
+Claude uses `get_cll` (Column-Level Lineage) to trace the impact through your model graph.
+
+```
+You: Run a Value Diff on the customers model using customer_id as the primary key
+```
+
+Claude runs `value_diff` to compare row-level values between branches and reports per-column match rates.
+
+See the [MCP Server page](mcp-server.md#available-tools) for the full list of available tools and [how agents use them](mcp-server.md#how-agents-use-these-tools) in a structured validation workflow.
 
 ## Available commands
 
@@ -191,7 +205,8 @@ Yes. The plugin works with the open source version for local validation. [Cloud]
 
 ## Next Steps
 
-- [Recce MCP Server](mcp-server.md): configure Recce with Cursor, Windsurf, and other AI agents, or explore advanced MCP options
-- [Row Count Diff](../what-you-can-explore/data-diffing.md#row-count-diff): understand row count validation
+- [Recce MCP Server](mcp-server.md): full tool reference, agent workflow guide, and configuration for Cursor, Windsurf, and other AI agents
+- [Column-Level Lineage](../what-you-can-explore/column-level-lineage.md): understand how column changes propagate through your models
+- [Value Diff](../what-you-can-explore/data-diffing.md#value-diff): row-level data validation
 - [Profile Diff](../what-you-can-explore/data-diffing.md#profile-diff): statistical profiling comparisons
 - [CI/CD Setup](environment-setup.md): automate validation in your workflow
