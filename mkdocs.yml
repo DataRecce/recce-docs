@@ -60,6 +60,7 @@ nav:
           - Connect Data Warehouse: setup-guides/connect-to-warehouse.md
           - Environment Setup: setup-guides/environment-setup.md
           - Environment Best Practices: setup-guides/environment-best-practices.md
+          - Advanced Environment Setup: setup-guides/environment-advanced.md
           - dbt Cloud Setup: setup-guides/dbt-cloud-setup.md
           - Setup CD: setup-guides/setup-cd.md
           - Setup CI: setup-guides/setup-ci.md

@@ -1,33 +1,36 @@
 ---
 title: Environment Best Practices
 description: >-
-  Best practices for preparing reliable dbt validation environments. Avoid
-  misleading data diffing results from source drift, stale branches, and environment collisions.
+  How to set up reliable dbt environments for Recce data validation.
+  Start with a shared production base and per-PR schemas, then diagnose
+  environment-dependent SQL patterns that cause false alarms.
 ---
 
 # Environment Best Practices
 
-Unreliable comparison environments produce misleading validation results. When source data drifts, branches fall behind, or environments collide, you cannot trust what Recce reports.
+Recce compares a **base** environment (your production or staging reference) against a **current** environment (your PR changes). Reliable environments produce reliable validation results. When source data drifts, branches fall behind, or environments collide, Recce comparisons produce misleading results.
 
-This guide covers strategies to prepare reliable, efficient environments for Recce data validation. Recce compares a *base environment* (production or staging, representing your main branch) against a *current environment* (representing your pull request branch).
+This guide walks you through preparing environments for accurate, efficient data validation, starting with the simplest setup and building up as needed.
 
-## When to use this guide
+## Start Simple: Shared Production Base
 
-- Setting up CI/CD for Recce for the first time
-- Seeing inconsistent diff results across PRs
-- Managing warehouse costs from accumulated PR environments
-- Troubleshooting validation results that don't match expectations
+Most teams already have two environments running:
 
-## Challenges this guide addresses
+1. **Production**: your main branch, built on a schedule (CD job, dbt Cloud, Airflow, etc.)
+2. **PR build**: a CI job triggered on each pull request that runs `dbt build`
 
-Several factors can affect comparison accuracy:
+The simplest Recce setup: use production as your base, and the PR build as your current.
 
-- Source data updates continuously
-- Transformations take time to run
-- Other pull requests (PRs) merge into the base branch
-- Generated environments accumulate in the warehouse
+```mermaid
+graph LR
+    A["Production<br/>(scheduled CD job)<br/>= base"] --> C["Recce<br/>Compare"]
+    B["PR CI Build<br/>(triggered per PR)<br/>= current"] --> C
+```
 
-## Use per-PR schemas
+!!! info
+    This is where most teams should start. Production already exists, just point Recce at it. No extra builds, no extra configuration.
+
+## Use Per-PR Schemas
 
 Each PR should have its own isolated schema. This prevents interference between concurrent PRs and makes cleanup straightforward.
 
@@ -49,64 +52,24 @@ Benefits:
 
 See [Environment Setup](environment-setup.md) for detailed configuration.
 
-## Prepare a single base environment
+## Slim CI Works Out of the Box
 
-Use one consistent base environment for all PRs to compare against. Options:
+Many teams optimize PR builds using dbt's slim CI pattern, only building models that changed and their downstream dependencies:
 
-| Base Environment | Characteristics | Best For |
-|------------------|-----------------|----------|
-| Production | Latest merged code, full data | Accurate production comparison |
-| Staging | Latest merged code, limited data | Faster comparisons, lower cost |
-
-If using staging as base:
-
-- Ensure transformed results reflect the latest commit of the base branch
-- Use the same source data as PR environments
-- Use the same transformation logic as PR environments
-
-The staging environment should match PR environments as closely as possible, differing only in git commit.
-
-## Limit source data range
-
-Most data is temporal. Using only recent data reduces transformation time while still validating correctness.
-
-**Strategy:** Use data from the last month, excluding the current week. This ensures consistent results regardless of when transformations run.
-
-```sql
-SELECT *
-FROM {{ source('your_source_name', 'orders') }}
-{% if target.name != 'prod' %}
-WHERE
-    order_date >= DATEADD(month, -1, CURRENT_DATE)
-    AND order_date < DATE_TRUNC('week', CURRENT_DATE)
-{% endif %}
+```bash
+dbt build --select state:modified+ --defer --state prod-artifacts/
 ```
 
-![Diagram showing how limiting data to the previous month excluding current week creates consistent comparison windows](../assets/images/setup-guides/prep-env-limit-data-range.png){: .shadow}
+Unchanged models are resolved from production via `--defer`, so you only pay for what changed. Recce works with slim CI. It compares whatever was built in the PR environment against production.
 
-Benefits:
+For many projects, this is the complete setup.
 
-- Faster transformation execution
-- Consistent comparison results
-- Reduced warehouse costs
-
-## Reduce source data volatility
-
-If source data updates frequently (hourly or more), comparison results can vary based on timing rather than code changes.
-
-**Strategies:**
-
-- **Zero-copy clone** (Snowflake, BigQuery, Databricks): Freeze source data at a specific point in time
-- **Weekly snapshots**: Update source data weekly to reduce variability
-
-![Diagram showing zero-copy clone creating a frozen snapshot of source data for consistent CI comparisons](../assets/images/setup-guides/prep-env-clone-source.png){: .shadow}
-
-## Keep base environment current
+## Keep Your Base Environment Current
 
 The base environment can become outdated in two scenarios:
 
-1. **New source data**: If you update data weekly, update the base environment at least weekly
-2. **PRs merged to main**: Trigger base environment update on merge events
+1. **New source data**: if you update data weekly, update the base environment at least weekly
+2. **PRs merged to main**: the base no longer reflects the latest code
 
 Configure your CD workflow to run:
 
@@ -115,35 +78,21 @@ Configure your CD workflow to run:
 
 See [Setup CD](setup-cd.md) for workflow configuration.
 
-## Obtain artifacts for environments
+## Obtain Artifacts for Environments
 
 Recce uses base and current environment artifacts (`manifest.json`, `catalog.json`) to find corresponding tables in the data warehouse for comparison.
 
-**Recommended approaches:**
+- **Recce Cloud**: Automatic artifact management via `recce-cloud upload`. See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md).
+- **dbt Cloud**: Download artifacts from dbt Cloud jobs. See [dbt Cloud Setup](dbt-cloud-setup.md).
 
-- **Recce Cloud** - Automatic artifact management via `recce-cloud upload`. See [Setup CD](setup-cd.md) and [Setup CI](setup-ci.md).
-- **dbt Cloud** - Download artifacts from dbt Cloud jobs. See dbt Cloud Setup (separate guide).
+For custom setups, upload artifacts to cloud storage (S3, GCS, Azure Blob) or use GitHub Actions artifacts.
 
-**Alternative approaches** (for custom setups):
+## Keep PR Branch in Sync
 
-- **Cloud storage** - Upload artifacts to S3, GCS, or Azure Blob in CI
-- **GitHub Actions artifacts** - Use `gh run download` to retrieve from workflow runs
-- **Stateless** - Checkout the base branch and run `dbt docs generate` on-demand
+If a PR runs after other PRs merge to main, the comparison mixes changes from the current PR with changes from other merged PRs. This produces results that don't accurately reflect the current PR's impact.
 
-## Keep PR branch in sync with base
-
-If a PR runs after other PRs merge to main, the comparison mixes:
-
-- Changes from the current PR
-- Changes from other merged PRs
-
-This produces comparison results that don't accurately reflect the current PR's impact.
-
-![Diagram showing how an outdated PR branch mixes changes from other merged PRs into comparison results](../assets/images/setup-guides/prep-env-pr-outdated.png){: .shadow}
-
-**GitHub**: Enable [branch protection](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch) to show when PRs are outdated.
-
-**CI check**: Add a workflow step to verify the PR is up-to-date:
+- **GitHub:** Enable [branch protection](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch) to show when PRs are outdated.
+- **CI check:** Add a workflow step to verify the PR is up-to-date:
 
 ```yaml
 - name: Check if PR is up-to-date
@@ -160,13 +109,13 @@ This produces comparison results that don't accurately reflect the current PR's 
     fi
 ```
 
-## Clean up PR environments
+## Clean Up PR Environments
 
 As PRs accumulate, so do generated schemas. Implement cleanup to manage warehouse storage.
 
-**On PR close**: Create a workflow that drops the PR schema when the PR closes.
+**On PR close:** Create a workflow that drops the PR schema when the PR closes.
 
-```jinja
+```sql
 {% macro clear_schema(schema_name) %}
 {% set drop_schema_command = "DROP SCHEMA IF EXISTS " ~ schema_name ~ " CASCADE;" %}
 {% do run_query(drop_schema_command) %}
@@ -175,22 +124,41 @@ As PRs accumulate, so do generated schemas. Implement cleanup to manage warehous
 
 Run the cleanup:
 
-```shell
+```bash
 dbt run-operation clear_schema --args "{'schema_name': 'pr_123'}"
 ```
 
-**Scheduled cleanup**: Remove schemas not used for a week.
+**Scheduled cleanup:** Remove schemas not used for a week.
 
-## Example configuration
+## Example Configuration
 
-| Environment | Schema | When to Run | Count | Data Range |
-|-------------|--------|-------------|-------|------------|
-| Production | `public` | Daily | 1 | All |
-| Staging | `staging` | Daily + on merge | 1 | 1 month, excluding current week |
-| PR | `pr_<number>` | On push | # of open PRs | 1 month, excluding current week |
+| Environment | Schema | When to Run | Count |
+|-------------|--------|-------------|-------|
+| Production | `public` | Daily | 1 |
+| PR | `pr_<number>` | On push | # of open PRs |
 
-## Next steps
+## Seeing Unexpected Diffs?
 
-- [Environment Setup](environment-setup.md) - Technical configuration for profiles.yml and CI/CD
-- [Setup CD](setup-cd.md) - Configure automatic baseline updates
-- [Setup CI](setup-ci.md) - Configure PR validation
+If Recce shows large row count differences or data mismatches on models you didn't change, your project may contain **environment-dependent SQL**: patterns that produce different output depending on when or where models are built.
+
+Common examples:
+
+- **`target.name` / `target.schema`**: conditional logic that produces different SQL in prod vs CI (e.g., `{% if target.name == 'prod' %}`)
+- **`current_date()` / `current_timestamp()` / `now()`**: time-dependent filters that shift between builds
+- **Limited source data ranges**: many teams filter sources to recent data in non-prod environments (e.g., `{% if target.name != 'prod' %} WHERE order_date >= ... {% endif %}`). This is a common and sensible cost optimization, but it means production has all data while CI has a subset, producing row count differences unrelated to code changes.
+
+Quick check: scan your project for these patterns:
+
+```bash
+grep -rn "target\.name\|target\.schema\|current_date\|current_timestamp\|now()" models/
+```
+
+- **No matches?** The shared production base setup above is all you need. You're done.
+- **Matches found?** See [Advanced Environment Setup](environment-advanced.md) for strategies to eliminate false alarms.
+
+## Next Steps
+
+- [Environment Setup](environment-setup.md): Technical configuration for profiles.yml and CI/CD
+- [Setup CD](setup-cd.md): Configure automatic baseline updates
+- [Setup CI](setup-ci.md): Configure PR validation
+- [Advanced Environment Setup](environment-advanced.md): Eliminate false alarms from environment-dependent SQL
