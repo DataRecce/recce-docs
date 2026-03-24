@@ -33,7 +33,7 @@ When Recce compares production against your PR, these models produce literally d
 
 ## The Fix: Session Base
 
-Build both environments the same way. Instead of comparing production against the PR, build a dedicated **session base** for the PR using a CI target so both base and current take the same Jinja branches.
+Build both environments the same way. Instead of comparing production against the PR, build a dedicated **session base** for the PR using a CI target so both base and current produce the same SQL.
 
 ### Configure profiles.yml
 
@@ -72,7 +72,7 @@ env:
   SNOWFLAKE_SCHEMA_CURRENT: "pr_${{ github.event.pull_request.number }}"
 ```
 
-Both targets share the same `target.name` behavior, so environment-dependent Jinja branches resolve identically.
+Both targets share the same `target.name` behavior, so both produce the same SQL.
 
 **Before: Shared Production Base**
 
@@ -99,7 +99,7 @@ Instead of one build, you run **two builds** per PR:
 1. **Session base**: checkout the merge base commit (where PR branched from main), build with `--target pr_base`
 2. **Current**: checkout the PR branch, build with `--target pr_current`
 
-Both use CI targets, so `target.name`, `current_date()`, etc. resolve the same way. Same SQL, same Jinja branches. Differences reflect actual code changes only.
+Both use CI targets, so `target.name`, `current_date()`, etc. resolve the same way. Differences reflect actual code changes only.
 
 !!! info "Why merge base, not tip of main?"
     If main has moved forward since the PR was created (other PRs merged), building from tip of main would include unrelated changes. The merge base isolates **this PR's changes only**, matching how GitHub computes its PR diff.

@@ -143,7 +143,7 @@ If Recce shows large row count differences or data mismatches on models you didn
 
 Common examples:
 
-- **`target.name` / `target.schema`**: Jinja branches that behave differently in prod vs CI (e.g., `{% if target.name == 'prod' %}`)
+- **`target.name` / `target.schema`**: conditional logic that produces different SQL in prod vs CI (e.g., `{% if target.name == 'prod' %}`)
 - **`current_date()` / `current_timestamp()` / `now()`**: time-dependent filters that shift between builds
 - **Limited source data ranges**: many teams filter sources to recent data in non-prod environments (e.g., `{% if target.name != 'prod' %} WHERE order_date >= ... {% endif %}`). This is a common and sensible cost optimization, but it means production has all data while CI has a subset, producing row count differences unrelated to code changes.
 
