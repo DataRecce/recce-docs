@@ -2,8 +2,8 @@
 title: Advanced Environment Setup
 description: >-
   Fix false alarms in Recce caused by environment-dependent SQL patterns.
-  Build isolated PR bases with matching CI targets so data differences
-  reflect actual code changes only.
+  Build a session base for each PR with matching CI targets so data
+  differences reflect actual code changes only.
 ---
 
 # Advanced Environment Setup
@@ -31,9 +31,9 @@ When Recce compares production against your PR, these models produce literally d
 !!! note "Incremental models are fine"
     Incremental models are **not** inherently problematic. In a fresh CI build, `is_incremental()` evaluates to `false` in both environments, so both run the same `else` branch. The real issue is environment-dependent patterns in **any** materialization type.
 
-## The Fix: Isolated PR Base
+## The Fix: Session Base
 
-Build both environments the same way. Instead of comparing production against the PR, build a dedicated **PR base** using a CI target so both base and current take the same Jinja branches.
+Build both environments the same way. Instead of comparing production against the PR, build a dedicated **session base** for the PR using a CI target so both base and current take the same Jinja branches.
 
 ### Configure profiles.yml
 
@@ -83,11 +83,11 @@ graph LR
     R1 --> FA["False alarm:<br/>different SQL branches"]
 ```
 
-**After: Isolated PR Base**
+**After: Session Base for the PR**
 
 ```mermaid
 graph LR
-    P2["PR Base<br/>(target: pr_base)<br/>→ takes 'else' branch"] --> R2["Recce"]
+    P2["Session Base<br/>(target: pr_base)<br/>→ takes 'else' branch"] --> R2["Recce"]
     C2["PR Current<br/>(target: pr_current)<br/>→ takes 'else' branch"] --> R2
     R2 --> OK["Same SQL branches:<br/>differences = real code changes"]
 ```
@@ -96,8 +96,8 @@ graph LR
 
 Instead of one build, you run **two builds** per PR:
 
-1. **PR base**: checkout the merge base commit (where PR branched from main), build with `--target pr_base`
-2. **PR current**: checkout the PR branch, build with `--target pr_current`
+1. **Session base**: checkout the merge base commit (where PR branched from main), build with `--target pr_base`
+2. **Current**: checkout the PR branch, build with `--target pr_current`
 
 Both use CI targets, so `target.name`, `current_date()`, etc. resolve the same way. Same SQL, same Jinja branches. Differences reflect actual code changes only.
 
@@ -140,7 +140,7 @@ The deterministic models are already correct as clones. Only the environment-dep
 
 For teams with no environment-dependent SQL patterns. See [Environment Best Practices](environment-best-practices.md).
 
-### Scenario B: Isolated PR Base, Full Rebuild
+### Scenario B: Session Base, Full Rebuild
 
 For small projects (< 50 models) with environment-dependent SQL.
 
@@ -149,12 +149,17 @@ env:
   PR_BRANCH: ${{ github.head_ref }}
 
 steps:
-  - name: Build PR Base (from merge base)
+  - name: Build Session Base (from merge base)
     run: |
       MERGE_BASE=$(git merge-base origin/main ${{ env.PR_BRANCH }})
       git checkout $MERGE_BASE
       dbt build --target pr_base
       dbt docs generate --target pr_base
+
+  - name: Upload Session Base Artifacts to Recce Cloud
+    run: recce-cloud upload --session-base
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   - name: Build PR Current
     run: |
@@ -162,14 +167,13 @@ steps:
       dbt build --target pr_current
       dbt docs generate --target pr_current
 
-  - name: Upload to Recce Cloud
-    run: |
-      recce-cloud upload \
-        --base-artifacts target_base/ \
-        --current-artifacts target_current/
+  - name: Upload Current Artifacts to Recce Cloud
+    run: recce-cloud upload
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-### Scenario C: Isolated PR Base, Optimized
+### Scenario C: Session Base, Optimized
 
 For large projects: combines clone, selective rebuild, and data sampling.
 
@@ -183,7 +187,7 @@ steps:
       mkdir -p prod_artifacts/
       aws s3 cp s3://your-bucket/dbt-artifacts/manifest.json prod_artifacts/
 
-  - name: Build PR Base (clone + selective rebuild)
+  - name: Build Session Base (clone + selective rebuild)
     run: |
       MERGE_BASE=$(git merge-base origin/main ${{ env.PR_BRANCH }})
       git checkout $MERGE_BASE
@@ -193,19 +197,23 @@ steps:
         --sample="{'start': '2025-02-01', 'end': '2025-02-28'}"
       dbt docs generate --target pr_base
 
+  - name: Upload Session Base Artifacts to Recce Cloud
+    run: recce-cloud upload --session-base
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   - name: Build PR Current
     run: |
       git checkout ${{ env.PR_BRANCH }}
-      # Use the same date range as PR base
+      # Use the same date range as session base
       dbt build --target pr_current \
         --sample="{'start': '2025-02-01', 'end': '2025-02-28'}"
       dbt docs generate --target pr_current
 
-  - name: Upload to Recce Cloud
-    run: |
-      recce-cloud upload \
-        --base-artifacts target_base/ \
-        --current-artifacts target_current/
+  - name: Upload Current Artifacts to Recce Cloud
+    run: recce-cloud upload
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## Next Steps
