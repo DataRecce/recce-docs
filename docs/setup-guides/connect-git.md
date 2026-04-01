@@ -50,22 +50,40 @@ Then select the repository containing your dbt project. This becomes your Cloud 
 
 ## Connect GitLab
 
-GitLab uses Personal Access Tokens (PAT) instead of OAuth.
+GitLab uses Personal Access Tokens (PAT) instead of OAuth. We recommend creating a dedicated service account so that Recce Cloud PR comments appear as a bot, not as your personal account.
 
-### 1. Create a Personal Access Token
+### 1. Create a Dedicated Service Account (Recommended)
 
-In GitLab: User Settings → Access Tokens → Add new token.
+PR comments posted through the GitLab API appear as the token owner. If you use your personal token, your teammates see comments from *you* rather than from Recce Cloud.
 
-**Required scopes:**
+To avoid this, create a **GitLab service account** for Recce Cloud:
 
-- `api` - Full access (required for PR comments)
-- `read_api` - Read-only alternative (limited functionality)
+1. In GitLab, navigate to your **group Settings > Service Accounts**
+2. Click **Add service account**
+3. Set the name to **Recce Cloud** (username auto-generates)
+4. Click **Create service account**
+5. (Optional) Edit the account to customize the username and upload a Recce avatar
 
-**Expected result:** Token string displayed (copy immediately).
+**Expected result:** Service account appears in the group's member list with a "service account" badge.
 
-### 2. Add Token to Cloud
+Add the service account as a **Developer** member to the projects you want Recce Cloud to access.
 
-Navigate to Settings → Git Provider. Select GitLab, paste token.
+!!! info "Availability"
+    GitLab service accounts are available on GitLab.com Free (up to 100 per group), Premium, and Ultimate. For Self-Managed Free instances where service accounts are unavailable, create a dedicated GitLab user (e.g., `recce-cloud-bot`) instead.
+
+### 2. Create a Personal Access Token
+
+Generate a PAT for your service account (not your personal account):
+
+1. In the service account's settings, click **Manage access tokens > Add new token**
+2. Set a descriptive name (e.g., "Recce Cloud integration")
+3. Select the **`api`** scope (required for PR comments)
+4. Set an expiration date and click **Create**
+5. Copy the token immediately (it cannot be viewed again)
+
+### 3. Add Token to Cloud
+
+Navigate to **Settings > Git Provider** in Recce Cloud. Select GitLab and paste the token.
 
 ## Verify Success
 
@@ -84,6 +102,7 @@ In Cloud, navigate to your repository. You should see:
 | Repository not found | Ensure proper permissions are granted (GitLab: token access, GitHub: app authorized) |
 | Invalid token (GitLab) | Generate new token with `api` scope |
 | Cannot post PR comments (GitLab) | Regenerate token with `api` scope instead of `read_api` |
+| PR comments show as personal user (GitLab) | Create a [service account](#1-create-a-dedicated-service-account-recommended) and use its token instead of your personal token |
 
 ## Next Steps
 
