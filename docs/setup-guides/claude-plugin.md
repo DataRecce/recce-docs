@@ -86,7 +86,7 @@ This walks you through:
 
 When setup completes, you'll see confirmation that the MCP server is running and connected.
 
-Once connected, Claude has access to the full set of Recce validation tools, including Lineage Diff, Column-Level Lineage, row-level Value Diff, Top-K Diff, Histogram Diff, and more. Try asking questions about your data changes:
+Once connected, Claude has access to all Recce validation tools: Lineage Diff, Column-Level Lineage, Value Diff, Top-K Diff, Histogram Diff, and more. Try asking about your data changes:
 
 ```
 You: What schema changes happened in my current branch?
@@ -203,7 +203,7 @@ Recce works with any dbt adapter, including Snowflake, BigQuery, Redshift, Datab
 
 Yes. The plugin works with the open source version for local validation. [Cloud](https://cloud.reccehq.com/) adds automated PR review, team collaboration, and persistent validation history.
 
-## Next Steps
+## Next steps
 
 - [Recce MCP Server](mcp-server.md): full tool reference, agent workflow guide, and configuration for Cursor, Windsurf, and other AI agents
 - [Column-Level Lineage](../what-you-can-explore/column-level-lineage.md): understand how column changes propagate through your models
