@@ -1,0 +1,58 @@
+# Recce Docs
+
+> Recce is a Data Review Agent that validates dbt pull requests before merge. The docs cover Recce Cloud (managed) and Recce OSS (local CLI), with guides for connecting Git and warehouses, running data diffing and column-level lineage, collaborating on checklists, and wiring CI/CD. Use this index to find the right page in one request.
+
+## What's Recce
+
+- [Recce: Data Review Agent for dbt Pull Requests](https://docs.reccehq.com/): product overview and what Recce validates between environments
+- [Cloud vs Open Source](https://docs.reccehq.com/whats-recce/cloud-vs-oss/): compare Recce Cloud and Recce OSS to pick the right fit
+
+## Getting Started
+
+- [Get Started with Recce Cloud](https://docs.reccehq.com/getting-started/start-free-with-cloud/): set up Recce Cloud to automate dbt validation on pull requests
+- [OSS Setup](https://docs.reccehq.com/getting-started/oss-setup/): install and run Recce OSS locally for manual dbt validation
+- [Jaffle Shop Tutorial (OSS)](https://docs.reccehq.com/getting-started/jaffle-shop-tutorial/): hands-on walkthrough using the Jaffle Shop sample dbt project
+
+## Setup Guides
+
+- [Connect Your Repository](https://docs.reccehq.com/setup-guides/connect-git/): connect GitHub or GitLab to Recce Cloud
+- [Connect Data Warehouse](https://docs.reccehq.com/setup-guides/connect-to-warehouse/): connect Snowflake, Databricks, BigQuery, or Redshift
+- [Environment Setup](https://docs.reccehq.com/setup-guides/environment-setup/): configure dbt profiles and CI/CD variables for base vs current comparison
+- [Environment Best Practices](https://docs.reccehq.com/setup-guides/environment-best-practices/): reliable patterns for shared production base and per-PR schemas
+- [Advanced Environment Setup](https://docs.reccehq.com/setup-guides/environment-advanced/): build a session base per PR to silence false alarms from non-deterministic SQL
+- [dbt Cloud Setup](https://docs.reccehq.com/setup-guides/dbt-cloud-setup/): integrate Recce with dbt Cloud artifacts
+- [Setup CD](https://docs.reccehq.com/setup-guides/setup-cd/): automate baseline updates after every merge to main
+- [Setup CI](https://docs.reccehq.com/setup-guides/setup-ci/): validate dbt data changes on every pull request
+- [Claude Plugin](https://docs.reccehq.com/setup-guides/claude-plugin/): use Recce inside Claude Code with automated MCP and artifact setup
+- [MCP Server (AI Agents)](https://docs.reccehq.com/setup-guides/mcp-server/): connect Claude Code, Cursor, or Windsurf to validate data via natural language
+
+## Using Recce
+
+- [Admin Setup](https://docs.reccehq.com/using-recce/admin-setup/): configure your Recce Cloud organization, projects, and members
+- [Data Developer Workflow](https://docs.reccehq.com/using-recce/data-developer/): validate dbt changes through the development lifecycle
+- [Data Reviewer Workflow](https://docs.reccehq.com/using-recce/data-reviewer/): review and approve dbt data changes on pull requests
+- [CLI Commands](https://docs.reccehq.com/using-recce/cli-commands/): command-line reference for Recce Cloud and Recce OSS
+- [Workflow in OSS](https://docs.reccehq.com/using-recce/oss-workflow/): local OSS workflow for state files, checklists, and sharing results
+
+## What You Can Explore
+
+- [Data Review Summary](https://docs.reccehq.com/what-you-can-explore/summary/): AI-generated pull request summary that explains the change and its impact
+- [Lineage Diff](https://docs.reccehq.com/what-you-can-explore/lineage-diff/): visualize added, modified, and removed models between base and current
+- [Code Change](https://docs.reccehq.com/what-you-can-explore/code-change/): inspect SQL and config diffs for each changed model
+- [Column-Level Lineage](https://docs.reccehq.com/what-you-can-explore/column-level-lineage/): trace upstream and downstream relationships at the column level
+- [Impact Radius](https://docs.reccehq.com/what-you-can-explore/impact-radius/): identify downstream models and columns affected by a change
+- [Breaking Change Analysis](https://docs.reccehq.com/what-you-can-explore/breaking-change-analysis/): categorize modified models as breaking, non-breaking, or partial
+- [Data Diffing](https://docs.reccehq.com/what-you-can-explore/data-diffing/): row count diff, profile diff, value diff, top-K diff, histogram diff, and query
+- [Multi-Models](https://docs.reccehq.com/what-you-can-explore/multi-models/): run checks across multiple models at once
+
+## Collaboration
+
+- [Checklist](https://docs.reccehq.com/collaboration/checklist/): save validation checks as proof-of-correctness for the PR
+- [Activity](https://docs.reccehq.com/collaboration/activity/): audit trail of approvals, comments, and edits per check
+- [Preset Checks](https://docs.reccehq.com/collaboration/preset-checks/): turn recurring checks into defaults for every PR
+- [Share](https://docs.reccehq.com/collaboration/share/): share validation results securely with reviewers and stakeholders
+
+## Reference
+
+- [Configuration](https://docs.reccehq.com/technical-concepts/configuration/): recce.yml reference for preset checks and parameters
+- [State File](https://docs.reccehq.com/technical-concepts/state-file/): state file format for validation results, checks, and environment info
