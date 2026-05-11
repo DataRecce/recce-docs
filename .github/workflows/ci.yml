@@ -25,6 +25,27 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install -r requirements.txt 
-      - run: mkdocs gh-deploy --force
-      
+      - run: pip install -r requirements.txt
+      # gh-deploy occasionally hits a transient HTTP 500 from GitHub on the
+      # push to gh-pages (see run 25674953089). Retry a few times before
+      # failing the job so a one-off blip doesn't take docs.reccehq.com down.
+      - name: Deploy to gh-pages (with retry)
+        env:
+          DISABLE_MKDOCS_2_WARNING: "true"
+        run: |
+          set -e
+          attempts=3
+          delay=15
+          for i in $(seq 1 "$attempts"); do
+            if mkdocs gh-deploy --force; then
+              echo "Deploy succeeded on attempt $i"
+              exit 0
+            fi
+            if [ "$i" -lt "$attempts" ]; then
+              echo "Deploy attempt $i failed; retrying in ${delay}s..."
+              sleep "$delay"
+              delay=$((delay * 2))
+            fi
+          done
+          echo "Deploy failed after $attempts attempts"
+          exit 1
