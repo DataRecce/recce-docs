@@ -3,9 +3,12 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from urllib.parse import urlparse
 
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import event_priority
+
+EXPECTED_HOST = "docs.reccehq.com"
 
 
 @event_priority(-100)
@@ -18,7 +21,10 @@ def on_post_build(config: MkDocsConfig) -> None:
     urls = sorted(set(re.findall(r"<loc>(.*?)</loc>", sitemap)))
     parts: list[str] = ["# Recce Documentation — Full Corpus\n"]
     for url in urls:
-        rel = url.rsplit("docs.reccehq.com/", 1)[-1].rstrip("/")
+        parsed = urlparse(url)
+        if parsed.netloc and parsed.netloc != EXPECTED_HOST:
+            continue
+        rel = parsed.path.strip("/")
         html_path = site / rel / "index.html" if rel else site / "index.html"
         if not html_path.exists():
             continue
