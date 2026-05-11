@@ -220,5 +220,8 @@ plugins:
       cards_layout_options:
         background_color: "#2A6CA7"
 
+hooks:
+  - scripts/build_llms_full.py
+
 watch:
   - docs
