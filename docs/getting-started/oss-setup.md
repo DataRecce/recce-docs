@@ -68,7 +68,7 @@ recce server
 
 **Expected result:** Server starts and displays:
 
-```
+```text
 Recce server is running at http://0.0.0.0:8000
 ```
 

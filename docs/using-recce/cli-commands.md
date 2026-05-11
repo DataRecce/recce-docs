@@ -234,7 +234,7 @@ recce server --port 8001
 
 #### Summary fails with "state file is required for review mode"
 
-```
+```text
 recce summary recce-state.json
 [Error] Failed to generate summary
 The state file is required for review mode

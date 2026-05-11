@@ -316,7 +316,7 @@ dbt debug
 
 If you're using Claude Code and running into issues, the [Recce Claude Plugin](claude-plugin.md) handles prerequisite checks and provides actionable error messages:
 
-```
+```text
 /plugin install recce-quickstart@recce-claude-plugin
 /recce-setup
 ```
