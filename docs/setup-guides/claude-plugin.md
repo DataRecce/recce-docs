@@ -40,19 +40,19 @@ The plugin also handles all of the setup that the [MCP server](mcp-server.md) re
 
 In Claude Code, run:
 
-```
+```text
 /plugin marketplace add DataRecce/recce-claude-plugin
 ```
 
 ### Step 2: Install the plugin
 
-```
+```text
 /plugin install recce-quickstart@recce-claude-plugin
 ```
 
 Or use the interactive installer:
 
-```
+```text
 /plugin
 ```
 
@@ -60,7 +60,7 @@ Navigate to the **Discover** tab, find `recce-quickstart`, and press Enter to in
 
 ### Step 3: Verify installation
 
-```
+```text
 /plugin
 ```
 
@@ -73,7 +73,7 @@ Navigate to the **Installed** tab to confirm `recce-quickstart` appears.
 
 Make sure you're on your feature branch. Recce compares your current branch against main. Then navigate to your dbt project and run the setup command:
 
-```
+```text
 /recce-setup
 ```
 
@@ -88,19 +88,19 @@ When setup completes, you'll see confirmation that the MCP server is running and
 
 Once connected, Claude has access to the full set of Recce validation tools, including Lineage Diff, Column-Level Lineage, row-level Value Diff, Top-K Diff, Histogram Diff, and more. Try asking questions about your data changes:
 
-```
+```text
 You: What schema changes happened in my current branch?
 ```
 
 Claude calls Recce's `schema_diff` tool behind the scenes and responds with a summary of added, removed, or modified columns across your changed models.
 
-```
+```text
 You: Which downstream columns are affected by my changes to the orders model?
 ```
 
 Claude uses `get_cll` (Column-Level Lineage) to trace the impact through your model graph.
 
-```
+```text
 You: Run a Value Diff on the customers model using customer_id as the primary key
 ```
 
@@ -121,19 +121,19 @@ See the [MCP Server page](mcp-server.md#available-tools) for the full list of av
 
 ### Analyze a pull request
 
-```
+```text
 /recce-pr https://github.com/your-org/your-repo/pull/123
 ```
 
 Or if you're already on the PR branch:
 
-```
+```text
 /recce-pr
 ```
 
 ### Run specific validation checks
 
-```
+```text
 /recce-check row-count orders
 /recce-check schema customers
 /recce-check profile payments
@@ -143,25 +143,25 @@ Or if you're already on the PR branch:
 
 Disable the plugin:
 
-```
+```text
 /plugin disable recce-quickstart@recce-claude-plugin
 ```
 
 Re-enable:
 
-```
+```text
 /plugin enable recce-quickstart@recce-claude-plugin
 ```
 
 Uninstall:
 
-```
+```text
 /plugin uninstall recce-quickstart@recce-claude-plugin
 ```
 
 Update to latest version:
 
-```
+```text
 /plugin marketplace update recce-claude-plugin
 ```
 

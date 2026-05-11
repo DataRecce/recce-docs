@@ -50,6 +50,7 @@ nav:
       - What's Recce:
           - index.md
           - whats-recce/cloud-vs-oss.md
+          - whats-recce/glossary.md
           - Changelog: "https://reccehq.com/changelog/"
       - Getting Started:
           - Start with Cloud: getting-started/start-free-with-cloud.md
@@ -222,6 +223,7 @@ plugins:
 
 hooks:
   - scripts/build_llms_full.py
+  - scripts/build_md_mirrors.py
 
 watch:
   - docs

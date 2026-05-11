@@ -21,7 +21,7 @@ Data diffing validates that your model changes produce the expected results. Eac
 
 A common approach is to start with lightweight checks and progressively drill down as needed. This decision tree provides a suggested workflow:
 
-```
+```text
 Start with Row Count
     │
     ├─ Counts match? → Profile Diff for deeper stats
