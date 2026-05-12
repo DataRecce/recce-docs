@@ -82,4 +82,5 @@ For the CLI reference, see <https://docs.reccehq.com/using-recce/cli-commands/>.
 - Scorecard: 0.2.0
 - Mode: site
 - Last runs:
+  - 2026-05-11 — 72 (scorecard 0.2.0)
   - 2026-05-11 — 66 (scorecard 0.2.0)
