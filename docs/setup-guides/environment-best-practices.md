@@ -64,6 +64,19 @@ Unchanged models are resolved from production via `--defer`, so you only pay for
 
 For many projects, this is the complete setup.
 
+!!! warning "Set `state_modified_compare_more_unrendered_values` if your configs reference environment values"
+    By default, dbt's `state:modified` compares **rendered** config values. If your models use environment-aware Jinja inside configs — `incremental_predicates`, `unique_key`, or `partition_by` referencing `{{ this }}`, `{{ target.schema }}`, env vars, etc. — the same model renders to different values in base vs. PR environments. dbt flags them as modified and Recce surfaces them as altered, even though the source code is identical.
+
+    Enable the [`state_modified_compare_more_unrendered_values`](https://docs.getdbt.com/reference/global-configs/behavior-changes#source-definitions-for-statemodified) flag (dbt >= 1.9) so dbt compares the unrendered Jinja source instead:
+
+    ```yaml
+    # dbt_project.yml
+    flags:
+      state_modified_compare_more_unrendered_values: True
+    ```
+
+    Both base and current manifests must be built with the flag enabled — rebuild your base artifacts if they predate this change, or `state:modified` will keep producing false positives.
+
 ## Keep Your Base Environment Current
 
 The base environment can become outdated in two scenarios:
