@@ -25,7 +25,7 @@ Auto-Snapshot fixes this by copying the project's shared base into the PR sessio
 
 The banner appears at the top of the session view (lineage, diff, or detail) when the project's shared base has been refreshed since this PR's snapshot was captured.
 
-![Staleness banner at the top of a Recce Cloud session, prompting the reviewer to refresh the base](../assets/images/using-recce/staleness-banner-placeholder.png){: .shadow}
+![Staleness banner at the top of a Recce Cloud session, prompting the reviewer to refresh the base](../assets/images/using-recce/staleness-banner.png){: .shadow}
 
 > **Production data has changed since this PR's base was captured. Comparisons may not reflect current state.** **\[Refresh base\]**
 
