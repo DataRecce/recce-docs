@@ -91,6 +91,9 @@ Configure your CD workflow to run:
 
 See [Setup CD](setup-cd.md) for workflow configuration.
 
+!!! info "Auto-Snapshot keeps PR diffs clean when the base moves"
+    Recce Cloud freezes a snapshot of the shared base into each PR session at upload time, so subsequent merges to `main` don't leak into the PR diff as phantom modified or removed models. When production moves on, Recce shows a yellow banner on the session with a **Refresh base** button so reviewers can re-baseline in place. See [Refresh Base](../using-recce/staleness-banner.md) for details.
+
 ## Obtain Artifacts for Environments
 
 Recce uses base and current environment artifacts (`manifest.json`, `catalog.json`) to find corresponding tables in the data warehouse for comparison.

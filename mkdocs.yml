@@ -71,6 +71,7 @@ nav:
           - using-recce/admin-setup.md
           - using-recce/data-developer.md
           - using-recce/data-reviewer.md
+          - Refresh Base: using-recce/staleness-banner.md
           - using-recce/cli-commands.md
           - Workflow in OSS: using-recce/oss-workflow.md
       - What You Can Explore:

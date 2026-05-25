@@ -195,3 +195,4 @@ Confirm your workflow works:
 - [Data Reviewer Workflow](data-reviewer.md) - How reviewers use Recce
 - [Admin Setup](admin-setup.md) - Set up your organization
 - [Data Review Summary](../what-you-can-explore/summary.md) - Understanding agent summaries
+- [Refresh Base](staleness-banner.md) - Keep PR comparisons aligned when production moves

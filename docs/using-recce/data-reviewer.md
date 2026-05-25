@@ -54,6 +54,9 @@ For deeper investigation:
 2. Select the PR session from the list
 3. Explore the changes interactively
 
+!!! info "Yellow banner at the top of the session?"
+    That means production has moved on since this PR's baseline was captured. The PR diff is still anchored to the original snapshot, so it accurately reflects what this PR changed. Click **Refresh base** if you want to re-baseline against current production. See [Refresh Base](staleness-banner.md).
+
 **What you can do:**
 
 - View [lineage diff](../what-you-can-explore/lineage-diff.md) to see affected models
@@ -124,5 +127,6 @@ Confirm you can review PRs:
 
 - [Data Developer Workflow](data-developer.md) - How developers validate changes
 - [Data Review Summary](../what-you-can-explore/summary.md) - Understanding the agent summary
+- [Refresh Base](staleness-banner.md) - What the staleness banner means and when to refresh
 - [Checklist](../collaboration/checklist.md) - Track validation checks across PRs
 - [Share Validation Results](../collaboration/share.md) - Share findings with your team
