@@ -12,14 +12,14 @@ Recce Cloud captures a snapshot of your production baseline when your PR is uplo
 
 When production moves on, the PR session detects that its snapshot is behind, and a yellow banner offers a one-click **Refresh base** action.
 
-## Why a Frozen Snapshot
+## How Auto-Snapshot Keeps Diffs Clean
 
 Without a frozen baseline, every comparison runs against whichever production state is live at the moment you open the UI. If `main` has merged ten times since CI ran, those merges leak into your PR diff as phantom changes — modified models you never touched, removed models that are simply newer in production.
 
 Auto-Snapshot fixes this by copying the project's shared base into the PR session at upload time. The PR diff stays anchored to the production state that existed when the PR was first validated, so the only changes you see are the ones from your branch.
 
-!!! info "Example: 205datalab acid test"
-    A customer PR that touched **one** model used to display **2 modified + 13 removed** because production had drifted between CI and review. With Auto-Snapshot, the same PR now shows **1 modified, 0 removed** — matching what the developer actually changed.
+!!! info "Example: clean diff vs. phantom diff"
+    Before Auto-Snapshot, a 1-model PR could surface as **2 modified + 13 removed** entries because production had drifted between CI and review. After Auto-Snapshot, the same PR surfaces as **1 modified, 0 removed** — matching what the developer actually changed.
 
 ## When the Staleness Banner Appears
 
@@ -29,7 +29,7 @@ The banner appears at the top of the session view (lineage, diff, or detail) whe
 
 > **Production data has changed since this PR's base was captured. Comparisons may not reflect current state.** **\[Refresh base\]**
 
-The banner is correctness-critical, so it is **not dismissible**. It clears automatically once you refresh, or once the snapshot matches the current shared base again.
+The banner signals a real risk to the comparison, so it is **not dismissible**. It clears automatically once you refresh, or once the snapshot matches the current shared base again.
 
 First-time viewers see a one-shot popover that introduces the feature. After dismissing it, the banner alone communicates staleness.
 
@@ -40,10 +40,15 @@ Clicking **Refresh base** re-clones the latest shared-base artifacts into this P
 1. The button shows a spinner while the refresh runs.
 2. Recce pulls the current shared-base `manifest.json`, `catalog.json`, and lineage cache into the session.
 3. The lineage and diff views re-render against the new baseline within about 30 seconds.
-4. A toast confirms: *"Base refreshed. If you've saved checks in this session, you may want to re-run them against the new base."*
+4. A toast confirms the refresh:
+
+    > Base refreshed. If you've saved checks in this session, you may want to re-run them against the new base.
+
 5. The banner clears.
 
-If the refresh fails, the banner stays visible and an error toast appears: *"Refresh failed — try again."*
+If the refresh fails, the banner stays visible and an error toast appears:
+
+> Refresh failed — try again.
 
 !!! tip "Re-run saved checks after a refresh"
     Checks you added to the session before the refresh still reference the previous baseline. Re-run them so the recorded results reflect the new comparison.
