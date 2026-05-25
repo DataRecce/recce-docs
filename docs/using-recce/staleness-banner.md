@@ -1,9 +1,9 @@
 ---
 title: Refresh Base
 description: >-
-  Recce Cloud freezes a per-PR baseline at upload time so PR comparisons stay
-  clean. If production moves on after that, a banner lets you refresh the
-  baseline in place.
+  Recce Cloud's auto-snapshot freezes a per-PR snapshot baseline at upload time
+  so PR comparisons stay clean. If the shared base drifts afterwards, a
+  staleness banner lets you refresh the snapshot baseline in place.
 ---
 
 # Refresh Base
@@ -24,6 +24,8 @@ Auto-Snapshot fixes this by copying the project's shared base into the PR sessio
 ## When the Staleness Banner Appears
 
 The banner appears at the top of the session view (lineage, diff, or detail) when the project's shared base has been refreshed since this PR's snapshot was captured.
+
+![Staleness banner at the top of a Recce Cloud session, prompting the reviewer to refresh the base](../assets/images/using-recce/staleness-banner-placeholder.png){: .shadow}
 
 > **Production data has changed since this PR's base was captured. Comparisons may not reflect current state.** **\[Refresh base\]**
 
@@ -60,7 +62,7 @@ For most PR reviews, the frozen snapshot is the right default — it answers the
 ## Requirements
 
 - The project has a shared base configured (`recce-cloud upload --type prod` runs on `main`). Refresh is disabled when no shared base exists.
-- The PR session was created after Auto-Snapshot was enabled in your Recce Cloud project. Older sessions continue to compare against the live shared base.
+- The PR session was created after Auto-Snapshot was enabled in your Recce Cloud project. New PR sessions automatically capture a frozen snapshot at upload; older sessions created before the rollout continue to compare against the live shared base and won't show the staleness banner.
 
 ## Related Reading
 
