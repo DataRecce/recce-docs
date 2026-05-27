@@ -76,7 +76,7 @@ Once you push changes and open a PR, the Recce Agent validates automatically.
 
 #### What Happens
 
-1. Your CI pipeline runs `recce-cloud upload`
+1. Your CI pipeline runs `recce-cloud upload`. At upload time, Recce Cloud captures a per-PR snapshot of the shared base so reviewers see a clean diff of only what this PR changed — see [Refresh Base](staleness-banner.md) for what happens if production moves on later.
 2. The agent compares your PR branch against the base branch
 3. The agent runs validation checks based on detected changes
 4. A data review summary posts to your PR
@@ -195,3 +195,4 @@ Confirm your workflow works:
 - [Data Reviewer Workflow](data-reviewer.md) - How reviewers use Recce
 - [Admin Setup](admin-setup.md) - Set up your organization
 - [Data Review Summary](../what-you-can-explore/summary.md) - Understanding agent summaries
+- [Refresh Base](staleness-banner.md) - Keep PR comparisons aligned when production moves
