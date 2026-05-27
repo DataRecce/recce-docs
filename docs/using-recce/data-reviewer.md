@@ -55,7 +55,7 @@ For deeper investigation:
 3. Explore the changes interactively
 
 !!! info "Yellow banner at the top of the session?"
-    That means production has moved on since this PR's baseline was captured. The PR diff is still anchored to the original snapshot, so it accurately reflects what this PR changed. Click **Refresh base** if you want to refresh the comparison against current production. See [Refresh Base](staleness-banner.md).
+    Production has moved on since this PR was uploaded. The PR diff is still anchored to the original snapshot — by design, so it accurately reflects what this PR changed. Click **Refresh base** only when you want to re-anchor the comparison to current production. See [Refresh Base](staleness-banner.md).
 
 **What you can do:**
 
