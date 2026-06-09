@@ -23,7 +23,7 @@ Once connected, ask your AI agent questions like:
 
 - "What schema changes happened in this branch?"
 - "Show me the Row Count Diff for all modified models"
-- "Are there any breaking column changes in this PR?"
+- "Are there any column changes that affect downstream models in this PR?"
 - "Profile the orders table and compare it against production"
 - "Which downstream columns are affected by this change?"
 - "Run a Value Diff on the orders model and show me which columns changed"

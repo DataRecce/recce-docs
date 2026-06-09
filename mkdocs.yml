@@ -80,7 +80,7 @@ nav:
           - what-you-can-explore/code-change.md
           - what-you-can-explore/column-level-lineage.md
           - what-you-can-explore/impact-radius.md
-          - what-you-can-explore/breaking-change-analysis.md
+          - Change Classification: what-you-can-explore/change-classification.md
           - what-you-can-explore/data-diffing.md
           - what-you-can-explore/multi-models.md
       - Collaboration:
@@ -154,6 +154,8 @@ plugins:
   - redirects:
       redirect_maps:
         # Old numbered paths to new unnumbered paths
+        # Renamed page (DRC-3554): Breaking Change Analysis -> Change Classification
+        'what-you-can-explore/breaking-change-analysis.md': 'what-you-can-explore/change-classification.md'
         '1-whats-recce/cloud-vs-oss.md': 'whats-recce/cloud-vs-oss.md'
         '1-whats-recce/community-support.md': 'whats-recce/cloud-vs-oss.md'
         '2-getting-started/start-free-with-cloud.md': 'getting-started/start-free-with-cloud.md'
@@ -179,13 +181,13 @@ plugins:
         '3-visualized-change/column-level-lineage.md': 'what-you-can-explore/column-level-lineage.md'
         '3-visualized-change/multi-models.md': 'what-you-can-explore/multi-models.md'
         '4-downstream-impacts/impact-radius.md': 'what-you-can-explore/impact-radius.md'
-        '4-downstream-impacts/breaking-change-analysis.md': 'what-you-can-explore/breaking-change-analysis.md'
+        '4-downstream-impacts/breaking-change-analysis.md': 'what-you-can-explore/change-classification.md'
         '5-what-you-can-explore/summary.md': 'what-you-can-explore/summary.md'
         '5-what-you-can-explore/lineage-diff.md': 'what-you-can-explore/lineage-diff.md'
         '5-what-you-can-explore/code-change.md': 'what-you-can-explore/code-change.md'
         '5-what-you-can-explore/column-level-lineage.md': 'what-you-can-explore/column-level-lineage.md'
         '5-what-you-can-explore/impact-radius.md': 'what-you-can-explore/impact-radius.md'
-        '5-what-you-can-explore/breaking-change-analysis.md': 'what-you-can-explore/breaking-change-analysis.md'
+        '5-what-you-can-explore/breaking-change-analysis.md': 'what-you-can-explore/change-classification.md'
         '5-what-you-can-explore/data-diffing.md': 'what-you-can-explore/data-diffing.md'
         '5-what-you-can-explore/multi-models.md': 'what-you-can-explore/multi-models.md'
         '5-data-diffing/row-count-diff.md': 'what-you-can-explore/data-diffing.md'

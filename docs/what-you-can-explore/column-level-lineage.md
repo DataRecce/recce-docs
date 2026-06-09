@@ -46,7 +46,7 @@ The transformation type is also displayed for each column, which will help you u
 ## Related
 
 - [Impact Radius](impact-radius.md) - See column-level impact on downstream models
-- [Breaking Change Analysis](breaking-change-analysis.md) - Classify change severity
+- [Change Classification](change-classification.md) - Classify change severity
 - [Data Diffing](data-diffing.md) - Validate column-level data changes
 
 

@@ -45,7 +45,7 @@ Quick definitions for the terms used across the Recce docs. Where a concept has 
 
 **Impact radius.** The set of downstream models and columns affected by a change. See [Impact Radius](../what-you-can-explore/impact-radius.md).
 
-**Breaking change analysis.** Automated categorization of a modified model as breaking, non-breaking, or partial breaking. See [Breaking Change Analysis](../what-you-can-explore/breaking-change-analysis.md).
+**Change classification.** Automated categorization of a modified model as a model-wide change, column change, or additive change. See [Change Classification](../what-you-can-explore/change-classification.md).
 
 **Row count diff.** Compares the number of rows in a model between base and current. Fastest sanity check.
 

@@ -23,7 +23,7 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **state file** | session file, cache | Stores validation results and checks for later use |
 | **preset checks** | default tests, template checks | Pre-configured validation rules for projects |
 | **lineage diff** | dependency comparison | Visual comparison of model relationships |
-| **breaking change analysis** | impact assessment | Automated detection of schema changes |
+| **change classification** | breaking change analysis (deprecated), impact assessment | Automated categorization of a modified model change |
 | **value diff** | data comparison | Row-by-row data validation between environments |
 | **profile diff** | summary statistics | Column-level statistical comparisons |
 | **histogram diff** | distribution analysis | Numeric data distribution comparisons |
@@ -32,6 +32,20 @@ This guide helps maintain consistent, data-team-friendly language across all Rec
 | **Recce**| recce | this is the brand name, should always use "Recce" | 
 | **dbt** | DBT | this is the brand name, should always use lower cases| 
 
+
+### Change Classification Vocabulary
+
+The change-classification feature (formerly named "Breaking Change Analysis") categorizes a modified model into one of three change types. Use the canonical terms below; the legacy terms are deprecated and kept only for migration reference.
+
+| **Use This (canonical)** | **Deprecated** | **Meaning** |
+|--------------------------|----------------|-------------|
+| **change classification** | breaking change analysis | The feature/concept that categorizes a model change |
+| **model-wide change** | breaking change, `breaking` | All downstream models are affected |
+| **column change** | partial breaking change, partial-breaking, `partial_breaking` | Only downstream models/columns that reference the changed columns are affected |
+| **additive change** | non-breaking change, non-breaking, `non_breaking` | No downstream models are affected (e.g. new columns) |
+| **unknown** | unknown | Transformation type could not be determined (unchanged) |
+
+The page slug is `change-classification.md` (was `breaking-change-analysis.md`; redirect added 2026-06-09). The historical feature name "Breaking Change Analysis" may still appear in external links or third-party material.
 
 ### Data vs Software Terms
 

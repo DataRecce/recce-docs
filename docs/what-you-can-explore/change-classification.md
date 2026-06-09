@@ -1,21 +1,21 @@
 ---
-title: Breaking Change Analysis
+title: Change Classification
 ---
 
-**Breaking Change Analysis** examines modified models and categorizes changes into three types:
+**Change Classification** examines modified models and categorizes changes into three types:
 
-- Breaking changes
-- Partial breaking changes
-- Non-breaking changes
+- Model-wide changes
+- Column changes
+- Additive changes
 
-It's generally assumed that any modification to a model’s SQL will affect all downstream models. However, not all changes have the same level of impact. For example, formatting adjustments or the addition of a new column should not break downstream dependencies. Breaking change analysis helps you assess whether a change affects downstream models and, if so, to what extent.
+It's generally assumed that any modification to a model’s SQL will affect all downstream models. However, not all changes have the same level of impact. For example, formatting adjustments or the addition of a new column should not break downstream dependencies. Change classification helps you assess whether a change affects downstream models and, if so, to what extent.
 
 
 ## Usage
 Use the [impact radius](./impact-radius.md#usage) view to analyze changed and see the impacted downstream.
 
 ## Categories of change
-### Non-breaking change
+### Additive change
 
 No downstream models are affected. Common cases are adding new columns, comments, or formatting changes that don't alter logic.
 
@@ -35,7 +35,7 @@ from
 
 
 
-### Partial breaking change
+### Column change
 
 Only downstream models that reference specific columns are affected. Common cases are removing, renaming, or redefining a column.
 
@@ -73,7 +73,7 @@ from
 ```
 
 
-### Breaking change
+### Model-wide change
 
 All downstream models are affected. Common case are changes adding a filter condition or adding group by columns.
 
@@ -107,11 +107,11 @@ from
 
 ## Limitations
 
-Our breaking change analysis is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a breaking change when it is actually non-breaking or partial breaking changes. Common cases include:
+Our change classification is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a model-wide change when it is actually an additive change or column change. Common cases include:
 
 1. Logical equivalence in operations, such as changing `a + b` to `b + a`.
 1. Adding a `LEFT JOIN` to a table and selecting columns from it. This is often used to enrich the current model with additional dimension table data without affecting existing downstream tables.
-1. All modified python models or seeds are treated as breaking change.
+1. All modified python models or seeds are treated as model-wide changes.
 
 ## When to Use
 
@@ -122,7 +122,7 @@ Our breaking change analysis is intentionally conservative to prioritize safety.
 
 ## Technology
 
-Breaking Change Analysis is powered by the SQL analysis and AST diff capabilities of [SQLGlot](https://github.com/tobymao/sqlglot) to compare two SQL semantic trees.
+Change Classification is powered by the SQL analysis and AST diff capabilities of [SQLGlot](https://github.com/tobymao/sqlglot) to compare two SQL semantic trees.
 
 ## Related
 

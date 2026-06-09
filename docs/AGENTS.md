@@ -2,7 +2,7 @@
 
 This is the agent skill file for [docs.reccehq.com](https://docs.reccehq.com). It tells AI coding agents how to install Recce, configure it, and use it against a dbt project. If you are a human, the rendered docs site is the friendlier read; this file exists for agents that need a single index.
 
-Recce is a Data Review Agent for dbt pull requests. It compares a base release against the changes in a pull request, surfaces breaking changes, runs row-count and value diffs, and produces a validation checklist that travels with the PR.
+Recce is a Data Review Agent for dbt pull requests. It compares a base release against the changes in a pull request, surfaces model-wide and column changes, runs row-count and value diffs, and produces a validation checklist that travels with the PR.
 
 ## Install
 
@@ -63,7 +63,7 @@ recce server
 - Code change (SQL and config diff per model): <https://docs.reccehq.com/what-you-can-explore/code-change/>
 - Column-level lineage: <https://docs.reccehq.com/what-you-can-explore/column-level-lineage/>
 - Impact radius (downstream models affected): <https://docs.reccehq.com/what-you-can-explore/impact-radius/>
-- Breaking change analysis: <https://docs.reccehq.com/what-you-can-explore/breaking-change-analysis/>
+- Change classification: <https://docs.reccehq.com/what-you-can-explore/change-classification/>
 - Data diffing (row count, profile, value, top-K, histogram, query): <https://docs.reccehq.com/what-you-can-explore/data-diffing/>
 
 For the CLI reference, see <https://docs.reccehq.com/using-recce/cli-commands/>. For terminology, see [/whats-recce/glossary/](https://docs.reccehq.com/whats-recce/glossary/).

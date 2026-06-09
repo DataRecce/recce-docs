@@ -79,6 +79,6 @@ After reviewing code changes, you can:
 
 ## Related
 
-- [Breaking Change Analysis](breaking-change-analysis.md) - Classify impact severity
+- [Change Classification](change-classification.md) - Classify impact severity
 - [Impact Radius](impact-radius.md) - See affected downstream models
 - [Data Diffing](data-diffing.md) - Validate data changes
