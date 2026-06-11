@@ -33,7 +33,7 @@ While dbt provides a similar capability using the [state selector](https://docs.
 
 ### Show impact radius for a single changed model
 
-1. Hover over a changed model, then click the **target icon** or right-click the model and click the **Show Impact Radius**
+1. Hover over a changed model, then click the **target icon**, or right-click the model and select **Show Impact Radius**.
 
     ![Target icon for showing impact radius of a single model](../assets/images/what-you-can-explore/impact-radius-single-1.png){: .shadow}
 
@@ -100,7 +100,7 @@ select
 from {{ ref("customers") }}
 ```
 
-![alt text](../assets/images/what-you-can-explore/cll-example.png){: .shadow}
+![Column-level lineage graph showing the impact radius of stg_orders.status across downstream models](../assets/images/what-you-can-explore/cll-example.png){: .shadow}
 
 The following impact is detected:
 

@@ -2,25 +2,26 @@
 title: Change Classification
 ---
 
-**Change Classification** examines modified models and categorizes changes into three types:
+**Change Classification** examines each modified model and categorizes the change into one of three types:
 
-- Model-wide changes
-- Column changes
 - Additive changes
+- Column changes
+- Model-wide changes
 
-It's generally assumed that any modification to a model’s SQL will affect all downstream models. However, not all changes have the same level of impact. For example, formatting adjustments or the addition of a new column should not break downstream dependencies. Change classification helps you assess whether a change affects downstream models and, if so, to what extent.
+Without classification, you have to assume that any change to a model's SQL affects every downstream model. In practice, changes differ in impact: a formatting adjustment or a new column shouldn't disrupt downstream dependencies, while a new filter condition can change every downstream result. Change Classification tells you whether a change affects downstream models and, if so, to what extent.
 
 
 ## Usage
-Use the [impact radius](./impact-radius.md#usage) view to analyze changed and see the impacted downstream.
+Use the [Impact Radius](./impact-radius.md#usage) view to analyze changed models and see their impacted downstream models.
 
 ## Categories of change
 ### Additive change
 
-No downstream models are affected. Common cases are adding new columns, comments, or formatting changes that don't alter logic.
+No downstream models are affected. Common cases include adding a new column, adding comments, or reformatting SQL without altering logic.
 
-**Example: Add new columns**
-Adding a new column like status doesn't affect models that don't reference it.
+**Example: Adding a new column**
+
+Adding a new column such as `status` doesn't affect downstream models that don't reference it.
 
 ```diff
 select
@@ -37,7 +38,7 @@ from
 
 ### Column change
 
-Only downstream models that reference specific columns are affected. Common cases are removing, renaming, or redefining a column.
+Only downstream models that reference the changed columns are affected. Common cases include removing, renaming, or redefining a column.
 
 **Example: Removing a column**
 
@@ -75,9 +76,10 @@ from
 
 ### Model-wide change
 
-All downstream models are affected. Common case are changes adding a filter condition or adding group by columns.
+All downstream models are affected. Common cases include adding a filter condition or adding a `GROUP BY` column.
 
 **Example: Adding a filter condition**
+
 This may reduce the number of rows, affecting all downstream logic that depends on the original row set.
 
 ```diff
@@ -91,12 +93,13 @@ from
 
 
 **Example: Adding a GROUP BY column**
-Changes the granularity of the result set, which can break all dependent models.
+
+This changes the granularity of the result set, which affects every dependent model.
 
 ```diff
 select
     user_id,
-++  order_data,
+++  order_date,
     count(*) as total_orders
 from
     {{ ref("orders") }}
@@ -107,22 +110,22 @@ from
 
 ## Limitations
 
-Our change classification is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a model-wide change when it is actually an additive change or column change. Common cases include:
+Change Classification is intentionally conservative to prioritize safety. As a result, a modified model may be classified as a model-wide change when it is actually an additive or column change. Common cases include:
 
-1. Logical equivalence in operations, such as changing `a + b` to `b + a`.
-1. Adding a `LEFT JOIN` to a table and selecting columns from it. This is often used to enrich the current model with additional dimension table data without affecting existing downstream tables.
-1. All modified python models or seeds are treated as model-wide changes.
+1. Logically equivalent rewrites, such as changing `a + b` to `b + a`.
+1. Adding a `LEFT JOIN` and selecting columns from the joined table. This pattern is often used to enrich a model with dimension data without affecting existing downstream models.
+1. Modified Python models and seeds, which are always treated as model-wide changes.
 
 ## When to Use
 
 - Determine which downstream models need validation after a change
 - Prioritize review effort based on impact severity
-- Understand if a refactor will break dependent models
+- Understand whether a refactor affects dependent models
 - Assess risk before merging model changes
 
 ## Technology
 
-Change Classification is powered by the SQL analysis and AST diff capabilities of [SQLGlot](https://github.com/tobymao/sqlglot) to compare two SQL semantic trees.
+Change Classification uses the SQL parsing and AST diff capabilities of [SQLGlot](https://github.com/tobymao/sqlglot) to compare the semantic trees of the base and current SQL.
 
 ## Related
 
