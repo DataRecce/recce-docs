@@ -14,7 +14,7 @@ Review of documentation created by Claude and merged by Dori.
 - [ ] `docs/3-using-recce/data-reviewer.md`
 
 ### PR #81: Cleanup
-- [ ] `docs/CLEANUP-TODO.md`
+- [ ] `claude/CLEANUP-TODO.md`
 
 ### PR #82: Community
 - [ ] `docs/8-community/support.md`

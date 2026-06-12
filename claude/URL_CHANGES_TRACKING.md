@@ -94,12 +94,12 @@ Terminology sweep renamed the "Breaking Change Analysis" page to "Change Classif
 
 | Old URL | New URL | Redirect type | Rollout date |
 |---------|---------|---------------|--------------|
-| `/what-you-can-explore/breaking-change-analysis/` | `/what-you-can-explore/change-classification/` | 301 | 2026-06-09 |
+| `/what-you-can-explore/breaking-change-analysis/` | `/what-you-can-explore/change-classification/` | client-side (meta refresh) | 2026-06-09 |
 
 ### Implementation
 
 - Page renamed: `docs/what-you-can-explore/breaking-change-analysis.md` → `docs/what-you-can-explore/change-classification.md` (`git mv`).
-- Redirect added to `mkdocs.yml` `redirects.redirect_maps`: `'what-you-can-explore/breaking-change-analysis.md': 'what-you-can-explore/change-classification.md'`. The mkdocs-redirects plugin emits a client-side redirect that the docs host serves as a 301.
+- Redirect added to `mkdocs.yml` `redirects.redirect_maps`: `'what-you-can-explore/breaking-change-analysis.md': 'what-you-can-explore/change-classification.md'`. The mkdocs-redirects plugin emits a client-side redirect (instant `<meta http-equiv="refresh">` + JS `location.href` + `rel="canonical"`), which search engines treat as a permanent redirect. It is NOT an origin HTTP 301 unless the host adds a separate rule — verify the actual response code post-deploy.
 - Two legacy numbered-path redirects (`4-downstream-impacts/breaking-change-analysis.md`, `5-what-you-can-explore/breaking-change-analysis.md`) were retargeted to the new slug so they no longer chain to a removed page.
 - Nav label updated: "Change Classification".
 

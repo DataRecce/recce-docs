@@ -3,7 +3,7 @@
 ## Overview
 This report analyzes the documentation restructuring changes in the [PR#34](https://github.com/DataRecce/recce-docs/pull/34), comparing production URLs with the new structure and categorizing content changes.
 
-> **Update (DRC-3554, 2026-06-09):** the `breaking-change-analysis` page referenced below was later renamed to `change-classification` and its terminology updated (breaking -> model-wide change, partial breaking -> column change, non-breaking -> additive change). A 301 redirect is in `mkdocs.yml`; see `claude/URL_CHANGES_TRACKING.md`. The rows below are kept as the original historical record.
+> **Update (DRC-3554, 2026-06-09):** the `breaking-change-analysis` page referenced below was later renamed to `change-classification` and its terminology updated (breaking -> model-wide change, partial breaking -> column change, non-breaking -> additive change). A redirect (client-side, via mkdocs-redirects) is in `mkdocs.yml`; see `claude/URL_CHANGES_TRACKING.md`. The rows below are kept as the original historical record.
 
 ## 1. URL Structure Comparison (Production → New)
 
