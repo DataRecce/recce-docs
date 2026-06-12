@@ -14,7 +14,7 @@ Review of documentation created by Claude and merged by Dori.
 - [ ] `docs/3-using-recce/data-reviewer.md`
 
 ### PR #81: Cleanup
-- [ ] `docs/CLEANUP-TODO.md`
+- [ ] `claude/CLEANUP-TODO.md`
 
 ### PR #82: Community
 - [ ] `docs/8-community/support.md`
@@ -74,3 +74,12 @@ _Add findings and feedback below as we review each file._
 _Questions that come up during review._
 
 1.
+
+---
+
+## Note (DRC-3554, 2026-06-09)
+
+References above to `breaking-change-analysis.md` are historical. That page was renamed to
+`docs/what-you-can-explore/change-classification.md` and the terminology updated
+(breaking → model-wide change, partial breaking → column change, non-breaking → additive change).
+A 301 redirect from the old slug is in `mkdocs.yml`. See `claude/URL_CHANGES_TRACKING.md`.

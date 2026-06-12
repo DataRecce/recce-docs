@@ -8,11 +8,11 @@ While dbt provides a similar capability using the [state selector](https://docs.
 
 === "Impact Radius"
     
-    ![Breaking Change Analysis](../assets/images/what-you-can-explore/impact-radius.png){: .shadow}
+    ![Impact Radius](../assets/images/what-you-can-explore/impact-radius.png){: .shadow}
 
 === "state:modified+"
     
-    ![Breaking Change Analysis (disabled)](../assets/images/what-you-can-explore/impact-radius-legacy.png){: .shadow}
+    ![Impact Radius (disabled)](../assets/images/what-you-can-explore/impact-radius-legacy.png){: .shadow}
 
 
 ## Usage
@@ -33,7 +33,7 @@ While dbt provides a similar capability using the [state selector](https://docs.
 
 ### Show impact radius for a single changed model
 
-1. Hover over a changed model, then click the **target icon** or right-click the model and click the **Show Impact Radius**
+1. Hover over a changed model, then click the **target icon**, or right-click the model and select **Show Impact Radius**.
 
     ![Target icon for showing impact radius of a single model](../assets/images/what-you-can-explore/impact-radius-single-1.png){: .shadow}
 
@@ -100,7 +100,7 @@ select
 from {{ ref("customers") }}
 ```
 
-![alt text](../assets/images/what-you-can-explore/cll-example.png){: .shadow}
+![Column-level lineage graph showing the impact radius of stg_orders.status across downstream models](../assets/images/what-you-can-explore/cll-example.png){: .shadow}
 
 The following impact is detected:
 
@@ -116,11 +116,11 @@ The following impact is detected:
 
 Two core features power the impact radius analysis:
 
-**[Breaking Change Analysis](./breaking-change-analysis.md)** classifies modified models into three categories:
+**[Change Classification](./change-classification.md)** classifies modified models into three categories:
 
-- **Breaking changes**: Impact all downstream **models**
-- **Non-breaking changes**: Do not impact any downstream **models**
-- **Partial breaking changes**: Impact only downstream **models or columns** that depend on the modified columns
+- **Model-wide changes**: Impact all downstream **models**
+- **Additive changes**: Do not impact any downstream **models**
+- **Column changes**: Impact only downstream **models or columns** that depend on the modified columns
 
 **[Column-level lineage](column-level-lineage.md)** analyzes your model's SQL to identify column-level dependencies:
 
@@ -131,9 +131,9 @@ Two core features power the impact radius analysis:
 
 With the insights from the two features above, Recce determines the impact radius:
 
-1. If a model has a **[breaking change](breaking-change-analysis.md#breaking-change)**, include all downstream models in the impact radius.
-2. If a model has a **[non-breaking change](breaking-change-analysis.md#non-breaking-change)**, include only the downstream columns and models of newly added columns.
-3. If a model has a **[partial breaking change](breaking-change-analysis.md#partial-breaking-change)**, include the downstream columns and models of added, removed, or modified columns.
+1. If a model has a **[model-wide change](change-classification.md#model-wide-change)**, include all downstream models in the impact radius.
+2. If a model has an **[additive change](change-classification.md#additive-change)**, include only the downstream columns and models of newly added columns.
+3. If a model has a **[column change](change-classification.md#column-change)**, include the downstream columns and models of added, removed, or modified columns.
 
 ## When to Use
 
@@ -144,15 +144,6 @@ With the insights from the two features above, Recce determines the impact radiu
 
 ## Related
 
-- [Breaking Change Analysis](breaking-change-analysis.md) - Understand how changes are classified
+- [Change Classification](change-classification.md) - Understand how changes are classified
 - [Column-Level Lineage](column-level-lineage.md) - Trace column dependencies
 - [Data Diffing](data-diffing.md) - Validate data changes in impacted models
-
-
-
-
-
-
-
-
-

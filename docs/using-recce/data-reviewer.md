@@ -96,7 +96,7 @@ When columns are added, removed, or modified:
 
 1. Check if downstream models are affected
 2. Verify the change is intentional
-3. Confirm breaking changes are coordinated
+3. Confirm model-wide changes are coordinated
 
 ### Row Count Differences
 

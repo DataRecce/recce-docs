@@ -27,7 +27,7 @@ Lineage diffs, code changes, column-level lineage, multi-model views.
 → `docs/3-visualized-change/`
 
 ### Downstream Impacts (Section 4)
-Impact radius analysis and breaking change detection.
+Impact radius analysis and change classification (model-wide, column, additive changes).
 → `docs/4-downstream-impacts/`
 
 ### Data Diffing (Section 5)

@@ -42,7 +42,7 @@
 - [Code Change](https://docs.reccehq.com/what-you-can-explore/code-change.md): inspect SQL and config diffs for each changed model
 - [Column-Level Lineage](https://docs.reccehq.com/what-you-can-explore/column-level-lineage.md): trace upstream and downstream relationships at the column level
 - [Impact Radius](https://docs.reccehq.com/what-you-can-explore/impact-radius.md): identify downstream models and columns affected by a change
-- [Breaking Change Analysis](https://docs.reccehq.com/what-you-can-explore/breaking-change-analysis.md): categorize modified models as breaking, non-breaking, or partial
+- [Change Classification](https://docs.reccehq.com/what-you-can-explore/change-classification.md): categorize modified models as model-wide changes, column changes, or additive changes
 - [Data Diffing](https://docs.reccehq.com/what-you-can-explore/data-diffing.md): row count diff, profile diff, value diff, top-K diff, histogram diff, and query
 - [Multi-Models](https://docs.reccehq.com/what-you-can-explore/multi-models.md): run checks across multiple models at once
 
