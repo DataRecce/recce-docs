@@ -23,9 +23,45 @@
   --md-code-hl-variable-color:  var(--md-default-fg-color--dark);
   --md-default-bg-color:        oklch(0.248 0.016 269.03);
   --md-default-fg-color:        #e7e8ef;
-  --md-code-bg-color:           #0b121e;
+  --md-code-bg-color:           #0d1520;
+  --md-code-fg-color:           #e0e4ec;
   --md-typeset-table-color:     #07566e;
   --md-typeset-table-color--light: rgba(0, 0, 0, 0.50);
+}
+
+/* Dark mode code blocks - improved contrast and copy button */
+[data-md-color-scheme="secondary-dark"] .md-typeset pre > code {
+  color: #e0e4ec;
+}
+
+[data-md-color-scheme="secondary-dark"] .md-typeset .md-code__content {
+  color: #e0e4ec;
+}
+
+[data-md-color-scheme="secondary"] .md-clipboard,
+[data-md-color-scheme="secondary"] .md-code__button {
+  color: #546e7a;
+}
+
+[data-md-color-scheme="secondary"] .md-clipboard:hover,
+[data-md-color-scheme="secondary"] .md-code__button:hover {
+  color: #ff6e42;
+}
+
+[data-md-color-scheme="secondary-dark"] .md-code__nav {
+  background-color: transparent;
+}
+
+[data-md-color-scheme="secondary-dark"] .md-clipboard,
+[data-md-color-scheme="secondary-dark"] .md-code__button {
+  color: #8a9bb5;
+  background-color: transparent;
+}
+
+[data-md-color-scheme="secondary-dark"] .md-clipboard:hover,
+[data-md-color-scheme="secondary-dark"] .md-code__button:hover {
+  color: #ff6e42;
+  background-color: transparent;
 }
 
 .md-nav__item a.md-nav__link[href^="https://github.com/DataRecce/recce/releases"] .md-ellipsis::before {
