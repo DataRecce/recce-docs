@@ -60,7 +60,7 @@ dbt docs generate --target-path target-base
 This creates `target-base/manifest.json` and `target-base/catalog.json`. The MCP server compares these two artifact sets to produce diffs.
 
 !!! note
-    If `target-base/` is missing, the MCP server starts in **single-environment mode** — all tools remain available, but diff results show no changes because both sides reference the same data. Generate base artifacts to enable real comparisons.
+    If `target-base/` is missing, the MCP server starts in **single-source mode** — all tools remain available, but diff results show no changes because both sides reference the same data. Generate base artifacts to enable real comparisons.
 
 ## Installation
 
@@ -197,7 +197,7 @@ Choose the tab for your AI agent. **stdio** is simpler (no separate process to m
 
 ## Available tools
 
-The MCP server exposes these tools to your AI agent. Tools are grouped by availability — some work in all modes, while diff tools require a running server with warehouse access.
+The MCP server exposes these tools to your AI agent. Tools are grouped by function: metadata tools work with dbt artifacts only, while diff tools require a warehouse connection.
 
 ### Metadata and lineage tools
 
@@ -238,9 +238,6 @@ These tools manage validation checks stored in the running Recce server instance
 | `create_check` | Create a persistent checklist item from analysis findings. Idempotent — updates existing checks with matching type and parameters |
 
 Checks can also be configured as preset checks in `recce.yml`. See [Preset checks](../collaboration/preset-checks.md) for details.
-
-!!! note
-    If base artifacts (`target-base/`) are not present, the server starts in **single-environment mode** — all tools remain available, but diff results show no changes. Generate base artifacts to enable real comparisons.
 
 ## How agents use these tools
 
@@ -341,7 +338,7 @@ No. The MCP server is part of Recce OSS and free to use. [Recce Cloud](https://c
 
 [MCP (Model Context Protocol)](https://modelcontextprotocol.io) is an open standard that allows AI agents to call external tools. Recce implements an MCP server so AI agents can run data diffs against your warehouse on demand.
 
-## Next Steps
+## Next steps
 
 - [Recce Claude Plugin](claude-plugin.md): guided setup for Claude Code users with interactive commands
 - [Column-Level Lineage](../what-you-can-explore/column-level-lineage.md): trace how column changes propagate through your model graph

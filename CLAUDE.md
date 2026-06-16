@@ -27,12 +27,17 @@ mkdocs build                      # Build static site to /site
 
 | Path | Purpose |
 |------|---------|
-| `docs/` | Markdown source files (numbered sections) |
+| `docs/` | Markdown source files |
 | `mkdocs.yml` | Site config and nav structure |
-| `claude/` | Writing principles and terminology guides |
+| `claude/` | Docs-specific writing principles, terminology, and site map |
+| `.claude/skills/` | Local Claude Code skills (docs guide) |
 | `docs/assets/images/` | Screenshots and diagrams |
 | `site/` | Built output (git-ignored) |
 
-## Knowledge Base
+## Plugin Dependency
 
-→ `claude/KNOWLEDGE_BASE.md`
+Voice, formatting, QA, and AISEO reviews are provided by the `recce-team` plugin. Install it:
+
+```
+claude plugin add https://github.com/DataRecce/recce-team
+```
