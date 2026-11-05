@@ -11,7 +11,7 @@ Set up Cloud to automate data review on every pull request. This guide walks you
 
 [**Get Started**](https://cloud.reccehq.com/onboarding/get-started)
 
-<div style="aspect-ratio: 16 / 9; width: 100%;"><iframe src="https://www.loom.com/embed/25aa05fb20b24da5bd5a744cf7d0b372" title="Recce Cloud Getting Started" allow="fullscreen" loading="lazy" style="width: 100%; height: 100%; border: 0;"></iframe></div>
+<div style="aspect-ratio: 853 / 672; width: 100%;"><iframe src="https://www.tella.tv/video/vid_cmw06upzm000m08ic5dqudgvg/embed" title="Recce Cloud Getting Started" allow="fullscreen" loading="lazy" style="width: 100%; height: 100%; border: 0;"></iframe></div>
 
 ## Goal
 
