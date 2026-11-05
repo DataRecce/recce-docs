@@ -10,10 +10,10 @@ icon: material/school
 
 The following guide uses the official [Jaffle Shop DuckDB](https://github.com/dbt-labs/jaffle_shop_duckdb) project from dbt-labs, and provides everything you need to get started with Recce Cloud. By the end of the guide you'll be able to create and sync Recce checks with a GitHub PR via Recce Cloud.
 
-To see what you'll get, check out the first section from the following [Loom](https://www.loom.com/share/2029a2d63e61426fa16137f58575cea4?sid=ea4bcbd2-5ba8-4cbb-8617-3ddd97476b4b):
+To see what you'll get, check out the first section from the following [video](https://www.tella.tv/video/recce-cloud-demo-tutorial-hwiz6wp7):
 
 
-<div style="position: relative; padding-bottom: 62.19806763285024%; height: 0;"><iframe src="https://www.loom.com/embed/2029a2d63e61426fa16137f58575cea4?sid=5fd2f55d-f744-42a5-b11d-295cd9f43799" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 66.71%; height: 0;"><iframe src="https://www.tella.tv/video/vid_cmw05i27d017708jthwiz6wp7/embed" title="Recce Cloud - Demo Tutorial" allow="fullscreen" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 
 ## Clone Jaffle Shop to your own private repository
