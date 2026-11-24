@@ -57,3 +57,4 @@
 
 - [Configuration](https://docs.reccehq.com/technical-concepts/configuration.md): recce.yml reference for preset checks and parameters
 - [State File](https://docs.reccehq.com/technical-concepts/state-file.md): state file format for validation results, checks, and environment info
+- [Telemetry and Privacy](https://docs.reccehq.com/technical-concepts/telemetry.md): what anonymous usage data and error reports Recce OSS sends, and how to turn them off with anonymous_tracking, RECCE_DISABLE_TELEMETRY, or DO_NOT_TRACK
