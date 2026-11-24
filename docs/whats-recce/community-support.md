@@ -9,7 +9,7 @@ description: >-
 
 Here's where you can get in touch with the Recce team and find support:
 
-- [Join our community on Discord](https://discord.gg/3Ux2NKmSw). Recce and Spacedock share one server.
+- [Join our community on Discord](https://discord.gg/DnmXC4ehsy). Recce and Spacedock share one server.
 - [dbt Slack](https://www.getdbt.com/community/join-the-community) in the [#tools-recce](https://getdbt.slack.com/archives/C05C28V7CPP) channel
 - Email us [help@reccehq.com](mailto:help@reccehq.com)
 
