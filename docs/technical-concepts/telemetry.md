@@ -64,7 +64,7 @@ Repository names, branch names, and artifact paths are sent only as one-way SHA-
 
 When you open the Recce web UI from `recce server`, the browser loads:
 
-- **Amplitude and PostHog**, which record page views and clicks, including the text of the element you clicked. Amplitude also records **anonymized session replays** of the Recce UI. The parts of the UI that show model names, SQL, and query results are masked, so replays do not contain them.
+- **Amplitude and PostHog**, which record page views and clicks, including the text of the element you clicked. Amplitude also records **anonymized session replays** of the Recce UI. Form fields and text inputs are masked, and so is every part of the UI that shows your project's content: lineage node names, SQL and code editors, query and diff results, schemas, check names, error messages, and environment details. Replays show the layout and how you move through Recce, not your data.
 - **Google Tag Manager**.
 
 None of these load when telemetry is off.
@@ -87,7 +87,7 @@ Before a report leaves your machine, Recce removes:
 - Warehouse credentials, dbt profiles, or API tokens
 - SQL, model code, or the content of your checks
 
-Session replays are anonymized and don't contain these either. The one place on-screen text can appear is a web UI click event, which records the text of the element you clicked: usually a button label, but a model name if you click a node in the lineage view. If that is a concern, turn telemetry off.
+Session replays are anonymized and don't contain these either. The one place on-screen text can appear is a web UI click event, which records the label of the button or link you clicked. That is usually a fixed label such as "Run Diff", but can occasionally be a model or check name. If that is a concern, turn telemetry off.
 
 !!! warning "Recce 1.73 and earlier"
 
