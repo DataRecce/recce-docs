@@ -87,7 +87,7 @@ Before a report leaves your machine, Recce removes:
 - Warehouse credentials, dbt profiles, or API tokens
 - SQL, model code, or the content of your checks
 
-Session replays are anonymized and don't contain these either. The one place on-screen text can appear is a web UI click event, which records the label of the button or link you clicked. That is usually a fixed label such as "Run Diff", but can occasionally be a model or check name. If that is a concern, turn telemetry off.
+Session replays are anonymized and don't contain these either. The one place on-screen text can appear is a web UI click event, which records the label of the button or link you clicked. That is usually a fixed label such as "Profile Diff", but can occasionally be a model or check name. If that is a concern, turn telemetry off.
 
 !!! warning "Recce 1.73 and earlier"
 
