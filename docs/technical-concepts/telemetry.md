@@ -10,7 +10,7 @@ description: >-
 
 Recce OSS sends anonymous usage data and error reports so the team can see which features data teams use and fix problems faster. This page explains what is sent, what is not, and how to turn it off.
 
-This page covers Recce you run yourself: the `recce` CLI, `recce server`, the MCP server, and the `recce-cloud` CLI. Recce Cloud instances run on Recce's infrastructure and are not controlled by these settings.
+This page describes Recce 1.74.0 and later. It covers Recce you run yourself: the `recce` CLI, `recce server`, the MCP server, and the `recce-cloud` CLI. Recce Cloud instances run on Recce's infrastructure and are not controlled by these settings.
 
 ## Turn telemetry off
 
@@ -89,9 +89,9 @@ Before a report leaves your machine, Recce removes:
 
 Web UI analytics are different: click text and session replays capture what is on screen, which can include model names, SQL, or query results. If your screen shows sensitive data, turn telemetry off.
 
-!!! warning "Older versions of Recce"
+!!! warning "Recce 1.73 and earlier"
 
-    Before Recce TODO-VERSION, `anonymous_tracking: false` turned off usage events but not error reporting or the web UI trackers, and `RECCE_DISABLE_TELEMETRY` covered PostHog only. Upgrade to get the full opt-out:
+    Before Recce 1.74.0, `anonymous_tracking: false` turned off usage events but not error reporting or the web UI trackers, and `RECCE_DISABLE_TELEMETRY` covered PostHog only. Upgrade to get the full opt-out:
 
     ```shell
     pip install -U recce
